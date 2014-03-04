@@ -1,4 +1,4 @@
 easymerge
 =========
 
-EasyMerge is a Java redundant code detector and merger
+EasyMerge is a Python redundant code detector and merger
