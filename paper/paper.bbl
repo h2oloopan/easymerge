@@ -7,6 +7,12 @@ B.~Baker.
 \newblock {\em Proceedings of the 2nd Working Conference on Reverse
   Engineering}, pages 86--95, 1995.
 
+\bibitem{bulychev}
+P.~Bulychev and M.~Minea.
+\newblock Duplicate code detection using anti-unification.
+\newblock {\em Spring Young Researchers Colloquium on Software Engineering,
+  SYRCoSE 2008}, pages 4--7, 2008.
+
 \bibitem{roy}
 C.~K. Roy and J.~R. Cordy.
 \newblock An empirical study of function clones in open source software

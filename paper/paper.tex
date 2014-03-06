@@ -109,9 +109,9 @@ Abstract goes here.
 %A category including the fourth, optional field follows...
 \category{D.2.8}{Software Engineering}{Metrics}[complexity measures, performance measures]
 
-\terms{Theory}
+\terms{Software Engineering, Recommendation System}
 
-\keywords{ACM proceedings, \LaTeX, text tagging} % NOT required for Proceedings
+\keywords{Software Engineering, Clone Detection, Code Refactoring, Recommendation System} % NOT required for Proceedings
 
 \section{Introduction}
 In software development, it's very common seeing developers reuse code fragments by copying and pasting with or without minor adaptation.
@@ -119,13 +119,17 @@ Moreover, for large scale projects, developers are often too lazy to browse exis
 were already in the code base. As a result, software systems often contain sections of code that are very similar, called code clones.
 
 Previous research shows that a significant fraction (between 7\% and 23\%) of the code in a typical software system has been cloned \cite{baker} \cite{roy}. Many code clones
-in code bases are unnecessary duplications. By detecting, categorizing,
+in code bases are unnecessary duplications. 
+Code duplication can be a significant drawback, leading to bad design, and increased probability of bug occurrence and propagation. As a result, it can significantly
+increase maintenance cost, and form a barrier for software evolution. By detecting, categorizing,
 and removing code clones, we can produce easier to understand, cleaner, and more reusable code.
 
 Clone detection has been an avid research topic in the field of software engineering for decades. Fortunately, several automated techniques for detecting code clones
 have already been proposed. However, how to deal with detected clones, e.g. how to distinguish necessary clones from unnecessary ones and how to refactor code to remove
 unnecessary clones still remain a big problem in not only commercial but also academic domain. As a result, in this paper, we try to classify code clones and build
 a recommendation system called EasyMerge to help developers merge unnecessary clones on top of current state-of-the-art clone detection approach.
+
+More specifically, we pick CloneDigger \cite{bulychev}, an anti-unification duplicate code detection tool as our underlying clone detection approach, for its overall performance, coverage of multiple clone types, and availability. EasyMerge integrates CloneDigger as the pre-processing tool, analyze its output clone pairs, and recommend possible merges which can remove unnecessary clones without changing functionality of code base, creating reference conflicts, nor causing troubles to future code understanding or development.
 
 \section{Background}
 
