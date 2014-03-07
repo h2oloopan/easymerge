@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.10.28)  6 MAR 2014 11:30
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.10.28)  7 MAR 2014 13:18
 entering extended mode
 **C:/Users/Shengying/Projects/easymerge/paper/paper.tex
 (C:/Users/Shengying/Projects/easymerge/paper/paper.tex
@@ -220,39 +220,41 @@ LaTeX Font Info:    ... okay on input line 31.
 \makeMPintoPDFobject=\count114
 \everyMPtoPDFconversion=\toks37
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 102.
+LaTeX Font Info:    Try loading font information for U+msa on input line 105.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 102.
+LaTeX Font Info:    Try loading font information for U+msb on input line 105.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 102.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 105.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-Overfull \hbox (1.08371pt too wide) in paragraph at lines 132--133
+Overfull \hbox (1.08371pt too wide) in paragraph at lines 135--138
 []\T1/aer/m/n/9 More specif-i-cally, we pick CloneDig-ger [2], an anti-unificat
 ion
  []
 
-(C:\Users\Shengying\Projects\easymerge\paper\paper.bbl) [1{C:/ProgramData/MiKTe
-X/2.9/pdftex/config/pdftex.map}
+(C:\Users\Shengying\Projects\easymerge\paper\paper.bbl [1{C:/ProgramData/MiKTeX
+/2.9/pdftex/config/pdftex.map}
 
+
+]) [2
 
 ]
 (C:\Users\Shengying\Projects\easymerge\paper\paper.aux) ) 
 Here is how much of TeX's memory you used:
  2416 strings out of 493921
  28957 string characters out of 3144863
- 85027 words of memory out of 3000000
+ 86027 words of memory out of 3000000
  5676 multiletter control sequences out of 15000+200000
  47315 words of font info for 64 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 41i,10n,28p,597b,248s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,10n,28p,357b,248s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86
 )/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files (x86)/MiKTeX 2.9
 /fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
@@ -261,9 +263,9 @@ type1/public/amsfonts/cm/cmti9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
 e1/urw/helvetic/uhvb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/h
 elvetic/uhvr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utm
 b8a.pfb>
-Output written on paper.pdf (1 page, 84475 bytes).
+Output written on paper.pdf (2 pages, 86499 bytes).
 PDF statistics:
- 31 PDF objects out of 1000 (max. 8388607)
+ 34 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

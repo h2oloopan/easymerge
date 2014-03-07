@@ -30,7 +30,7 @@
 
 \begin{document}
 
-\title{EasyMerge - Clone Code Refactor}
+\title{EasyMerge - A New Tool for Code Clones Refactoring}
 %
 % You need the command \numberofauthors to handle the 'placement
 % and alignment' of the authors beneath the title.
@@ -74,15 +74,18 @@
 % 1st. author
 \alignauthor
 Shengying Pan\\
+       \affaddr{School of Computer Science}\\
        \affaddr{University of Waterloo}\\
        \email{s5pan@uwaterloo.ca}
 % 2nd. author
 \alignauthor
 Haocheng Qin\\
+       \affaddr{School of Computer Science}\\
        \affaddr{University of Waterloo}\\
        \email{h7qin@uwaterloo.ca}
 % 3rd. author
 \alignauthor Yahui Chen\\
+       \affaddr{School of Computer Science}\\
        \affaddr{University of Waterloo}\\
        \email{y556chen@uwaterloo.ca}
 \and  % use '\and' if you need 'another row' of author names
@@ -129,13 +132,20 @@ have already been proposed. However, how to deal with detected clones, e.g. how 
 unnecessary clones still remain a big problem in not only commercial but also academic domain. As a result, in this paper, we try to classify code clones and build
 a recommendation system called EasyMerge to help developers merge unnecessary clones on top of current state-of-the-art clone detection approach.
 
-More specifically, we pick CloneDigger \cite{bulychev}, an anti-unification duplicate code detection tool as our underlying clone detection approach, for its overall performance, coverage of multiple clone types, and availability. EasyMerge integrates CloneDigger as the pre-processing tool, analyze its output clone pairs, and recommend possible merges which can remove unnecessary clones without changing functionality of code base, creating reference conflicts, nor causing troubles to future code understanding or development.
+More specifically, we pick CloneDigger \cite{bulychev}, an anti-unification duplicate code detection tool as our underlying clone detection approach. CloneDigger is one of the best available 
+clone detection tools currently for its overall performance, coverage of multiple clone types, and availability. 
+EasyMerge integrates CloneDigger as the pre-processing tool, analyze its output clone pairs, and recommend possible merges which can remove unnecessary clones without changing functionality of code base, creating reference conflicts, nor causing troubles to future code understanding and development.
+
+The paper is structured as following: we first go through the basics, background, and current state of clone detection and code clone refactoring in general.
+Then we introduce and discuss the fundamentals of CloneDigger and the anti-unification algorithm it is using to detect clones. Afterwards, we explain EasyMerge's
+work flow and underlying techniques. And at the end, we set up testing environment and discuss the experimental results of running EasyMerge against several
+open source projects of different scales.
 
 \section{Background}
 
 \section{Clone Code Detection}
 
-\section{Clone Merging Algorithm}
+\section{EasyMerge}
 
 \section{Experimental Results}
 
