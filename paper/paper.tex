@@ -28,6 +28,8 @@
 
 \documentclass{acm_proc_article-sp}
 
+\newdef{definition}{Definition}
+
 \begin{document}
 
 \title{EasyMerge - A New Tool for Code Clones Refactoring}
@@ -136,13 +138,40 @@ More specifically, we pick CloneDigger \cite{bulychev}, an anti-unification dupl
 clone detection tools currently for its overall performance, coverage of multiple clone types, and availability. 
 EasyMerge integrates CloneDigger as the pre-processing tool, analyze its output clone pairs, and recommend possible merges which can remove unnecessary clones without changing functionality of code base, creating reference conflicts, nor causing troubles to future code understanding and development.
 
-The paper is structured as following: we first go through the basics, background, and current state of clone detection and code clone refactoring in general.
+The rest of the paper is structured as follows: we first go through the basics, background, and current state of clone detection and code clone refactoring in general.
 Then we introduce and discuss the fundamentals of CloneDigger and the anti-unification algorithm it is using to detect clones. Afterwards, we explain EasyMerge's
 work flow and underlying techniques. And at the end, we set up testing environment and discuss the experimental results of running EasyMerge against several
 open source projects of different scales.
 
 \section{Background}
-Roy and Cordy has done a great work \cite{roy2}
+Roy, Cordy, and Koschke have done a great work \cite{roy2} writing an overview paper explaining the basics of clone detection, and providing a complete comparison of essential
+strengths and weaknesses of both individual tools and techniques and alternative approaches in general. It gives us all the needed preliminaries to focus on clone refactoring rather
+than spending time working on the detection part. We begin with a basic introduction to clone detection terminology in Roy's paper.
+
+\begin{definition}
+(Code Fragment). A code fragment (CF) is any sequence of code lines (with or without comments). It can be of any granularity, e.g., function
+definition, begin-end block, or sequence of statements. A $CF$ is identified by its file name and begin-end line numbers in the original code base
+and is denoted as a triple ($CF.FileName$, $CF.BeginLine$, $CF.EndLine$).
+\end{definition}
+
+\begin{definition}
+(Code Clone). A code fragment $CF2$ is a clone of another code fragment $CF1$ if they are similar by some given definition of similarity, that is, 
+$f(CF1) = f(CF2)$ where $f$ is the similarity function (see clone types below). Two fragments that are similar to each other form a clone pair
+$(CF1, CF2)$, and when many fragments are similar, they form a clone class or clone group.
+\end{definition}
+
+\begin{definition}
+(Clone Types). There are two main kinds of similarity between code fragments. Fragments can be similar based on the similarity of their program text,
+or they can be similar based on their functionality (independent of their text). The first kind of clone is often the result of copying a code fragment and
+pasting into another location. In the following we provide the types of clones based on both the textual (Type 1 to 3)\cite{bellon} and functional (Type 4)\cite{gabel, komondoor} similarities:
+
+\begin{itemize}
+\item {\bf Type-1:} Identical code fragments except for variations in whitespace, layout and comments.
+\item {\bf Type-2:} Syntactically identical fragments except for variations in identifiers, literals, types, whitespace, layout and comments.
+\item {\bf Type-3:} Copied fragments with further modifications such as changed, added or removed statements, in addition to variations in identifiers, literals, types, whitespace, layout and comments.
+\item {\bf Type-4:} Two or more code fragments that perform the same computation but are implemented by different syntactic variants.
+\end{itemize}
+\end{definition}
 
 \section{Clone Code Detection}
 
