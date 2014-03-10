@@ -113,7 +113,11 @@ complex when scopes and dependencies are considered. Furthermore, not all clones
 libraries. As a result, we need adaptive clone refactoring tools that can locate unnecessary clones and alert possible implications in the procedure to help
 software engineers be more efficient and make less mistakes in the refactoring process.
 
-In this paper, we introduce EasyMerge, a new tool to refactor code clones. EasyMerge is built on top of AST-based clone detection algorithm
+In this paper, we introduce EasyMerge, a new tool to refactor code clones. EasyMerge is built on top of AST-based anti-unification clone detection algorithm and 
+refactors software projects written in Python. It adds intelligence to code clone refactoring by categorizing clones and generating refactoring recommendations
+based on evaluation of external variable references and function calls. It copes with features of Python language and can deal with clone segments in functions,
+classes, and across different scopes. It ensures functionality-wise consistency before and after refactoring and provide warnings when potential refactoring could lead to
+unwanted complexity or cause readability issues.
 \end{abstract}
 
 % A category with the (minimum) three required fields
@@ -180,24 +184,14 @@ pasting into another location. In the following we provide the types of clones b
 \end{itemize}
 \end{definition}
 
-\section{Clone Code Detection}
+\section{CloneDigger}
 
 \section{EasyMerge}
 
 \section{Experimental Results}
 
-\section{Conclusions}
-
-\section{Future Work}
-
 %ACKNOWLEDGMENTS are optional
 \section{Acknowledgments}
-This section is optional; it is a location for you
-to acknowledge grants, funding, editing assistance and
-what have you.  In the present case, for example, the
-authors would like to thank Gerald Murray of ACM for
-his help in codifying this \textit{Author's Guide}
-and the \textbf{.cls} and \textbf{.tex} files that it describes.
 
 %
 % The following two commands are all you need in the
