@@ -24,6 +24,10 @@ import traceback
 import os.path
 from cgi import escape
 
+import debug
+
+import pickle
+
 import arguments
 import anti_unification
 import python_compiler
@@ -104,11 +108,12 @@ class HTMLReport(Report):
         for clone_i in range(len(self._clones)):
             try:
                 clone = self._clones[clone_i]
+                #debug.print_clone(clone)
                 s = '<P>'
                 s += '<B>Clone # %d</B><BR>'%(clone_i +1,)
 #           s = '<P> Clone detected in source files "%s" and "%s" <BR>\n' % (sequences[0].getSourceFile().getFileName(), sequences[1].getSourceFile().getFileName())
                 s+= 'Distance between two fragments = %d <BR>' %(clone.calcDistance())
-                s+= 'Clone size = ' + str(max([len(set(clone[i].getCoveredLineNumbers())) for i in [0,1]] ))
+                s+= 'Clone size = ' + str(([(set(clone[i].getCoveredLineNumbers())) for i in [0,1]] ))
                 s+= '<TABLE NOWRAP WIDTH=100% BORDER=1>'
                 s+= eclipse_start
                 s+= '<TR>'
@@ -231,7 +236,7 @@ class HTMLReport(Report):
                             print 'using diff highlight'
                             (d,u) = use_diff()
                     for j in [0,1]:                 
-                        t.append('<TD>\n' + d[j] + '</TD>\n')
+                        t.append('<TD>\n' + d[j] + "<BR>" + str(statements[j]) + '</TD>\n')
                     if u.getSize() > 0:
                         color = 'RED'
                     else:

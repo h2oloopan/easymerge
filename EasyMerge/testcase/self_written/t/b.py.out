@@ -1,0 +1,368 @@
+[0, 'os']
+=======================
+ID:0
+Name:__init__
+lines:(4, 5)
+scope:[('Class', 'T', (2, 7))]
+member:True
+=======================
+ID:1
+Name:test
+lines:(6, 7)
+scope:[('Class', 'T', (2, 7))]
+member:True
+=======================
+ID:2
+Name:__init__
+lines:(11, 12)
+scope:[('Class', 'T2', (9, 14))]
+member:True
+=======================
+ID:3
+Name:test
+lines:(13, 14)
+scope:[('Class', 'T2', (9, 14))]
+member:True
+=======================
+ID:4
+Name:b
+lines:(27, 36)
+scope:[('Global', '', (0, 999998))]
+member:False
+=======================
+ID:5
+Name:cc
+lines:(28, 29)
+scope:[('Function', 'b', (27, 36))]
+member:False
+=======================
+ID:0
+Name:T
+lines:(2, 7)
+scope:[]
+=======================
+ID:1
+Name:T2
+lines:(9, 14)
+scope:[]
+=======================
+Name:['T2']
+line:17
+scope:(0, 999998)
+source:('class', 1)
+=======================
+Name:['cc']
+line:30
+scope:(27, 36)
+source:('function', 5)
+Module
+None
+
+Stmt
+	Import
+		[('os', None)]
+
+
+	Class
+		'T'
+
+		Stmt
+			Assign
+				AssName
+					'aa'
+
+
+				Const
+					"'a'"
+
+
+
+			Function
+				'__init__'
+
+				'self'
+
+				0
+
+				Stmt
+					Assign
+						AssAttr
+							Name
+								'self'
+
+
+							'bb'
+
+							'OP_ASSIGN'
+
+
+						Const
+							'1.0'
+
+
+
+
+
+			Function
+				'test'
+
+				'self'
+
+				0
+
+				Stmt
+					Pass
+
+
+
+
+
+	Class
+		'T2'
+
+		Stmt
+			Assign
+				AssName
+					'aa'
+
+
+				Const
+					"'a'"
+
+
+
+			Function
+				'__init__'
+
+				'self'
+
+				0
+
+				Stmt
+					Assign
+						AssAttr
+							Name
+								'self'
+
+
+							'bb'
+
+							'OP_ASSIGN'
+
+
+						Const
+							'1.0'
+
+
+
+
+
+			Function
+				'test'
+
+				'self'
+
+				0
+
+				Stmt
+					Pass
+
+
+
+
+
+	Assign
+		AssName
+			'c'
+
+
+		CallFunc
+			Name
+				'T2'
+
+
+			None
+
+			None
+
+
+
+	If
+		Compare
+			Const
+				'5'
+
+
+			'=='
+
+			Const
+				'0'
+
+
+
+		Stmt
+			Printnl
+				Const
+					"'E'"
+
+
+				None
+
+
+
+		Stmt
+			Printnl
+				Const
+					"'OK'"
+
+
+				None
+
+
+
+
+	Printnl
+		Name
+			'c'
+
+
+		None
+
+
+	Printnl
+		CallFunc
+			Name
+				'str'
+
+
+			Name
+				'c'
+
+
+			None
+
+			None
+
+
+		None
+
+
+	Function
+		'b'
+
+		'c'
+
+		'i'
+
+		Const
+			'1'
+
+
+		0
+
+		Stmt
+			Function
+				'cc'
+
+				0
+
+				Stmt
+					Printnl
+						Const
+							"'cc here'"
+
+
+						None
+
+
+
+
+			Printnl
+				CallFunc
+					Name
+						'cc'
+
+
+					None
+
+					None
+
+
+				None
+
+
+			Printnl
+				Name
+					'c'
+
+
+				None
+
+
+			Printnl
+				CallFunc
+					Name
+						'str'
+
+
+					Name
+						'c'
+
+
+					None
+
+					None
+
+
+				None
+
+
+			If
+				Name
+					'c'
+
+
+				Stmt
+					Return
+						Name
+							'c'
+
+
+
+
+				Stmt
+					Return
+						Name
+							'None'
+
+
+
+
+
+
+
+	Printnl
+		Const
+			'5'
+
+
+		None
+
+
+	Printnl
+		Const
+			'6'
+
+
+		None
+
+
+	Printnl
+		Const
+			'7'
+
+
+		None
+
+
+

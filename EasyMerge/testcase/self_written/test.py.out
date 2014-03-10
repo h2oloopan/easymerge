@@ -1,0 +1,138 @@
+=======================
+ID:0
+Name:a
+lines:(1, 6)
+scope:[('Class', 'cA', (0, 6))]
+member:True
+=======================
+ID:1
+Name:b
+lines:(3, 4)
+scope:[('Class', 'cA', (0, 6)), ('Function', 'a', (1, 6))]
+member:False
+=======================
+ID:0
+Name:cA
+lines:(0, 6)
+scope:[]
+=======================
+Name:['cA']
+line:8
+scope:(0, 999998)
+source:('class', 0)
+=======================
+Name:['ca', 'a']
+line:9
+scope:(0, 999998)
+source:('member', -1)
+Module
+None
+
+Stmt
+	Class
+		'cA'
+
+		Stmt
+			Function
+				'a'
+
+				'self'
+
+				0
+
+				Stmt
+					Assign
+						AssName
+							'i'
+
+
+						Const
+							'0'
+
+
+
+					Function
+						'b'
+
+						0
+
+						Stmt
+							Printnl
+								Getattr
+									Name
+										'b'
+
+
+									'__class__'
+
+
+								None
+
+
+
+
+					Printnl
+						Getattr
+							Name
+								'b'
+
+
+							'__name__'
+
+
+						None
+
+
+
+
+
+
+	Assign
+		AssName
+			'ca'
+
+
+		CallFunc
+			Name
+				'cA'
+
+
+			None
+
+			None
+
+
+
+	Discard
+		CallFunc
+			Getattr
+				Name
+					'ca'
+
+
+				'a'
+
+
+			None
+
+			None
+
+
+
+	Printnl
+		Getattr
+			Getattr
+				Name
+					'ca'
+
+
+				'a'
+
+
+			'__name__'
+
+
+		None
+
+
+

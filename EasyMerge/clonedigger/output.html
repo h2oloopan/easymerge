@@ -44,10 +44,10 @@
     <BODY>
     
     
-    <P>Source files: 5</P>
-        <a href = "javascript:unhide('files');">Click here to show/hide file names</a><div id="files" class="hidden"><P><B>Source files:</B><BR>..\..\ply\ply\cpp.py, <BR>..\..\ply\ply\ctokens.py, <BR>..\..\ply\ply\lex.py, <BR>..\..\ply\ply\yacc.py, <BR>..\..\ply\ply\__init__.py</P></div>
-        <P>Clones detected: 50</P>
-        <P>661 of 3083 lines are duplicates (21.44%) </P>
+    <P>Source files: 4</P>
+        <a href = "javascript:unhide('files');">Click here to show/hide file names</a><div id="files" class="hidden"><P><B>Source files:</B><BR>../testcase/compiler_code/class_def.py, <BR>../testcase/compiler_code/symbol_table.py, <BR>../testcase/compiler_code/dict_scan.py, <BR>../testcase/compiler_code/tools.py</P></div>
+        <P>Clones detected: 12</P>
+        <P>98 of 1147 lines are duplicates (8.54%) </P>
 <P>
 <B>Parameters<BR> </B>
 clustering_threshold = 10<BR>
@@ -58,2373 +58,275 @@ clusterize_using_hash = False<BR>
 clusterize_using_dcup = False<BR>
 </P> 
         
-    <B>Time elapsed</B><BR>Construction of AST : 1.05 seconds<BR>
-Building statement hash : 0.02 seconds<BR>
-Building patterns : 3.12 seconds<BR>
-Marking similar statements : 3.84 seconds<BR>
-Finding similar sequences of statements : 0.37 seconds<BR>
-Refining candidates : 0.69 seconds<BR>
- Total time: 9.08<BR>
- Started at: Tue Mar 04 16:01:35 2014<BR>
- Finished at: Tue Mar 04 16:01:44 2014
-    <P><B>Clone # 1</B><BR>Distance between two fragments = 0 <BR>Clone size = 55<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 835</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 557</TD></TR><TR>
+    <B>Time elapsed</B><BR>Construction of AST : 0.34 seconds<BR>
+Building statement hash : 0.00 seconds<BR>
+Building patterns : 0.65 seconds<BR>
+Marking similar statements : 0.79 seconds<BR>
+Finding similar sequences of statements : 0.09 seconds<BR>
+Refining candidates : 0.23 seconds<BR>
+ Total time: 2.10<BR>
+ Started at: Mon Mar 10 16:44:51 2014<BR>
+ Finished at: Mon Mar 10 16:44:53 2014
+    <P><B>Clone # 1</B><BR>Distance between two fragments = 2 <BR>Clone size = [set([1064, 1065, 1066, 1067, 1070, 1071, 1072, 1074]), set([1058, 1059, 1060, 1062, 1052, 1053, 1054, 1055])]<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../testcase/compiler_code/symbol_table.py"<BR>The first line is 1065</TD><TD></TD><TD>Source file "../testcase/compiler_code/symbol_table.py"<BR>The first line is 1053</TD></TR><TR>
 <TD>
-if (errorcount == 0) or (self.errorok):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errorcount = error_count<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.errorok = 0<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errtoken = lookahead<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if errtoken.type == '$end':<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errtoken = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if self.errorfunc:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (errtoken) and (not hasattr(errtoken, 'lexer')):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errtoken.lexer = lexer<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tok = call_errorfunc(self.errorfunc, errtoken, self)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if self.errorok:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = tok<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errtoken = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue<BR>
+for i in lrtab.<span style="color: rgb(255, 0, 0);">lr_goto</span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">goto</span> = lrtab.<span style="color: rgb(255, 0, 0);">lr_goto</span>[i]<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;c = d.<span style="color: rgb(255, 0, 0);">goto</span>.add()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;c.state = i<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;for j in <span style="color: rgb(255, 0, 0);">goto</span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c2 = c.decision.add()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c2.tag = j<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c2.state = <span style="color: rgb(255, 0, 0);">goto</span>[j]<BR> ( For ( AssName ( 'i' )  )   ( Getattr ( Name ( 'lrtab' )  )   ( 'lr_goto' )  )   ( Stmt ( Assign ( AssName ( 'goto' )  )   ( Subscript ( Getattr ( Name ( 'lrtab' )  )   ( 'lr_goto' )  )   ( 'OP_APPLY' )   ( Name ( 'i' )  )  )  )   ( Assign ( AssName ( 'c' )  )   ( CallFunc ( Getattr ( Getattr ( Name ( 'd' )  )   ( 'goto' )  )   ( 'add' )  )   ( None )   ( None )  )  )   ( Assign ( AssAttr ( Name ( 'c' )  )   ( 'state' )   ( 'OP_ASSIGN' )  )   ( Name ( 'i' )  )  )   ( For ( AssName ( 'j' )  )   ( Name ( 'goto' )  )   ( Stmt ( Assign ( AssName ( 'c2' )  )   ( CallFunc ( Getattr ( Getattr ( Name ( 'c' )  )   ( 'decision' )  )   ( 'add' )  )   ( None )   ( None )  )  )   ( Assign ( AssAttr ( Name ( 'c2' )  )   ( 'tag' )   ( 'OP_ASSIGN' )  )   ( Name ( 'j' )  )  )   ( Assign ( AssAttr ( Name ( 'c2' )  )   ( 'state' )   ( 'OP_ASSIGN' )  )   ( Subscript ( Name ( 'goto' )  )   ( 'OP_APPLY' )   ( Name ( 'j' )  )  )  )  )   ( None )  )  )   ( None )  ) </TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+for i in lrtab.<span style="color: rgb(255, 0, 0);">lr_action</span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">action</span> = lrtab.<span style="color: rgb(255, 0, 0);">lr_action</span>[i]<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;c = d.<span style="color: rgb(255, 0, 0);">action</span>.add()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;c.state = i<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;for j in <span style="color: rgb(255, 0, 0);">action</span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c2 = c.decision.add()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c2.tag = j<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c2.state = <span style="color: rgb(255, 0, 0);">action</span>[j]<BR> ( For ( AssName ( 'i' )  )   ( Getattr ( Name ( 'lrtab' )  )   ( 'lr_action' )  )   ( Stmt ( Assign ( AssName ( 'action' )  )   ( Subscript ( Getattr ( Name ( 'lrtab' )  )   ( 'lr_action' )  )   ( 'OP_APPLY' )   ( Name ( 'i' )  )  )  )   ( Assign ( AssName ( 'c' )  )   ( CallFunc ( Getattr ( Getattr ( Name ( 'd' )  )   ( 'action' )  )   ( 'add' )  )   ( None )   ( None )  )  )   ( Assign ( AssAttr ( Name ( 'c' )  )   ( 'state' )   ( 'OP_ASSIGN' )  )   ( Name ( 'i' )  )  )   ( For ( AssName ( 'j' )  )   ( Name ( 'action' )  )   ( Stmt ( Assign ( AssName ( 'c2' )  )   ( CallFunc ( Getattr ( Getattr ( Name ( 'c' )  )   ( 'decision' )  )   ( 'add' )  )   ( None )   ( None )  )  )   ( Assign ( AssAttr ( Name ( 'c2' )  )   ( 'tag' )   ( 'OP_ASSIGN' )  )   ( Name ( 'j' )  )  )   ( Assign ( AssAttr ( Name ( 'c2' )  )   ( 'state' )   ( 'OP_ASSIGN' )  )   ( Subscript ( Name ( 'action' )  )   ( 'OP_APPLY' )   ( Name ( 'j' )  )  )  )  )   ( None )  )  )   ( None )  ) </TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 2</B><BR>Distance between two fragments = 4 <BR>Clone size = [set([886, 887, 888, 889, 890, 891, 892, 893]), set([896, 897, 898, 899, 900, 901, 894, 895])]<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../testcase/compiler_code/symbol_table.py"<BR>The first line is 887</TD><TD></TD><TD>Source file "../testcase/compiler_code/symbol_table.py"<BR>The first line is 895</TD></TR><TR>
+<TD>
+file.write(<span style="color: rgb(255, 0, 0);">'ID2QUOTE:\n'</span>)<BR> ( Discard ( CallFunc ( Getattr ( Name ( 'file' )  )   ( 'write' )  )   ( Const ( "'ID2QUOTE:\\n'" )  )   ( None )   ( None )  )  ) </TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+file.write(<span style="color: rgb(255, 0, 0);">'\nID2RESERVE:\n'</span>)<BR> ( Discard ( CallFunc ( Getattr ( Name ( 'file' )  )   ( 'write' )  )   ( Const ( "'\\nID2RESERVE:\\n'" )  )   ( None )   ( None )  )  ) </TD>
+</TR>
+<TR>
+<TD>
+for i in <span style="color: rgb(255, 0, 0);">id2quote</span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;s = ((str(i.id)) + ('.\t')) + (i.str)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;file.write((s) + ('\n'))<BR> ( For ( AssName ( 'i' )  )   ( Name ( 'id2quote' )  )   ( Stmt ( Assign ( AssName ( 's' )  )   ( Add ( Add ( CallFunc ( Name ( 'str' )  )   ( Getattr ( Name ( 'i' )  )   ( 'id' )  )   ( None )   ( None )  )   ( Const ( "'.\\t'" )  )  )   ( Getattr ( Name ( 'i' )  )   ( 'str' )  )  )  )   ( Discard ( CallFunc ( Getattr ( Name ( 'file' )  )   ( 'write' )  )   ( Add ( Name ( 's' )  )   ( Const ( "'\\n'" )  )  )   ( None )   ( None )  )  )  )   ( None )  ) </TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+for i in <span style="color: rgb(255, 0, 0);">id2reserve</span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;s = ((str(i.id)) + ('.\t')) + (i.str)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;file.write((s) + ('\n'))<BR> ( For ( AssName ( 'i' )  )   ( Name ( 'id2reserve' )  )   ( Stmt ( Assign ( AssName ( 's' )  )   ( Add ( Add ( CallFunc ( Name ( 'str' )  )   ( Getattr ( Name ( 'i' )  )   ( 'id' )  )   ( None )   ( None )  )   ( Const ( "'.\\t'" )  )  )   ( Getattr ( Name ( 'i' )  )   ( 'str' )  )  )  )   ( Discard ( CallFunc ( Getattr ( Name ( 'file' )  )   ( 'write' )  )   ( Add ( Name ( 's' )  )   ( Const ( "'\\n'" )  )  )   ( None )   ( None )  )  )  )   ( None )  ) </TD>
+</TR>
+<TR>
+<TD>
+file.write(<span style="color: rgb(255, 0, 0);">'\nQUOTE2ID:\n'</span>)<BR> ( Discard ( CallFunc ( Getattr ( Name ( 'file' )  )   ( 'write' )  )   ( Const ( "'\\nQUOTE2ID:\\n'" )  )   ( None )   ( None )  )  ) </TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+file.write(<span style="color: rgb(255, 0, 0);">'\nRESERVE2ID:\n'</span>)<BR> ( Discard ( CallFunc ( Getattr ( Name ( 'file' )  )   ( 'write' )  )   ( Const ( "'\\nRESERVE2ID:\\n'" )  )   ( None )   ( None )  )  ) </TD>
+</TR>
+<TR>
+<TD>
+for i in <span style="color: rgb(255, 0, 0);">quote2id</span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;s = ((i) + ('\t:\t')) + (str(<span style="color: rgb(255, 0, 0);">quote2id</span>[i]))<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;file.write((s) + ('\n'))<BR> ( For ( AssName ( 'i' )  )   ( Name ( 'quote2id' )  )   ( Stmt ( Assign ( AssName ( 's' )  )   ( Add ( Add ( Name ( 'i' )  )   ( Const ( "'\\t:\\t'" )  )  )   ( CallFunc ( Name ( 'str' )  )   ( Subscript ( Name ( 'quote2id' )  )   ( 'OP_APPLY' )   ( Name ( 'i' )  )  )   ( None )   ( None )  )  )  )   ( Discard ( CallFunc ( Getattr ( Name ( 'file' )  )   ( 'write' )  )   ( Add ( Name ( 's' )  )   ( Const ( "'\\n'" )  )  )   ( None )   ( None )  )  )  )   ( None )  ) </TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+for i in <span style="color: rgb(255, 0, 0);">reserve2id</span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;s = ((i) + ('\t:\t')) + (str(<span style="color: rgb(255, 0, 0);">reserve2id</span>[i]))<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;file.write((s) + ('\n'))<BR> ( For ( AssName ( 'i' )  )   ( Name ( 'reserve2id' )  )   ( Stmt ( Assign ( AssName ( 's' )  )   ( Add ( Add ( Name ( 'i' )  )   ( Const ( "'\\t:\\t'" )  )  )   ( CallFunc ( Name ( 'str' )  )   ( Subscript ( Name ( 'reserve2id' )  )   ( 'OP_APPLY' )   ( Name ( 'i' )  )  )   ( None )   ( None )  )  )  )   ( Discard ( CallFunc ( Getattr ( Name ( 'file' )  )   ( 'write' )  )   ( Add ( Name ( 's' )  )   ( Const ( "'\\n'" )  )  )   ( None )   ( None )  )  )  )   ( None )  ) </TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 3</B><BR>Distance between two fragments = 3 <BR>Clone size = [set([256, 249, 250, 251, 252, 254, 255]), set([193, 194, 195, 196, 198, 199, 201])]<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../testcase/compiler_code/class_def.py"<BR>The first line is 250</TD><TD></TD><TD>Source file "../testcase/compiler_code/class_def.py"<BR>The first line is 194</TD></TR><TR>
+<TD>
+c = <span style="color: rgb(255, 0, 0);">children</span>.add()<BR> ( Assign ( AssName ( 'c' )  )   ( CallFunc ( Getattr ( Name ( 'children' )  )   ( 'add' )  )   ( None )   ( None )  )  ) </TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+c = <span style="color: rgb(255, 0, 0);">d.exp.children</span>.add()<BR> ( Assign ( AssName ( 'c' )  )   ( CallFunc ( Getattr ( Getattr ( Getattr ( Name ( 'd' )  )   ( 'exp' )  )   ( 'children' )  )   ( 'add' )  )   ( None )   ( None )  )  ) </TD>
+</TR>
+<TR>
+<TD>
+if isinstance(i.value, tuple):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if isinstance(i.value[1], tuple):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c.src_type, c.src_id, c.src_attr = i.get_dump(c.children)<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if errtoken:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if hasattr(errtoken, 'lineno'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lineno = lookahead.lineno<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lineno = 0<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if lineno:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.stderr.write(('yacc: Syntax error at line %d, token=%s\n') % ((lineno, errtoken.type)))<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.stderr.write(('yacc: Syntax error, token=%s') % (errtoken.type))<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.stderr.write('yacc: Parse error in input. EOF\n')<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return None<BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errorcount = error_count</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c.src_type, c.src_val = i.get_dump(c.children)<BR>
+elif isinstance(i.value, str):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;c.src_type, c.src_val = i.get_dump(c.children)<BR> ( If ( CallFunc ( Name ( 'isinstance' )  )   ( Getattr ( Name ( 'i' )  )   ( 'value' )  )   ( Name ( 'tuple' )  )   ( None )   ( None )  )   ( Stmt ( If ( CallFunc ( Name ( 'isinstance' )  )   ( Subscript ( Getattr ( Name ( 'i' )  )   ( 'value' )  )   ( 'OP_APPLY' )   ( Const ( '1' )  )  )   ( Name ( 'tuple' )  )   ( None )   ( None )  )   ( Stmt ( Assign ( AssTuple ( AssAttr ( Name ( 'c' )  )   ( 'src_type' )   ( 'OP_ASSIGN' )  )   ( AssAttr ( Name ( 'c' )  )   ( 'src_id' )   ( 'OP_ASSIGN' )  )   ( AssAttr ( Name ( 'c' )  )   ( 'src_attr' )   ( 'OP_ASSIGN' )  )  )   ( CallFunc ( Getattr ( Name ( 'i' )  )   ( 'get_dump' )  )   ( Getattr ( Name ( 'c' )  )   ( 'children' )  )   ( None )   ( None )  )  )  )   ( Stmt ( Assign ( AssTuple ( AssAttr ( Name ( 'c' )  )   ( 'src_type' )   ( 'OP_ASSIGN' )  )   ( AssAttr ( Name ( 'c' )  )   ( 'src_val' )   ( 'OP_ASSIGN' )  )  )   ( CallFunc ( Getattr ( Name ( 'i' )  )   ( 'get_dump' )  )   ( Getattr ( Name ( 'c' )  )   ( 'children' )  )   ( None )   ( None )  )  )  )  )  )   ( CallFunc ( Name ( 'isinstance' )  )   ( Getattr ( Name ( 'i' )  )   ( 'value' )  )   ( Name ( 'str' )  )   ( None )   ( None )  )   ( Stmt ( Assign ( AssTuple ( AssAttr ( Name ( 'c' )  )   ( 'src_type' )   ( 'OP_ASSIGN' )  )   ( AssAttr ( Name ( 'c' )  )   ( 'src_val' )   ( 'OP_ASSIGN' )  )  )   ( CallFunc ( Getattr ( Name ( 'i' )  )   ( 'get_dump' )  )   ( Getattr ( Name ( 'c' )  )   ( 'children' )  )   ( None )   ( None )  )  )  )   ( None )  ) </TD>
 <TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if (errorcount == 0) or (self.errorok):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errorcount = error_count<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.errorok = 0<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errtoken = lookahead<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if errtoken.type == '$end':<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errtoken = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if self.errorfunc:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (errtoken) and (not hasattr(errtoken, 'lexer')):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errtoken.lexer = lexer<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tok = call_errorfunc(self.errorfunc, errtoken, self)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if self.errorok:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = tok<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errtoken = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue<BR>
+if isinstance(i.value, tuple):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if isinstance(i.value[1], tuple):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c.src_type, c.src_id, c.src_attr = i.get_dump(c.children)<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if errtoken:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if hasattr(errtoken, 'lineno'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lineno = lookahead.lineno<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lineno = 0<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if lineno:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.stderr.write(('yacc: Syntax error at line %d, token=%s\n') % ((lineno, errtoken.type)))<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.stderr.write(('yacc: Syntax error, token=%s') % (errtoken.type))<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.stderr.write('yacc: Parse error in input. EOF\n')<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return None<BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errorcount = error_count</TD>
-</TR>
-<TR>
-<TD>
-if (len(statestack) <= 1) and (lookahead.type != '$end'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookahead = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errtoken = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;state = 0<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookaheadstack[:]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;continue</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if (len(statestack) <= 1) and (lookahead.type != '$end'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookahead = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errtoken = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;state = 0<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookaheadstack[:]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;continue</TD>
-</TR>
-<TR>
-<TD>
-if lookahead.type == '$end':<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;return None</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if lookahead.type == '$end':<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;return None</TD>
-</TR>
-<TR>
-<TD>
-if lookahead.type != 'error':<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;sym = symstack[-1]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if sym.type == 'error':<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if tracking:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sym.endlineno = getattr(lookahead, 'lineno', sym.lineno)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sym.endlexpos = getattr(lookahead, 'lexpos', sym.lexpos)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;t = YaccSymbol()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;t.type = 'error'<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if hasattr(lookahead, 'lineno'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t.lineno = lookahead.lineno<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if hasattr(lookahead, 'lexpos'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t.lexpos = lookahead.lexpos<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;t.value = lookahead<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookaheadstack.append(lookahead)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookahead = t<BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;sym = symstack.pop()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if tracking:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead.lineno = sym.lineno<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead.lexpos = sym.lexpos<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;statestack.pop()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;state = statestack[-1]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if lookahead.type != 'error':<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;sym = symstack[-1]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if sym.type == 'error':<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if tracking:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sym.endlineno = getattr(lookahead, 'lineno', sym.lineno)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sym.endlexpos = getattr(lookahead, 'lexpos', sym.lexpos)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;t = YaccSymbol()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;t.type = 'error'<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if hasattr(lookahead, 'lineno'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t.lineno = lookahead.lineno<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if hasattr(lookahead, 'lexpos'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t.lexpos = lookahead.lexpos<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;t.value = lookahead<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookaheadstack.append(lookahead)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookahead = t<BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;sym = symstack.pop()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if tracking:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead.lineno = sym.lineno<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead.lexpos = sym.lexpos<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;statestack.pop()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;state = statestack[-1]</TD>
-</TR>
-<TR>
-<TD>
-continue</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-continue</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c.src_type, c.src_val = i.get_dump(c.children)<BR>
+elif isinstance(i.value, str):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;c.src_type, c.src_val = i.get_dump(c.children)<BR> ( If ( CallFunc ( Name ( 'isinstance' )  )   ( Getattr ( Name ( 'i' )  )   ( 'value' )  )   ( Name ( 'tuple' )  )   ( None )   ( None )  )   ( Stmt ( If ( CallFunc ( Name ( 'isinstance' )  )   ( Subscript ( Getattr ( Name ( 'i' )  )   ( 'value' )  )   ( 'OP_APPLY' )   ( Const ( '1' )  )  )   ( Name ( 'tuple' )  )   ( None )   ( None )  )   ( Stmt ( Assign ( AssTuple ( AssAttr ( Name ( 'c' )  )   ( 'src_type' )   ( 'OP_ASSIGN' )  )   ( AssAttr ( Name ( 'c' )  )   ( 'src_id' )   ( 'OP_ASSIGN' )  )   ( AssAttr ( Name ( 'c' )  )   ( 'src_attr' )   ( 'OP_ASSIGN' )  )  )   ( CallFunc ( Getattr ( Name ( 'i' )  )   ( 'get_dump' )  )   ( Getattr ( Name ( 'c' )  )   ( 'children' )  )   ( None )   ( None )  )  )  )   ( Stmt ( Assign ( AssTuple ( AssAttr ( Name ( 'c' )  )   ( 'src_type' )   ( 'OP_ASSIGN' )  )   ( AssAttr ( Name ( 'c' )  )   ( 'src_val' )   ( 'OP_ASSIGN' )  )  )   ( CallFunc ( Getattr ( Name ( 'i' )  )   ( 'get_dump' )  )   ( Getattr ( Name ( 'c' )  )   ( 'children' )  )   ( None )   ( None )  )  )  )  )  )   ( CallFunc ( Name ( 'isinstance' )  )   ( Getattr ( Name ( 'i' )  )   ( 'value' )  )   ( Name ( 'str' )  )   ( None )   ( None )  )   ( Stmt ( Assign ( AssTuple ( AssAttr ( Name ( 'c' )  )   ( 'src_type' )   ( 'OP_ASSIGN' )  )   ( AssAttr ( Name ( 'c' )  )   ( 'src_val' )   ( 'OP_ASSIGN' )  )  )   ( CallFunc ( Getattr ( Name ( 'i' )  )   ( 'get_dump' )  )   ( Getattr ( Name ( 'c' )  )   ( 'children' )  )   ( None )   ( None )  )  )  )   ( None )  ) </TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 2</B><BR>Distance between two fragments = 0 <BR>Clone size = 31<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 835</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1096</TD></TR><TR>
+<P><B>Clone # 4</B><BR>Distance between two fragments = 4 <BR>Clone size = [set([960, 961, 956, 957, 958, 959]), set([953, 954, 955, 956, 957, 958])]<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../testcase/compiler_code/symbol_table.py"<BR>The first line is 957</TD><TD></TD><TD>Source file "../testcase/compiler_code/symbol_table.py"<BR>The first line is 954</TD></TR><TR>
 <TD>
-if (errorcount == 0) or (self.errorok):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errorcount = error_count<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.errorok = 0<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errtoken = lookahead<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if errtoken.type == '$end':<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errtoken = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if self.errorfunc:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (errtoken) and (not hasattr(errtoken, 'lexer')):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errtoken.lexer = lexer<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tok = call_errorfunc(self.errorfunc, errtoken, self)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if self.errorok:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = tok<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errtoken = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if errtoken:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if hasattr(errtoken, 'lineno'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lineno = lookahead.lineno<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lineno = 0<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if lineno:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.stderr.write(('yacc: Syntax error at line %d, token=%s\n') % ((lineno, errtoken.type)))<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.stderr.write(('yacc: Syntax error, token=%s') % (errtoken.type))<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.stderr.write('yacc: Parse error in input. EOF\n')<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return None<BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errorcount = error_count</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if (errorcount == 0) or (self.errorok):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errorcount = error_count<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.errorok = 0<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errtoken = lookahead<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if errtoken.type == '$end':<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errtoken = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if self.errorfunc:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (errtoken) and (not hasattr(errtoken, 'lexer')):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errtoken.lexer = lexer<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tok = call_errorfunc(self.errorfunc, errtoken, self)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if self.errorok:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = tok<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errtoken = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if errtoken:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if hasattr(errtoken, 'lineno'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lineno = lookahead.lineno<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lineno = 0<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if lineno:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.stderr.write(('yacc: Syntax error at line %d, token=%s\n') % ((lineno, errtoken.type)))<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.stderr.write(('yacc: Syntax error, token=%s') % (errtoken.type))<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.stderr.write('yacc: Parse error in input. EOF\n')<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return None<BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errorcount = error_count</TD>
-</TR>
-<TR>
-<TD>
-if (len(statestack) <= 1) and (lookahead.type != '$end'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookahead = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errtoken = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;state = 0<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookaheadstack[:]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;continue</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if (len(statestack) <= 1) and (lookahead.type != '$end'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookahead = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errtoken = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;state = 0<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookaheadstack[:]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;continue</TD>
-</TR>
-<TR>
-<TD>
-if lookahead.type == '$end':<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;return None</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if lookahead.type == '$end':<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;return None</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 3</B><BR>Distance between two fragments = 0 <BR>Clone size = 31<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 557</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1096</TD></TR><TR>
-<TD>
-if (errorcount == 0) or (self.errorok):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errorcount = error_count<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.errorok = 0<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errtoken = lookahead<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if errtoken.type == '$end':<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errtoken = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if self.errorfunc:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (errtoken) and (not hasattr(errtoken, 'lexer')):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errtoken.lexer = lexer<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tok = call_errorfunc(self.errorfunc, errtoken, self)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if self.errorok:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = tok<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errtoken = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if errtoken:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if hasattr(errtoken, 'lineno'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lineno = lookahead.lineno<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lineno = 0<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if lineno:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.stderr.write(('yacc: Syntax error at line %d, token=%s\n') % ((lineno, errtoken.type)))<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.stderr.write(('yacc: Syntax error, token=%s') % (errtoken.type))<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.stderr.write('yacc: Parse error in input. EOF\n')<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return None<BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errorcount = error_count</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if (errorcount == 0) or (self.errorok):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errorcount = error_count<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.errorok = 0<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errtoken = lookahead<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if errtoken.type == '$end':<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errtoken = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if self.errorfunc:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (errtoken) and (not hasattr(errtoken, 'lexer')):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errtoken.lexer = lexer<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tok = call_errorfunc(self.errorfunc, errtoken, self)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if self.errorok:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = tok<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errtoken = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if errtoken:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if hasattr(errtoken, 'lineno'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lineno = lookahead.lineno<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lineno = 0<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if lineno:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.stderr.write(('yacc: Syntax error at line %d, token=%s\n') % ((lineno, errtoken.type)))<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.stderr.write(('yacc: Syntax error, token=%s') % (errtoken.type))<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.stderr.write('yacc: Parse error in input. EOF\n')<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return None<BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errorcount = error_count</TD>
-</TR>
-<TR>
-<TD>
-if (len(statestack) <= 1) and (lookahead.type != '$end'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookahead = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errtoken = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;state = 0<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookaheadstack[:]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;continue</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if (len(statestack) <= 1) and (lookahead.type != '$end'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookahead = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errtoken = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;state = 0<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookaheadstack[:]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;continue</TD>
-</TR>
-<TR>
-<TD>
-if lookahead.type == '$end':<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;return None</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if lookahead.type == '$end':<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;return None</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 4</B><BR>Distance between two fragments = 0 <BR>Clone size = 29<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 651</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 929</TD></TR><TR>
-<TD>
-lookahead = None</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookahead = None</TD>
-</TR>
-<TR>
-<TD>
-lookaheadstack = []</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookaheadstack = []</TD>
-</TR>
-<TR>
-<TD>
-actions = self.action</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-actions = self.action</TD>
-</TR>
-<TR>
-<TD>
-goto = self.goto</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-goto = self.goto</TD>
-</TR>
-<TR>
-<TD>
-prod = self.productions</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-prod = self.productions</TD>
-</TR>
-<TR>
-<TD>
-pslice = YaccProduction(None)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-pslice = YaccProduction(None)</TD>
-</TR>
-<TR>
-<TD>
-errorcount = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-errorcount = 0</TD>
-</TR>
-<TR>
-<TD>
-if not lexer:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lex = load_ply_lex()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lexer = lex.lexer</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if not lexer:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lex = load_ply_lex()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lexer = lex.lexer</TD>
-</TR>
-<TR>
-<TD>
-pslice.lexer = lexer</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-pslice.lexer = lexer</TD>
-</TR>
-<TR>
-<TD>
-pslice.parser = self</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-pslice.parser = self</TD>
-</TR>
-<TR>
-<TD>
-if input is not None:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lexer.input(input)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if input is not None:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lexer.input(input)</TD>
-</TR>
-<TR>
-<TD>
-if tokenfunc is None:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;get_token = lexer.token<BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;get_token = tokenfunc</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if tokenfunc is None:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;get_token = lexer.token<BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;get_token = tokenfunc</TD>
-</TR>
-<TR>
-<TD>
-self.token = get_token</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.token = get_token</TD>
-</TR>
-<TR>
-<TD>
-statestack = []</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-statestack = []</TD>
-</TR>
-<TR>
-<TD>
-self.statestack = statestack</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.statestack = statestack</TD>
-</TR>
-<TR>
-<TD>
-symstack = []</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-symstack = []</TD>
-</TR>
-<TR>
-<TD>
-self.symstack = symstack</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.symstack = symstack</TD>
-</TR>
-<TR>
-<TD>
-pslice.stack = symstack</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-pslice.stack = symstack</TD>
-</TR>
-<TR>
-<TD>
-errtoken = None</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-errtoken = None</TD>
-</TR>
-<TR>
-<TD>
-statestack.append(0)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-statestack.append(0)</TD>
-</TR>
-<TR>
-<TD>
-sym = YaccSymbol()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym = YaccSymbol()</TD>
-</TR>
-<TR>
-<TD>
-sym.type = '$end'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.type = '$end'</TD>
-</TR>
-<TR>
-<TD>
-symstack.append(sym)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-symstack.append(sym)</TD>
-</TR>
-<TR>
-<TD>
-state = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-state = 0</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 5</B><BR>Distance between two fragments = 4 <BR>Clone size = 26<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 2624</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 2663</TD></TR><TR>
-<TD>
-if smaller:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;items = {}<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;for s, nd in self.<span style="color: rgb(255, 0, 0);">lr_action</span>.items():<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for name, v in nd.items():<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i = items.get(name)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if not i:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i = ([], [])<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;items[name] = i<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i[0].append(s)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i[1].append(v)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;f.write(<span style="color: rgb(255, 0, 0);">'\n_lr_action_items = {'</span>)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;for k, v in items.items():<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f.write(('%r:([') % (k))<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for i in v[0]:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f.write(('%r,') % (i))<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f.write('],[')<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for i in v[1]:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f.write(('%r,') % (i))<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f.write(']),')<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;f.write('}\n')<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;f.write(<span style="color: rgb(255, 0, 0);">'\n_lr_action = { }\nfor _k, _v in _lr_action_items.items():\n   for _x,_y in zip(_v[0],_v[1]):\n      if not _x in _lr_action:  _lr_action[_x] = { }\n      _lr_action[_x][_k] = _y\ndel _lr_action_items\n'</span>)<BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;f.write(<span style="color: rgb(255, 0, 0);">'\n_lr_action = { '</span>)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;for k, v in self.<span style="color: rgb(255, 0, 0);">lr_action</span>.items():<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f.write(('(%r,%r):%r,') % ((k[0], k[1], v)))<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;f.write('}\n')<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;None</TD>
+for i in <span style="color: rgb(255, 0, 0);">id2term</span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;c = merge.symtab.<span style="color: rgb(255, 0, 0);">term</span>.add()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;i.dump(c)<BR> ( For ( AssName ( 'i' )  )   ( Name ( 'id2term' )  )   ( Stmt ( Assign ( AssName ( 'c' )  )   ( CallFunc ( Getattr ( Getattr ( Getattr ( Name ( 'merge' )  )   ( 'symtab' )  )   ( 'term' )  )   ( 'add' )  )   ( None )   ( None )  )  )   ( Discard ( CallFunc ( Getattr ( Name ( 'i' )  )   ( 'dump' )  )   ( Name ( 'c' )  )   ( None )   ( None )  )  )  )   ( None )  ) </TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-if smaller:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;items = {}<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;for s, nd in self.<span style="color: rgb(255, 0, 0);">lr_goto</span>.items():<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for name, v in nd.items():<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i = items.get(name)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if not i:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i = ([], [])<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;items[name] = i<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i[0].append(s)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i[1].append(v)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;f.write(<span style="color: rgb(255, 0, 0);">'\n_lr_goto_items = {'</span>)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;for k, v in items.items():<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f.write(('%r:([') % (k))<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for i in v[0]:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f.write(('%r,') % (i))<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f.write('],[')<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for i in v[1]:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f.write(('%r,') % (i))<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f.write(']),')<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;f.write('}\n')<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;f.write(<span style="color: rgb(255, 0, 0);">'\n_lr_goto = { }\nfor _k, _v in _lr_goto_items.items():\n   for _x,_y in zip(_v[0],_v[1]):\n       if not _x in _lr_goto: _lr_goto[_x] = { }\n       _lr_goto[_x][_k] = _y\ndel _lr_goto_items\n'</span>)<BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;f.write(<span style="color: rgb(255, 0, 0);">'\n_lr_goto = { '</span>)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;for k, v in self.<span style="color: rgb(255, 0, 0);">lr_goto</span>.items():<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f.write(('(%r,%r):%r,') % ((k[0], k[1], v)))<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;f.write('}\n')<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;None</TD>
+for i in <span style="color: rgb(255, 0, 0);">id2tag</span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;c = merge.symtab.<span style="color: rgb(255, 0, 0);">customTag</span>.add()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;i.dump(c)<BR> ( For ( AssName ( 'i' )  )   ( Name ( 'id2tag' )  )   ( Stmt ( Assign ( AssName ( 'c' )  )   ( CallFunc ( Getattr ( Getattr ( Getattr ( Name ( 'merge' )  )   ( 'symtab' )  )   ( 'customTag' )  )   ( 'add' )  )   ( None )   ( None )  )  )   ( Discard ( CallFunc ( Getattr ( Name ( 'i' )  )   ( 'dump' )  )   ( Name ( 'c' )  )   ( None )   ( None )  )  )  )   ( None )  ) </TD>
 </TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 6</B><BR>Distance between two fragments = 0 <BR>Clone size = 22<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 344</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 660</TD></TR><TR>
-<TD>
-if not lexer:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lex = load_ply_lex()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lexer = lex.lexer</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if not lexer:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lex = load_ply_lex()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lexer = lex.lexer</TD>
-</TR>
-<TR>
-<TD>
-pslice.lexer = lexer</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-pslice.lexer = lexer</TD>
-</TR>
-<TR>
-<TD>
-pslice.parser = self</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-pslice.parser = self</TD>
-</TR>
-<TR>
-<TD>
-if input is not None:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lexer.input(input)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if input is not None:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lexer.input(input)</TD>
-</TR>
-<TR>
-<TD>
-if tokenfunc is None:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;get_token = lexer.token<BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;get_token = tokenfunc</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if tokenfunc is None:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;get_token = lexer.token<BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;get_token = tokenfunc</TD>
-</TR>
-<TR>
-<TD>
-self.token = get_token</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.token = get_token</TD>
-</TR>
-<TR>
-<TD>
-statestack = []</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-statestack = []</TD>
-</TR>
-<TR>
-<TD>
-self.statestack = statestack</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.statestack = statestack</TD>
-</TR>
-<TR>
-<TD>
-symstack = []</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-symstack = []</TD>
-</TR>
-<TR>
-<TD>
-self.symstack = symstack</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.symstack = symstack</TD>
-</TR>
-<TR>
-<TD>
-pslice.stack = symstack</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-pslice.stack = symstack</TD>
-</TR>
-<TR>
-<TD>
-errtoken = None</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-errtoken = None</TD>
-</TR>
-<TR>
-<TD>
-statestack.append(0)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-statestack.append(0)</TD>
-</TR>
-<TR>
-<TD>
-sym = YaccSymbol()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym = YaccSymbol()</TD>
-</TR>
-<TR>
-<TD>
-sym.type = '$end'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.type = '$end'</TD>
-</TR>
-<TR>
-<TD>
-symstack.append(sym)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-symstack.append(sym)</TD>
-</TR>
-<TR>
-<TD>
-state = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-state = 0</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 7</B><BR>Distance between two fragments = 0 <BR>Clone size = 22<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 344</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 938</TD></TR><TR>
-<TD>
-if not lexer:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lex = load_ply_lex()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lexer = lex.lexer</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if not lexer:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lex = load_ply_lex()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lexer = lex.lexer</TD>
-</TR>
-<TR>
-<TD>
-pslice.lexer = lexer</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-pslice.lexer = lexer</TD>
-</TR>
-<TR>
-<TD>
-pslice.parser = self</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-pslice.parser = self</TD>
-</TR>
-<TR>
-<TD>
-if input is not None:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lexer.input(input)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if input is not None:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lexer.input(input)</TD>
-</TR>
-<TR>
-<TD>
-if tokenfunc is None:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;get_token = lexer.token<BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;get_token = tokenfunc</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if tokenfunc is None:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;get_token = lexer.token<BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;get_token = tokenfunc</TD>
-</TR>
-<TR>
-<TD>
-self.token = get_token</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.token = get_token</TD>
-</TR>
-<TR>
-<TD>
-statestack = []</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-statestack = []</TD>
-</TR>
-<TR>
-<TD>
-self.statestack = statestack</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.statestack = statestack</TD>
-</TR>
-<TR>
-<TD>
-symstack = []</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-symstack = []</TD>
-</TR>
-<TR>
-<TD>
-self.symstack = symstack</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.symstack = symstack</TD>
-</TR>
-<TR>
-<TD>
-pslice.stack = symstack</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-pslice.stack = symstack</TD>
-</TR>
-<TR>
-<TD>
-errtoken = None</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-errtoken = None</TD>
-</TR>
-<TR>
-<TD>
-statestack.append(0)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-statestack.append(0)</TD>
-</TR>
-<TR>
-<TD>
-sym = YaccSymbol()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym = YaccSymbol()</TD>
-</TR>
-<TR>
-<TD>
-sym.type = '$end'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.type = '$end'</TD>
-</TR>
-<TR>
-<TD>
-symstack.append(sym)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-symstack.append(sym)</TD>
-</TR>
-<TR>
-<TD>
-state = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-state = 0</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 8</B><BR>Distance between two fragments = 0 <BR>Clone size = 18<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1027</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 760</TD></TR><TR>
-<TD>
-pslice.slice = targ</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-pslice.slice = targ</TD>
-</TR>
-<TR>
-<TD>
-try:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;symstack[-plen:]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;statestack[-plen:]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;p.callable(pslice)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;symstack.append(sym)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;state = goto[statestack[-1]][pname]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;statestack.append(state)<BR>
-except SyntaxError:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookaheadstack.append(lookahead)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;symstack.pop()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;statestack.pop()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;state = statestack[-1]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;sym.type = 'error'<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookahead = sym<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errorcount = error_count<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.errorok = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-try:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;symstack[-plen:]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;statestack[-plen:]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;p.callable(pslice)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;symstack.append(sym)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;state = goto[statestack[-1]][pname]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;statestack.append(state)<BR>
-except SyntaxError:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookaheadstack.append(lookahead)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;symstack.pop()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;statestack.pop()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;state = statestack[-1]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;sym.type = 'error'<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookahead = sym<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errorcount = error_count<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.errorok = 0</TD>
-</TR>
-<TR>
-<TD>
-continue</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-continue</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 9</B><BR>Distance between two fragments = 0 <BR>Clone size = 17<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1052</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 791</TD></TR><TR>
-<TD>
-targ = [sym]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-targ = [sym]</TD>
-</TR>
-<TR>
-<TD>
-pslice.slice = targ</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-pslice.slice = targ</TD>
-</TR>
-<TR>
-<TD>
-try:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;p.callable(pslice)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;symstack.append(sym)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;state = goto[statestack[-1]][pname]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;statestack.append(state)<BR>
-except SyntaxError:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookaheadstack.append(lookahead)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;symstack.pop()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;statestack.pop()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;state = statestack[-1]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;sym.type = 'error'<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookahead = sym<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errorcount = error_count<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.errorok = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-try:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;p.callable(pslice)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;symstack.append(sym)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;state = goto[statestack[-1]][pname]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;statestack.append(state)<BR>
-except SyntaxError:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookaheadstack.append(lookahead)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;symstack.pop()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;statestack.pop()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;state = statestack[-1]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;sym.type = 'error'<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookahead = sym<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errorcount = error_count<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.errorok = 0</TD>
-</TR>
-<TR>
-<TD>
-continue</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-continue</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 10</B><BR>Distance between two fragments = 0 <BR>Clone size = 13<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 2945</TD><TD></TD><TD>Source file "..\..\ply\ply\lex.py"<BR>The first line is 586</TD></TR><TR>
-<TD>
-if not tokens:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.log.error('No token list is defined')<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.error = 1<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;return None</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if not tokens:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.log.error('No token list is defined')<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.error = 1<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;return None</TD>
-</TR>
-<TR>
-<TD>
-if not isinstance(tokens, (list, tuple)):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.log.error('tokens must be a list or tuple')<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.error = 1<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;return None</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if not isinstance(tokens, (list, tuple)):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.log.error('tokens must be a list or tuple')<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.error = 1<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;return None</TD>
-</TR>
-<TR>
-<TD>
-if not tokens:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.log.error('tokens is empty')<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.error = 1<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;return None</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if not tokens:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.log.error('tokens is empty')<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.error = 1<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;return None</TD>
-</TR>
-<TR>
-<TD>
-self.tokens = tokens</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.tokens = tokens</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 11</B><BR>Distance between two fragments = 0 <BR>Clone size = 13<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 2761</TD><TD></TD><TD>Source file "..\..\ply\ply\lex.py"<BR>The first line is 437</TD></TR><TR>
-<TD>
-def get_caller_module_dict(levels):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;try:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise RuntimeError<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;except RuntimeError:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e, b, t = sys.exc_info()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f = t.tb_frame<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while levels > 0:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f = f.f_back<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;levels -= 1<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ldict = f.f_globals.copy()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if f.f_globals != f.f_locals:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ldict.update(f.f_locals)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return ldict</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-def get_caller_module_dict(levels):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;try:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise RuntimeError<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;except RuntimeError:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e, b, t = sys.exc_info()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f = t.tb_frame<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while levels > 0:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f = f.f_back<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;levels -= 1<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ldict = f.f_globals.copy()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if f.f_globals != f.f_locals:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ldict.update(f.f_locals)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return ldict</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 12</B><BR>Distance between two fragments = 0 <BR>Clone size = 10<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 741</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 447</TD></TR><TR>
-<TD>
-targ = symstack[(-plen) - (1):]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-targ = symstack[(-plen) - (1):]</TD>
-</TR>
-<TR>
-<TD>
-targ[0] = sym</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-targ[0] = sym</TD>
-</TR>
-<TR>
-<TD>
-if tracking:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;t1 = targ[1]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;sym.lineno = t1.lineno<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;sym.lexpos = t1.lexpos<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;t1 = targ[-1]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;sym.endlineno = getattr(t1, 'endlineno', t1.lineno)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;sym.endlexpos = getattr(t1, 'endlexpos', t1.lexpos)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if tracking:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;t1 = targ[1]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;sym.lineno = t1.lineno<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;sym.lexpos = t1.lexpos<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;t1 = targ[-1]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;sym.endlineno = getattr(t1, 'endlineno', t1.lineno)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;sym.endlexpos = getattr(t1, 'endlexpos', t1.lexpos)</TD>
-</TR>
-<TR>
-<TD>
-pslice.slice = targ</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-pslice.slice = targ</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 13</B><BR>Distance between two fragments = 0 <BR>Clone size = 9<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1156</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 898</TD></TR><TR>
-<TD>
-t = YaccSymbol()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-t = YaccSymbol()</TD>
-</TR>
-<TR>
-<TD>
-t.type = 'error'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-t.type = 'error'</TD>
-</TR>
-<TR>
-<TD>
-if hasattr(lookahead, 'lineno'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;t.lineno = lookahead.lineno</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if hasattr(lookahead, 'lineno'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;t.lineno = lookahead.lineno</TD>
-</TR>
-<TR>
-<TD>
-if hasattr(lookahead, 'lexpos'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;t.lexpos = lookahead.lexpos</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if hasattr(lookahead, 'lexpos'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;t.lexpos = lookahead.lexpos</TD>
-</TR>
-<TR>
-<TD>
-t.value = lookahead</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-t.value = lookahead</TD>
-</TR>
-<TR>
-<TD>
-lookaheadstack.append(lookahead)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookaheadstack.append(lookahead)</TD>
-</TR>
-<TR>
-<TD>
-lookahead = t</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookahead = t</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 14</B><BR>Distance between two fragments = 0 <BR>Clone size = 9<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1156</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 619</TD></TR><TR>
-<TD>
-t = YaccSymbol()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-t = YaccSymbol()</TD>
-</TR>
-<TR>
-<TD>
-t.type = 'error'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-t.type = 'error'</TD>
-</TR>
-<TR>
-<TD>
-if hasattr(lookahead, 'lineno'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;t.lineno = lookahead.lineno</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if hasattr(lookahead, 'lineno'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;t.lineno = lookahead.lineno</TD>
-</TR>
-<TR>
-<TD>
-if hasattr(lookahead, 'lexpos'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;t.lexpos = lookahead.lexpos</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if hasattr(lookahead, 'lexpos'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;t.lexpos = lookahead.lexpos</TD>
-</TR>
-<TR>
-<TD>
-t.value = lookahead</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-t.value = lookahead</TD>
-</TR>
-<TR>
-<TD>
-lookaheadstack.append(lookahead)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookaheadstack.append(lookahead)</TD>
-</TR>
-<TR>
-<TD>
-lookahead = t</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookahead = t</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 15</B><BR>Distance between two fragments = 0 <BR>Clone size = 9<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 703</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 981</TD></TR><TR>
-<TD>
-if not lookahead:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if not lookaheadstack:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = get_token()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = lookaheadstack.pop()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if not lookahead:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = YaccSymbol()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead.type = '$end'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if not lookahead:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if not lookaheadstack:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = get_token()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = lookaheadstack.pop()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if not lookahead:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = YaccSymbol()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead.type = '$end'</TD>
-</TR>
-<TR>
-<TD>
-ltype = lookahead.type</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-ltype = lookahead.type</TD>
-</TR>
-<TR>
-<TD>
-t = actions[state].get(ltype)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-t = actions[state].get(ltype)</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 16</B><BR>Distance between two fragments = 0 <BR>Clone size = 8<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1069</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1039</TD></TR><TR>
-<TD>
-lookaheadstack.append(lookahead)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookaheadstack.append(lookahead)</TD>
-</TR>
-<TR>
-<TD>
-symstack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-symstack.pop()</TD>
-</TR>
-<TR>
-<TD>
-statestack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-statestack.pop()</TD>
-</TR>
-<TR>
-<TD>
-state = statestack[-1]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-state = statestack[-1]</TD>
-</TR>
-<TR>
-<TD>
-sym.type = 'error'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.type = 'error'</TD>
-</TR>
-<TR>
-<TD>
-lookahead = sym</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookahead = sym</TD>
-</TR>
-<TR>
-<TD>
-errorcount = error_count</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-errorcount = error_count</TD>
-</TR>
-<TR>
-<TD>
-self.errorok = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.errorok = 0</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 17</B><BR>Distance between two fragments = 0 <BR>Clone size = 8<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1069</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 772</TD></TR><TR>
-<TD>
-lookaheadstack.append(lookahead)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookaheadstack.append(lookahead)</TD>
-</TR>
-<TR>
-<TD>
-symstack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-symstack.pop()</TD>
-</TR>
-<TR>
-<TD>
-statestack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-statestack.pop()</TD>
-</TR>
-<TR>
-<TD>
-state = statestack[-1]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-state = statestack[-1]</TD>
-</TR>
-<TR>
-<TD>
-sym.type = 'error'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.type = 'error'</TD>
-</TR>
-<TR>
-<TD>
-lookahead = sym</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookahead = sym</TD>
-</TR>
-<TR>
-<TD>
-errorcount = error_count</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-errorcount = error_count</TD>
-</TR>
-<TR>
-<TD>
-self.errorok = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.errorok = 0</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 18</B><BR>Distance between two fragments = 0 <BR>Clone size = 8<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1069</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 520</TD></TR><TR>
-<TD>
-lookaheadstack.append(lookahead)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookaheadstack.append(lookahead)</TD>
-</TR>
-<TR>
-<TD>
-symstack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-symstack.pop()</TD>
-</TR>
-<TR>
-<TD>
-statestack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-statestack.pop()</TD>
-</TR>
-<TR>
-<TD>
-state = statestack[-1]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-state = statestack[-1]</TD>
-</TR>
-<TR>
-<TD>
-sym.type = 'error'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.type = 'error'</TD>
-</TR>
-<TR>
-<TD>
-lookahead = sym</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookahead = sym</TD>
-</TR>
-<TR>
-<TD>
-errorcount = error_count</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-errorcount = error_count</TD>
-</TR>
-<TR>
-<TD>
-self.errorok = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.errorok = 0</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 19</B><BR>Distance between two fragments = 0 <BR>Clone size = 8<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1069</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 481</TD></TR><TR>
-<TD>
-lookaheadstack.append(lookahead)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookaheadstack.append(lookahead)</TD>
-</TR>
-<TR>
-<TD>
-symstack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-symstack.pop()</TD>
-</TR>
-<TR>
-<TD>
-statestack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-statestack.pop()</TD>
-</TR>
-<TR>
-<TD>
-state = statestack[-1]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-state = statestack[-1]</TD>
-</TR>
-<TR>
-<TD>
-sym.type = 'error'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.type = 'error'</TD>
-</TR>
-<TR>
-<TD>
-lookahead = sym</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookahead = sym</TD>
-</TR>
-<TR>
-<TD>
-errorcount = error_count</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-errorcount = error_count</TD>
-</TR>
-<TR>
-<TD>
-self.errorok = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.errorok = 0</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 20</B><BR>Distance between two fragments = 0 <BR>Clone size = 8<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1039</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 808</TD></TR><TR>
-<TD>
-lookaheadstack.append(lookahead)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookaheadstack.append(lookahead)</TD>
-</TR>
-<TR>
-<TD>
-symstack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-symstack.pop()</TD>
-</TR>
-<TR>
-<TD>
-statestack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-statestack.pop()</TD>
-</TR>
-<TR>
-<TD>
-state = statestack[-1]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-state = statestack[-1]</TD>
-</TR>
-<TR>
-<TD>
-sym.type = 'error'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.type = 'error'</TD>
-</TR>
-<TR>
-<TD>
-lookahead = sym</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookahead = sym</TD>
-</TR>
-<TR>
-<TD>
-errorcount = error_count</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-errorcount = error_count</TD>
-</TR>
-<TR>
-<TD>
-self.errorok = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.errorok = 0</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 21</B><BR>Distance between two fragments = 0 <BR>Clone size = 8<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1039</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 520</TD></TR><TR>
-<TD>
-lookaheadstack.append(lookahead)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookaheadstack.append(lookahead)</TD>
-</TR>
-<TR>
-<TD>
-symstack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-symstack.pop()</TD>
-</TR>
-<TR>
-<TD>
-statestack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-statestack.pop()</TD>
-</TR>
-<TR>
-<TD>
-state = statestack[-1]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-state = statestack[-1]</TD>
-</TR>
-<TR>
-<TD>
-sym.type = 'error'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.type = 'error'</TD>
-</TR>
-<TR>
-<TD>
-lookahead = sym</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookahead = sym</TD>
-</TR>
-<TR>
-<TD>
-errorcount = error_count</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-errorcount = error_count</TD>
-</TR>
-<TR>
-<TD>
-self.errorok = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.errorok = 0</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 22</B><BR>Distance between two fragments = 0 <BR>Clone size = 8<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1039</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 481</TD></TR><TR>
-<TD>
-lookaheadstack.append(lookahead)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookaheadstack.append(lookahead)</TD>
-</TR>
-<TR>
-<TD>
-symstack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-symstack.pop()</TD>
-</TR>
-<TR>
-<TD>
-statestack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-statestack.pop()</TD>
-</TR>
-<TR>
-<TD>
-state = statestack[-1]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-state = statestack[-1]</TD>
-</TR>
-<TR>
-<TD>
-sym.type = 'error'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.type = 'error'</TD>
-</TR>
-<TR>
-<TD>
-lookahead = sym</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookahead = sym</TD>
-</TR>
-<TR>
-<TD>
-errorcount = error_count</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-errorcount = error_count</TD>
-</TR>
-<TR>
-<TD>
-self.errorok = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.errorok = 0</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 23</B><BR>Distance between two fragments = 0 <BR>Clone size = 8<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 808</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 772</TD></TR><TR>
-<TD>
-lookaheadstack.append(lookahead)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookaheadstack.append(lookahead)</TD>
-</TR>
-<TR>
-<TD>
-symstack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-symstack.pop()</TD>
-</TR>
-<TR>
-<TD>
-statestack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-statestack.pop()</TD>
-</TR>
-<TR>
-<TD>
-state = statestack[-1]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-state = statestack[-1]</TD>
-</TR>
-<TR>
-<TD>
-sym.type = 'error'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.type = 'error'</TD>
-</TR>
-<TR>
-<TD>
-lookahead = sym</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookahead = sym</TD>
-</TR>
-<TR>
-<TD>
-errorcount = error_count</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-errorcount = error_count</TD>
-</TR>
-<TR>
-<TD>
-self.errorok = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.errorok = 0</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 24</B><BR>Distance between two fragments = 0 <BR>Clone size = 8<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 808</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 520</TD></TR><TR>
-<TD>
-lookaheadstack.append(lookahead)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookaheadstack.append(lookahead)</TD>
-</TR>
-<TR>
-<TD>
-symstack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-symstack.pop()</TD>
-</TR>
-<TR>
-<TD>
-statestack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-statestack.pop()</TD>
-</TR>
-<TR>
-<TD>
-state = statestack[-1]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-state = statestack[-1]</TD>
-</TR>
-<TR>
-<TD>
-sym.type = 'error'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.type = 'error'</TD>
-</TR>
-<TR>
-<TD>
-lookahead = sym</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookahead = sym</TD>
-</TR>
-<TR>
-<TD>
-errorcount = error_count</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-errorcount = error_count</TD>
-</TR>
-<TR>
-<TD>
-self.errorok = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.errorok = 0</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 25</B><BR>Distance between two fragments = 0 <BR>Clone size = 8<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 808</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 481</TD></TR><TR>
-<TD>
-lookaheadstack.append(lookahead)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookaheadstack.append(lookahead)</TD>
-</TR>
-<TR>
-<TD>
-symstack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-symstack.pop()</TD>
-</TR>
-<TR>
-<TD>
-statestack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-statestack.pop()</TD>
-</TR>
-<TR>
-<TD>
-state = statestack[-1]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-state = statestack[-1]</TD>
-</TR>
-<TR>
-<TD>
-sym.type = 'error'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.type = 'error'</TD>
-</TR>
-<TR>
-<TD>
-lookahead = sym</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookahead = sym</TD>
-</TR>
-<TR>
-<TD>
-errorcount = error_count</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-errorcount = error_count</TD>
-</TR>
-<TR>
-<TD>
-self.errorok = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.errorok = 0</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 26</B><BR>Distance between two fragments = 0 <BR>Clone size = 8<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 772</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 520</TD></TR><TR>
-<TD>
-lookaheadstack.append(lookahead)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookaheadstack.append(lookahead)</TD>
-</TR>
-<TR>
-<TD>
-symstack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-symstack.pop()</TD>
-</TR>
-<TR>
-<TD>
-statestack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-statestack.pop()</TD>
-</TR>
-<TR>
-<TD>
-state = statestack[-1]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-state = statestack[-1]</TD>
-</TR>
-<TR>
-<TD>
-sym.type = 'error'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.type = 'error'</TD>
-</TR>
-<TR>
-<TD>
-lookahead = sym</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookahead = sym</TD>
-</TR>
-<TR>
-<TD>
-errorcount = error_count</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-errorcount = error_count</TD>
-</TR>
-<TR>
-<TD>
-self.errorok = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.errorok = 0</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 27</B><BR>Distance between two fragments = 0 <BR>Clone size = 8<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 772</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 481</TD></TR><TR>
-<TD>
-lookaheadstack.append(lookahead)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookaheadstack.append(lookahead)</TD>
-</TR>
-<TR>
-<TD>
-symstack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-symstack.pop()</TD>
-</TR>
-<TR>
-<TD>
-statestack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-statestack.pop()</TD>
-</TR>
-<TR>
-<TD>
-state = statestack[-1]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-state = statestack[-1]</TD>
-</TR>
-<TR>
-<TD>
-sym.type = 'error'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.type = 'error'</TD>
-</TR>
-<TR>
-<TD>
-lookahead = sym</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookahead = sym</TD>
-</TR>
-<TR>
-<TD>
-errorcount = error_count</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-errorcount = error_count</TD>
-</TR>
-<TR>
-<TD>
-self.errorok = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.errorok = 0</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 28</B><BR>Distance between two fragments = 0 <BR>Clone size = 8<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 520</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 481</TD></TR><TR>
-<TD>
-lookaheadstack.append(lookahead)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookaheadstack.append(lookahead)</TD>
-</TR>
-<TR>
-<TD>
-symstack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-symstack.pop()</TD>
-</TR>
-<TR>
-<TD>
-statestack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-statestack.pop()</TD>
-</TR>
-<TR>
-<TD>
-state = statestack[-1]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-state = statestack[-1]</TD>
-</TR>
-<TR>
-<TD>
-sym.type = 'error'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.type = 'error'</TD>
-</TR>
-<TR>
-<TD>
-lookahead = sym</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookahead = sym</TD>
-</TR>
-<TR>
-<TD>
-errorcount = error_count</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-errorcount = error_count</TD>
-</TR>
-<TR>
-<TD>
-self.errorok = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.errorok = 0</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 29</B><BR>Distance between two fragments = 4 <BR>Clone size = 8<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 3244</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 3236</TD></TR><TR>
-<TD>
-debuglog.info('')</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-debuglog.info('')</TD>
-</TR>
 <TR>
 <TD>
-debuglog.info(<span style="color: rgb(255, 0, 0);">'Nonterminals, with rules where they appear'</span>)</TD>
+for i in <span style="color: rgb(255, 0, 0);">id2pattern</span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;c = merge.symtab.<span style="color: rgb(255, 0, 0);">pattern</span>.add()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;i.dump(c)<BR> ( For ( AssName ( 'i' )  )   ( Name ( 'id2pattern' )  )   ( Stmt ( Assign ( AssName ( 'c' )  )   ( CallFunc ( Getattr ( Getattr ( Getattr ( Name ( 'merge' )  )   ( 'symtab' )  )   ( 'pattern' )  )   ( 'add' )  )   ( None )   ( None )  )  )   ( Discard ( CallFunc ( Getattr ( Name ( 'i' )  )   ( 'dump' )  )   ( Name ( 'c' )  )   ( None )   ( None )  )  )  )   ( None )  ) </TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-debuglog.info(<span style="color: rgb(255, 0, 0);">'Terminals, with rules where they appear'</span>)</TD>
+for i in <span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">id2term</span></span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;c = merge.symtab.<span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">term</span></span>.add()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;i.dump(c)<BR> ( For ( AssName ( 'i' )  )   ( Name ( 'id2term' )  )   ( Stmt ( Assign ( AssName ( 'c' )  )   ( CallFunc ( Getattr ( Getattr ( Getattr ( Name ( 'merge' )  )   ( 'symtab' )  )   ( 'term' )  )   ( 'add' )  )   ( None )   ( None )  )  )   ( Discard ( CallFunc ( Getattr ( Name ( 'i' )  )   ( 'dump' )  )   ( Name ( 'c' )  )   ( None )   ( None )  )  )  )   ( None )  ) </TD>
 </TR>
-<TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 5</B><BR>Distance between two fragments = 4 <BR>Clone size = [set([962, 963, 964, 965, 966, 967]), set([960, 961, 962, 963, 964, 959])]<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../testcase/compiler_code/symbol_table.py"<BR>The first line is 963</TD><TD></TD><TD>Source file "../testcase/compiler_code/symbol_table.py"<BR>The first line is 960</TD></TR><TR>
 <TD>
-debuglog.info('')</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-debuglog.info('')</TD>
-</TR>
-<TR>
-<TD>
-<span style="color: rgb(255, 0, 0);">nonterms</span> = list(grammar.<span style="color: rgb(255, 0, 0);">Nonterminals</span>)</TD>
+for i in <span style="color: rgb(255, 0, 0);">id2quote</span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;c = merge.symtab.<span style="color: rgb(255, 0, 0);">quote</span>.add()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;i.dump(c)<BR> ( For ( AssName ( 'i' )  )   ( Name ( 'id2quote' )  )   ( Stmt ( Assign ( AssName ( 'c' )  )   ( CallFunc ( Getattr ( Getattr ( Getattr ( Name ( 'merge' )  )   ( 'symtab' )  )   ( 'quote' )  )   ( 'add' )  )   ( None )   ( None )  )  )   ( Discard ( CallFunc ( Getattr ( Name ( 'i' )  )   ( 'dump' )  )   ( Name ( 'c' )  )   ( None )   ( None )  )  )  )   ( None )  ) </TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="color: rgb(255, 0, 0);">terms</span> = list(grammar.<span style="color: rgb(255, 0, 0);">Terminals</span>)</TD>
+for i in <span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">id2pattern</span></span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;c = merge.symtab.<span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">pattern</span></span>.add()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;i.dump(c)<BR> ( For ( AssName ( 'i' )  )   ( Name ( 'id2pattern' )  )   ( Stmt ( Assign ( AssName ( 'c' )  )   ( CallFunc ( Getattr ( Getattr ( Getattr ( Name ( 'merge' )  )   ( 'symtab' )  )   ( 'pattern' )  )   ( 'add' )  )   ( None )   ( None )  )  )   ( Discard ( CallFunc ( Getattr ( Name ( 'i' )  )   ( 'dump' )  )   ( Name ( 'c' )  )   ( None )   ( None )  )  )  )   ( None )  ) </TD>
 </TR>
 <TR>
 <TD>
-<span style="color: rgb(255, 0, 0);">nonterms</span>.sort()</TD>
+for i in <span style="color: rgb(255, 0, 0);">id2reserve</span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;c = merge.symtab.<span style="color: rgb(255, 0, 0);">reserve</span>.add()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;i.dump(c)<BR> ( For ( AssName ( 'i' )  )   ( Name ( 'id2reserve' )  )   ( Stmt ( Assign ( AssName ( 'c' )  )   ( CallFunc ( Getattr ( Getattr ( Getattr ( Name ( 'merge' )  )   ( 'symtab' )  )   ( 'reserve' )  )   ( 'add' )  )   ( None )   ( None )  )  )   ( Discard ( CallFunc ( Getattr ( Name ( 'i' )  )   ( 'dump' )  )   ( Name ( 'c' )  )   ( None )   ( None )  )  )  )   ( None )  ) </TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="color: rgb(255, 0, 0);">terms</span>.sort()</TD>
+for i in <span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">id2quote</span></span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;c = merge.symtab.<span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">quote</span></span>.add()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;i.dump(c)<BR> ( For ( AssName ( 'i' )  )   ( Name ( 'id2quote' )  )   ( Stmt ( Assign ( AssName ( 'c' )  )   ( CallFunc ( Getattr ( Getattr ( Getattr ( Name ( 'merge' )  )   ( 'symtab' )  )   ( 'quote' )  )   ( 'add' )  )   ( None )   ( None )  )  )   ( Discard ( CallFunc ( Getattr ( Name ( 'i' )  )   ( 'dump' )  )   ( Name ( 'c' )  )   ( None )   ( None )  )  )  )   ( None )  ) </TD>
 </TR>
-<TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 6</B><BR>Distance between two fragments = 4 <BR>Clone size = [set([960, 961, 962, 963, 964, 959]), set([953, 954, 955, 956, 957, 958])]<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../testcase/compiler_code/symbol_table.py"<BR>The first line is 960</TD><TD></TD><TD>Source file "../testcase/compiler_code/symbol_table.py"<BR>The first line is 954</TD></TR><TR>
 <TD>
-for <span style="color: rgb(255, 0, 0);">nonterm</span> in <span style="color: rgb(255, 0, 0);">nonterms</span>:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;debuglog.info('%-20s : %s', <span style="color: rgb(255, 0, 0);">nonterm</span>, ' '.join([str(s) for s in grammar.<span style="color: rgb(255, 0, 0);">Nonterminals</span>[<span style="color: rgb(255, 0, 0);">nonterm</span>] ]))</TD>
+for i in <span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">id2pattern</span></span></span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;c = merge.symtab.<span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">pattern</span></span></span>.add()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;i.dump(c)<BR> ( For ( AssName ( 'i' )  )   ( Name ( 'id2pattern' )  )   ( Stmt ( Assign ( AssName ( 'c' )  )   ( CallFunc ( Getattr ( Getattr ( Getattr ( Name ( 'merge' )  )   ( 'symtab' )  )   ( 'pattern' )  )   ( 'add' )  )   ( None )   ( None )  )  )   ( Discard ( CallFunc ( Getattr ( Name ( 'i' )  )   ( 'dump' )  )   ( Name ( 'c' )  )   ( None )   ( None )  )  )  )   ( None )  ) </TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-for <span style="color: rgb(255, 0, 0);">term</span> in <span style="color: rgb(255, 0, 0);">terms</span>:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;debuglog.info('%-20s : %s', <span style="color: rgb(255, 0, 0);">term</span>, ' '.join([str(s) for s in grammar.<span style="color: rgb(255, 0, 0);">Terminals</span>[<span style="color: rgb(255, 0, 0);">term</span>] ]))</TD>
+for i in <span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">id2tag</span></span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;c = merge.symtab.<span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">customTag</span></span>.add()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;i.dump(c)<BR> ( For ( AssName ( 'i' )  )   ( Name ( 'id2tag' )  )   ( Stmt ( Assign ( AssName ( 'c' )  )   ( CallFunc ( Getattr ( Getattr ( Getattr ( Name ( 'merge' )  )   ( 'symtab' )  )   ( 'customTag' )  )   ( 'add' )  )   ( None )   ( None )  )  )   ( Discard ( CallFunc ( Getattr ( Name ( 'i' )  )   ( 'dump' )  )   ( Name ( 'c' )  )   ( None )   ( None )  )  )  )   ( None )  ) </TD>
 </TR>
 <TR>
 <TD>
-debuglog.info('')</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-debuglog.info('')</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 30</B><BR>Distance between two fragments = 4 <BR>Clone size = 8<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1847</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1264</TD></TR><TR>
-<TD>
-try:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">lri</span>.lr_after = <span style="color: rgb(255, 0, 0);">self.Prodnames</span>[<span style="color: rgb(255, 0, 0);">lri</span>.prod[(<span style="color: rgb(255, 0, 0);">i</span>) + (1)]]<BR>
-except (IndexError, KeyError):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">lri</span>.lr_after = []</TD>
+for i in <span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">id2quote</span></span></span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;c = merge.symtab.<span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">quote</span></span></span>.add()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;i.dump(c)<BR> ( For ( AssName ( 'i' )  )   ( Name ( 'id2quote' )  )   ( Stmt ( Assign ( AssName ( 'c' )  )   ( CallFunc ( Getattr ( Getattr ( Getattr ( Name ( 'merge' )  )   ( 'symtab' )  )   ( 'quote' )  )   ( 'add' )  )   ( None )   ( None )  )  )   ( Discard ( CallFunc ( Getattr ( Name ( 'i' )  )   ( 'dump' )  )   ( Name ( 'c' )  )   ( None )   ( None )  )  )  )   ( None )  ) </TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-try:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">p</span>.lr_after = <span style="color: rgb(255, 0, 0);">Prodnames</span>[<span style="color: rgb(255, 0, 0);">p</span>.prod[(<span style="color: rgb(255, 0, 0);">n</span>) + (1)]]<BR>
-except (IndexError, KeyError):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">p</span>.lr_after = []</TD>
+for i in <span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">id2term</span></span></span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;c = merge.symtab.<span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">term</span></span></span>.add()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;i.dump(c)<BR> ( For ( AssName ( 'i' )  )   ( Name ( 'id2term' )  )   ( Stmt ( Assign ( AssName ( 'c' )  )   ( CallFunc ( Getattr ( Getattr ( Getattr ( Name ( 'merge' )  )   ( 'symtab' )  )   ( 'term' )  )   ( 'add' )  )   ( None )   ( None )  )  )   ( Discard ( CallFunc ( Getattr ( Name ( 'i' )  )   ( 'dump' )  )   ( Name ( 'c' )  )   ( None )   ( None )  )  )  )   ( None )  ) </TD>
 </TR>
-<TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 7</B><BR>Distance between two fragments = 4 <BR>Clone size = [set([965, 966, 967, 968, 969, 970]), set([960, 961, 962, 963, 964, 959])]<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../testcase/compiler_code/symbol_table.py"<BR>The first line is 966</TD><TD></TD><TD>Source file "../testcase/compiler_code/symbol_table.py"<BR>The first line is 960</TD></TR><TR>
 <TD>
-try:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">lri</span>.lr_before = <span style="color: rgb(255, 0, 0);">lri</span>.prod[(<span style="color: rgb(255, 0, 0);">i</span>) - (1)]<BR>
-except IndexError:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">lri</span>.lr_before = None</TD>
+for i in <span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">id2reserve</span></span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;c = merge.symtab.<span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">reserve</span></span>.add()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;i.dump(c)<BR> ( For ( AssName ( 'i' )  )   ( Name ( 'id2reserve' )  )   ( Stmt ( Assign ( AssName ( 'c' )  )   ( CallFunc ( Getattr ( Getattr ( Getattr ( Name ( 'merge' )  )   ( 'symtab' )  )   ( 'reserve' )  )   ( 'add' )  )   ( None )   ( None )  )  )   ( Discard ( CallFunc ( Getattr ( Name ( 'i' )  )   ( 'dump' )  )   ( Name ( 'c' )  )   ( None )   ( None )  )  )  )   ( None )  ) </TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-try:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">p</span>.lr_before = <span style="color: rgb(255, 0, 0);">p</span>.prod[(<span style="color: rgb(255, 0, 0);">n</span>) - (1)]<BR>
-except IndexError:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">p</span>.lr_before = None</TD>
+for i in <span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">id2pattern</span></span></span></span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;c = merge.symtab.<span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">pattern</span></span></span></span>.add()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;i.dump(c)<BR> ( For ( AssName ( 'i' )  )   ( Name ( 'id2pattern' )  )   ( Stmt ( Assign ( AssName ( 'c' )  )   ( CallFunc ( Getattr ( Getattr ( Getattr ( Name ( 'merge' )  )   ( 'symtab' )  )   ( 'pattern' )  )   ( 'add' )  )   ( None )   ( None )  )  )   ( Discard ( CallFunc ( Getattr ( Name ( 'i' )  )   ( 'dump' )  )   ( Name ( 'c' )  )   ( None )   ( None )  )  )  )   ( None )  ) </TD>
 </TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 31</B><BR>Distance between two fragments = 0 <BR>Clone size = 7<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 392</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 981</TD></TR><TR>
+<TR>
 <TD>
-if not lookahead:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if not lookaheadstack:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = get_token()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = lookaheadstack.pop()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if not lookahead:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = YaccSymbol()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead.type = '$end'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if not lookahead:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if not lookaheadstack:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = get_token()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = lookaheadstack.pop()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if not lookahead:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = YaccSymbol()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead.type = '$end'</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 32</B><BR>Distance between two fragments = 0 <BR>Clone size = 7<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 392</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 703</TD></TR><TR>
-<TD>
-if not lookahead:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if not lookaheadstack:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = get_token()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = lookaheadstack.pop()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if not lookahead:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = YaccSymbol()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead.type = '$end'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if not lookahead:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if not lookaheadstack:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = get_token()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = lookaheadstack.pop()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if not lookahead:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = YaccSymbol()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead.type = '$end'</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 33</B><BR>Distance between two fragments = 4 <BR>Clone size = 7<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\cpp.py"<BR>The first line is 202</TD><TD></TD><TD>Source file "..\..\ply\ply\cpp.py"<BR>The first line is 219</TD></TR><TR>
-<TD>
-self.lexer.input(<span style="color: rgb(255, 0, 0);">'identifier'</span>)</TD>
+for i in <span style="color: rgb(255, 0, 0);">id2event</span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;c = merge.symtab.<span style="color: rgb(255, 0, 0);">event</span>.add()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;i.dump(c)<BR> ( For ( AssName ( 'i' )  )   ( Name ( 'id2event' )  )   ( Stmt ( Assign ( AssName ( 'c' )  )   ( CallFunc ( Getattr ( Getattr ( Getattr ( Name ( 'merge' )  )   ( 'symtab' )  )   ( 'event' )  )   ( 'add' )  )   ( None )   ( None )  )  )   ( Discard ( CallFunc ( Getattr ( Name ( 'i' )  )   ( 'dump' )  )   ( Name ( 'c' )  )   ( None )   ( None )  )  )  )   ( None )  ) </TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-self.lexer.input(<span style="color: rgb(255, 0, 0);">'"filename"'</span>)</TD>
+for i in <span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">id2quote</span></span></span></span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;c = merge.symtab.<span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">quote</span></span></span></span>.add()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;i.dump(c)<BR> ( For ( AssName ( 'i' )  )   ( Name ( 'id2quote' )  )   ( Stmt ( Assign ( AssName ( 'c' )  )   ( CallFunc ( Getattr ( Getattr ( Getattr ( Name ( 'merge' )  )   ( 'symtab' )  )   ( 'quote' )  )   ( 'add' )  )   ( None )   ( None )  )  )   ( Discard ( CallFunc ( Getattr ( Name ( 'i' )  )   ( 'dump' )  )   ( Name ( 'c' )  )   ( None )   ( None )  )  )  )   ( None )  ) </TD>
 </TR>
-<TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 8</B><BR>Distance between two fragments = 4 <BR>Clone size = [set([962, 963, 964, 965, 966, 967]), set([953, 954, 955, 956, 957, 958])]<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../testcase/compiler_code/symbol_table.py"<BR>The first line is 963</TD><TD></TD><TD>Source file "../testcase/compiler_code/symbol_table.py"<BR>The first line is 954</TD></TR><TR>
 <TD>
-tok = self.lexer.token()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-tok = self.lexer.token()</TD>
-</TR>
-<TR>
-<TD>
-if (not tok) or (tok.value != <span style="color: rgb(255, 0, 0);">'identifier'</span>):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;print <span style="color: rgb(255, 0, 0);">"Couldn't determine identifier type"</span><BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.<span style="color: rgb(255, 0, 0);">t_ID</span> = tok.type</TD>
+for i in <span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">id2quote</span></span></span></span></span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;c = merge.symtab.<span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">quote</span></span></span></span></span>.add()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;i.dump(c)<BR> ( For ( AssName ( 'i' )  )   ( Name ( 'id2quote' )  )   ( Stmt ( Assign ( AssName ( 'c' )  )   ( CallFunc ( Getattr ( Getattr ( Getattr ( Name ( 'merge' )  )   ( 'symtab' )  )   ( 'quote' )  )   ( 'add' )  )   ( None )   ( None )  )  )   ( Discard ( CallFunc ( Getattr ( Name ( 'i' )  )   ( 'dump' )  )   ( Name ( 'c' )  )   ( None )   ( None )  )  )  )   ( None )  ) </TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-if (not tok) or (tok.value != <span style="color: rgb(255, 0, 0);">'"filename"'</span>):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;print <span style="color: rgb(255, 0, 0);">"Couldn't determine string type"</span><BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.<span style="color: rgb(255, 0, 0);">t_STRING</span> = tok.type</TD>
+for i in <span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">id2tag</span></span></span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;c = merge.symtab.<span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">customTag</span></span></span>.add()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;i.dump(c)<BR> ( For ( AssName ( 'i' )  )   ( Name ( 'id2tag' )  )   ( Stmt ( Assign ( AssName ( 'c' )  )   ( CallFunc ( Getattr ( Getattr ( Getattr ( Name ( 'merge' )  )   ( 'symtab' )  )   ( 'customTag' )  )   ( 'add' )  )   ( None )   ( None )  )  )   ( Discard ( CallFunc ( Getattr ( Name ( 'i' )  )   ( 'dump' )  )   ( Name ( 'c' )  )   ( None )   ( None )  )  )  )   ( None )  ) </TD>
 </TR>
 <TR>
 <TD>
-self.lexer.input(<span style="color: rgb(255, 0, 0);">'12345'</span>)</TD>
+for i in <span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">id2reserve</span></span></span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;c = merge.symtab.<span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">reserve</span></span></span>.add()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;i.dump(c)<BR> ( For ( AssName ( 'i' )  )   ( Name ( 'id2reserve' )  )   ( Stmt ( Assign ( AssName ( 'c' )  )   ( CallFunc ( Getattr ( Getattr ( Getattr ( Name ( 'merge' )  )   ( 'symtab' )  )   ( 'reserve' )  )   ( 'add' )  )   ( None )   ( None )  )  )   ( Discard ( CallFunc ( Getattr ( Name ( 'i' )  )   ( 'dump' )  )   ( Name ( 'c' )  )   ( None )   ( None )  )  )  )   ( None )  ) </TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-self.lexer.input(<span style="color: rgb(255, 0, 0);">'  '</span>)</TD>
-</TR>
-<TR>
-<TD>
-tok = self.lexer.token()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-tok = self.lexer.token()</TD>
+for i in <span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">id2term</span></span></span></span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;c = merge.symtab.<span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">term</span></span></span></span>.add()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;i.dump(c)<BR> ( For ( AssName ( 'i' )  )   ( Name ( 'id2term' )  )   ( Stmt ( Assign ( AssName ( 'c' )  )   ( CallFunc ( Getattr ( Getattr ( Getattr ( Name ( 'merge' )  )   ( 'symtab' )  )   ( 'term' )  )   ( 'add' )  )   ( None )   ( None )  )  )   ( Discard ( CallFunc ( Getattr ( Name ( 'i' )  )   ( 'dump' )  )   ( Name ( 'c' )  )   ( None )   ( None )  )  )  )   ( None )  ) </TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 34</B><BR>Distance between two fragments = 0 <BR>Clone size = 7<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 331</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 929</TD></TR><TR>
+<P><B>Clone # 9</B><BR>Distance between two fragments = 4 <BR>Clone size = [set([965, 966, 967, 968, 969, 970]), set([953, 954, 955, 956, 957, 958])]<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../testcase/compiler_code/symbol_table.py"<BR>The first line is 966</TD><TD></TD><TD>Source file "../testcase/compiler_code/symbol_table.py"<BR>The first line is 954</TD></TR><TR>
 <TD>
-lookahead = None</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookahead = None</TD>
-</TR>
-<TR>
-<TD>
-lookaheadstack = []</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookaheadstack = []</TD>
-</TR>
-<TR>
-<TD>
-actions = self.action</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-actions = self.action</TD>
-</TR>
-<TR>
-<TD>
-goto = self.goto</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-goto = self.goto</TD>
-</TR>
-<TR>
-<TD>
-prod = self.productions</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-prod = self.productions</TD>
-</TR>
-<TR>
-<TD>
-pslice = YaccProduction(None)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-pslice = YaccProduction(None)</TD>
-</TR>
-<TR>
-<TD>
-errorcount = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-errorcount = 0</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 35</B><BR>Distance between two fragments = 0 <BR>Clone size = 7<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 331</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 651</TD></TR><TR>
-<TD>
-lookahead = None</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookahead = None</TD>
-</TR>
-<TR>
-<TD>
-lookaheadstack = []</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookaheadstack = []</TD>
-</TR>
-<TR>
-<TD>
-actions = self.action</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-actions = self.action</TD>
-</TR>
-<TR>
-<TD>
-goto = self.goto</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-goto = self.goto</TD>
-</TR>
-<TR>
-<TD>
-prod = self.productions</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-prod = self.productions</TD>
-</TR>
-<TR>
-<TD>
-pslice = YaccProduction(None)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-pslice = YaccProduction(None)</TD>
-</TR>
-<TR>
-<TD>
-errorcount = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-errorcount = 0</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 36</B><BR>Distance between two fragments = 0 <BR>Clone size = 7<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 717</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 995</TD></TR><TR>
-<TD>
-if t > 0:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;statestack.append(t)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;state = t<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;symstack.append(lookahead)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookahead = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if errorcount:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errorcount -= 1<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;continue</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if t > 0:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;statestack.append(t)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;state = t<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;symstack.append(lookahead)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookahead = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if errorcount:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errorcount -= 1<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;continue</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 37</B><BR>Distance between two fragments = 4 <BR>Clone size = 7<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\lex.py"<BR>The first line is 215</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1881</TD></TR><TR>
-<TD>
-if isinstance(<span style="color: rgb(255, 0, 0);">tabfile</span>, types.ModuleType):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">lextab</span> = <span style="color: rgb(255, 0, 0);">tabfile</span><BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if sys.version_info[0] < 3:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exec (<span style="color: rgb(255, 0, 0);">'import %s as lextab'</span>) % (<span style="color: rgb(255, 0, 0);">tabfile</span>)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;env = {}<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exec ((<span style="color: rgb(255, 0, 0);">'import %s as lextab'</span>) % (<span style="color: rgb(255, 0, 0);">tabfile</span>), env, env)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">lextab</span> = env[<span style="color: rgb(255, 0, 0);">'lextab'</span>]</TD>
+for i in <span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">id2reserve</span></span></span></span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;c = merge.symtab.<span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">reserve</span></span></span></span>.add()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;i.dump(c)<BR> ( For ( AssName ( 'i' )  )   ( Name ( 'id2reserve' )  )   ( Stmt ( Assign ( AssName ( 'c' )  )   ( CallFunc ( Getattr ( Getattr ( Getattr ( Name ( 'merge' )  )   ( 'symtab' )  )   ( 'reserve' )  )   ( 'add' )  )   ( None )   ( None )  )  )   ( Discard ( CallFunc ( Getattr ( Name ( 'i' )  )   ( 'dump' )  )   ( Name ( 'c' )  )   ( None )   ( None )  )  )  )   ( None )  ) </TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-if isinstance(<span style="color: rgb(255, 0, 0);">module</span>, types.ModuleType):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">parsetab</span> = <span style="color: rgb(255, 0, 0);">module</span><BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if sys.version_info[0] < 3:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exec (<span style="color: rgb(255, 0, 0);">'import %s as parsetab'</span>) % (<span style="color: rgb(255, 0, 0);">module</span>)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;env = {}<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exec ((<span style="color: rgb(255, 0, 0);">'import %s as parsetab'</span>) % (<span style="color: rgb(255, 0, 0);">module</span>), env, env)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">parsetab</span> = env[<span style="color: rgb(255, 0, 0);">'parsetab'</span>]</TD>
+for i in <span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">id2tag</span></span></span></span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;c = merge.symtab.<span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">customTag</span></span></span></span>.add()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;i.dump(c)<BR> ( For ( AssName ( 'i' )  )   ( Name ( 'id2tag' )  )   ( Stmt ( Assign ( AssName ( 'c' )  )   ( CallFunc ( Getattr ( Getattr ( Getattr ( Name ( 'merge' )  )   ( 'symtab' )  )   ( 'customTag' )  )   ( 'add' )  )   ( None )   ( None )  )  )   ( Discard ( CallFunc ( Getattr ( Name ( 'i' )  )   ( 'dump' )  )   ( Name ( 'c' )  )   ( None )   ( None )  )  )  )   ( None )  ) </TD>
 </TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 38</B><BR>Distance between two fragments = 3 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1287</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1216</TD></TR><TR>
+<TR>
 <TD>
-self.<span style="color: rgb(255, 0, 0);">len</span> = <span style="color: rgb(255, 0, 0);">len</span></TD>
+for i in <span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">id2event</span></span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;c = merge.symtab.<span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">event</span></span>.add()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;i.dump(c)<BR> ( For ( AssName ( 'i' )  )   ( Name ( 'id2event' )  )   ( Stmt ( Assign ( AssName ( 'c' )  )   ( CallFunc ( Getattr ( Getattr ( Getattr ( Name ( 'merge' )  )   ( 'symtab' )  )   ( 'event' )  )   ( 'add' )  )   ( None )   ( None )  )  )   ( Discard ( CallFunc ( Getattr ( Name ( 'i' )  )   ( 'dump' )  )   ( Name ( 'c' )  )   ( None )   ( None )  )  )  )   ( None )  ) </TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-self.<span style="color: rgb(255, 0, 0);">number</span> = <span style="color: rgb(255, 0, 0);">number</span></TD>
+for i in <span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">id2term</span></span></span></span></span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;c = merge.symtab.<span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">term</span></span></span></span></span>.add()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;i.dump(c)<BR> ( For ( AssName ( 'i' )  )   ( Name ( 'id2term' )  )   ( Stmt ( Assign ( AssName ( 'c' )  )   ( CallFunc ( Getattr ( Getattr ( Getattr ( Name ( 'merge' )  )   ( 'symtab' )  )   ( 'term' )  )   ( 'add' )  )   ( None )   ( None )  )  )   ( Discard ( CallFunc ( Getattr ( Name ( 'i' )  )   ( 'dump' )  )   ( Name ( 'c' )  )   ( None )   ( None )  )  )  )   ( None )  ) </TD>
 </TR>
-<TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 10</B><BR>Distance between two fragments = 4 <BR>Clone size = [set([160, 161, 155, 156, 157, 158]), set([20, 21, 22, 23, 25, 26])]<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../testcase/compiler_code/class_def.py"<BR>The first line is 156</TD><TD></TD><TD>Source file "../testcase/compiler_code/class_def.py"<BR>The first line is 21</TD></TR><TR>
 <TD>
-self.func = func</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.func = func</TD>
-</TR>
-<TR>
-<TD>
-self.callable = None</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.callable = None</TD>
-</TR>
-<TR>
-<TD>
-self.file = file</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.file = file</TD>
-</TR>
-<TR>
-<TD>
-self.line = line</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.line = line</TD>
-</TR>
-<TR>
-<TD>
-self.<span style="color: rgb(255, 0, 0);">str</span> = <span style="color: rgb(255, 0, 0);">str</span></TD>
+def __init__(self, <span style="color: rgb(255, 0, 0);">target</span>, <span style="color: rgb(255, 0, 0);">exp</span>, <span style="color: rgb(255, 0, 0);">env</span>):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;self.<span style="color: rgb(255, 0, 0);">target</span> = <span style="color: rgb(255, 0, 0);">target</span><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;self.<span style="color: rgb(255, 0, 0);">exp</span> = <span style="color: rgb(255, 0, 0);">exp</span><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;self.<span style="color: rgb(255, 0, 0);">env</span> = <span style="color: rgb(255, 0, 0);">env</span><BR> ( Function ( '__init__' )   ( 'self' )   ( 'target' )   ( 'exp' )   ( 'env' )   ( 0 )   ( Stmt ( Assign ( AssAttr ( Name ( 'self' )  )   ( 'target' )   ( 'OP_ASSIGN' )  )   ( Name ( 'target' )  )  )   ( Assign ( AssAttr ( Name ( 'self' )  )   ( 'exp' )   ( 'OP_ASSIGN' )  )   ( Name ( 'exp' )  )  )   ( Assign ( AssAttr ( Name ( 'self' )  )   ( 'env' )   ( 'OP_ASSIGN' )  )   ( Name ( 'env' )  )  )  )  ) </TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-self.<span style="color: rgb(255, 0, 0);">prec</span> = <span style="color: rgb(255, 0, 0);">precedence</span></TD>
+def __init__(self, <span style="color: rgb(255, 0, 0);">name</span>, <span style="color: rgb(255, 0, 0);">content</span>, <span style="color: rgb(255, 0, 0);">package</span>):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;self.<span style="color: rgb(255, 0, 0);">name</span> = <span style="color: rgb(255, 0, 0);">name</span><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;self.<span style="color: rgb(255, 0, 0);">content</span> = <span style="color: rgb(255, 0, 0);">content</span><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;self.<span style="color: rgb(255, 0, 0);">package</span> = <span style="color: rgb(255, 0, 0);">package</span><BR> ( Function ( '__init__' )   ( 'self' )   ( 'name' )   ( 'content' )   ( 'package' )   ( 0 )   ( Stmt ( Assign ( AssAttr ( Name ( 'self' )  )   ( 'name' )   ( 'OP_ASSIGN' )  )   ( Name ( 'name' )  )  )   ( Assign ( AssAttr ( Name ( 'self' )  )   ( 'content' )   ( 'OP_ASSIGN' )  )   ( Name ( 'content' )  )  )   ( Assign ( AssAttr ( Name ( 'self' )  )   ( 'package' )   ( 'OP_ASSIGN' )  )   ( Name ( 'package' )  )  )  )  ) </TD>
 </TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 39</B><BR>Distance between two fragments = 4 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 188</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 184</TD></TR><TR>
+<TR>
 <TD>
-def <span style="color: rgb(255, 0, 0);">restart</span>():<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;warnings.warn(_warnmsg)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;return <span style="color: rgb(255, 0, 0);">_restart</span>()</TD>
+def get_id(self, id):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;self.id = tools.generate_id(<span style="color: rgb(255, 0, 0);">'event'</span>, id)<BR> ( Function ( 'get_id' )   ( 'self' )   ( 'id' )   ( 0 )   ( Stmt ( Assign ( AssAttr ( Name ( 'self' )  )   ( 'id' )   ( 'OP_ASSIGN' )  )   ( CallFunc ( Getattr ( Name ( 'tools' )  )   ( 'generate_id' )  )   ( Const ( "'event'" )  )   ( Name ( 'id' )  )   ( None )   ( None )  )  )  )  ) </TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-def <span style="color: rgb(255, 0, 0);">errok</span>():<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;warnings.warn(_warnmsg)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;return <span style="color: rgb(255, 0, 0);">_errok</span>()</TD>
+def get_id(self, id):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;self.id = tools.generate_id(<span style="color: rgb(255, 0, 0);">'tag'</span>, id)<BR> ( Function ( 'get_id' )   ( 'self' )   ( 'id' )   ( 0 )   ( Stmt ( Assign ( AssAttr ( Name ( 'self' )  )   ( 'id' )   ( 'OP_ASSIGN' )  )   ( CallFunc ( Getattr ( Name ( 'tools' )  )   ( 'generate_id' )  )   ( Const ( "'tag'" )  )   ( Name ( 'id' )  )   ( None )   ( None )  )  )  )  ) </TD>
 </TR>
-<TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 11</B><BR>Distance between two fragments = 1 <BR>Clone size = [set([145, 146, 147, 149, 150, 152]), set([132, 133, 134, 136, 137, 139])]<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../testcase/compiler_code/class_def.py"<BR>The first line is 146</TD><TD></TD><TD>Source file "../testcase/compiler_code/class_def.py"<BR>The first line is 133</TD></TR><TR>
 <TD>
-def <span style="color: rgb(255, 0, 0);">token</span>():<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;warnings.warn(_warnmsg)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;return <span style="color: rgb(255, 0, 0);">_token</span>()</TD>
+def dump(self, d=None):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if not d:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d = Meta.<span style="color: rgb(255, 0, 0);">Reserve</span>()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;d.id = self.id<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;d.str = self.str.decode('utf8')<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;return d<BR> ( Function ( 'dump' )   ( 'self' )   ( 'd' )   ( Name ( 'None' )  )   ( 0 )   ( Stmt ( If ( Not ( Name ( 'd' )  )  )   ( Stmt ( Assign ( AssName ( 'd' )  )   ( CallFunc ( Getattr ( Name ( 'Meta' )  )   ( 'Reserve' )  )   ( None )   ( None )  )  )  )   ( None )  )   ( Assign ( AssAttr ( Name ( 'd' )  )   ( 'id' )   ( 'OP_ASSIGN' )  )   ( Getattr ( Name ( 'self' )  )   ( 'id' )  )  )   ( Assign ( AssAttr ( Name ( 'd' )  )   ( 'str' )   ( 'OP_ASSIGN' )  )   ( CallFunc ( Getattr ( Getattr ( Name ( 'self' )  )   ( 'str' )  )   ( 'decode' )  )   ( Const ( "'utf8'" )  )   ( None )   ( None )  )  )   ( Return ( Name ( 'd' )  )  )  )  ) </TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-def <span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">restart</span></span>():<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;warnings.warn(_warnmsg)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;return <span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">_restart</span></span>()</TD>
+def dump(self, d=None):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if not d:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d = Meta.<span style="color: rgb(255, 0, 0);">Quote</span>()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;d.id = self.id<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;d.str = self.str.decode('utf8')<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;return d<BR> ( Function ( 'dump' )   ( 'self' )   ( 'd' )   ( Name ( 'None' )  )   ( 0 )   ( Stmt ( If ( Not ( Name ( 'd' )  )  )   ( Stmt ( Assign ( AssName ( 'd' )  )   ( CallFunc ( Getattr ( Name ( 'Meta' )  )   ( 'Quote' )  )   ( None )   ( None )  )  )  )   ( None )  )   ( Assign ( AssAttr ( Name ( 'd' )  )   ( 'id' )   ( 'OP_ASSIGN' )  )   ( Getattr ( Name ( 'self' )  )   ( 'id' )  )  )   ( Assign ( AssAttr ( Name ( 'd' )  )   ( 'str' )   ( 'OP_ASSIGN' )  )   ( CallFunc ( Getattr ( Getattr ( Name ( 'self' )  )   ( 'str' )  )   ( 'decode' )  )   ( Const ( "'utf8'" )  )   ( None )   ( None )  )  )   ( Return ( Name ( 'd' )  )  )  )  ) </TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 40</B><BR>Distance between two fragments = 0 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1009</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 731</TD></TR><TR>
+<P><B>Clone # 12</B><BR>Distance between two fragments = 2 <BR>Clone size = [set([499, 500, 501, 502, 503]), set([491, 492, 493, 494, 495])]<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../testcase/compiler_code/symbol_table.py"<BR>The first line is 500</TD><TD></TD><TD>Source file "../testcase/compiler_code/symbol_table.py"<BR>The first line is 492</TD></TR><TR>
 <TD>
-p = prod[-t]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-p = prod[-t]</TD>
-</TR>
-<TR>
-<TD>
-pname = p.name</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-pname = p.name</TD>
-</TR>
-<TR>
-<TD>
-plen = p.len</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-plen = p.len</TD>
-</TR>
-<TR>
-<TD>
-sym = YaccSymbol()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym = YaccSymbol()</TD>
-</TR>
-<TR>
-<TD>
-sym.type = pname</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.type = pname</TD>
-</TR>
-<TR>
-<TD>
-sym.value = None</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.value = None</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 41</B><BR>Distance between two fragments = 0 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1009</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 429</TD></TR><TR>
-<TD>
-p = prod[-t]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-p = prod[-t]</TD>
-</TR>
-<TR>
-<TD>
-pname = p.name</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-pname = p.name</TD>
-</TR>
-<TR>
-<TD>
-plen = p.len</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-plen = p.len</TD>
-</TR>
-<TR>
-<TD>
-sym = YaccSymbol()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym = YaccSymbol()</TD>
-</TR>
-<TR>
-<TD>
-sym.type = pname</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.type = pname</TD>
-</TR>
-<TR>
-<TD>
-sym.value = None</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.value = None</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 42</B><BR>Distance between two fragments = 0 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 731</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 429</TD></TR><TR>
-<TD>
-p = prod[-t]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-p = prod[-t]</TD>
-</TR>
-<TR>
-<TD>
-pname = p.name</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-pname = p.name</TD>
-</TR>
-<TR>
-<TD>
-plen = p.len</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-plen = p.len</TD>
-</TR>
-<TR>
-<TD>
-sym = YaccSymbol()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym = YaccSymbol()</TD>
-</TR>
-<TR>
-<TD>
-sym.type = pname</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.type = pname</TD>
-</TR>
-<TR>
-<TD>
-sym.value = None</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.value = None</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 43</B><BR>Distance between two fragments = 0 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 511</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 472</TD></TR><TR>
-<TD>
-p.callable(pslice)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-p.callable(pslice)</TD>
-</TR>
-<TR>
-<TD>
-debug.info('Result : %s', format_result(pslice[0]))</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-debug.info('Result : %s', format_result(pslice[0]))</TD>
-</TR>
-<TR>
-<TD>
-symstack.append(sym)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-symstack.append(sym)</TD>
-</TR>
-<TR>
-<TD>
-state = goto[statestack[-1]][pname]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-state = goto[statestack[-1]][pname]</TD>
-</TR>
-<TR>
-<TD>
-statestack.append(state)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-statestack.append(state)</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 44</B><BR>Distance between two fragments = 2 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 2828</TD><TD></TD><TD>Source file "..\..\ply\ply\lex.py"<BR>The first line is 561</TD></TR><TR>
-<TD>
-self.<span style="color: rgb(255, 0, 0);">grammar</span> = <span style="color: rgb(255, 0, 0);">[]</span></TD>
+if isinstance(<span style="color: rgb(255, 0, 0);">tag_id</span>, tuple):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">info2</span> = <span style="color: rgb(255, 0, 0);">tag_id</span>[1]<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">tag_id</span> = <span style="color: rgb(255, 0, 0);">tag_id</span>[0]<BR> ( If ( CallFunc ( Name ( 'isinstance' )  )   ( Name ( 'tag_id' )  )   ( Name ( 'tuple' )  )   ( None )   ( None )  )   ( Stmt ( Assign ( AssName ( 'info2' )  )   ( Subscript ( Name ( 'tag_id' )  )   ( 'OP_APPLY' )   ( Const ( '1' )  )  )  )   ( Assign ( AssName ( 'tag_id' )  )   ( Subscript ( Name ( 'tag_id' )  )   ( 'OP_APPLY' )   ( Const ( '0' )  )  )  )  )   ( None )  ) </TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-self.<span style="color: rgb(255, 0, 0);">modules</span> = <span style="color: rgb(255, 0, 0);">{}</span></TD>
+if isinstance(<span style="color: rgb(255, 0, 0);">term_id</span>, tuple):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">info</span> = <span style="color: rgb(255, 0, 0);">term_id</span>[1]<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">term_id</span> = <span style="color: rgb(255, 0, 0);">term_id</span>[0]<BR> ( If ( CallFunc ( Name ( 'isinstance' )  )   ( Name ( 'term_id' )  )   ( Name ( 'tuple' )  )   ( None )   ( None )  )   ( Stmt ( Assign ( AssName ( 'info' )  )   ( Subscript ( Name ( 'term_id' )  )   ( 'OP_APPLY' )   ( Const ( '1' )  )  )  )   ( Assign ( AssName ( 'term_id' )  )   ( Subscript ( Name ( 'term_id' )  )   ( 'OP_APPLY' )   ( Const ( '0' )  )  )  )  )   ( None )  ) </TD>
 </TR>
 <TR>
 <TD>
-self.error = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.error = 0</TD>
-</TR>
-<TR>
-<TD>
-if log is None:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.log = PlyLogger(sys.stderr)<BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.log = log</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if log is None:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.log = PlyLogger(sys.stderr)<BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.log = log</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 45</B><BR>Distance between two fragments = 0 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 495</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 786</TD></TR><TR>
-<TD>
-if tracking:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;sym.lineno = lexer.lineno<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;sym.lexpos = lexer.lexpos</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if tracking:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;sym.lineno = lexer.lineno<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;sym.lexpos = lexer.lexpos</TD>
-</TR>
-<TR>
-<TD>
-targ = [sym]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-targ = [sym]</TD>
-</TR>
-<TR>
-<TD>
-pslice.slice = targ</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-pslice.slice = targ</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 46</B><BR>Distance between two fragments = 0 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 90</TD><TD></TD><TD>Source file "..\..\ply\ply\lex.py"<BR>The first line is 50</TD></TR><TR>
-<TD>
-if sys.version_info[0] < 3:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;def func_code(f):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return f.func_code<BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;def func_code(f):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return f.__code__</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if sys.version_info[0] < 3:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;def func_code(f):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return f.func_code<BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;def func_code(f):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return f.__code__</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 47</B><BR>Distance between two fragments = 2 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 130</TD><TD></TD><TD>Source file "..\..\ply\ply\lex.py"<BR>The first line is 84</TD></TR><TR>
-<TD>
-def warning(self, msg, *args, **kwargs):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.f.write((('WARNING: ') + ((msg) % (args))) + ('\n'))</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-def warning(self, msg, *args, **kwargs):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.f.write((('WARNING: ') + ((msg) % (args))) + ('\n'))</TD>
-</TR>
-<TR>
-<TD>
-def error(self, msg, *args, **kwargs):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.f.write((('ERROR: ') + ((msg) % (args))) + ('\n'))</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-def error(self, msg, *args, **kwargs):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.f.write((('ERROR: ') + ((msg) % (args))) + ('\n'))</TD>
-</TR>
-<TR>
-<TD>
-<span style="color: rgb(255, 0, 0);">critical</span> = <span style="color: rgb(255, 0, 0);">debug</span></TD>
+if <span style="color: rgb(255, 0, 0);">tag_id</span> >= 0:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;return <span style="color: rgb(255, 0, 0);">tag_id</span><BR> ( If ( Compare ( Name ( 'tag_id' )  )   ( '>=' )   ( Const ( '0' )  )  )   ( Stmt ( Return ( Name ( 'tag_id' )  )  )  )   ( None )  ) </TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="color: rgb(255, 0, 0);">info</span> = <span style="color: rgb(255, 0, 0);">critical</span></TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 48</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 3286</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 3278</TD></TR><TR>
-<TD>
-<span style="color: rgb(255, 0, 0);">num_rr</span> = len(lr.<span style="color: rgb(255, 0, 0);">rr_conflicts</span>)</TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="color: rgb(255, 0, 0);">num_sr</span> = len(lr.<span style="color: rgb(255, 0, 0);">sr_conflicts</span>)</TD>
-</TR>
-<TR>
-<TD>
-if <span style="color: rgb(255, 0, 0);">num_rr</span> == 1:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errorlog.warning(<span style="color: rgb(255, 0, 0);">'1 reduce/reduce conflict'</span>)<BR>
-elif <span style="color: rgb(255, 0, 0);">num_rr</span> > 1:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errorlog.warning(<span style="color: rgb(255, 0, 0);">'%d reduce/reduce conflicts'</span>, <span style="color: rgb(255, 0, 0);">num_rr</span>)</TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-if <span style="color: rgb(255, 0, 0);">num_sr</span> == 1:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errorlog.warning(<span style="color: rgb(255, 0, 0);">'1 shift/reduce conflict'</span>)<BR>
-elif <span style="color: rgb(255, 0, 0);">num_sr</span> > 1:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errorlog.warning(<span style="color: rgb(255, 0, 0);">'%d shift/reduce conflicts'</span>, <span style="color: rgb(255, 0, 0);">num_sr</span>)</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 49</B><BR>Distance between two fragments = 0 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\lex.py"<BR>The first line is 94</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 139</TD></TR><TR>
-<TD>
-class NullLogger(object):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;def __getattribute__(self, name):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return self<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;def __call__(self, *args, **kwargs):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return self<BR>
-</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-class NullLogger(object):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;def __getattribute__(self, name):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return self<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;def __call__(self, *args, **kwargs):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return self<BR>
-</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 50</B><BR>Distance between two fragments = 1 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\cpp.py"<BR>The first line is 656</TD><TD></TD><TD>Source file "..\..\ply\ply\cpp.py"<BR>The first line is 640</TD></TR><TR>
-<TD>
-if enable:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;for tok in self.expand_macros(chunk):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yield tok<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;chunk = []<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.<span style="color: rgb(255, 0, 0);">undef</span>(args)</TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-if enable:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;for tok in self.expand_macros(chunk):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yield tok<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;chunk = []<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.<span style="color: rgb(255, 0, 0);">define</span>(args)</TD>
+if <span style="color: rgb(255, 0, 0);">term_id</span> >= 0:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;return <span style="color: rgb(255, 0, 0);">term_id</span><BR> ( If ( Compare ( Name ( 'term_id' )  )   ( '>=' )   ( Const ( '0' )  )  )   ( Stmt ( Return ( Name ( 'term_id' )  )  )  )   ( None )  ) </TD>
 </TR>
 </TABLE> </P> <HR>
     

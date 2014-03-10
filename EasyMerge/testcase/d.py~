@@ -1,0 +1,6 @@
+from c import A, B
+
+def helper(i):
+	t = i()
+	t.test()
+

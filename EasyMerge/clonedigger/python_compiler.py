@@ -36,7 +36,7 @@ class PythonCompilerSourceFile (SourceFile):
     extension = 'py'
     distance_threshold = 5
     size_threshold = 5
-    ignored_statements = ['Import', 'From']
+    ignored_statements = []#'Import', 'From']
     def __init__(self, file_name, func_prefixes = ()):
         SourceFile.__init__(self, file_name)
         self._func_prefixes = func_prefixes
