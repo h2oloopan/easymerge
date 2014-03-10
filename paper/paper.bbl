@@ -4,8 +4,13 @@
 B.~Baker.
 \newblock On finding duplication and near-duplication in large software
   systems.
-\newblock {\em Proceedings of the 2nd Working Conference on Reverse
-  Engineering}, pages 86--95, 1995.
+\newblock {\em in: Proceedings of the 2nd Working Conference on Reverse
+  Engineering, WCRE 1995}, pages 86--95, 1995.
+
+\bibitem{bellon}
+S.~Bellon, R.~Koschke, G.~Antoniol, J.~Krinke, and E.~Merlo.
+\newblock Comparison and evaluation of clone detection tools.
+\newblock {\em Transactions on Software Engineering}, 33(9):577--591, 2007.
 
 \bibitem{bulychev}
 P.~Bulychev and M.~Minea.
@@ -13,11 +18,30 @@ P.~Bulychev and M.~Minea.
 \newblock {\em Spring Young Researchers Colloquium on Software Engineering,
   SYRCoSE 2008}, pages 4--7, 2008.
 
-\bibitem{roy}
+\bibitem{gabel}
+M.~Gabel, L.~Jiang, and Z.~Su.
+\newblock Scalable detection of semantic clones.
+\newblock {\em in: Proceedings of the 30th International Conference on Software
+  Engineering, ICSE 2008}, pages 321--330, 2008.
+
+\bibitem{komondoor}
+R.~Komondoor and S.~Horwitz.
+\newblock Using slicing to identify duplication in source code.
+\newblock {\em in: Proceedings of the 8th International Symposium on Static
+  Analysis, SAS 2001}, pages 40--56, 2001.
+
+\bibitem{roy1}
 C.~K. Roy and J.~R. Cordy.
 \newblock An empirical study of function clones in open source software
   systems.
-\newblock {\em Proceedings of the 15th Working Conference on Reverse
-  Engineering}, pages 81--90, 2008.
+\newblock {\em in: Proceedings of the 15th Working Conference on Reverse
+  Engineering, WCRE 2008}, pages 81--90, 2008.
+
+\bibitem{roy2}
+C.~K. Roy, J.~R. Cordy, and R.~Koschke.
+\newblock Comparison and evaluation of code clone detection techniques and
+  tools: A qualitative approach.
+\newblock {\em Science of Computer Programming, Special Issue on Program
+  Comprehension, ICPC 2008}, 74(7):470--495, 2009.
 
 \end{thebibliography}
