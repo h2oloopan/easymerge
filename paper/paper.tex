@@ -107,13 +107,13 @@ email: {\texttt{jsmith@affiliation.org}}) and Julius P.~Kumquat
 \maketitle
 \begin{abstract}
 Code clones are common in medium to large scale software projects. Oftentimes, unnecessary clones cause troubles to code base maintenance and code reusability. 
-Over past decades, many techniques and approaches have been proposed to detect code clones. However, how to refactor clones is still a challenging topic to software
+Over past decades, many techniques and approaches have been proposed to detect code clones. However, how to refactor clones is still a very challenging topic to software
 engineers. Even text-wise identical code clones can be semantically different when they are referring variables and calling functions outside. And the problem is more 
 complex when scopes and dependencies are considered. Furthermore, not all clones can be refactored as they may be part of tests or needed to maintain dependencies across multiple
 libraries. As a result, we need adaptive clone refactoring tools that can locate unnecessary clones and alert possible implications in the procedure to help
 software engineers be more efficient and make less mistakes in the refactoring process.
 
-In this paper, we introduce EasyMerge, a new tool to refactor code clones.
+In this paper, we introduce EasyMerge, a new tool to refactor code clones. EasyMerge is built on top of AST-based clone detection algorithm
 \end{abstract}
 
 % A category with the (minimum) three required fields
@@ -123,7 +123,7 @@ In this paper, we introduce EasyMerge, a new tool to refactor code clones.
 
 \terms{Software Engineering, Recommendation System}
 
-\keywords{Software Engineering, Clone Detection, Code Refactoring, Recommendation System} % NOT required for Proceedings
+\keywords{Software Engineering, Clone Detection, Code Refactoring, Recommendation System, Python} % NOT required for Proceedings
 
 \section{Introduction}
 In software development, it's very common seeing developers reuse code fragments by copying and pasting with or without minor adaptation.
