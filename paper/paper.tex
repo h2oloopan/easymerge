@@ -155,6 +155,7 @@ work flow and underlying techniques. And at the end, we set up testing environme
 open source projects of different scales.
 
 \section{Background}
+\subsection{Clone Detection}
 Roy, Cordy, and Koschke have done a great work \cite{roy2} writing an overview paper explaining the basics of clone detection, and providing a complete comparison of essential
 strengths and weaknesses of both individual tools and techniques and alternative approaches in general. It gives us all the needed preliminaries to focus on clone refactoring rather
 than spending time working on the detection part. We begin with a basic introduction to clone detection terminology in Roy's paper.
@@ -183,6 +184,26 @@ pasting into another location. In the following we provide the types of clones b
 \item {\bf Type-4:} Two or more code fragments that perform the same computation but are implemented by different syntactic variants.
 \end{itemize}
 \end{definition}
+
+There are many different techniques to detect code clones. In Roy's paper \cite{roy2}, they covered tools of textual approaches, lexical approaches, syntactic approaches,
+semantic approaches and hybrids. Different tools have advantages and disadvantages for different facets (usage, interaction, language, clone information, technical aspect, 
+adjustment, processing, and evaluation) and behave quite differently for some scenarios. As clone detection is still an on-going research, it's hard to say one tool is the best
+at the moment. However, for the purpose of building EasyMerge, we want to pick a tool that is cross-platform, freely available, efficient, covering multiple clone types, and can
+handle different editing scenarios decently. Thus we chose CloneDigger \cite{bulychev} after a comprehensive comparison.
+
+\subsection{Clone Refactoring}
+On the other hand, for clone refactoring, most proposed solutions use some pre-defined metrics as the refactoring guidance to help users determine whether the 
+code clones are suitable for refactoring. For example, Balazinska \cite{balazinska} proposed to use 21 metrics to measure the suitability for refactoring. Higo \cite{higo}
+developed ARIES tools, using the code detection tool CCFinder and environment analysis tool Gemini to find the clones can be refactored. And Schulze \cite{schulze}
+proposed a new metric DIST (distance of the code clones). Unlike them, instead of calculating distance between code segments and only merging close clones, EasyMerge 
+try to fix the differences and merge as many clones as possible without introducing extra complexity.
+
+For the actual merging process, currently existing research mainly focus on using refactoring patterns \cite{fowler}, especially ``Extract Method" and ``Pull Up Method".
+"Extract Method" means that a fragment of source code is extracted and redefined as a new method. ``Pull Up Method" means that the same methods defined in child
+classes are pulled up to its parent class. In general, they are both merging similar code blocks into one newly created function, and ``Pull Up Method" only differs from 
+``Extract Method" as it places the newly created function into the super class when code blocks are inside functions sharing the same parent class.
+
+Unfortunately, code clones may be coupled with surrounding code, its inheritance tree, or other independent classes/code blocks. For instance: 
 
 \section{CloneDigger}
 

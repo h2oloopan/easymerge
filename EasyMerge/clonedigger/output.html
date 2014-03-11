@@ -44,10 +44,10 @@
     <BODY>
     
     
-    <P>Source files: 5</P>
-        <a href = "javascript:unhide('files');">Click here to show/hide file names</a><div id="files" class="hidden"><P><B>Source files:</B><BR>..\..\ply\ply\cpp.py, <BR>..\..\ply\ply\ctokens.py, <BR>..\..\ply\ply\lex.py, <BR>..\..\ply\ply\yacc.py, <BR>..\..\ply\ply\__init__.py</P></div>
-        <P>Clones detected: 50</P>
-        <P>661 of 3083 lines are duplicates (21.44%) </P>
+    <P>Source files: 24</P>
+        <a href = "javascript:unhide('files');">Click here to show/hide file names</a><div id="files" class="hidden"><P><B>Source files:</B><BR>../tests/beets/__init__.py, <BR>../tests/beets/importer.py, <BR>../tests/beets/library.py, <BR>../tests/beets/mediafile.py, <BR>../tests/beets/plugins.py, <BR>../tests/beets/vfs.py, <BR>../tests/beets/autotag/__init__.py, <BR>../tests/beets/autotag/hooks.py, <BR>../tests/beets/autotag/match.py, <BR>../tests/beets/autotag/mb.py, <BR>../tests/beets/dbcore/__init__.py, <BR>../tests/beets/dbcore/db.py, <BR>../tests/beets/dbcore/query.py, <BR>../tests/beets/dbcore/types.py, <BR>../tests/beets/ui/__init__.py, <BR>../tests/beets/ui/commands.py, <BR>../tests/beets/ui/migrate.py, <BR>../tests/beets/util/__init__.py, <BR>../tests/beets/util/artresizer.py, <BR>../tests/beets/util/bluelet.py, <BR>../tests/beets/util/confit.py, <BR>../tests/beets/util/enumeration.py, <BR>../tests/beets/util/functemplate.py, <BR>../tests/beets/util/pipeline.py</P></div>
+        <P>Clones detected: 39</P>
+        <P>453 of 7184 lines are duplicates (6.31%) </P>
 <P>
 <B>Parameters<BR> </B>
 clustering_threshold = 10<BR>
@@ -58,2373 +58,888 @@ clusterize_using_hash = False<BR>
 clusterize_using_dcup = False<BR>
 </P> 
         
-    <B>Time elapsed</B><BR>Construction of AST : 1.05 seconds<BR>
+    <B>Time elapsed</B><BR>Construction of AST : 2.58 seconds<BR>
 Building statement hash : 0.02 seconds<BR>
-Building patterns : 3.12 seconds<BR>
-Marking similar statements : 3.84 seconds<BR>
-Finding similar sequences of statements : 0.37 seconds<BR>
-Refining candidates : 0.69 seconds<BR>
- Total time: 9.08<BR>
- Started at: Tue Mar 04 16:01:35 2014<BR>
- Finished at: Tue Mar 04 16:01:44 2014
-    <P><B>Clone # 1</B><BR>Distance between two fragments = 0 <BR>Clone size = 55<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 835</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 557</TD></TR><TR>
+Building patterns : 6.05 seconds<BR>
+Marking similar statements : 9.44 seconds<BR>
+Finding similar sequences of statements : 1.69 seconds<BR>
+Refining candidates : 3.55 seconds<BR>
+ Total time: 23.33<BR>
+ Started at: Mon Mar 10 17:00:18 2014<BR>
+ Finished at: Mon Mar 10 17:00:39 2014
+    <P><B>Clone # 1</B><BR>Distance between two fragments = 1 <BR>Clone size = 23<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/migrate.py"<BR>The first line is 222</TD><TD></TD><TD>Source file "../tests/beets/util/confit.py"<BR>The first line is 631</TD></TR><TR>
 <TD>
-if (errorcount == 0) or (self.errorok):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errorcount = error_count<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.errorok = 0<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errtoken = lookahead<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if errtoken.type == '$end':<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errtoken = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if self.errorfunc:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (errtoken) and (not hasattr(errtoken, 'lexer')):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errtoken.lexer = lexer<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tok = call_errorfunc(self.errorfunc, errtoken, self)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if self.errorok:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = tok<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errtoken = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if errtoken:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if hasattr(errtoken, 'lineno'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lineno = lookahead.lineno<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lineno = 0<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if lineno:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.stderr.write(('yacc: Syntax error at line %d, token=%s\n') % ((lineno, errtoken.type)))<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.stderr.write(('yacc: Syntax error, token=%s') % (errtoken.type))<BR>
+def represent_mapping(self, tag, mapping, flow_style=None):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;value = []<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;node = yaml.MappingNode(tag, value, flow_style=flow_style)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if self.alias_key is not None:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.represented_objects[self.alias_key] = node<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;best_style = <span style="color: rgb(255, 0, 0);">True</span><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if hasattr(mapping, 'items'):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mapping = list(mapping.items())<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;for item_key, item_value in mapping:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;node_key = self.represent_data(item_key)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;node_value = self.represent_data(item_value)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if not (isinstance(node_key, yaml.ScalarNode)) and (not node_key.style):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;best_style = <span style="color: rgb(255, 0, 0);">False</span><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if not (isinstance(node_value, yaml.ScalarNode)) and (not node_value.style):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;best_style = <span style="color: rgb(255, 0, 0);">False</span><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.append((node_key, node_value))<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if flow_style is None:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if self.default_flow_style is not None:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;node.flow_style = self.default_flow_style<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.stderr.write('yacc: Parse error in input. EOF\n')<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return None<BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errorcount = error_count</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if (errorcount == 0) or (self.errorok):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errorcount = error_count<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.errorok = 0<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errtoken = lookahead<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if errtoken.type == '$end':<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errtoken = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if self.errorfunc:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (errtoken) and (not hasattr(errtoken, 'lexer')):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errtoken.lexer = lexer<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tok = call_errorfunc(self.errorfunc, errtoken, self)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if self.errorok:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = tok<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errtoken = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if errtoken:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if hasattr(errtoken, 'lineno'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lineno = lookahead.lineno<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lineno = 0<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if lineno:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.stderr.write(('yacc: Syntax error at line %d, token=%s\n') % ((lineno, errtoken.type)))<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.stderr.write(('yacc: Syntax error, token=%s') % (errtoken.type))<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.stderr.write('yacc: Parse error in input. EOF\n')<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return None<BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errorcount = error_count</TD>
-</TR>
-<TR>
-<TD>
-if (len(statestack) <= 1) and (lookahead.type != '$end'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookahead = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errtoken = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;state = 0<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookaheadstack[:]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;continue</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if (len(statestack) <= 1) and (lookahead.type != '$end'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookahead = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errtoken = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;state = 0<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookaheadstack[:]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;continue</TD>
-</TR>
-<TR>
-<TD>
-if lookahead.type == '$end':<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;return None</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if lookahead.type == '$end':<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;return None</TD>
-</TR>
-<TR>
-<TD>
-if lookahead.type != 'error':<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;sym = symstack[-1]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if sym.type == 'error':<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if tracking:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sym.endlineno = getattr(lookahead, 'lineno', sym.lineno)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sym.endlexpos = getattr(lookahead, 'lexpos', sym.lexpos)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;t = YaccSymbol()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;t.type = 'error'<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if hasattr(lookahead, 'lineno'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t.lineno = lookahead.lineno<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if hasattr(lookahead, 'lexpos'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t.lexpos = lookahead.lexpos<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;t.value = lookahead<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookaheadstack.append(lookahead)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookahead = t<BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;sym = symstack.pop()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if tracking:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead.lineno = sym.lineno<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead.lexpos = sym.lexpos<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;statestack.pop()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;state = statestack[-1]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if lookahead.type != 'error':<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;sym = symstack[-1]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if sym.type == 'error':<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if tracking:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sym.endlineno = getattr(lookahead, 'lineno', sym.lineno)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sym.endlexpos = getattr(lookahead, 'lexpos', sym.lexpos)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;t = YaccSymbol()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;t.type = 'error'<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if hasattr(lookahead, 'lineno'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t.lineno = lookahead.lineno<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if hasattr(lookahead, 'lexpos'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t.lexpos = lookahead.lexpos<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;t.value = lookahead<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookaheadstack.append(lookahead)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookahead = t<BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;sym = symstack.pop()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if tracking:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead.lineno = sym.lineno<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead.lexpos = sym.lexpos<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;statestack.pop()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;state = statestack[-1]</TD>
-</TR>
-<TR>
-<TD>
-continue</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-continue</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 2</B><BR>Distance between two fragments = 0 <BR>Clone size = 31<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 835</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1096</TD></TR><TR>
-<TD>
-if (errorcount == 0) or (self.errorok):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errorcount = error_count<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.errorok = 0<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errtoken = lookahead<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if errtoken.type == '$end':<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errtoken = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if self.errorfunc:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (errtoken) and (not hasattr(errtoken, 'lexer')):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errtoken.lexer = lexer<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tok = call_errorfunc(self.errorfunc, errtoken, self)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if self.errorok:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = tok<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errtoken = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if errtoken:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if hasattr(errtoken, 'lineno'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lineno = lookahead.lineno<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lineno = 0<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if lineno:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.stderr.write(('yacc: Syntax error at line %d, token=%s\n') % ((lineno, errtoken.type)))<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.stderr.write(('yacc: Syntax error, token=%s') % (errtoken.type))<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.stderr.write('yacc: Parse error in input. EOF\n')<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return None<BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errorcount = error_count</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if (errorcount == 0) or (self.errorok):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errorcount = error_count<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.errorok = 0<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errtoken = lookahead<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if errtoken.type == '$end':<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errtoken = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if self.errorfunc:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (errtoken) and (not hasattr(errtoken, 'lexer')):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errtoken.lexer = lexer<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tok = call_errorfunc(self.errorfunc, errtoken, self)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if self.errorok:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = tok<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errtoken = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if errtoken:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if hasattr(errtoken, 'lineno'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lineno = lookahead.lineno<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lineno = 0<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if lineno:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.stderr.write(('yacc: Syntax error at line %d, token=%s\n') % ((lineno, errtoken.type)))<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.stderr.write(('yacc: Syntax error, token=%s') % (errtoken.type))<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.stderr.write('yacc: Parse error in input. EOF\n')<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return None<BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errorcount = error_count</TD>
-</TR>
-<TR>
-<TD>
-if (len(statestack) <= 1) and (lookahead.type != '$end'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookahead = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errtoken = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;state = 0<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookaheadstack[:]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;continue</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if (len(statestack) <= 1) and (lookahead.type != '$end'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookahead = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errtoken = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;state = 0<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookaheadstack[:]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;continue</TD>
-</TR>
-<TR>
-<TD>
-if lookahead.type == '$end':<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;return None</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if lookahead.type == '$end':<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;return None</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 3</B><BR>Distance between two fragments = 0 <BR>Clone size = 31<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 557</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1096</TD></TR><TR>
-<TD>
-if (errorcount == 0) or (self.errorok):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errorcount = error_count<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.errorok = 0<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errtoken = lookahead<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if errtoken.type == '$end':<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errtoken = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if self.errorfunc:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (errtoken) and (not hasattr(errtoken, 'lexer')):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errtoken.lexer = lexer<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tok = call_errorfunc(self.errorfunc, errtoken, self)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if self.errorok:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = tok<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errtoken = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if errtoken:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if hasattr(errtoken, 'lineno'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lineno = lookahead.lineno<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lineno = 0<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if lineno:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.stderr.write(('yacc: Syntax error at line %d, token=%s\n') % ((lineno, errtoken.type)))<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.stderr.write(('yacc: Syntax error, token=%s') % (errtoken.type))<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.stderr.write('yacc: Parse error in input. EOF\n')<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return None<BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errorcount = error_count</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if (errorcount == 0) or (self.errorok):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errorcount = error_count<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.errorok = 0<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errtoken = lookahead<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if errtoken.type == '$end':<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errtoken = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if self.errorfunc:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (errtoken) and (not hasattr(errtoken, 'lexer')):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errtoken.lexer = lexer<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tok = call_errorfunc(self.errorfunc, errtoken, self)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if self.errorok:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = tok<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errtoken = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if errtoken:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if hasattr(errtoken, 'lineno'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lineno = lookahead.lineno<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lineno = 0<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if lineno:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.stderr.write(('yacc: Syntax error at line %d, token=%s\n') % ((lineno, errtoken.type)))<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.stderr.write(('yacc: Syntax error, token=%s') % (errtoken.type))<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys.stderr.write('yacc: Parse error in input. EOF\n')<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return None<BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errorcount = error_count</TD>
-</TR>
-<TR>
-<TD>
-if (len(statestack) <= 1) and (lookahead.type != '$end'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookahead = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errtoken = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;state = 0<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookaheadstack[:]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;continue</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if (len(statestack) <= 1) and (lookahead.type != '$end'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookahead = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errtoken = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;state = 0<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookaheadstack[:]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;continue</TD>
-</TR>
-<TR>
-<TD>
-if lookahead.type == '$end':<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;return None</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if lookahead.type == '$end':<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;return None</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 4</B><BR>Distance between two fragments = 0 <BR>Clone size = 29<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 651</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 929</TD></TR><TR>
-<TD>
-lookahead = None</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookahead = None</TD>
-</TR>
-<TR>
-<TD>
-lookaheadstack = []</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookaheadstack = []</TD>
-</TR>
-<TR>
-<TD>
-actions = self.action</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-actions = self.action</TD>
-</TR>
-<TR>
-<TD>
-goto = self.goto</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-goto = self.goto</TD>
-</TR>
-<TR>
-<TD>
-prod = self.productions</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-prod = self.productions</TD>
-</TR>
-<TR>
-<TD>
-pslice = YaccProduction(None)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-pslice = YaccProduction(None)</TD>
-</TR>
-<TR>
-<TD>
-errorcount = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-errorcount = 0</TD>
-</TR>
-<TR>
-<TD>
-if not lexer:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lex = load_ply_lex()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lexer = lex.lexer</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if not lexer:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lex = load_ply_lex()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lexer = lex.lexer</TD>
-</TR>
-<TR>
-<TD>
-pslice.lexer = lexer</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-pslice.lexer = lexer</TD>
-</TR>
-<TR>
-<TD>
-pslice.parser = self</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-pslice.parser = self</TD>
-</TR>
-<TR>
-<TD>
-if input is not None:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lexer.input(input)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if input is not None:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lexer.input(input)</TD>
-</TR>
-<TR>
-<TD>
-if tokenfunc is None:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;get_token = lexer.token<BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;get_token = tokenfunc</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if tokenfunc is None:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;get_token = lexer.token<BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;get_token = tokenfunc</TD>
-</TR>
-<TR>
-<TD>
-self.token = get_token</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.token = get_token</TD>
-</TR>
-<TR>
-<TD>
-statestack = []</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-statestack = []</TD>
-</TR>
-<TR>
-<TD>
-self.statestack = statestack</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.statestack = statestack</TD>
-</TR>
-<TR>
-<TD>
-symstack = []</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-symstack = []</TD>
-</TR>
-<TR>
-<TD>
-self.symstack = symstack</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.symstack = symstack</TD>
-</TR>
-<TR>
-<TD>
-pslice.stack = symstack</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-pslice.stack = symstack</TD>
-</TR>
-<TR>
-<TD>
-errtoken = None</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-errtoken = None</TD>
-</TR>
-<TR>
-<TD>
-statestack.append(0)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-statestack.append(0)</TD>
-</TR>
-<TR>
-<TD>
-sym = YaccSymbol()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym = YaccSymbol()</TD>
-</TR>
-<TR>
-<TD>
-sym.type = '$end'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.type = '$end'</TD>
-</TR>
-<TR>
-<TD>
-symstack.append(sym)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-symstack.append(sym)</TD>
-</TR>
-<TR>
-<TD>
-state = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-state = 0</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 5</B><BR>Distance between two fragments = 4 <BR>Clone size = 26<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 2624</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 2663</TD></TR><TR>
-<TD>
-if smaller:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;items = {}<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;for s, nd in self.<span style="color: rgb(255, 0, 0);">lr_action</span>.items():<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for name, v in nd.items():<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i = items.get(name)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if not i:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i = ([], [])<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;items[name] = i<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i[0].append(s)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i[1].append(v)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;f.write(<span style="color: rgb(255, 0, 0);">'\n_lr_action_items = {'</span>)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;for k, v in items.items():<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f.write(('%r:([') % (k))<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for i in v[0]:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f.write(('%r,') % (i))<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f.write('],[')<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for i in v[1]:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f.write(('%r,') % (i))<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f.write(']),')<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;f.write('}\n')<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;f.write(<span style="color: rgb(255, 0, 0);">'\n_lr_action = { }\nfor _k, _v in _lr_action_items.items():\n   for _x,_y in zip(_v[0],_v[1]):\n      if not _x in _lr_action:  _lr_action[_x] = { }\n      _lr_action[_x][_k] = _y\ndel _lr_action_items\n'</span>)<BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;f.write(<span style="color: rgb(255, 0, 0);">'\n_lr_action = { '</span>)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;for k, v in self.<span style="color: rgb(255, 0, 0);">lr_action</span>.items():<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f.write(('(%r,%r):%r,') % ((k[0], k[1], v)))<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;f.write('}\n')<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;None</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;node.flow_style = best_style<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;return node</TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-if smaller:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;items = {}<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;for s, nd in self.<span style="color: rgb(255, 0, 0);">lr_goto</span>.items():<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for name, v in nd.items():<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i = items.get(name)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if not i:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i = ([], [])<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;items[name] = i<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i[0].append(s)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i[1].append(v)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;f.write(<span style="color: rgb(255, 0, 0);">'\n_lr_goto_items = {'</span>)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;for k, v in items.items():<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f.write(('%r:([') % (k))<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for i in v[0]:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f.write(('%r,') % (i))<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f.write('],[')<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for i in v[1]:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f.write(('%r,') % (i))<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f.write(']),')<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;f.write('}\n')<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;f.write(<span style="color: rgb(255, 0, 0);">'\n_lr_goto = { }\nfor _k, _v in _lr_goto_items.items():\n   for _x,_y in zip(_v[0],_v[1]):\n       if not _x in _lr_goto: _lr_goto[_x] = { }\n       _lr_goto[_x][_k] = _y\ndel _lr_goto_items\n'</span>)<BR>
+def represent_mapping(self, tag, mapping, flow_style=None):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;value = []<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;node = yaml.MappingNode(tag, value, flow_style=flow_style)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if self.alias_key is not None:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.represented_objects[self.alias_key] = node<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;best_style = <span style="color: rgb(255, 0, 0);">False</span><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if hasattr(mapping, 'items'):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mapping = list(mapping.items())<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;for item_key, item_value in mapping:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;node_key = self.represent_data(item_key)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;node_value = self.represent_data(item_value)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if not (isinstance(node_key, yaml.ScalarNode)) and (not node_key.style):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;best_style = <span style="color: rgb(255, 0, 0);">False</span><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if not (isinstance(node_value, yaml.ScalarNode)) and (not node_value.style):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;best_style = <span style="color: rgb(255, 0, 0);">False</span><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.append((node_key, node_value))<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if flow_style is None:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if self.default_flow_style is not None:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;node.flow_style = self.default_flow_style<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;node.flow_style = best_style<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;return node</TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 2</B><BR>Distance between two fragments = 0 <BR>Clone size = 11<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 381</TD><TD></TD><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 233</TD></TR><TR>
+<TD>
+if match.info.data_url:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;print_(('URL:\n    %s') % (match.info.data_url))</TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+if match.info.data_url:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;print_(('URL:\n    %s') % (match.info.data_url))</TD>
+</TR>
+<TR>
+<TD>
+info = []</TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+info = []</TD>
+</TR>
+<TR>
+<TD>
+info.append(('(Similarity: %s)') % (dist_string(match.distance)))</TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+info.append(('(Similarity: %s)') % (dist_string(match.distance)))</TD>
+</TR>
+<TR>
+<TD>
+penalties = penalty_string(match.distance)</TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+penalties = penalty_string(match.distance)</TD>
+</TR>
+<TR>
+<TD>
+if penalties:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;info.append(penalties)</TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+if penalties:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;info.append(penalties)</TD>
+</TR>
+<TR>
+<TD>
+disambig = disambig_string(match.info)</TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+disambig = disambig_string(match.info)</TD>
+</TR>
+<TR>
+<TD>
+if disambig:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;info.append(ui.colorize('lightgray', ('(%s)') % (disambig)))</TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+if disambig:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;info.append(ui.colorize('lightgray', ('(%s)') % (disambig)))</TD>
+</TR>
+<TR>
+<TD>
+print_(' '.join(info))</TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+print_(' '.join(info))</TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 3</B><BR>Distance between two fragments = 3 <BR>Clone size = 10<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/mediafile.py"<BR>The first line is 136</TD><TD></TD><TD>Source file "../tests/beets/mediafile.py"<BR>The first line is 98</TD></TR><TR>
+<TD>
+if val is None:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;return <span style="color: rgb(255, 0, 0);">0.0</span><BR>
+elif (isinstance(val, <span style="color: rgb(255, 0, 0);">int</span>)) or (isinstance(val, <span style="color: rgb(255, 0, 0);">float</span>)):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;return <span style="color: rgb(255, 0, 0);">float</span>(val)<BR>
 else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;f.write(<span style="color: rgb(255, 0, 0);">'\n_lr_goto = { '</span>)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;for k, v in self.<span style="color: rgb(255, 0, 0);">lr_goto</span>.items():<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f.write(('(%r,%r):%r,') % ((k[0], k[1], v)))<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;f.write('}\n')<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;None</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 6</B><BR>Distance between two fragments = 0 <BR>Clone size = 22<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 344</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 660</TD></TR><TR>
-<TD>
-if not lexer:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lex = load_ply_lex()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lexer = lex.lexer</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if not lexer:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lex = load_ply_lex()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lexer = lex.lexer</TD>
-</TR>
-<TR>
-<TD>
-pslice.lexer = lexer</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-pslice.lexer = lexer</TD>
-</TR>
-<TR>
-<TD>
-pslice.parser = self</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-pslice.parser = self</TD>
-</TR>
-<TR>
-<TD>
-if input is not None:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lexer.input(input)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if input is not None:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lexer.input(input)</TD>
-</TR>
-<TR>
-<TD>
-if tokenfunc is None:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;get_token = lexer.token<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if not isinstance(val, basestring):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;val = unicode(val)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;val = re.match(<span style="color: rgb(255, 0, 0);">'[\\+-]?[0-9\\.]*'</span>, val.strip()).group(<span style="color: rgb(255, 0, 0);">0</span>)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if not val:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <span style="color: rgb(255, 0, 0);">0.0</span><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <span style="color: rgb(255, 0, 0);">float</span>(val)</TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+if val is None:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;return <span style="color: rgb(255, 0, 0);">0</span><BR>
+elif (isinstance(val, <span style="color: rgb(255, 0, 0);">int</span>)) or (isinstance(val, <span style="color: rgb(255, 0, 0);">float</span>)):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;return <span style="color: rgb(255, 0, 0);">int</span>(val)<BR>
 else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;get_token = tokenfunc</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if tokenfunc is None:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;get_token = lexer.token<BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;get_token = tokenfunc</TD>
-</TR>
-<TR>
-<TD>
-self.token = get_token</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.token = get_token</TD>
-</TR>
-<TR>
-<TD>
-statestack = []</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-statestack = []</TD>
-</TR>
-<TR>
-<TD>
-self.statestack = statestack</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.statestack = statestack</TD>
-</TR>
-<TR>
-<TD>
-symstack = []</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-symstack = []</TD>
-</TR>
-<TR>
-<TD>
-self.symstack = symstack</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.symstack = symstack</TD>
-</TR>
-<TR>
-<TD>
-pslice.stack = symstack</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-pslice.stack = symstack</TD>
-</TR>
-<TR>
-<TD>
-errtoken = None</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-errtoken = None</TD>
-</TR>
-<TR>
-<TD>
-statestack.append(0)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-statestack.append(0)</TD>
-</TR>
-<TR>
-<TD>
-sym = YaccSymbol()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym = YaccSymbol()</TD>
-</TR>
-<TR>
-<TD>
-sym.type = '$end'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.type = '$end'</TD>
-</TR>
-<TR>
-<TD>
-symstack.append(sym)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-symstack.append(sym)</TD>
-</TR>
-<TR>
-<TD>
-state = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-state = 0</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;if not isinstance(val, basestring):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;val = unicode(val)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;val = re.match(<span style="color: rgb(255, 0, 0);">'[0-9]*'</span>, val.strip()).group(<span style="color: rgb(255, 0, 0);">0</span>)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if not val:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <span style="color: rgb(255, 0, 0);">0</span><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <span style="color: rgb(255, 0, 0);">int</span>(val)</TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 7</B><BR>Distance between two fragments = 0 <BR>Clone size = 22<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 344</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 938</TD></TR><TR>
+<P><B>Clone # 4</B><BR>Distance between two fragments = 0 <BR>Clone size = 9<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/pipeline.py"<BR>The first line is 274</TD><TD></TD><TD>Source file "../tests/beets/util/pipeline.py"<BR>The first line is 229</TD></TR><TR>
 <TD>
-if not lexer:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lex = load_ply_lex()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lexer = lex.lexer</TD>
+<span style="font-family: monospace;">with&nbsp; self.abort_lock:<BR>
+&nbsp; if&nbsp; self.abort_flag:<BR>
+&nbsp; &nbsp; return<span style="color:rgb(255,0,0);"></span></span></TD>
 <TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if not lexer:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lex = load_ply_lex()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lexer = lex.lexer</TD>
+<span style="font-family: monospace;">with&nbsp; self.abort_lock:<BR>
+&nbsp; if&nbsp; self.abort_flag:<BR>
+&nbsp; &nbsp; return<span style="color:rgb(255,0,0);"></span></span></TD>
 </TR>
 <TR>
 <TD>
-pslice.lexer = lexer</TD>
+msg = self.in_queue.get()</TD>
 <TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-pslice.lexer = lexer</TD>
+msg = self.in_queue.get()</TD>
 </TR>
 <TR>
 <TD>
-pslice.parser = self</TD>
+if msg is POISON:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;break</TD>
 <TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-pslice.parser = self</TD>
+if msg is POISON:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;break</TD>
 </TR>
 <TR>
 <TD>
-if input is not None:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lexer.input(input)</TD>
+<span style="font-family: monospace;">with&nbsp; self.abort_lock:<BR>
+&nbsp; if&nbsp; self.abort_flag:<BR>
+&nbsp; &nbsp; return<span style="color:rgb(255,0,0);"></span></span></TD>
 <TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if input is not None:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lexer.input(input)</TD>
-</TR>
-<TR>
-<TD>
-if tokenfunc is None:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;get_token = lexer.token<BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;get_token = tokenfunc</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if tokenfunc is None:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;get_token = lexer.token<BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;get_token = tokenfunc</TD>
-</TR>
-<TR>
-<TD>
-self.token = get_token</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.token = get_token</TD>
-</TR>
-<TR>
-<TD>
-statestack = []</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-statestack = []</TD>
-</TR>
-<TR>
-<TD>
-self.statestack = statestack</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.statestack = statestack</TD>
-</TR>
-<TR>
-<TD>
-symstack = []</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-symstack = []</TD>
-</TR>
-<TR>
-<TD>
-self.symstack = symstack</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.symstack = symstack</TD>
-</TR>
-<TR>
-<TD>
-pslice.stack = symstack</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-pslice.stack = symstack</TD>
-</TR>
-<TR>
-<TD>
-errtoken = None</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-errtoken = None</TD>
-</TR>
-<TR>
-<TD>
-statestack.append(0)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-statestack.append(0)</TD>
-</TR>
-<TR>
-<TD>
-sym = YaccSymbol()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym = YaccSymbol()</TD>
-</TR>
-<TR>
-<TD>
-sym.type = '$end'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.type = '$end'</TD>
-</TR>
-<TR>
-<TD>
-symstack.append(sym)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-symstack.append(sym)</TD>
-</TR>
-<TR>
-<TD>
-state = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-state = 0</TD>
+<span style="font-family: monospace;">with&nbsp; self.abort_lock:<BR>
+&nbsp; if&nbsp; self.abort_flag:<BR>
+&nbsp; &nbsp; return<span style="color:rgb(255,0,0);"></span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 8</B><BR>Distance between two fragments = 0 <BR>Clone size = 18<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1027</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 760</TD></TR><TR>
+<P><B>Clone # 5</B><BR>Distance between two fragments = 4 <BR>Clone size = 8<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/dbcore/types.py"<BR>The first line is 105</TD><TD></TD><TD>Source file "../tests/beets/dbcore/types.py"<BR>The first line is 60</TD></TR><TR>
 <TD>
-pslice.slice = targ</TD>
+query = query.NumericQuery</TD>
 <TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-pslice.slice = targ</TD>
+query = query.NumericQuery</TD>
 </TR>
 <TR>
 <TD>
-try:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;symstack[-plen:]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;statestack[-plen:]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;p.callable(pslice)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;symstack.append(sym)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;state = goto[statestack[-1]][pname]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;statestack.append(state)<BR>
-except SyntaxError:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookaheadstack.append(lookahead)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;symstack.pop()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;statestack.pop()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;state = statestack[-1]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;sym.type = 'error'<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookahead = sym<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errorcount = error_count<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.errorok = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-try:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;symstack[-plen:]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;statestack[-plen:]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;p.callable(pslice)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;symstack.append(sym)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;state = goto[statestack[-1]][pname]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;statestack.append(state)<BR>
-except SyntaxError:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookaheadstack.append(lookahead)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;symstack.pop()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;statestack.pop()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;state = statestack[-1]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;sym.type = 'error'<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookahead = sym<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errorcount = error_count<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.errorok = 0</TD>
+def format(self, value):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;return <span style="color: rgb(255, 0, 0);">u'{0:.1f}'.format</span>((value) or (<span style="color: rgb(255, 0, 0);">0.0</span>))</TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+def format(self, value):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;return <span style="color: rgb(255, 0, 0);">unicode</span>((value) or (<span style="color: rgb(255, 0, 0);">0</span>))</TD>
 </TR>
 <TR>
 <TD>
-continue</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-continue</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 9</B><BR>Distance between two fragments = 0 <BR>Clone size = 17<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1052</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 791</TD></TR><TR>
-<TD>
-targ = [sym]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-targ = [sym]</TD>
-</TR>
-<TR>
-<TD>
-pslice.slice = targ</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-pslice.slice = targ</TD>
-</TR>
-<TR>
-<TD>
-try:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;p.callable(pslice)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;symstack.append(sym)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;state = goto[statestack[-1]][pname]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;statestack.append(state)<BR>
-except SyntaxError:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookaheadstack.append(lookahead)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;symstack.pop()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;statestack.pop()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;state = statestack[-1]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;sym.type = 'error'<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookahead = sym<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errorcount = error_count<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.errorok = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-try:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;p.callable(pslice)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;symstack.append(sym)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;state = goto[statestack[-1]][pname]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;statestack.append(state)<BR>
-except SyntaxError:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookaheadstack.append(lookahead)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;symstack.pop()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;statestack.pop()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;state = statestack[-1]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;sym.type = 'error'<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookahead = sym<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errorcount = error_count<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.errorok = 0</TD>
-</TR>
-<TR>
-<TD>
-continue</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-continue</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 10</B><BR>Distance between two fragments = 0 <BR>Clone size = 13<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 2945</TD><TD></TD><TD>Source file "..\..\ply\ply\lex.py"<BR>The first line is 586</TD></TR><TR>
-<TD>
-if not tokens:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.log.error('No token list is defined')<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.error = 1<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;return None</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if not tokens:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.log.error('No token list is defined')<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.error = 1<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;return None</TD>
-</TR>
-<TR>
-<TD>
-if not isinstance(tokens, (list, tuple)):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.log.error('tokens must be a list or tuple')<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.error = 1<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;return None</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if not isinstance(tokens, (list, tuple)):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.log.error('tokens must be a list or tuple')<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.error = 1<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;return None</TD>
-</TR>
-<TR>
-<TD>
-if not tokens:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.log.error('tokens is empty')<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.error = 1<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;return None</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if not tokens:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.log.error('tokens is empty')<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.error = 1<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;return None</TD>
-</TR>
-<TR>
-<TD>
-self.tokens = tokens</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.tokens = tokens</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 11</B><BR>Distance between two fragments = 0 <BR>Clone size = 13<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 2761</TD><TD></TD><TD>Source file "..\..\ply\ply\lex.py"<BR>The first line is 437</TD></TR><TR>
-<TD>
-def get_caller_module_dict(levels):<BR>
+def parse(self, string):<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;try:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise RuntimeError<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;except RuntimeError:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e, b, t = sys.exc_info()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f = t.tb_frame<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while levels > 0:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f = f.f_back<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;levels -= 1<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ldict = f.f_globals.copy()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if f.f_globals != f.f_locals:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ldict.update(f.f_locals)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return ldict</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-def get_caller_module_dict(levels):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <span style="color: rgb(255, 0, 0);">float</span>(string)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;except ValueError:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <span style="color: rgb(255, 0, 0);">0.0</span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+def parse(self, string):<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;try:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise RuntimeError<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;except RuntimeError:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e, b, t = sys.exc_info()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f = t.tb_frame<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while levels > 0:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f = f.f_back<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;levels -= 1<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ldict = f.f_globals.copy()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if f.f_globals != f.f_locals:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ldict.update(f.f_locals)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return ldict</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <span style="color: rgb(255, 0, 0);">int</span>(string)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;except ValueError:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <span style="color: rgb(255, 0, 0);">0</span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 12</B><BR>Distance between two fragments = 0 <BR>Clone size = 10<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 741</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 447</TD></TR><TR>
-<TD>
-targ = symstack[(-plen) - (1):]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-targ = symstack[(-plen) - (1):]</TD>
-</TR>
-<TR>
-<TD>
-targ[0] = sym</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-targ[0] = sym</TD>
-</TR>
-<TR>
-<TD>
-if tracking:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;t1 = targ[1]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;sym.lineno = t1.lineno<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;sym.lexpos = t1.lexpos<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;t1 = targ[-1]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;sym.endlineno = getattr(t1, 'endlineno', t1.lineno)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;sym.endlexpos = getattr(t1, 'endlexpos', t1.lexpos)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if tracking:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;t1 = targ[1]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;sym.lineno = t1.lineno<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;sym.lexpos = t1.lexpos<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;t1 = targ[-1]<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;sym.endlineno = getattr(t1, 'endlineno', t1.lineno)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;sym.endlexpos = getattr(t1, 'endlexpos', t1.lexpos)</TD>
-</TR>
-<TR>
-<TD>
-pslice.slice = targ</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-pslice.slice = targ</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 13</B><BR>Distance between two fragments = 0 <BR>Clone size = 9<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1156</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 898</TD></TR><TR>
-<TD>
-t = YaccSymbol()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-t = YaccSymbol()</TD>
-</TR>
-<TR>
-<TD>
-t.type = 'error'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-t.type = 'error'</TD>
-</TR>
-<TR>
-<TD>
-if hasattr(lookahead, 'lineno'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;t.lineno = lookahead.lineno</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if hasattr(lookahead, 'lineno'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;t.lineno = lookahead.lineno</TD>
-</TR>
-<TR>
-<TD>
-if hasattr(lookahead, 'lexpos'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;t.lexpos = lookahead.lexpos</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if hasattr(lookahead, 'lexpos'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;t.lexpos = lookahead.lexpos</TD>
-</TR>
-<TR>
-<TD>
-t.value = lookahead</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-t.value = lookahead</TD>
-</TR>
-<TR>
-<TD>
-lookaheadstack.append(lookahead)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookaheadstack.append(lookahead)</TD>
-</TR>
-<TR>
-<TD>
-lookahead = t</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookahead = t</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 14</B><BR>Distance between two fragments = 0 <BR>Clone size = 9<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1156</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 619</TD></TR><TR>
-<TD>
-t = YaccSymbol()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-t = YaccSymbol()</TD>
-</TR>
-<TR>
-<TD>
-t.type = 'error'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-t.type = 'error'</TD>
-</TR>
-<TR>
-<TD>
-if hasattr(lookahead, 'lineno'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;t.lineno = lookahead.lineno</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if hasattr(lookahead, 'lineno'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;t.lineno = lookahead.lineno</TD>
-</TR>
-<TR>
-<TD>
-if hasattr(lookahead, 'lexpos'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;t.lexpos = lookahead.lexpos</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if hasattr(lookahead, 'lexpos'):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;t.lexpos = lookahead.lexpos</TD>
-</TR>
-<TR>
-<TD>
-t.value = lookahead</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-t.value = lookahead</TD>
-</TR>
-<TR>
-<TD>
-lookaheadstack.append(lookahead)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookaheadstack.append(lookahead)</TD>
-</TR>
-<TR>
-<TD>
-lookahead = t</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookahead = t</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 15</B><BR>Distance between two fragments = 0 <BR>Clone size = 9<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 703</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 981</TD></TR><TR>
-<TD>
-if not lookahead:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if not lookaheadstack:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = get_token()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = lookaheadstack.pop()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if not lookahead:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = YaccSymbol()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead.type = '$end'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if not lookahead:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if not lookaheadstack:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = get_token()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = lookaheadstack.pop()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if not lookahead:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = YaccSymbol()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead.type = '$end'</TD>
-</TR>
-<TR>
-<TD>
-ltype = lookahead.type</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-ltype = lookahead.type</TD>
-</TR>
-<TR>
-<TD>
-t = actions[state].get(ltype)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-t = actions[state].get(ltype)</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 16</B><BR>Distance between two fragments = 0 <BR>Clone size = 8<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1069</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1039</TD></TR><TR>
-<TD>
-lookaheadstack.append(lookahead)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookaheadstack.append(lookahead)</TD>
-</TR>
-<TR>
-<TD>
-symstack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-symstack.pop()</TD>
-</TR>
-<TR>
-<TD>
-statestack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-statestack.pop()</TD>
-</TR>
-<TR>
-<TD>
-state = statestack[-1]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-state = statestack[-1]</TD>
-</TR>
-<TR>
-<TD>
-sym.type = 'error'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.type = 'error'</TD>
-</TR>
-<TR>
-<TD>
-lookahead = sym</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookahead = sym</TD>
-</TR>
-<TR>
-<TD>
-errorcount = error_count</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-errorcount = error_count</TD>
-</TR>
-<TR>
-<TD>
-self.errorok = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.errorok = 0</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 17</B><BR>Distance between two fragments = 0 <BR>Clone size = 8<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1069</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 772</TD></TR><TR>
-<TD>
-lookaheadstack.append(lookahead)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookaheadstack.append(lookahead)</TD>
-</TR>
-<TR>
-<TD>
-symstack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-symstack.pop()</TD>
-</TR>
-<TR>
-<TD>
-statestack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-statestack.pop()</TD>
-</TR>
-<TR>
-<TD>
-state = statestack[-1]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-state = statestack[-1]</TD>
-</TR>
-<TR>
-<TD>
-sym.type = 'error'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.type = 'error'</TD>
-</TR>
-<TR>
-<TD>
-lookahead = sym</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookahead = sym</TD>
-</TR>
-<TR>
-<TD>
-errorcount = error_count</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-errorcount = error_count</TD>
-</TR>
-<TR>
-<TD>
-self.errorok = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.errorok = 0</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 18</B><BR>Distance between two fragments = 0 <BR>Clone size = 8<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1069</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 520</TD></TR><TR>
-<TD>
-lookaheadstack.append(lookahead)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookaheadstack.append(lookahead)</TD>
-</TR>
-<TR>
-<TD>
-symstack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-symstack.pop()</TD>
-</TR>
-<TR>
-<TD>
-statestack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-statestack.pop()</TD>
-</TR>
-<TR>
-<TD>
-state = statestack[-1]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-state = statestack[-1]</TD>
-</TR>
-<TR>
-<TD>
-sym.type = 'error'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.type = 'error'</TD>
-</TR>
-<TR>
-<TD>
-lookahead = sym</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookahead = sym</TD>
-</TR>
-<TR>
-<TD>
-errorcount = error_count</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-errorcount = error_count</TD>
-</TR>
-<TR>
-<TD>
-self.errorok = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.errorok = 0</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 19</B><BR>Distance between two fragments = 0 <BR>Clone size = 8<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1069</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 481</TD></TR><TR>
-<TD>
-lookaheadstack.append(lookahead)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookaheadstack.append(lookahead)</TD>
-</TR>
-<TR>
-<TD>
-symstack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-symstack.pop()</TD>
-</TR>
-<TR>
-<TD>
-statestack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-statestack.pop()</TD>
-</TR>
-<TR>
-<TD>
-state = statestack[-1]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-state = statestack[-1]</TD>
-</TR>
-<TR>
-<TD>
-sym.type = 'error'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.type = 'error'</TD>
-</TR>
-<TR>
-<TD>
-lookahead = sym</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookahead = sym</TD>
-</TR>
-<TR>
-<TD>
-errorcount = error_count</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-errorcount = error_count</TD>
-</TR>
-<TR>
-<TD>
-self.errorok = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.errorok = 0</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 20</B><BR>Distance between two fragments = 0 <BR>Clone size = 8<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1039</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 808</TD></TR><TR>
-<TD>
-lookaheadstack.append(lookahead)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookaheadstack.append(lookahead)</TD>
-</TR>
-<TR>
-<TD>
-symstack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-symstack.pop()</TD>
-</TR>
-<TR>
-<TD>
-statestack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-statestack.pop()</TD>
-</TR>
-<TR>
-<TD>
-state = statestack[-1]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-state = statestack[-1]</TD>
-</TR>
-<TR>
-<TD>
-sym.type = 'error'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.type = 'error'</TD>
-</TR>
-<TR>
-<TD>
-lookahead = sym</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookahead = sym</TD>
-</TR>
-<TR>
-<TD>
-errorcount = error_count</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-errorcount = error_count</TD>
-</TR>
-<TR>
-<TD>
-self.errorok = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.errorok = 0</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 21</B><BR>Distance between two fragments = 0 <BR>Clone size = 8<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1039</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 520</TD></TR><TR>
-<TD>
-lookaheadstack.append(lookahead)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookaheadstack.append(lookahead)</TD>
-</TR>
-<TR>
-<TD>
-symstack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-symstack.pop()</TD>
-</TR>
-<TR>
-<TD>
-statestack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-statestack.pop()</TD>
-</TR>
-<TR>
-<TD>
-state = statestack[-1]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-state = statestack[-1]</TD>
-</TR>
-<TR>
-<TD>
-sym.type = 'error'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.type = 'error'</TD>
-</TR>
-<TR>
-<TD>
-lookahead = sym</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookahead = sym</TD>
-</TR>
-<TR>
-<TD>
-errorcount = error_count</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-errorcount = error_count</TD>
-</TR>
-<TR>
-<TD>
-self.errorok = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.errorok = 0</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 22</B><BR>Distance between two fragments = 0 <BR>Clone size = 8<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1039</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 481</TD></TR><TR>
-<TD>
-lookaheadstack.append(lookahead)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookaheadstack.append(lookahead)</TD>
-</TR>
-<TR>
-<TD>
-symstack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-symstack.pop()</TD>
-</TR>
-<TR>
-<TD>
-statestack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-statestack.pop()</TD>
-</TR>
-<TR>
-<TD>
-state = statestack[-1]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-state = statestack[-1]</TD>
-</TR>
-<TR>
-<TD>
-sym.type = 'error'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.type = 'error'</TD>
-</TR>
-<TR>
-<TD>
-lookahead = sym</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookahead = sym</TD>
-</TR>
-<TR>
-<TD>
-errorcount = error_count</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-errorcount = error_count</TD>
-</TR>
-<TR>
-<TD>
-self.errorok = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.errorok = 0</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 23</B><BR>Distance between two fragments = 0 <BR>Clone size = 8<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 808</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 772</TD></TR><TR>
-<TD>
-lookaheadstack.append(lookahead)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookaheadstack.append(lookahead)</TD>
-</TR>
-<TR>
-<TD>
-symstack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-symstack.pop()</TD>
-</TR>
-<TR>
-<TD>
-statestack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-statestack.pop()</TD>
-</TR>
-<TR>
-<TD>
-state = statestack[-1]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-state = statestack[-1]</TD>
-</TR>
-<TR>
-<TD>
-sym.type = 'error'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.type = 'error'</TD>
-</TR>
-<TR>
-<TD>
-lookahead = sym</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookahead = sym</TD>
-</TR>
-<TR>
-<TD>
-errorcount = error_count</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-errorcount = error_count</TD>
-</TR>
-<TR>
-<TD>
-self.errorok = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.errorok = 0</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 24</B><BR>Distance between two fragments = 0 <BR>Clone size = 8<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 808</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 520</TD></TR><TR>
-<TD>
-lookaheadstack.append(lookahead)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookaheadstack.append(lookahead)</TD>
-</TR>
-<TR>
-<TD>
-symstack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-symstack.pop()</TD>
-</TR>
-<TR>
-<TD>
-statestack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-statestack.pop()</TD>
-</TR>
-<TR>
-<TD>
-state = statestack[-1]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-state = statestack[-1]</TD>
-</TR>
-<TR>
-<TD>
-sym.type = 'error'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.type = 'error'</TD>
-</TR>
-<TR>
-<TD>
-lookahead = sym</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookahead = sym</TD>
-</TR>
-<TR>
-<TD>
-errorcount = error_count</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-errorcount = error_count</TD>
-</TR>
-<TR>
-<TD>
-self.errorok = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.errorok = 0</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 25</B><BR>Distance between two fragments = 0 <BR>Clone size = 8<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 808</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 481</TD></TR><TR>
-<TD>
-lookaheadstack.append(lookahead)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookaheadstack.append(lookahead)</TD>
-</TR>
-<TR>
-<TD>
-symstack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-symstack.pop()</TD>
-</TR>
-<TR>
-<TD>
-statestack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-statestack.pop()</TD>
-</TR>
-<TR>
-<TD>
-state = statestack[-1]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-state = statestack[-1]</TD>
-</TR>
-<TR>
-<TD>
-sym.type = 'error'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.type = 'error'</TD>
-</TR>
-<TR>
-<TD>
-lookahead = sym</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookahead = sym</TD>
-</TR>
-<TR>
-<TD>
-errorcount = error_count</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-errorcount = error_count</TD>
-</TR>
-<TR>
-<TD>
-self.errorok = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.errorok = 0</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 26</B><BR>Distance between two fragments = 0 <BR>Clone size = 8<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 772</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 520</TD></TR><TR>
-<TD>
-lookaheadstack.append(lookahead)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookaheadstack.append(lookahead)</TD>
-</TR>
-<TR>
-<TD>
-symstack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-symstack.pop()</TD>
-</TR>
-<TR>
-<TD>
-statestack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-statestack.pop()</TD>
-</TR>
-<TR>
-<TD>
-state = statestack[-1]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-state = statestack[-1]</TD>
-</TR>
-<TR>
-<TD>
-sym.type = 'error'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.type = 'error'</TD>
-</TR>
-<TR>
-<TD>
-lookahead = sym</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookahead = sym</TD>
-</TR>
-<TR>
-<TD>
-errorcount = error_count</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-errorcount = error_count</TD>
-</TR>
-<TR>
-<TD>
-self.errorok = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.errorok = 0</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 27</B><BR>Distance between two fragments = 0 <BR>Clone size = 8<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 772</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 481</TD></TR><TR>
-<TD>
-lookaheadstack.append(lookahead)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookaheadstack.append(lookahead)</TD>
-</TR>
-<TR>
-<TD>
-symstack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-symstack.pop()</TD>
-</TR>
-<TR>
-<TD>
-statestack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-statestack.pop()</TD>
-</TR>
-<TR>
-<TD>
-state = statestack[-1]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-state = statestack[-1]</TD>
-</TR>
-<TR>
-<TD>
-sym.type = 'error'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.type = 'error'</TD>
-</TR>
-<TR>
-<TD>
-lookahead = sym</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookahead = sym</TD>
-</TR>
-<TR>
-<TD>
-errorcount = error_count</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-errorcount = error_count</TD>
-</TR>
-<TR>
-<TD>
-self.errorok = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.errorok = 0</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 28</B><BR>Distance between two fragments = 0 <BR>Clone size = 8<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 520</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 481</TD></TR><TR>
-<TD>
-lookaheadstack.append(lookahead)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookaheadstack.append(lookahead)</TD>
-</TR>
-<TR>
-<TD>
-symstack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-symstack.pop()</TD>
-</TR>
-<TR>
-<TD>
-statestack.pop()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-statestack.pop()</TD>
-</TR>
-<TR>
-<TD>
-state = statestack[-1]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-state = statestack[-1]</TD>
-</TR>
-<TR>
-<TD>
-sym.type = 'error'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.type = 'error'</TD>
-</TR>
-<TR>
-<TD>
-lookahead = sym</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookahead = sym</TD>
-</TR>
-<TR>
-<TD>
-errorcount = error_count</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-errorcount = error_count</TD>
-</TR>
-<TR>
-<TD>
-self.errorok = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.errorok = 0</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 29</B><BR>Distance between two fragments = 4 <BR>Clone size = 8<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 3244</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 3236</TD></TR><TR>
-<TD>
-debuglog.info('')</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-debuglog.info('')</TD>
-</TR>
-<TR>
-<TD>
-debuglog.info(<span style="color: rgb(255, 0, 0);">'Nonterminals, with rules where they appear'</span>)</TD>
+<P><B>Clone # 6</B><BR>Distance between two fragments = 3 <BR>Clone size = 7<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/importer.py"<BR>The first line is 1001</TD><TD></TD><TD>Source file "../tests/beets/importer.py"<BR>The first line is 726</TD></TR><TR>
+<TD>
+while True:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;task = yield task<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if task.should_skip():<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;log.info(displayable_path(<span style="color: rgb(255, 0, 0);">task.item</span>.<span style="color: rgb(255, 0, 0);">path</span>))<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;task.set_null_candidates()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;task.set_choice(action.ASIS)</TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-debuglog.info(<span style="color: rgb(255, 0, 0);">'Terminals, with rules where they appear'</span>)</TD>
-</TR>
-<TR>
-<TD>
-debuglog.info('')</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-debuglog.info('')</TD>
-</TR>
-<TR>
-<TD>
-<span style="color: rgb(255, 0, 0);">nonterms</span> = list(grammar.<span style="color: rgb(255, 0, 0);">Nonterminals</span>)</TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="color: rgb(255, 0, 0);">terms</span> = list(grammar.<span style="color: rgb(255, 0, 0);">Terminals</span>)</TD>
-</TR>
-<TR>
-<TD>
-<span style="color: rgb(255, 0, 0);">nonterms</span>.sort()</TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="color: rgb(255, 0, 0);">terms</span>.sort()</TD>
-</TR>
-<TR>
-<TD>
-for <span style="color: rgb(255, 0, 0);">nonterm</span> in <span style="color: rgb(255, 0, 0);">nonterms</span>:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;debuglog.info('%-20s : %s', <span style="color: rgb(255, 0, 0);">nonterm</span>, ' '.join([str(s) for s in grammar.<span style="color: rgb(255, 0, 0);">Nonterminals</span>[<span style="color: rgb(255, 0, 0);">nonterm</span>] ]))</TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-for <span style="color: rgb(255, 0, 0);">term</span> in <span style="color: rgb(255, 0, 0);">terms</span>:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;debuglog.info('%-20s : %s', <span style="color: rgb(255, 0, 0);">term</span>, ' '.join([str(s) for s in grammar.<span style="color: rgb(255, 0, 0);">Terminals</span>[<span style="color: rgb(255, 0, 0);">term</span>] ]))</TD>
-</TR>
-<TR>
-<TD>
-debuglog.info('')</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-debuglog.info('')</TD>
+while True:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;task = yield task<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if task.should_skip():<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;log.info(displayable_path(<span style="color: rgb(255, 0, 0);">task</span>.<span style="color: rgb(255, 0, 0);">paths</span>))<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;task.set_null_candidates()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;task.set_choice(action.ASIS)</TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 30</B><BR>Distance between two fragments = 4 <BR>Clone size = 8<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1847</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1264</TD></TR><TR>
+<P><B>Clone # 7</B><BR>Distance between two fragments = 2 <BR>Clone size = 7<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/autotag/mb.py"<BR>The first line is 341</TD><TD></TD><TD>Source file "../tests/beets/autotag/mb.py"<BR>The first line is 317</TD></TR><TR>
 <TD>
-try:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">lri</span>.lr_after = <span style="color: rgb(255, 0, 0);">self.Prodnames</span>[<span style="color: rgb(255, 0, 0);">lri</span>.prod[(<span style="color: rgb(255, 0, 0);">i</span>) + (1)]]<BR>
-except (IndexError, KeyError):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">lri</span>.lr_after = []</TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-try:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">p</span>.lr_after = <span style="color: rgb(255, 0, 0);">Prodnames</span>[<span style="color: rgb(255, 0, 0);">p</span>.prod[(<span style="color: rgb(255, 0, 0);">n</span>) + (1)]]<BR>
-except (IndexError, KeyError):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">p</span>.lr_after = []</TD>
+if not any(criteria.itervalues()):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;return None</TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+if not any(criteria.itervalues()):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;return None</TD>
 </TR>
 <TR>
 <TD>
 try:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">lri</span>.lr_before = <span style="color: rgb(255, 0, 0);">lri</span>.prod[(<span style="color: rgb(255, 0, 0);">i</span>) - (1)]<BR>
-except IndexError:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">lri</span>.lr_before = None</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;res = musicbrainzngs.<span style="color: rgb(255, 0, 0);">search_recordings</span>(limit=limit, **criteria)<BR>
+except musicbrainzngs.MusicBrainzError, exc:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;raise MusicBrainzAPIError(exc, <span style="color: rgb(255, 0, 0);">'recording search'</span>, criteria, traceback.format_exc())</TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
 try:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">p</span>.lr_before = <span style="color: rgb(255, 0, 0);">p</span>.prod[(<span style="color: rgb(255, 0, 0);">n</span>) - (1)]<BR>
-except IndexError:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">p</span>.lr_before = None</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;res = musicbrainzngs.<span style="color: rgb(255, 0, 0);">search_releases</span>(limit=limit, **criteria)<BR>
+except musicbrainzngs.MusicBrainzError, exc:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;raise MusicBrainzAPIError(exc, <span style="color: rgb(255, 0, 0);">'release search'</span>, criteria, traceback.format_exc())</TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 31</B><BR>Distance between two fragments = 0 <BR>Clone size = 7<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 392</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 981</TD></TR><TR>
+<P><B>Clone # 8</B><BR>Distance between two fragments = 3 <BR>Clone size = 7<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 353</TD><TD></TD><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 346</TD></TR><TR>
 <TD>
-if not lookahead:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if not lookaheadstack:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = get_token()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = lookaheadstack.pop()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if not lookahead:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = YaccSymbol()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead.type = '$end'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if not lookahead:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if not lookaheadstack:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = get_token()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = lookaheadstack.pop()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if not lookahead:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = YaccSymbol()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead.type = '$end'</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 32</B><BR>Distance between two fragments = 0 <BR>Clone size = 7<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 392</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 703</TD></TR><TR>
-<TD>
-if not lookahead:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if not lookaheadstack:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = get_token()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = lookaheadstack.pop()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if not lookahead:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = YaccSymbol()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead.type = '$end'</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if not lookahead:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if not lookaheadstack:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = get_token()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = lookaheadstack.pop()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if not lookahead:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead = YaccSymbol()<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lookahead.type = '$end'</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 33</B><BR>Distance between two fragments = 4 <BR>Clone size = 7<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\cpp.py"<BR>The first line is 202</TD><TD></TD><TD>Source file "..\..\ply\ply\cpp.py"<BR>The first line is 219</TD></TR><TR>
-<TD>
-self.lexer.input(<span style="color: rgb(255, 0, 0);">'identifier'</span>)</TD>
+if match.<span style="color: rgb(255, 0, 0);">extra_items</span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;print_(<span style="color: rgb(255, 0, 0);">'Unmatched tracks:'</span>)</TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-self.lexer.input(<span style="color: rgb(255, 0, 0);">'"filename"'</span>)</TD>
+if match.<span style="color: rgb(255, 0, 0);">extra_tracks</span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;print_(<span style="color: rgb(255, 0, 0);">'Missing tracks:'</span>)</TD>
 </TR>
 <TR>
 <TD>
-tok = self.lexer.token()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-tok = self.lexer.token()</TD>
-</TR>
-<TR>
-<TD>
-if (not tok) or (tok.value != <span style="color: rgb(255, 0, 0);">'identifier'</span>):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;print <span style="color: rgb(255, 0, 0);">"Couldn't determine identifier type"</span><BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.<span style="color: rgb(255, 0, 0);">t_ID</span> = tok.type</TD>
+for <span style="color: rgb(255, 0, 0);">item</span> in match.<span style="color: rgb(255, 0, 0);">extra_items</span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;line = (' ! %s (#%s)') % ((<span style="color: rgb(255, 0, 0);">item</span>.title, format_index(<span style="color: rgb(255, 0, 0);">item</span>)))<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if <span style="color: rgb(255, 0, 0);">item</span>.length:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line += (' (%s)') % (ui.human_seconds_short(<span style="color: rgb(255, 0, 0);">item</span>.length))<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;print_(ui.colorize('yellow', line))</TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-if (not tok) or (tok.value != <span style="color: rgb(255, 0, 0);">'"filename"'</span>):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;print <span style="color: rgb(255, 0, 0);">"Couldn't determine string type"</span><BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.<span style="color: rgb(255, 0, 0);">t_STRING</span> = tok.type</TD>
+for <span style="color: rgb(255, 0, 0);">track_info</span> in match.<span style="color: rgb(255, 0, 0);">extra_tracks</span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;line = (' ! %s (#%s)') % ((<span style="color: rgb(255, 0, 0);">track_info</span>.title, format_index(<span style="color: rgb(255, 0, 0);">track_info</span>)))<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if <span style="color: rgb(255, 0, 0);">track_info</span>.length:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line += (' (%s)') % (ui.human_seconds_short(<span style="color: rgb(255, 0, 0);">track_info</span>.length))<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;print_(ui.colorize('yellow', line))</TD>
 </TR>
-<TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 9</B><BR>Distance between two fragments = 2 <BR>Clone size = 7<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/plugins.py"<BR>The first line is 166</TD><TD></TD><TD>Source file "../tests/beets/plugins.py"<BR>The first line is 153</TD></TR><TR>
 <TD>
-self.lexer.input(<span style="color: rgb(255, 0, 0);">'12345'</span>)</TD>
+def <span style="color: rgb(255, 0, 0);">template_field</span>(cls, name):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;def helper(func):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if cls.<span style="color: rgb(255, 0, 0);">template_fields</span> is None:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cls.<span style="color: rgb(255, 0, 0);">template_fields</span> = {}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cls.<span style="color: rgb(255, 0, 0);">template_fields</span>[name] = func<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return func<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;return helper</TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-self.lexer.input(<span style="color: rgb(255, 0, 0);">'  '</span>)</TD>
-</TR>
-<TR>
-<TD>
-tok = self.lexer.token()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-tok = self.lexer.token()</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 34</B><BR>Distance between two fragments = 0 <BR>Clone size = 7<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 331</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 929</TD></TR><TR>
-<TD>
-lookahead = None</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookahead = None</TD>
-</TR>
-<TR>
-<TD>
-lookaheadstack = []</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookaheadstack = []</TD>
-</TR>
-<TR>
-<TD>
-actions = self.action</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-actions = self.action</TD>
-</TR>
-<TR>
-<TD>
-goto = self.goto</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-goto = self.goto</TD>
-</TR>
-<TR>
-<TD>
-prod = self.productions</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-prod = self.productions</TD>
-</TR>
-<TR>
-<TD>
-pslice = YaccProduction(None)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-pslice = YaccProduction(None)</TD>
-</TR>
-<TR>
-<TD>
-errorcount = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-errorcount = 0</TD>
+def <span style="color: rgb(255, 0, 0);">template_func</span>(cls, name):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;def helper(func):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if cls.<span style="color: rgb(255, 0, 0);">template_funcs</span> is None:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cls.<span style="color: rgb(255, 0, 0);">template_funcs</span> = {}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cls.<span style="color: rgb(255, 0, 0);">template_funcs</span>[name] = func<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return func<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;return helper</TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 35</B><BR>Distance between two fragments = 0 <BR>Clone size = 7<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 331</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 651</TD></TR><TR>
+<P><B>Clone # 10</B><BR>Distance between two fragments = 1 <BR>Clone size = 7<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/importer.py"<BR>The first line is 669</TD><TD></TD><TD>Source file "../tests/beets/importer.py"<BR>The first line is 978</TD></TR><TR>
 <TD>
-lookahead = None</TD>
+task = yield task</TD>
 <TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookahead = None</TD>
+task = yield task</TD>
 </TR>
 <TR>
 <TD>
-lookaheadstack = []</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-lookaheadstack = []</TD>
-</TR>
-<TR>
-<TD>
-actions = self.action</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-actions = self.action</TD>
-</TR>
-<TR>
-<TD>
-goto = self.goto</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-goto = self.goto</TD>
-</TR>
-<TR>
-<TD>
-prod = self.productions</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-prod = self.productions</TD>
-</TR>
-<TR>
-<TD>
-pslice = YaccProduction(None)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-pslice = YaccProduction(None)</TD>
-</TR>
-<TR>
-<TD>
-errorcount = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-errorcount = 0</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 36</B><BR>Distance between two fragments = 0 <BR>Clone size = 7<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 717</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 995</TD></TR><TR>
-<TD>
-if t > 0:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;statestack.append(t)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;state = t<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;symstack.append(lookahead)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookahead = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if errorcount:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errorcount -= 1<BR>
+if task.should_skip():<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;continue</TD>
 <TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if t > 0:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;statestack.append(t)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;state = t<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;symstack.append(lookahead)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;lookahead = None<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if errorcount:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errorcount -= 1<BR>
+if task.should_skip():<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;continue</TD>
+</TR>
+<TR>
+<TD>
+choice = session.<span style="color: rgb(255, 0, 0);">choose_match</span>(task)</TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+choice = session.<span style="color: rgb(255, 0, 0);">choose_item</span>(task)</TD>
+</TR>
+<TR>
+<TD>
+task.set_choice(choice)</TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+task.set_choice(choice)</TD>
+</TR>
+<TR>
+<TD>
+session.log_choice(task)</TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+session.log_choice(task)</TD>
+</TR>
+<TR>
+<TD>
+plugins.send('import_task_choice', session=session, task=task)</TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+plugins.send('import_task_choice', session=session, task=task)</TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 11</B><BR>Distance between two fragments = 2 <BR>Clone size = 7<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/plugins.py"<BR>The first line is 286</TD><TD></TD><TD>Source file "../tests/beets/plugins.py"<BR>The first line is 276</TD></TR><TR>
+<TD>
+def <span style="color: rgb(255, 0, 0);">track_for_id</span>(<span style="color: rgb(255, 0, 0);">track_id</span>):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;out = []<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;for plugin in find_plugins():<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res = plugin.<span style="color: rgb(255, 0, 0);">track_for_id</span>(<span style="color: rgb(255, 0, 0);">track_id</span>)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if res:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;out.append(res)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;return out</TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+def <span style="color: rgb(255, 0, 0);">album_for_id</span>(<span style="color: rgb(255, 0, 0);">album_id</span>):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;out = []<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;for plugin in find_plugins():<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res = plugin.<span style="color: rgb(255, 0, 0);">album_for_id</span>(<span style="color: rgb(255, 0, 0);">album_id</span>)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if res:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;out.append(res)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;return out</TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 12</B><BR>Distance between two fragments = 4 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 1235</TD><TD></TD><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 909</TD></TR><TR>
+<TD>
+try:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;item.<span style="color: rgb(255, 0, 0);">write</span>()<BR>
+except Exception, exc:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;log.error(<span style="color: rgb(255, 0, 0);">u'could not write {0}: {1}'</span>.format(<span style="color: rgb(255, 0, 0);">util.displayable_path</span>(item.path), exc))<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;continue</TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+try:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;item.<span style="color: rgb(255, 0, 0);">read</span>()<BR>
+except Exception, exc:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;log.error(<span style="color: rgb(255, 0, 0);">u'error reading {0}: {1}'</span>.format(<span style="color: rgb(255, 0, 0);">displayable_path</span>(item.path), exc))<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;continue</TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 37</B><BR>Distance between two fragments = 4 <BR>Clone size = 7<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\lex.py"<BR>The first line is 215</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1881</TD></TR><TR>
+<P><B>Clone # 13</B><BR>Distance between two fragments = 2 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/plugins.py"<BR>The first line is 329</TD><TD></TD><TD>Source file "../tests/beets/plugins.py"<BR>The first line is 339</TD></TR><TR>
 <TD>
-if isinstance(<span style="color: rgb(255, 0, 0);">tabfile</span>, types.ModuleType):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">lextab</span> = <span style="color: rgb(255, 0, 0);">tabfile</span><BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if sys.version_info[0] < 3:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exec (<span style="color: rgb(255, 0, 0);">'import %s as lextab'</span>) % (<span style="color: rgb(255, 0, 0);">tabfile</span>)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;env = {}<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exec ((<span style="color: rgb(255, 0, 0);">'import %s as lextab'</span>) % (<span style="color: rgb(255, 0, 0);">tabfile</span>), env, env)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">lextab</span> = env[<span style="color: rgb(255, 0, 0);">'lextab'</span>]</TD>
+def <span style="color: rgb(255, 0, 0);">item_field_getters</span>():<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;funcs = {}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;for plugin in find_plugins():<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if plugin.<span style="color: rgb(255, 0, 0);">template_fields</span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;funcs.update(plugin.<span style="color: rgb(255, 0, 0);">template_fields</span>)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;return funcs</TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-if isinstance(<span style="color: rgb(255, 0, 0);">module</span>, types.ModuleType):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">parsetab</span> = <span style="color: rgb(255, 0, 0);">module</span><BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;if sys.version_info[0] < 3:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exec (<span style="color: rgb(255, 0, 0);">'import %s as parsetab'</span>) % (<span style="color: rgb(255, 0, 0);">module</span>)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;env = {}<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exec ((<span style="color: rgb(255, 0, 0);">'import %s as parsetab'</span>) % (<span style="color: rgb(255, 0, 0);">module</span>), env, env)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">parsetab</span> = env[<span style="color: rgb(255, 0, 0);">'parsetab'</span>]</TD>
+def <span style="color: rgb(255, 0, 0);">album_field_getters</span>():<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;funcs = {}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;for plugin in find_plugins():<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if plugin.<span style="color: rgb(255, 0, 0);">album_template_fields</span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;funcs.update(plugin.<span style="color: rgb(255, 0, 0);">album_template_fields</span>)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;return funcs</TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 38</B><BR>Distance between two fragments = 3 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1287</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1216</TD></TR><TR>
+<P><B>Clone # 14</B><BR>Distance between two fragments = 2 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/plugins.py"<BR>The first line is 329</TD><TD></TD><TD>Source file "../tests/beets/plugins.py"<BR>The first line is 301</TD></TR><TR>
 <TD>
-self.<span style="color: rgb(255, 0, 0);">len</span> = <span style="color: rgb(255, 0, 0);">len</span></TD>
+def <span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">item_field_getters</span></span>():<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;funcs = {}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;for plugin in find_plugins():<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if plugin.<span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">template_fields</span></span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;funcs.update(plugin.<span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">template_fields</span></span>)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;return funcs</TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-self.<span style="color: rgb(255, 0, 0);">number</span> = <span style="color: rgb(255, 0, 0);">number</span></TD>
+def <span style="color: rgb(255, 0, 0);">template_funcs</span>():<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;funcs = {}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;for plugin in find_plugins():<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if plugin.<span style="color: rgb(255, 0, 0);">template_funcs</span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;funcs.update(plugin.<span style="color: rgb(255, 0, 0);">template_funcs</span>)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;return funcs</TD>
 </TR>
-<TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 15</B><BR>Distance between two fragments = 2 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/plugins.py"<BR>The first line is 339</TD><TD></TD><TD>Source file "../tests/beets/plugins.py"<BR>The first line is 301</TD></TR><TR>
 <TD>
-self.func = func</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.func = func</TD>
-</TR>
-<TR>
-<TD>
-self.callable = None</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.callable = None</TD>
-</TR>
-<TR>
-<TD>
-self.file = file</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.file = file</TD>
-</TR>
-<TR>
-<TD>
-self.line = line</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.line = line</TD>
-</TR>
-<TR>
-<TD>
-self.<span style="color: rgb(255, 0, 0);">str</span> = <span style="color: rgb(255, 0, 0);">str</span></TD>
+def <span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">album_field_getters</span></span>():<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;funcs = {}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;for plugin in find_plugins():<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if plugin.<span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">album_template_fields</span></span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;funcs.update(plugin.<span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">album_template_fields</span></span>)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;return funcs</TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-self.<span style="color: rgb(255, 0, 0);">prec</span> = <span style="color: rgb(255, 0, 0);">precedence</span></TD>
+def <span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">template_funcs</span></span>():<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;funcs = {}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;for plugin in find_plugins():<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if plugin.<span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">template_funcs</span></span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;funcs.update(plugin.<span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">template_funcs</span></span>)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;return funcs</TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 39</B><BR>Distance between two fragments = 4 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 188</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 184</TD></TR><TR>
+<P><B>Clone # 16</B><BR>Distance between two fragments = 1 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/importer.py"<BR>The first line is 988</TD><TD></TD><TD>Source file "../tests/beets/importer.py"<BR>The first line is 710</TD></TR><TR>
 <TD>
-def <span style="color: rgb(255, 0, 0);">restart</span>():<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;warnings.warn(_warnmsg)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;return <span style="color: rgb(255, 0, 0);">_restart</span>()</TD>
+if task.choice_flag in (action.ASIS, action.APPLY):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;ident = task.chosen_ident()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (ident in recent) or (<span style="color: rgb(255, 0, 0);">_item_duplicate_check</span>(session.lib, task)):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;session.resolve_duplicate(task)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;session.log_choice(task, True)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;recent.add(ident)</TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-def <span style="color: rgb(255, 0, 0);">errok</span>():<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;warnings.warn(_warnmsg)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;return <span style="color: rgb(255, 0, 0);">_errok</span>()</TD>
+if task.choice_flag in (action.ASIS, action.APPLY):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;ident = task.chosen_ident()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (ident in recent) or (<span style="color: rgb(255, 0, 0);">_duplicate_check</span>(session.lib, task)):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;session.resolve_duplicate(task)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;session.log_choice(task, True)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;recent.add(ident)</TD>
 </TR>
-<TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 17</B><BR>Distance between two fragments = 1 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 513</TD><TD></TD><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 390</TD></TR><TR>
 <TD>
-def <span style="color: rgb(255, 0, 0);">token</span>():<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;warnings.warn(_warnmsg)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;return <span style="color: rgb(255, 0, 0);">_token</span>()</TD>
+if penalties:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">line</span>.append(penalties)</TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-def <span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">restart</span></span>():<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;warnings.warn(_warnmsg)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;return <span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">_restart</span></span>()</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 40</B><BR>Distance between two fragments = 0 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1009</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 731</TD></TR><TR>
-<TD>
-p = prod[-t]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-p = prod[-t]</TD>
+if penalties:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">info</span>.append(penalties)</TD>
 </TR>
 <TR>
 <TD>
-pname = p.name</TD>
+disambig = disambig_string(match.info)</TD>
 <TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-pname = p.name</TD>
+disambig = disambig_string(match.info)</TD>
 </TR>
 <TR>
 <TD>
-plen = p.len</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-plen = p.len</TD>
-</TR>
-<TR>
-<TD>
-sym = YaccSymbol()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym = YaccSymbol()</TD>
-</TR>
-<TR>
-<TD>
-sym.type = pname</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.type = pname</TD>
-</TR>
-<TR>
-<TD>
-sym.value = None</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.value = None</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 41</B><BR>Distance between two fragments = 0 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 1009</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 429</TD></TR><TR>
-<TD>
-p = prod[-t]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-p = prod[-t]</TD>
-</TR>
-<TR>
-<TD>
-pname = p.name</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-pname = p.name</TD>
-</TR>
-<TR>
-<TD>
-plen = p.len</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-plen = p.len</TD>
-</TR>
-<TR>
-<TD>
-sym = YaccSymbol()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym = YaccSymbol()</TD>
-</TR>
-<TR>
-<TD>
-sym.type = pname</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.type = pname</TD>
-</TR>
-<TR>
-<TD>
-sym.value = None</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.value = None</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 42</B><BR>Distance between two fragments = 0 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 731</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 429</TD></TR><TR>
-<TD>
-p = prod[-t]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-p = prod[-t]</TD>
-</TR>
-<TR>
-<TD>
-pname = p.name</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-pname = p.name</TD>
-</TR>
-<TR>
-<TD>
-plen = p.len</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-plen = p.len</TD>
-</TR>
-<TR>
-<TD>
-sym = YaccSymbol()</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym = YaccSymbol()</TD>
-</TR>
-<TR>
-<TD>
-sym.type = pname</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.type = pname</TD>
-</TR>
-<TR>
-<TD>
-sym.value = None</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-sym.value = None</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 43</B><BR>Distance between two fragments = 0 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 511</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 472</TD></TR><TR>
-<TD>
-p.callable(pslice)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-p.callable(pslice)</TD>
-</TR>
-<TR>
-<TD>
-debug.info('Result : %s', format_result(pslice[0]))</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-debug.info('Result : %s', format_result(pslice[0]))</TD>
-</TR>
-<TR>
-<TD>
-symstack.append(sym)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-symstack.append(sym)</TD>
-</TR>
-<TR>
-<TD>
-state = goto[statestack[-1]][pname]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-state = goto[statestack[-1]][pname]</TD>
-</TR>
-<TR>
-<TD>
-statestack.append(state)</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-statestack.append(state)</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 44</B><BR>Distance between two fragments = 2 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 2828</TD><TD></TD><TD>Source file "..\..\ply\ply\lex.py"<BR>The first line is 561</TD></TR><TR>
-<TD>
-self.<span style="color: rgb(255, 0, 0);">grammar</span> = <span style="color: rgb(255, 0, 0);">[]</span></TD>
+if disambig:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">line</span>.append(ui.colorize('lightgray', ('(%s)') % (disambig)))</TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-self.<span style="color: rgb(255, 0, 0);">modules</span> = <span style="color: rgb(255, 0, 0);">{}</span></TD>
+if disambig:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">info</span>.append(ui.colorize('lightgray', ('(%s)') % (disambig)))</TD>
 </TR>
 <TR>
 <TD>
-self.error = 0</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-self.error = 0</TD>
-</TR>
-<TR>
-<TD>
-if log is None:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.log = PlyLogger(sys.stderr)<BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.log = log</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if log is None:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.log = PlyLogger(sys.stderr)<BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.log = log</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 45</B><BR>Distance between two fragments = 0 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 495</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 786</TD></TR><TR>
-<TD>
-if tracking:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;sym.lineno = lexer.lineno<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;sym.lexpos = lexer.lexpos</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if tracking:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;sym.lineno = lexer.lineno<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;sym.lexpos = lexer.lexpos</TD>
-</TR>
-<TR>
-<TD>
-targ = [sym]</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-targ = [sym]</TD>
-</TR>
-<TR>
-<TD>
-pslice.slice = targ</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-pslice.slice = targ</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 46</B><BR>Distance between two fragments = 0 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 90</TD><TD></TD><TD>Source file "..\..\ply\ply\lex.py"<BR>The first line is 50</TD></TR><TR>
-<TD>
-if sys.version_info[0] < 3:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;def func_code(f):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return f.func_code<BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;def func_code(f):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return f.__code__</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-if sys.version_info[0] < 3:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;def func_code(f):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return f.func_code<BR>
-else:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;def func_code(f):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return f.__code__</TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 47</B><BR>Distance between two fragments = 2 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 130</TD><TD></TD><TD>Source file "..\..\ply\ply\lex.py"<BR>The first line is 84</TD></TR><TR>
-<TD>
-def warning(self, msg, *args, **kwargs):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.f.write((('WARNING: ') + ((msg) % (args))) + ('\n'))</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-def warning(self, msg, *args, **kwargs):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.f.write((('WARNING: ') + ((msg) % (args))) + ('\n'))</TD>
-</TR>
-<TR>
-<TD>
-def error(self, msg, *args, **kwargs):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.f.write((('ERROR: ') + ((msg) % (args))) + ('\n'))</TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-def error(self, msg, *args, **kwargs):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.f.write((('ERROR: ') + ((msg) % (args))) + ('\n'))</TD>
-</TR>
-<TR>
-<TD>
-<span style="color: rgb(255, 0, 0);">critical</span> = <span style="color: rgb(255, 0, 0);">debug</span></TD>
+print_(' '.join(<span style="color: rgb(255, 0, 0);">line</span>))</TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="color: rgb(255, 0, 0);">info</span> = <span style="color: rgb(255, 0, 0);">critical</span></TD>
+print_(' '.join(<span style="color: rgb(255, 0, 0);">info</span>))</TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 48</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 3286</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 3278</TD></TR><TR>
+<P><B>Clone # 18</B><BR>Distance between two fragments = 1 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 513</TD><TD></TD><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 242</TD></TR><TR>
 <TD>
-<span style="color: rgb(255, 0, 0);">num_rr</span> = len(lr.<span style="color: rgb(255, 0, 0);">rr_conflicts</span>)</TD>
+if penalties:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">line</span></span>.append(penalties)</TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="color: rgb(255, 0, 0);">num_sr</span> = len(lr.<span style="color: rgb(255, 0, 0);">sr_conflicts</span>)</TD>
+if penalties:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">info</span>.append(penalties)</TD>
 </TR>
 <TR>
 <TD>
-if <span style="color: rgb(255, 0, 0);">num_rr</span> == 1:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errorlog.warning(<span style="color: rgb(255, 0, 0);">'1 reduce/reduce conflict'</span>)<BR>
-elif <span style="color: rgb(255, 0, 0);">num_rr</span> > 1:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errorlog.warning(<span style="color: rgb(255, 0, 0);">'%d reduce/reduce conflicts'</span>, <span style="color: rgb(255, 0, 0);">num_rr</span>)</TD>
+disambig = disambig_string(match.info)</TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+disambig = disambig_string(match.info)</TD>
+</TR>
+<TR>
+<TD>
+if disambig:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">line</span></span>.append(ui.colorize('lightgray', ('(%s)') % (disambig)))</TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-if <span style="color: rgb(255, 0, 0);">num_sr</span> == 1:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errorlog.warning(<span style="color: rgb(255, 0, 0);">'1 shift/reduce conflict'</span>)<BR>
-elif <span style="color: rgb(255, 0, 0);">num_sr</span> > 1:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;errorlog.warning(<span style="color: rgb(255, 0, 0);">'%d shift/reduce conflicts'</span>, <span style="color: rgb(255, 0, 0);">num_sr</span>)</TD>
+if disambig:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">info</span>.append(ui.colorize('lightgray', ('(%s)') % (disambig)))</TD>
+</TR>
+<TR>
+<TD>
+print_(' '.join(<span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">line</span></span>))</TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+print_(' '.join(<span style="color: rgb(255, 0, 0);">info</span>))</TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 49</B><BR>Distance between two fragments = 0 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\lex.py"<BR>The first line is 94</TD><TD></TD><TD>Source file "..\..\ply\ply\yacc.py"<BR>The first line is 139</TD></TR><TR>
+<P><B>Clone # 19</B><BR>Distance between two fragments = 4 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/importer.py"<BR>The first line is 301</TD><TD></TD><TD>Source file "../tests/beets/importer.py"<BR>The first line is 298</TD></TR><TR>
 <TD>
-class NullLogger(object):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;def __getattribute__(self, name):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return self<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;def __call__(self, *args, **kwargs):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return self<BR>
+def <span style="color: rgb(255, 0, 0);">choose_match</span>(self, <span style="color: rgb(255, 0, 0);">task</span>):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;raise NotImplementedError</TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+def <span style="color: rgb(255, 0, 0);">should_resume</span>(self, <span style="color: rgb(255, 0, 0);">path</span>):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;raise NotImplementedError</TD>
+</TR>
+<TR>
+<TD>
+def <span style="color: rgb(255, 0, 0);">resolve_duplicate</span>(self, task):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;raise NotImplementedError</TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+def <span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">choose_match</span></span>(self, <span style="color: rgb(255, 0, 0);">task</span>):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;raise NotImplementedError</TD>
+</TR>
+<TR>
+<TD>
+def <span style="color: rgb(255, 0, 0);">choose_item</span>(self, task):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;raise NotImplementedError</TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+def <span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">resolve_duplicate</span></span>(self, task):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;raise NotImplementedError</TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 20</B><BR>Distance between two fragments = 4 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/bluelet.py"<BR>The first line is 70</TD><TD></TD><TD>Source file "../tests/beets/util/bluelet.py"<BR>The first line is 75</TD></TR><TR>
+<TD>
+class <span style="color: rgb(255, 0, 0);">SpawnEvent</span>(Event):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, <span style="color: rgb(255, 0, 0);">coro</span>):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<span style="color: rgb(255, 0, 0);">spawned</span> = <span style="color: rgb(255, 0, 0);">coro</span><BR>
 </TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-class NullLogger(object):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;def __getattribute__(self, name):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return self<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;def __call__(self, *args, **kwargs):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return self<BR>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+class <span style="color: rgb(255, 0, 0);">JoinEvent</span>(Event):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, <span style="color: rgb(255, 0, 0);">child</span>):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<span style="color: rgb(255, 0, 0);">child</span> = <span style="color: rgb(255, 0, 0);">child</span><BR>
+</TD>
+</TR>
+<TR>
+<TD>
+class <span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">JoinEvent</span></span>(Event):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, <span style="color: rgb(255, 0, 0);">child</span>):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<span style="color: rgb(255, 0, 0);">child</span> = <span style="color: rgb(255, 0, 0);">child</span><BR>
+</TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+class <span style="color: rgb(255, 0, 0);">KillEvent</span>(Event):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, child):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.child = child<BR>
 </TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 50</B><BR>Distance between two fragments = 1 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "..\..\ply\ply\cpp.py"<BR>The first line is 656</TD><TD></TD><TD>Source file "..\..\ply\ply\cpp.py"<BR>The first line is 640</TD></TR><TR>
+<P><B>Clone # 21</B><BR>Distance between two fragments = 4 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/bluelet.py"<BR>The first line is 60</TD><TD></TD><TD>Source file "../tests/beets/util/bluelet.py"<BR>The first line is 75</TD></TR><TR>
 <TD>
-if enable:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;for tok in self.expand_macros(chunk):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yield tok<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;chunk = []<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.<span style="color: rgb(255, 0, 0);">undef</span>(args)</TD>
+class <span style="color: rgb(255, 0, 0);">ValueEvent</span>(Event):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, <span style="color: rgb(255, 0, 0);">value</span>):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<span style="color: rgb(255, 0, 0);">value</span> = <span style="color: rgb(255, 0, 0);">value</span><BR>
+</TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-if enable:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;for tok in self.expand_macros(chunk):<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yield tok<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;chunk = []<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;self.<span style="color: rgb(255, 0, 0);">define</span>(args)</TD>
+class <span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">JoinEvent</span></span></span>(Event):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, <span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">child</span></span>):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">child</span></span> = <span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">child</span></span><BR>
+</TD>
+</TR>
+<TR>
+<TD>
+class <span style="color: rgb(255, 0, 0);">ExceptionEvent</span>(Event):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, <span style="color: rgb(255, 0, 0);">exc_info</span>):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<span style="color: rgb(255, 0, 0);">exc_info</span> = <span style="color: rgb(255, 0, 0);">exc_info</span><BR>
+</TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+class <span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">KillEvent</span></span>(Event):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, <span style="color: rgb(255, 0, 0);">child</span>):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<span style="color: rgb(255, 0, 0);">child</span> = <span style="color: rgb(255, 0, 0);">child</span><BR>
+</TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 22</B><BR>Distance between two fragments = 3 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/bluelet.py"<BR>The first line is 70</TD><TD></TD><TD>Source file "../tests/beets/util/bluelet.py"<BR>The first line is 87</TD></TR><TR>
+<TD>
+class <span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">SpawnEvent</span></span>(Event):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, <span style="color: rgb(255, 0, 0);">coro</span>):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<span style="color: rgb(255, 0, 0);">spawned</span> = <span style="color: rgb(255, 0, 0);">coro</span><BR>
+</TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+class <span style="color: rgb(255, 0, 0);">DelegationEvent</span>(Event):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, coro):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.spawned = coro<BR>
+</TD>
+</TR>
+<TR>
+<TD>
+class <span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">JoinEvent</span></span></span></span>(Event):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, <span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">child</span></span></span>):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">child</span></span></span> = <span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">child</span></span></span><BR>
+</TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+class <span style="color: rgb(255, 0, 0);">ReturnEvent</span>(Event):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, <span style="color: rgb(255, 0, 0);">value</span>):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<span style="color: rgb(255, 0, 0);">value</span> = <span style="color: rgb(255, 0, 0);">value</span><BR>
+</TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 23</B><BR>Distance between two fragments = 1 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/migrate.py"<BR>The first line is 317</TD><TD></TD><TD>Source file "../tests/beets/ui/migrate.py"<BR>The first line is 266</TD></TR><TR>
+<TD>
+if os.path.exists(destfn):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if replace:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log.debug(<span style="color: rgb(255, 0, 0);">u'moving old database aside: {0}'</span>.format(util.displayable_path(destfn)))<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_displace(destfn)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return None</TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+if os.path.exists(destfn):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if replace:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log.debug(<span style="color: rgb(255, 0, 0);">u'moving old config aside: {0}'</span>.format(util.displayable_path(destfn)))<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_displace(destfn)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;else:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return None</TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 24</B><BR>Distance between two fragments = 1 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/mediafile.py"<BR>The first line is 172</TD><TD></TD><TD>Source file "../tests/beets/mediafile.py"<BR>The first line is 167</TD></TR><TR>
+<TD>
+<span style="color: rgb(255, 0, 0);">description</span> = ''</TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="color: rgb(255, 0, 0);">mime</span> = ''</TD>
+</TR>
+<TR>
+<TD>
+while data[pos:(pos) + (2)] != '\x00\x00':<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">description</span> += data[pos:(pos) + (2)]<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;pos += 2</TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+while data[pos:(pos) + (2)] != '\x00\x00':<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">mime</span> += data[pos:(pos) + (2)]<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;pos += 2</TD>
+</TR>
+<TR>
+<TD>
+pos += 2</TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+pos += 2</TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 25</B><BR>Distance between two fragments = 0 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/mediafile.py"<BR>The first line is 772</TD><TD></TD><TD>Source file "../tests/beets/mediafile.py"<BR>The first line is 738</TD></TR><TR>
+<TD>
+pic = mutagen.flac.Picture()</TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+pic = mutagen.flac.Picture()</TD>
+</TR>
+<TR>
+<TD>
+pic.data = image.data</TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+pic.data = image.data</TD>
+</TR>
+<TR>
+<TD>
+pic.type = (image.type_index) or (3)</TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+pic.type = (image.type_index) or (3)</TD>
+</TR>
+<TR>
+<TD>
+pic.mime = image.mime_type</TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+pic.mime = image.mime_type</TD>
+</TR>
+<TR>
+<TD>
+pic.desc = (image.desc) or (u'')</TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+pic.desc = (image.desc) or (u'')</TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 26</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/library.py"<BR>The first line is 378</TD><TD></TD><TD>Source file "../tests/beets/library.py"<BR>The first line is 350</TD></TR><TR>
+<TD>
+try:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;f = MediaFile(syspath(<span style="color: rgb(255, 0, 0);">self.path</span>))<BR>
+except (OSError, IOError), exc:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;raise util.FilesystemError(exc, 'read', (<span style="color: rgb(255, 0, 0);">self.path</span>), traceback.format_exc())</TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+try:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;f = MediaFile(syspath(<span style="color: rgb(255, 0, 0);">read_path</span>))<BR>
+except (OSError, IOError), exc:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;raise util.FilesystemError(exc, 'read', (<span style="color: rgb(255, 0, 0);">read_path</span>), traceback.format_exc())</TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 27</B><BR>Distance between two fragments = 3 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/autotag/hooks.py"<BR>The first line is 286</TD><TD></TD><TD>Source file "../tests/beets/autotag/hooks.py"<BR>The first line is 295</TD></TR><TR>
+<TD>
+def <span style="color: rgb(255, 0, 0);">max_distance</span>(self):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">dist_max</span> = 0.0<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;for key, penalty in self._penalties.iteritems():<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">dist_max</span> += (<span style="color: rgb(255, 0, 0);">len</span>(penalty)) * (self._weights[key])<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;return <span style="color: rgb(255, 0, 0);">dist_max</span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+def <span style="color: rgb(255, 0, 0);">raw_distance</span>(self):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">dist_raw</span> = 0.0<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;for key, penalty in self._penalties.iteritems():<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 0, 0);">dist_raw</span> += (<span style="color: rgb(255, 0, 0);">sum</span>(penalty)) * (self._weights[key])<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;return <span style="color: rgb(255, 0, 0);">dist_raw</span></TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 28</B><BR>Distance between two fragments = 1 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/pipeline.py"<BR>The first line is 246</TD><TD></TD><TD>Source file "../tests/beets/util/pipeline.py"<BR>The first line is 199</TD></TR><TR>
+<TD>
+<span style="font-family: monospace;">for&nbsp; msg&nbsp; in&nbsp; _allmsgs(<span style="color:rgb(255,0,0);">out</span>):<BR>
+&nbsp; with&nbsp; self.abort_lock:<BR>
+&nbsp; &nbsp; if&nbsp; self.abort_flag:<BR>
+&nbsp; &nbsp; &nbsp; return<BR>
+&nbsp; self.out_queue.put(msg)<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">for&nbsp; msg&nbsp; in&nbsp; _allmsgs(<span style="color:rgb(255,0,0);">msg</span>):<BR>
+&nbsp; with&nbsp; self.abort_lock:<BR>
+&nbsp; &nbsp; if&nbsp; self.abort_flag:<BR>
+&nbsp; &nbsp; &nbsp; return<BR>
+&nbsp; self.out_queue.put(msg)<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 29</B><BR>Distance between two fragments = 2 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/mediafile.py"<BR>The first line is 555</TD><TD></TD><TD>Source file "../tests/beets/mediafile.py"<BR>The first line is 538</TD></TR><TR>
+<TD>
+def fetch(self, mutagen_file):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;try:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return mutagen_file[self.key].<span style="color: rgb(255, 0, 0);">data</span><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;except KeyError:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <span style="color: rgb(255, 0, 0);">None</span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+def fetch(self, mutagen_file):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;try:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return mutagen_file[self.key].<span style="color: rgb(255, 0, 0);">text</span><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;except KeyError:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <span style="color: rgb(255, 0, 0);">[]</span></TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 30</B><BR>Distance between two fragments = 2 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/mediafile.py"<BR>The first line is 483</TD><TD></TD><TD>Source file "../tests/beets/mediafile.py"<BR>The first line is 391</TD></TR><TR>
+<TD>
+def <span style="color: rgb(255, 0, 0);">get</span>(self, mutagen_file):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;try:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return mutagen_file[self.key]<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;except KeyError:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <span style="color: rgb(255, 0, 0);">None</span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+def <span style="color: rgb(255, 0, 0);">fetch</span>(self, mutagen_file):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;try:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return mutagen_file[self.key]<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;except KeyError:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <span style="color: rgb(255, 0, 0);">[]</span></TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 31</B><BR>Distance between two fragments = 4 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/autotag/match.py"<BR>The first line is 205</TD><TD></TD><TD>Source file "../tests/beets/autotag/match.py"<BR>The first line is 209</TD></TR><TR>
+<TD>
+if (likelies[<span style="color: rgb(255, 0, 0);">'label'</span>]) and (album_info.<span style="color: rgb(255, 0, 0);">label</span>):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;dist.add_string(<span style="color: rgb(255, 0, 0);">'label'</span>, likelies[<span style="color: rgb(255, 0, 0);">'label'</span>], album_info.<span style="color: rgb(255, 0, 0);">label</span>)</TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+if (likelies[<span style="color: rgb(255, 0, 0);">'catalognum'</span>]) and (album_info.<span style="color: rgb(255, 0, 0);">catalognum</span>):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;dist.add_string(<span style="color: rgb(255, 0, 0);">'catalognum'</span>, likelies[<span style="color: rgb(255, 0, 0);">'catalognum'</span>], album_info.<span style="color: rgb(255, 0, 0);">catalognum</span>)</TD>
+</TR>
+<TR>
+<TD>
+if (likelies[<span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">'catalognum'</span></span>]) and (album_info.<span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">catalognum</span></span>):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;dist.add_string(<span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">'catalognum'</span></span>, likelies[<span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">'catalognum'</span></span>], album_info.<span style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">catalognum</span></span>)</TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+if (likelies[<span style="color: rgb(255, 0, 0);">'albumdisambig'</span>]) and (album_info.<span style="color: rgb(255, 0, 0);">albumdisambig</span>):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;dist.add_string(<span style="color: rgb(255, 0, 0);">'albumdisambig'</span>, likelies[<span style="color: rgb(255, 0, 0);">'albumdisambig'</span>], album_info.<span style="color: rgb(255, 0, 0);">albumdisambig</span>)</TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 32</B><BR>Distance between two fragments = 2 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/library.py"<BR>The first line is 608</TD><TD></TD><TD>Source file "../tests/beets/library.py"<BR>The first line is 311</TD></TR><TR>
+<TD>
+if key == <span style="color: rgb(255, 0, 0);">'artpath'</span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if isinstance(value, unicode):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value = bytestring_path(value)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;elif isinstance(value, buffer):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value = <span style="color: rgb(255, 0, 0);">bytes</span>(value)</TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+if key == <span style="color: rgb(255, 0, 0);">'path'</span>:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if isinstance(value, unicode):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value = bytestring_path(value)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;elif isinstance(value, buffer):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value = <span style="color: rgb(255, 0, 0);">str</span>(value)</TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 33</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/dbcore/query.py"<BR>The first line is 445</TD><TD></TD><TD>Source file "../tests/beets/dbcore/query.py"<BR>The first line is 210</TD></TR><TR>
+<TD>
+if (self.<span style="color: rgb(255, 0, 0);">start</span> is not None) and (<span style="color: rgb(255, 0, 0);">date</span> < self.<span style="color: rgb(255, 0, 0);">start</span>):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;return False</TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+if (self.<span style="color: rgb(255, 0, 0);">rangemin</span> is not None) and (<span style="color: rgb(255, 0, 0);">value</span> < self.<span style="color: rgb(255, 0, 0);">rangemin</span>):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;return False</TD>
+</TR>
+<TR>
+<TD>
+if (self.<span style="color: rgb(255, 0, 0);">end</span> is not None) and (<span style="color: rgb(255, 0, 0);">date</span> <span style="color: rgb(255, 0, 0);">>=</span> self.<span style="color: rgb(255, 0, 0);">end</span>):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;return False</TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+if (self.<span style="color: rgb(255, 0, 0);">rangemax</span> is not None) and (<span style="color: rgb(255, 0, 0);">value</span> <span style="color: rgb(255, 0, 0);">></span> self.<span style="color: rgb(255, 0, 0);">rangemax</span>):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;return False</TD>
+</TR>
+<TR>
+<TD>
+return True</TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+return True</TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 34</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/bluelet.py"<BR>The first line is 489</TD><TD></TD><TD>Source file "../tests/beets/util/bluelet.py"<BR>The first line is 113</TD></TR><TR>
+<TD>
+def __init__(self, <span style="color: rgb(255, 0, 0);">conn</span>, bufsize):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;self.<span style="color: rgb(255, 0, 0);">conn</span> = <span style="color: rgb(255, 0, 0);">conn</span><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;self.bufsize = bufsize</TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+def __init__(self, <span style="color: rgb(255, 0, 0);">fd</span>, bufsize):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;self.<span style="color: rgb(255, 0, 0);">fd</span> = <span style="color: rgb(255, 0, 0);">fd</span><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;self.bufsize = bufsize</TD>
+</TR>
+<TR>
+<TD>
+def waitables(self):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;return ((<span style="color: rgb(255, 0, 0);">self.conn</span>.<span style="color: rgb(255, 0, 0);">sock</span>), (), ())</TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+def waitables(self):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;return ((<span style="color: rgb(255, 0, 0);">self</span>.<span style="color: rgb(255, 0, 0);">fd</span>), (), ())</TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 35</B><BR>Distance between two fragments = 3 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/dbcore/query.py"<BR>The first line is 301</TD><TD></TD><TD>Source file "../tests/beets/dbcore/query.py"<BR>The first line is 310</TD></TR><TR>
+<TD>
+class <span style="color: rgb(255, 0, 0);">AndQuery</span>(MutableCollectionQuery):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;def clause(self):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return self.clause_with_joiner(<span style="color: rgb(255, 0, 0);">'and'</span>)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;def match(self, item):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <span style="color: rgb(255, 0, 0);">all</span>([q.match(item) for q in self.subqueries ])<BR>
+</TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+class <span style="color: rgb(255, 0, 0);">OrQuery</span>(MutableCollectionQuery):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;def clause(self):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return self.clause_with_joiner(<span style="color: rgb(255, 0, 0);">'or'</span>)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;def match(self, item):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <span style="color: rgb(255, 0, 0);">any</span>([q.match(item) for q in self.subqueries ])<BR>
+</TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 36</B><BR>Distance between two fragments = 3 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/autotag/hooks.py"<BR>The first line is 470</TD><TD></TD><TD>Source file "../tests/beets/autotag/hooks.py"<BR>The first line is 479</TD></TR><TR>
+<TD>
+def <span style="color: rgb(255, 0, 0);">album_for_mbid</span>(<span style="color: rgb(255, 0, 0);">release_id</span>):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;try:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return mb.<span style="color: rgb(255, 0, 0);">album_for_id</span>(<span style="color: rgb(255, 0, 0);">release_id</span>)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;except mb.MusicBrainzAPIError, exc:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exc.log(log)</TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+def <span style="color: rgb(255, 0, 0);">track_for_mbid</span>(<span style="color: rgb(255, 0, 0);">recording_id</span>):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;try:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return mb.<span style="color: rgb(255, 0, 0);">track_for_id</span>(<span style="color: rgb(255, 0, 0);">recording_id</span>)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;except mb.MusicBrainzAPIError, exc:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exc.log(log)</TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 37</B><BR>Distance between two fragments = 3 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/dbcore/query.py"<BR>The first line is 319</TD><TD></TD><TD>Source file "../tests/beets/dbcore/query.py"<BR>The first line is 328</TD></TR><TR>
+<TD>
+class <span style="color: rgb(255, 0, 0);">TrueQuery</span>(Query):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;def clause(self):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return (<span style="color: rgb(255, 0, 0);">'1'</span>, ())<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;def match(self, item):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <span style="color: rgb(255, 0, 0);">True</span><BR>
+</TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+class <span style="color: rgb(255, 0, 0);">FalseQuery</span>(Query):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;def clause(self):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return (<span style="color: rgb(255, 0, 0);">'0'</span>, ())<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;def match(self, item):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return <span style="color: rgb(255, 0, 0);">False</span><BR>
+</TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 38</B><BR>Distance between two fragments = 2 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/pipeline.py"<BR>The first line is 435</TD><TD></TD><TD>Source file "../tests/beets/util/pipeline.py"<BR>The first line is 406</TD></TR><TR>
+<TD>
+def <span style="color: rgb(255, 0, 0);">exc_produce</span>():<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;for i in range(<span style="color: rgb(255, 0, 0);">10</span>):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(('generating %i') % (i))<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time.sleep(1)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yield i</TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+def <span style="color: rgb(255, 0, 0);">produce</span>():<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;for i in range(<span style="color: rgb(255, 0, 0);">5</span>):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(('generating %i') % (i))<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time.sleep(1)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yield i</TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 39</B><BR>Distance between two fragments = 2 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/autotag/hooks.py"<BR>The first line is 510</TD><TD></TD><TD>Source file "../tests/beets/autotag/hooks.py"<BR>The first line is 517</TD></TR><TR>
+<TD>
+if (<span style="color: rgb(255, 0, 0);">artist</span>) and (album):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;try:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;out.extend(mb.match_album(<span style="color: rgb(255, 0, 0);">artist</span>, album, len(items)))<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;except mb.MusicBrainzAPIError, exc:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exc.log(log)</TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+if (<span style="color: rgb(255, 0, 0);">va_likely</span>) and (album):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;try:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;out.extend(mb.match_album(<span style="color: rgb(255, 0, 0);">None</span>, album, len(items)))<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;except mb.MusicBrainzAPIError, exc:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exc.log(log)</TD>
 </TR>
 </TABLE> </P> <HR>
     
