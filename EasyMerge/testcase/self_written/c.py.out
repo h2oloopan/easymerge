@@ -1,0 +1,167 @@
+[0, 'd']
+=======================
+ID:0
+Name:test
+lines:(4, 5)
+scope:[('Class', 'A', (2, 5))]
+member:True
+=======================
+ID:1
+Name:test
+lines:(9, 10)
+scope:[('Class', 'B', (7, 10))]
+member:True
+=======================
+ID:0
+Name:A
+lines:(2, 5)
+scope:[]
+=======================
+ID:1
+Name:B
+lines:(7, 10)
+scope:[]
+=======================
+Name:['d', 'helper']
+line:12
+scope:(0, 999998)
+source:('import', 0)
+=======================
+Name:['A']
+line:14
+scope:(0, 999998)
+source:('class', 0)
+=======================
+Name:['a', 'test']
+line:15
+scope:(0, 999998)
+source:('member', -1)
+Module
+None
+
+Stmt
+	Import
+		[('d', None)]
+
+
+	Class
+		'A'
+
+		Stmt
+			Assign
+				AssName
+					'a'
+
+
+				Const
+					"'a'"
+
+
+
+			Function
+				'test'
+
+				'self'
+
+				0
+
+				Stmt
+					Printnl
+						Const
+							"'aa'"
+
+
+						None
+
+
+
+
+
+
+	Class
+		'B'
+
+		Stmt
+			Assign
+				AssName
+					'b'
+
+
+				Const
+					"'b'"
+
+
+
+			Function
+				'test'
+
+				'self'
+
+				0
+
+				Stmt
+					Printnl
+						Const
+							"'bb'"
+
+
+						None
+
+
+
+
+
+
+	Discard
+		CallFunc
+			Getattr
+				Name
+					'd'
+
+
+				'helper'
+
+
+			Name
+				'B'
+
+
+			None
+
+			None
+
+
+
+	Assign
+		AssName
+			'a'
+
+
+		CallFunc
+			Name
+				'A'
+
+
+			None
+
+			None
+
+
+
+	Discard
+		CallFunc
+			Getattr
+				Name
+					'a'
+
+
+				'test'
+
+
+			None
+
+			None
+
+
+
+

@@ -1,0 +1,654 @@
+[0, 'os']
+[1, 'sys']
+[2, 'time']
+[-2, 'sy']
+[3, 're']
+[3, 't', 'b']
+=======================
+ID:0
+Name:__init__
+lines:(11, 12)
+scope:[('Class', 'T', (8, 21)), ('Class', 'TT', (9, 14))]
+member:True
+=======================
+ID:1
+Name:test
+lines:(13, 14)
+scope:[('Class', 'T', (8, 21)), ('Class', 'TT', (9, 14))]
+member:True
+=======================
+ID:2
+Name:__init__
+lines:(16, 19)
+scope:[('Class', 'T', (8, 21))]
+member:True
+=======================
+ID:3
+Name:test
+lines:(20, 21)
+scope:[('Class', 'T', (8, 21))]
+member:True
+=======================
+ID:4
+Name:cc
+lines:(24, 25)
+scope:[('Global', '', (0, 999998))]
+member:False
+=======================
+ID:5
+Name:b
+lines:(40, 49)
+scope:[('Global', '', (0, 999998))]
+member:False
+=======================
+ID:6
+Name:cc
+lines:(41, 42)
+scope:[('Function', 'b', (40, 49))]
+member:False
+=======================
+ID:0
+Name:T
+lines:(8, 21)
+scope:[]
+=======================
+ID:1
+Name:TT
+lines:(9, 14)
+scope:[('Class', 'T', (8, 21))]
+=======================
+Name:['sy', 'time']
+line:7
+scope:(0, 999998)
+source:('import', -2)
+=======================
+Name:['b', 'T']
+line:22
+scope:(0, 999998)
+source:('member', -1)
+=======================
+Name:['T', 'TT']
+line:27
+scope:(0, 999998)
+source:('class', 1)
+=======================
+Name:['T']
+line:28
+scope:(0, 999998)
+source:('class', 0)
+=======================
+Name:['TT']
+line:29
+scope:(0, 999998)
+source:('class', 1)
+=======================
+Name:['T', 'TT']
+line:30
+scope:(0, 999998)
+source:('class', 1, 'followed')
+=======================
+Name:['cc']
+line:38
+scope:(0, 999998)
+source:('function', 4)
+=======================
+Name:['cc']
+line:43
+scope:(40, 49)
+source:('function', 6)
+=======================
+Name:['c', 'test']
+line:50
+scope:(0, 999998)
+source:('member', -1)
+=======================
+Name:['B', 'c', 'test']
+line:51
+scope:(0, 999998)
+source:('member', -1)
+=======================
+Name:['cc']
+line:52
+scope:(0, 999998)
+source:('function', 4)
+Module
+None
+
+Stmt
+	Import
+		[('os', None), ('sys', None)]
+
+
+	Import
+		[('time', 'sy')]
+
+
+	Import
+		[('re', None)]
+
+
+	Import
+		[('t.b', None)]
+
+
+	From
+		'b'
+
+		[('T', None), ('T2', None)]
+
+		0
+
+
+	Printnl
+		CallFunc
+			Getattr
+				Name
+					'sy'
+
+
+				'time'
+
+
+			None
+
+			None
+
+
+		None
+
+
+	Class
+		'T'
+
+		Stmt
+			Class
+				'TT'
+
+				Stmt
+					Assign
+						AssName
+							'at'
+
+
+						Const
+							'5'
+
+
+
+					Function
+						'__init__'
+
+						'self'
+
+						0
+
+						Stmt
+							Assign
+								AssAttr
+									Name
+										'self'
+
+
+									'bt'
+
+									'OP_ASSIGN'
+
+
+								Const
+									'6'
+
+
+
+
+
+					Function
+						'test'
+
+						'self'
+
+						0
+
+						Stmt
+							Printnl
+								Const
+									"'t'"
+
+
+								None
+
+
+
+
+
+
+			Assign
+				AssName
+					'a'
+
+
+				Const
+					'0'
+
+
+
+			Function
+				'__init__'
+
+				'self'
+
+				0
+
+				Stmt
+					Assign
+						AssAttr
+							Name
+								'self'
+
+
+							'b'
+
+							'OP_ASSIGN'
+
+
+						Const
+							'1'
+
+
+
+					Assign
+						AssAttr
+							Name
+								'self'
+
+
+							'c'
+
+							'OP_ASSIGN'
+
+
+						Const
+							"'c'"
+
+
+
+					Assign
+						AssAttr
+							Name
+								'self'
+
+
+							'd'
+
+							'OP_ASSIGN'
+
+
+						Name
+							'True'
+
+
+
+
+
+			Function
+				'test'
+
+				0
+
+				Stmt
+					Pass
+
+
+
+
+
+	Assign
+		AssName
+			'a'
+
+
+		CallFunc
+			Getattr
+				Name
+					'b'
+
+
+				'T'
+
+
+			None
+
+			None
+
+
+
+	Printnl
+		Getattr
+			Name
+				'a'
+
+
+			'aa'
+
+
+		None
+
+
+	Function
+		'cc'
+
+		0
+
+		Stmt
+			Printnl
+				Const
+					"'first'"
+
+
+				None
+
+
+
+
+	Assign
+		AssName
+			'c'
+
+
+		CallFunc
+			Getattr
+				Name
+					'T'
+
+
+				'TT'
+
+
+			None
+
+			None
+
+
+
+	Assign
+		AssName
+			'd'
+
+
+		CallFunc
+			Name
+				'T'
+
+
+			None
+
+			None
+
+
+
+	Assign
+		AssName
+			'e'
+
+
+		CallFunc
+			Name
+				'TT'
+
+
+			None
+
+			None
+
+
+
+	Discard
+		CallFunc
+			Getattr
+				CallFunc
+					Getattr
+						Name
+							'T'
+
+
+						'TT'
+
+
+					None
+
+					None
+
+
+				'test'
+
+
+			None
+
+			None
+
+
+
+	For
+		AssName
+			'i'
+
+
+		CallFunc
+			Name
+				'range'
+
+
+			Const
+				'5'
+
+
+			None
+
+			None
+
+
+		Stmt
+			Printnl
+				Const
+					"'qnmd'"
+
+
+				None
+
+
+
+		None
+
+
+	Printnl
+		Name
+			'c'
+
+
+		None
+
+
+	Printnl
+		CallFunc
+			Name
+				'str'
+
+
+			Name
+				'c'
+
+
+			None
+
+			None
+
+
+		None
+
+
+	Discard
+		CallFunc
+			Name
+				'cc'
+
+
+			None
+
+			None
+
+
+
+	Function
+		'b'
+
+		'c'
+
+		'i'
+
+		Const
+			'2'
+
+
+		0
+
+		Stmt
+			Function
+				'cc'
+
+				0
+
+				Stmt
+					Printnl
+						Const
+							"'cc here'"
+
+
+						None
+
+
+
+
+			Printnl
+				CallFunc
+					Name
+						'cc'
+
+
+					None
+
+					None
+
+
+				None
+
+
+			Printnl
+				Name
+					'c'
+
+
+				None
+
+
+			Printnl
+				CallFunc
+					Name
+						'str'
+
+
+					Name
+						'c'
+
+
+					None
+
+					None
+
+
+				None
+
+
+			If
+				Name
+					'c'
+
+
+				Stmt
+					Return
+						Name
+							'c'
+
+
+
+
+				Stmt
+					Return
+						Name
+							'None'
+
+
+
+
+
+
+
+	Printnl
+		CallFunc
+			Getattr
+				Name
+					'c'
+
+
+				'test'
+
+
+			None
+
+			None
+
+
+		None
+
+
+	Printnl
+		CallFunc
+			Getattr
+				Getattr
+					Name
+						'B'
+
+
+					'c'
+
+
+				'test'
+
+
+			None
+
+			None
+
+
+		None
+
+
+	Discard
+		CallFunc
+			Name
+				'cc'
+
+
+			None
+
+			None
+
+
+
+	Printnl
+		Const
+			'7'
+
+
+		None
+
+
+

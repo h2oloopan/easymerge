@@ -1,0 +1,63 @@
+=======================
+ID:0
+Name:helper
+lines:(0, 2)
+scope:[('Global', '', (0, 999998))]
+member:False
+=======================
+Name:['i']
+line:1
+scope:(0, 2)
+source:-1
+=======================
+Name:['t', 'test']
+line:2
+scope:(0, 2)
+source:('member', -1)
+Module
+None
+
+Stmt
+	Function
+		'helper'
+
+		'i'
+
+		0
+
+		Stmt
+			Assign
+				AssName
+					't'
+
+
+				CallFunc
+					Name
+						'i'
+
+
+					None
+
+					None
+
+
+
+			Discard
+				CallFunc
+					Getattr
+						Name
+							't'
+
+
+						'test'
+
+
+					None
+
+					None
+
+
+
+
+
+

@@ -31,6 +31,7 @@ import ast_suppliers
 import clone_detection_algorithm
 import arguments 
 import html_report
+import debug
 
 def main():
     cmdline = OptionParser(usage="""To run Clone Digger type:
@@ -150,10 +151,12 @@ The semantics of threshold options is discussed in the paper "Duplicate code det
                 source_file = supplier(file_name, func_prefixes)
             else:
                 # TODO implement func_prefixes for java also
-                source_file = supplier(file_name)
+                source_file = supplier(file_name)              
+                
             source_file.getTree().propagateCoveredLineNumbers()
             source_file.getTree().propagateHeight()
             source_files.append(source_file)
+            debug.AST(source_file.getTree()).output(file_name+".out")
             report.addFileName(file_name)                
             print 'done'
         except:
@@ -189,6 +192,33 @@ The semantics of threshold options is discussed in the paper "Duplicate code det
     for duplicate in duplicates:
         report.addClone(duplicate)
     report.sortByCloneSize()
+    
+    tag_dict = {}
+    duplicate_set = []
+    for i in report._clones:
+        clone_id = len(duplicate_set)
+        tag = [(),()]
+        for j in [0,1]:
+            tag[j] = (i[j].getSourceFile().getFileName(), min(i[j].getCoveredLineNumbers()),max(i[j].getCoveredLineNumbers()))
+        if not tag[0] in tag_dict and not tag[1] in tag_dict:
+            duplicate_set.append([i[0],i[1]])
+            tag_dict[tag[0]] = clone_id
+            tag_dict[tag[1]] = clone_id
+        elif tag[0] in tag_dict and not tag[1] in tag_dict:
+            duplicate_set[tag_dict[tag[0]]].append(i[1])
+            tag_dict[tag[1]] = tag_dict[tag[0]]
+        elif tag[1] in tag_dict and not tag[0] in tag_dict:
+            duplicate_set[tag_dict[tag[1]]].append(i[0])
+            tag_dict[tag[0]] = tag_dict[tag[1]]
+        else:
+            pass
+                
+    for s in duplicate_set:
+        print duplicate_set.index(s),":"
+        for i in s:
+            print (i.getSourceFile().getFileName(), min(i.getCoveredLineNumbers()),max(i.getCoveredLineNumbers()))
+        print ""
+    
     try:
         report.writeReport(output_file_name)
     except:
