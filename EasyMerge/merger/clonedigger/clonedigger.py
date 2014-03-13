@@ -33,19 +33,8 @@ import arguments
 import html_report
 import debug
 
-def main():
-    cmdline = OptionParser(usage="""To run Clone Digger type:
-python clonedigger.py [OPTION]... [SOURCE FILE OR DIRECTORY]...
-
-The typical usage is:
-python clonedigger.py source_file_1 source_file_2 ...
-  or
-python clonedigger.py path_to_source_tree
-Don't forget to remove automatically generated sources, tests and third party libraries from the source tree.
-
-Notice:
-The semantics of threshold options is discussed in the paper "Duplicate code detection using anti-unification", which can be downloaded from the site http://clonedigger.sourceforge.net . All arguments are optional. Supported options are: 
-""")
+def main(cmdline):
+   
     cmdline.add_option('-l', '--language', dest='language',
                        type='choice', choices=['python', 'java', 'lua', 'javascript', 'js'],
                        help='the programming language')
@@ -156,7 +145,7 @@ The semantics of threshold options is discussed in the paper "Duplicate code det
             source_file.getTree().propagateCoveredLineNumbers()
             source_file.getTree().propagateHeight()
             source_files.append(source_file)
-            debug.AST(source_file.getTree()).output(file_name+".out")
+            #debug.AST(source_file.getTree()).output(file_name+".out")
             report.addFileName(file_name)                
             print 'done'
         except:
@@ -191,33 +180,17 @@ The semantics of threshold options is discussed in the paper "Duplicate code det
     duplicates = clone_detection_algorithm.findDuplicateCode(source_files, report)
     for duplicate in duplicates:
         report.addClone(duplicate)
+    
     report.sortByCloneSize()
     
-    tag_dict = {}
-    duplicate_set = []
-    for i in report._clones:
-        clone_id = len(duplicate_set)
-        tag = [(),()]
-        for j in [0,1]:
-            tag[j] = (i[j].getSourceFile().getFileName(), min(i[j].getCoveredLineNumbers()),max(i[j].getCoveredLineNumbers()))
-        if not tag[0] in tag_dict and not tag[1] in tag_dict:
-            duplicate_set.append([i[0],i[1]])
-            tag_dict[tag[0]] = clone_id
-            tag_dict[tag[1]] = clone_id
-        elif tag[0] in tag_dict and not tag[1] in tag_dict:
-            duplicate_set[tag_dict[tag[0]]].append(i[1])
-            tag_dict[tag[1]] = tag_dict[tag[0]]
-        elif tag[1] in tag_dict and not tag[0] in tag_dict:
-            duplicate_set[tag_dict[tag[1]]].append(i[0])
-            tag_dict[tag[0]] = tag_dict[tag[1]]
-        else:
-            pass
-                
-    for s in duplicate_set:
-        print duplicate_set.index(s),":"
+     
+        
+    '''for s in duplicate_set:
+        print duplicate_set.index(s),":", tagging(s[0])[2]-tagging(s[0])[1]
         for i in s:
             print (i.getSourceFile().getFileName(), min(i.getCoveredLineNumbers()),max(i.getCoveredLineNumbers()))
-        print ""
+        print ""'''
+            
     
     try:
         report.writeReport(output_file_name)
@@ -226,7 +199,41 @@ The semantics of threshold options is discussed in the paper "Duplicate code det
         if os.path.exists(output_file_name):
             os.remove(output_file_name)
         raise 
+    
+    
+    return duplicates   
+        
+    report.sortByCloneSize()
+    
+     
+        
+    '''for s in duplicate_set:
+        print duplicate_set.index(s),":", tagging(s[0])[2]-tagging(s[0])[1]
+        for i in s:
+            print (i.getSourceFile().getFileName(), min(i.getCoveredLineNumbers()),max(i.getCoveredLineNumbers()))
+        print ""'''
+            
+    
+    '''try:
+        report.writeReport(output_file_name)
+    except:
+        print "catched error, removing output file"
+        if os.path.exists(output_file_name):
+            os.remove(output_file_name)
+        raise '''
 
 if __name__ == '__main__':
-    main()
+    cmdline = OptionParser(usage="""To run Clone Digger type:
+python clonedigger.py [OPTION]... [SOURCE FILE OR DIRECTORY]...
+
+The typical usage is:
+python clonedigger.py source_file_1 source_file_2 ...
+  or
+python clonedigger.py path_to_source_tree
+Don't forget to remove automatically generated sources, tests and third party libraries from the source tree.
+
+Notice:
+The semantics of threshold options is discussed in the paper "Duplicate code detection using anti-unification", which can be downloaded from the site http://clonedigger.sourceforge.net . All arguments are optional. Supported options are: 
+""")
+    main(cmdline)
 

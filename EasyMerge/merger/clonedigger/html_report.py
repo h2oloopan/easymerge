@@ -24,10 +24,6 @@ import traceback
 import os.path
 from cgi import escape
 
-import debug
-
-import pickle
-
 import arguments
 import anti_unification
 import python_compiler
@@ -66,24 +62,24 @@ class CPDXMLReport(Report):
     def setMarkToStatementHash(self, mark_to_statement_hash):   
         self._mark_to_statement_hash = mark_to_statement_hash
     def writeReport(self, file_name):
-	f = open(file_name, 'w')
-	f.write('<?xml version="1.0" encoding="UTF-8"?>\n')
-	f.write('<pmd-cpd>\n')
-	for clone in self._clones:	    
-	    token_numbers = [sum([s.getTokenCount() for s in clone[i]]) for i in (0,1)]
-	    f.write('<duplication lines="' + str(max([len(set(clone[i].getCoveredLineNumbers())) for i in [0,1]] )) + '" tokens="' + str(max(token_numbers)) +'">\n')
-	    for i in [0,1]:
-		f.write('<file line="' + str(1 + min(clone[i].getCoveredLineNumbers())) +  '" path="' + os.path.abspath(clone[i].getSourceFile().getFileName()) + '"/>\n')
-	    f.write('<codefragment>\n')
-	    f.write('<![CDATA[\n')
-	    for line in clone[0].getSourceLines():
-		f.write(line.replace(']]>','-CLONEDIGGER REMOVED CDATAEND-'))
+    	f = open(file_name, 'w')
+    	f.write('<?xml version="1.0" encoding="UTF-8"?>\n')
+    	f.write('<pmd-cpd>\n')
+    	for clone in self._clones:	    
+    	    token_numbers = [sum([s.getTokenCount() for s in clone[i]]) for i in (0,1)]
+    	    f.write('<duplication lines="' + str(max([len(set(clone[i].getCoveredLineNumbers())) for i in [0,1]] )) + '" tokens="' + str(max(token_numbers)) +'">\n')
+    	    for i in [0,1]:
+    		f.write('<file line="' + str(1 + min(clone[i].getCoveredLineNumbers())) +  '" path="' + os.path.abspath(clone[i].getSourceFile().getFileName()) + '"/>\n')
+    	    f.write('<codefragment>\n')
+    	    f.write('<![CDATA[\n')
+    	    for line in clone[0].getSourceLines():
+    		f.write(line.replace(']]>','-CLONEDIGGER REMOVED CDATAEND-'))
                 f.write('\n')
-	    f.write(']]>\n')
-	    f.write('</codefragment>\n')
-	    f.write('</duplication>\n')
-	f.write('</pmd-cpd>\n')
-	f.close()
+    	    f.write(']]>\n')
+    	    f.write('</codefragment>\n')
+    	    f.write('</duplication>\n')
+    	f.write('</pmd-cpd>\n')
+    	f.close()
 
 
 class HTMLReport(Report):
@@ -108,12 +104,11 @@ class HTMLReport(Report):
         for clone_i in range(len(self._clones)):
             try:
                 clone = self._clones[clone_i]
-                #debug.print_clone(clone)
                 s = '<P>'
                 s += '<B>Clone # %d</B><BR>'%(clone_i +1,)
 #           s = '<P> Clone detected in source files "%s" and "%s" <BR>\n' % (sequences[0].getSourceFile().getFileName(), sequences[1].getSourceFile().getFileName())
                 s+= 'Distance between two fragments = %d <BR>' %(clone.calcDistance())
-                s+= 'Clone size = ' + str(([(set(clone[i].getCoveredLineNumbers())) for i in [0,1]] ))
+                s+= 'Clone size = ' + str(max([len(set(clone[i].getCoveredLineNumbers())) for i in [0,1]] ))
                 s+= '<TABLE NOWRAP WIDTH=100% BORDER=1>'
                 s+= eclipse_start
                 s+= '<TR>'
@@ -138,6 +133,7 @@ class HTMLReport(Report):
                     s += '<TR>\n'
                     t = []
                     statements = [clone[j][i] for j in [0,1]]
+                    #print statements[0].__class__
 
                     def diff_highlight(seqs):
                         s = difflib.SequenceMatcher(lambda x:x == '<BR>\n')
@@ -179,6 +175,7 @@ class HTMLReport(Report):
                         return d,u
                     if arguments.use_diff:
                         (d,u) = use_diff()
+                        #print u.getSize()
                     else:
                         try:
                             def rec_correct_as_string(t1, t2, s1, s2):
@@ -236,7 +233,7 @@ class HTMLReport(Report):
                             print 'using diff highlight'
                             (d,u) = use_diff()
                     for j in [0,1]:                 
-                        t.append('<TD>\n' + d[j] + "<BR>" + str(statements[j]) + '</TD>\n')
+                        t.append('<TD>\n' + d[j] + '</TD>\n')
                     if u.getSize() > 0:
                         color = 'RED'
                     else:

@@ -4,5 +4,5 @@ clusterize_using_dcup = False
 report_unifiers = False
 print_time = True
 force = False  
-use_diff = False 
+use_diff = True
 clusterize_using_hash = False
