@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{baker}
 B.~Baker.
@@ -6,6 +6,13 @@ B.~Baker.
   systems.
 \newblock {\em in: Proceedings of the 2nd Working Conference on Reverse
   Engineering, WCRE 1995}, pages 86--95, 1995.
+
+\bibitem{balazinska}
+M.~Balazinska, E.~Merlo, and M.~Dagenais.
+\newblock Advanced clone-analysis to support object-oriented system
+  refactoring.
+\newblock {\em in: Proceedings of the Seventh Working Conference on Reverse
+  Engineering, WCRE 2000}, pages 98--107, 2000.
 
 \bibitem{bellon}
 S.~Bellon, R.~Koschke, G.~Antoniol, J.~Krinke, and E.~Merlo.
@@ -18,11 +25,23 @@ P.~Bulychev and M.~Minea.
 \newblock {\em Spring Young Researchers Colloquium on Software Engineering,
   SYRCoSE 2008}, pages 4--7, 2008.
 
+\bibitem{fowler}
+M.~Fowler.
+\newblock Refactoring: improving the design of existing code.
+\newblock {\em Addison Wesley}, 1999.
+
 \bibitem{gabel}
 M.~Gabel, L.~Jiang, and Z.~Su.
 \newblock Scalable detection of semantic clones.
 \newblock {\em in: Proceedings of the 30th International Conference on Software
   Engineering, ICSE 2008}, pages 321--330, 2008.
+
+\bibitem{higo}
+Y.~Higo, S.~Kusumoto, and K.~Inoue.
+\newblock A metric-based approach to identifying refactoring opportunities for
+  merging code clones in a java software system.
+\newblock {\em Journal of Software Maintenance and Evolution: Research and
+  Practice}, 20(6):435--461, 2008.
 
 \bibitem{komondoor}
 R.~Komondoor and S.~Horwitz.
@@ -43,5 +62,11 @@ C.~K. Roy, J.~R. Cordy, and R.~Koschke.
   tools: A qualitative approach.
 \newblock {\em Science of Computer Programming, Special Issue on Program
   Comprehension, ICPC 2008}, 74(7):470--495, 2009.
+
+\bibitem{schulze}
+S.~Schulze, M.~Kuhlemann, and M.~Rosenm\"uller.
+\newblock Towards a refactoring guideline using code clone classification.
+\newblock {\em in: Proceedings of the 2nd Workshop on Refactoring Tools, WRT
+  2008}, page~6, 2008.
 
 \end{thebibliography}
