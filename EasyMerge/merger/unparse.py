@@ -27,6 +27,21 @@ class UTree:
         self._attr = {}
     def addAttr(self, attr, value):
         self._attr[attr] = value
+    def output(self,level,tree=None):
+        for i in range(level):
+            print "\t"
+        if tree==None:
+            print "Type:",self._name
+            for i in self._attr:
+                self.output(level+1,self._attr[i])
+        elif tree.__class__=="UTree":
+            print "Type:",tree._name
+            for i in tree._attr:
+                self.output(level+1,tree._attr[i])
+        else:
+            print "Other:",tree
+        
+        
         
 class Unifier:
     def __init__(self, tree1, tree2):
@@ -37,13 +52,62 @@ class Unifier:
             
     def compare_trees(self,t1,t2):
         if self.check_entire_tree(t1,t2):
+            print "t1=t2"
             return t1
         else:
             if self.check_tree_name(t1, t2):
+                print "t1,t2 have same type:",t1.__class__.__name__
                 utree = UTree(t1.__class__.__name__)
+                meth = getattr(self, "_"+t1.__class__.__name__)
+                (vals,nodes) = meth(t1,t2)
+                print nodes
+                for attr in nodes:
+                    node = nodes[attr]
+                    utree.addAttr(attr, self.compare_trees(node[0], node[1]))
+                if not vals and not nodes:
+                    print "t1,t2 have different numbers of attributes"
+                    return ("???",t1,t2)
+                
                 return utree
             else:
-                return "???" 
+                print "t1,t2 have different types:",t1.__class__.__name__,",",t2.__class__.__name__
+                return ("???",t1,t2)
+      
+    def _Module(self, t1,t2):
+        nodes = {}
+        if len(t1.body)!=len(t2.body):
+            return (None, None)
+        for i in range(len(t1.body)):
+            nodes["body["+str(i)+"]"]=[t1.body[i],t2.body[i]]
+        return ([],nodes)
+    
+    def _If(self, t1,t2):
+        node = {}
+        node["test"] = [t1.test, t2.test]
+        node["body"] = [t1.body, t2.body]
+        # collapse nested ifs into equivalent elifs.
+        elif_counter = -1
+        while True:
+            has_elif1 = t1.orelse and len(t1.orelse) == 1 and isinstance(t1.orelse[0], ast.If)
+            has_elif2 = t2.orelse and len(t2.orelse) == 1 and isinstance(t2.orelse[0], ast.If)
+            if has_elif1 and has_elif2:
+                elif_counter+=1
+                t1 = t1.orelse[0]
+                t2 = t2.orelse[0]
+                node["elif["+str(elif_counter)+"].test"] = [t1.test, t2.test]
+                node["elif["+str(elif_counter)+"].body"] = [t1.body, t2.body]
+            elif not has_elif1 and not has_elif2:
+                break
+            else:
+                return (None,None)
+        # final else
+        if t1.orelse and t2.orelse:
+            node["orelse"]=[t1.orelse,t2.orelse]
+        elif not t1.orelse and not t2.orelse:
+            pass
+        else:
+            return (None, None)
+        return ([],node)
         
     def check_entire_tree(self,t1,t2):
         if t1==t2:
@@ -517,7 +581,8 @@ class Unparser:
         self.write(t.attr)
 
     def _Call(self, t):
-        self.dispatch(t.func)
+        self.write("CALL_HERE")
+        '''self.dispatch(t.func)
         self.write("(")
         comma = False
         for e in t.args:
@@ -538,7 +603,7 @@ class Unparser:
             else: comma = True
             self.write("**")
             self.dispatch(t.kwargs)
-        self.write(")")
+        self.write(")")'''
 
     def _Subscript(self, t):
         self.dispatch(t.value)
@@ -617,7 +682,9 @@ def roundtrip(filename1, filename2, output=sys.stdout):
     with open(filename2, "r") as pyfile:
         source = pyfile.read()
     tree2 = compile(source, filename2, "exec", ast.PyCF_ONLY_AST)
-    #Unparser(tree1, tree2, output)
+    Unparser(tree1, output)
+    mtree = Unifier(tree1, tree2)
+    mtree._utree.output(0)
 
 def testdir(a):
     try:
