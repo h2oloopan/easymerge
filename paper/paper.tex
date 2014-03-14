@@ -30,6 +30,16 @@
 
 \newdef{definition}{Definition}
 
+\makeatletter
+\newif\if@restonecol
+\makeatother
+\let\algorithm\relax
+\let\endalgorithm\relax
+\usepackage[ruled,vlined]{algorithm2e}
+
+\usepackage{enumerate}
+
+
 \begin{document}
 
 \title{EasyMerge - A New Tool for Code Clones Refactoring}
@@ -115,7 +125,7 @@ software engineers be more efficient and make less mistakes in the refactoring p
 
 In this paper, we introduce EasyMerge, a new tool to refactor code clones. EasyMerge is built on top of AST-based anti-unification clone detection algorithm and 
 refactors software projects written in Python. It adds intelligence to code clone refactoring by categorizing clones and generating refactoring recommendations
-based on evaluation of external variable references and function calls. It copes with features of Python language and can deal with clone segments in functions,
+based on evaluation of external variable references and function calls. It copes with features of Python language and can deal with clone fragments in functions,
 classes, and across different scopes. It ensures functionality-wise consistency before and after refactoring and provide warnings when potential refactoring could lead to
 unwanted complexity or cause readability issues.
 \end{abstract}
@@ -195,7 +205,7 @@ handle different editing scenarios decently. Thus we chose CloneDigger \cite{bul
 On the other hand, for clone refactoring, most proposed solutions use some pre-defined metrics as the refactoring guidance to help users determine whether the 
 code clones are suitable for refactoring. For example, Balazinska \cite{balazinska} proposed to use 21 metrics to measure the suitability for refactoring. Higo \cite{higo}
 developed ARIES tools, using the code detection tool CCFinder and environment analysis tool Gemini to find the clones can be refactored. And Schulze \cite{schulze}
-proposed a new metric DIST (distance of the code clones). Unlike them, instead of calculating distance between code segments and only merging close clones, EasyMerge 
+proposed a new metric DIST (distance of the code clones). Unlike them, instead of calculating distance between code fragments and only merging close clones, EasyMerge 
 try to fix the differences and merge as many clones as possible without introducing extra complexity.
 
 For the actual merging process, currently existing research mainly focus on using refactoring patterns \cite{fowler}, especially ``Extract Method" and ``Pull Up Method".
@@ -203,16 +213,96 @@ For the actual merging process, currently existing research mainly focus on usin
 classes are pulled up to its parent class. In general, they are both merging similar code blocks into one newly created function, and ``Pull Up Method" only differs from 
 ``Extract Method" as it places the newly created function into the super class when code blocks are inside functions sharing the same parent class.
 
-Unfortunately, code clones may be coupled with surrounding code, its inheritance tree, or other independent classes/code blocks. For instance: 
+Unfortunately, code clones may be coupled with surrounding code, its inheritance tree, or other independent classes/code blocks. For instance, code fragments inside clone pairs
+may contain function calls or variable references which are not defined inside the fragments. Furthermore, functions and variables of the same names may be in fact different
+at different locations of the code base. For example, if we have a code clone fragment as following:
+
+\IncMargin{1em}
+\begin{algorithm}
+	for x in range(0, 3):
+	
+		\Indp a = x + 1
+		
+		b = f(x)
+		
+		c = d + x
+\end{algorithm}
+\DecMargin{1em}
+
+We are calling function {\bf f()} where the definition of {\bf f()} can be different from fragment to fragment. Moreover, the value of variable {\bf d} is potentially different, too.
+The current approach to solve this problem is to pass such external functions and variables as parameters to newly generated methods from the ``Extract Method" refactoring pattern.
+For instance:
+
+\IncMargin{1em}
+\begin{algorithm}
+	def helper(p1, p2):
+	
+		\Indp for x in range(0, 3):
+		
+			\Indp a = x + 1
+			
+			b = p1(x)
+			
+			c = p2 + x
+			
+		\Indm \Indm helper(f, d)
+	
+\end{algorithm}
+\DecMargin{1em}
+
+However, this creates two new problems. Firstly, in this example, the scope of b was changed. It is now inside the helper function and no longer available to code after the clone fragment
+which could potentially cause reference errors. Secondly, when the length of the clone fragment is too long, we could possibly end up with a helper function of tons of parameters
+which in turn make the code after refactoring harder to understand and is against our goal to improve readability. And the most intuitive approach to solve the first problem
+is to return b and such variables from the ``Extracted Method" which introduces even more complexity.
+
+As a result, for recently proposed refactoring approach \cite{li} and the tools mentioned at the beginning of this subsection, they count the number of such external references
+in a code clone fragment as the key factor of their refactoring guideline metrics. 
+And clone fragments of too many such occurrences will not be recommended for refactoring.
+Furthermore, in Li's work \cite{li}, after standardization, it can also be used to refactor semantical
+similar but syntax-wise different clones by moving different function references to extracted method's parameters.
+
+Unlike most of current clone refactoring approaches that use token-based CCFinder \cite{kamiya} for clone detection, EasyMerge uses a newer detection tool called CloneDigger.
+Compared to CCFinder, CloneDigger is cross-platform and freely available as an open source project. Moreover, based on evaluation from Roy \cite{roy2},
+CloneDigger performs no worse than CCFinder in all detection scenarios and is actually better in certain scenarios e.g. a programmer copies a function that calculates the sum
+and product of a loop variable and calls another function, foo() with these values as parameters three times, making changes in whitespace in the first fragment (S1(a)), changes
+in commenting in the second (S1(b)), and changes in formatting in the third (S1(c)). In the following section, we will go over the basic ideas behind CloneDigger and its anti-unification
+algorithm.
 
 \section{CloneDigger}
+\subsection{Overview}
+Techniques for detecting duplicate code can be classified according to several criteria. Code can be viewed as similar based on syntactic criteria or at a semantic level. CloneDigger considers only syntactic similarity. The algorithm is approached based on abstract syntax trees. The algorithm of finding duplicates consists of several phases. In the beginning all statements are partitioned into clusters using anti-unification distance and the code is abstractly viewed as sequence of cluster identifiers. All pairs of identical sequences of cluster IDs, which have similar statements in corresponding positions, are globally checked for similarity using anti-unification distance.
+
+
+\subsection{Preliminaries}
+Anti-unification is a general expression of two given terms. Let $E_{1}$ and $E_{2}$ be two terms. Anti-unification E is a generalization of $E_{1}$ and $E_{2}$ if there exist two substitutions $\sigma_{1}$ and $\sigma_{2}$ such that $\sigma_{1}(E)=E_{1}$ and $\sigma_{2}(E)=E_{2}$. The most specific generalization of $E_{1}$ and $E_{2}$. The most specific generalization of $E_{1}$ and $E_{2}$ is called anti-unifier. The anti-unifier tree of two trees $T_{1}$ and $T_{2}$ is obtained by replacing some subtrees in $T_{1}$ and $T_{2}$ by special nodes.m containing term placeholders which are marked with integers, such as $?_{n}$. An anti-unifier stores only the common top-level tree structure and therefore details may be ignored.
+
+The anti-unification distance is defined as follows: let U be the anti-unifier of two trees $T_{1}$ and $T_{2}$ with substitutions $\sigma_{1}$ and $\sigma_{2}$. $\sigma_{1}$ and $\sigma_{2}$ are mappings from the set \{$?_{1}$, $?_{2}$, ..., $?_{n}$\} to substituting trees. Anti-unification distance between $T_{1}$ and $T_{2}$ as a sum of sizes of substituting trees in $\sigma_{1}$ and $\sigma_{2}$. The distance doesn't allow the permutation of siblings or changing the number of child nodes.
+
+
+\subsection{Duplicate Code Detection Algorithm}
+The method of finding duplicate code consists of three phases:
+\begin{enumerate}[step 1]
+
+    \item Partitioning similar statements into clusters
+    
+    Identify similar statements using anti-unification and partition them into clusters. A two-pass clustering algorithm is used. The first pass of the algorithm compare each new statement with the anti-unifiers of all existing clusters. The function $add\_cost$ is used to compute the cost of adding a tree $T$ to the cluster consisting of $n$ trees with anti-unifier $au$. Let $au'$ be the result of anti-unification of $T$ and $au$ with substitutions $\sigma_{1}$ and $\sigma_{2}$: $\sigma_{1}(au') = au$, $\sigma_{2}(au') = T$. $add\_cost$ is defined as $n \times |\sigma_{1}| + |\sigma_{2}|$. During the second pass all the statements re traversed again and for each statement we search for the most similar pattern from the set produced in the previous pass using the anti-unification distance. After the first phase each statement is marked with its cluster ID, two statements with the same cluster ID are considered similar in this preliminary view.
+
+    \item Finding pairs of identical cluster sequences
+    All pairs of sequences of statements, which are large enough, are identically labeled.
+    
+    \item Examining code sequences for overall similarity
+    All candidates are checked as a whole using anti-unification distance. The occurrences of the same variable refers to one leaf in the abstract syntax tree increase the quality of the algorithm.
+\end{enumerate}
+
+Now we can move on to introduce EasyMerge and how it works behind the scene.
+
 
 \section{EasyMerge}
 
 \section{Experimental Results}
 
 %ACKNOWLEDGMENTS are optional
-\section{Acknowledgments}
+%\section{Acknowledgements}
 
 %
 % The following two commands are all you need in the
