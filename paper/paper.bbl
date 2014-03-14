@@ -43,11 +43,26 @@ Y.~Higo, S.~Kusumoto, and K.~Inoue.
 \newblock {\em Journal of Software Maintenance and Evolution: Research and
   Practice}, 20(6):435--461, 2008.
 
+\bibitem{kamiya}
+T.~Kamiya, S.~Kusumoto, and K.~Inoue.
+\newblock Ccfinder: a multilinguistic token-based code clone detection system
+  for large scale source code.
+\newblock {\em IEEE Transactions on Software Engineering}, 28(7):654--670,
+  2002.
+
 \bibitem{komondoor}
 R.~Komondoor and S.~Horwitz.
 \newblock Using slicing to identify duplication in source code.
 \newblock {\em in: Proceedings of the 8th International Symposium on Static
   Analysis, SAS 2001}, pages 40--56, 2001.
+
+\bibitem{li}
+X.~Li, X.~Su, P.~Ma, and T.~Wang.
+\newblock Refactoring structure semantics similar clones combining
+  standardization with metrics.
+\newblock {\em in: Proceedings of International Conference on Soft Computing
+  Techniques and Engineering Application Advances in Intelligence Systems and
+  Computing}, 250:361--367, 2014.
 
 \bibitem{roy1}
 C.~K. Roy and J.~R. Cordy.
