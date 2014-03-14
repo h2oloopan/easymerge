@@ -44,7 +44,7 @@ class AST:
             scope_result.append(scope)
         if tree.getName()=="CallFunc" and not in_call:
             in_call = True
-            call_result.append((tree.getLineNumbers()[0], self.parse_call(tree.getChilds()[0]), scope))
+            call_result.append((tree,(tree.getLineNumbers()[0], self.parse_call(tree.getChilds()[0]), scope)))
         for i in tree.getChilds():
             new_scope = list(scope)            
             self.parse_tree(i, scope, scope_result, call_result, in_call)
@@ -63,8 +63,8 @@ class AST:
             elif call.getChilds()[0].getName()=="Subscript" or call.getChilds()[0].getName()=="Slice":
                 return [str(call.getChilds()[0]),call.getChilds()[1].getName()[1:-1]]
             else:
-                print "Exception Here", call.getChilds()[0].getName()
-        print "Exception Here", call.getName()
+                return [call.getChilds()[0].getName()+":"+str(call.getChilds()[0])]+[call.getChilds()[1].getName()[1:-1]]              
+        return [call.getName()+":"+str(call)]+[call.getChilds()[0].getName()[1:-1]] 
     
     
     def process_imports(self):
@@ -73,7 +73,7 @@ class AST:
             if i[0].find(".")<0:
                 new_i = [self.imports.index(i), i[0]]
             else:
-                new_i = [new_i[0]]+i[0].split('.')
+                new_i = [self.imports.index(i), i[0].split('.')]
             new_imports.append(new_i)
             if i[1]!=None:
                 if i[1].find(".")<0:
@@ -96,7 +96,9 @@ class AST:
         build_in_name = ["abs", "divmod", "input", "open", "staticmethod", "all", "enumerate", "int", "ord", "str", "any", "eval", "isinstance", "pow", "sum", "basestring", "execfile", "issubclass", "print", "super", "bin", "file", "iter", "property", "tuple", "bool", "filter", "len", "range", "type", "bytearray", "float", "list", "raw_input", "unichr", "callable", "format", "locals", "reduce", "unicode", "chr", "frozenset", "long", "reload", "vars", "classmethod", "getattr", "map", "repr", "xrange", "cmp", "globals", "max", "reversed", "zip", "compile", "hasattr", "memoryview", "round", "__import__", "complex", "hash", "min", "set", "apply", "delattr", "help", "next", "setattr", "buffer", "dict", "hex", "object", "slice", "coerce", "dir", "id", "oct", "sorted", "intern"]
         build_in_list = []
         for i in self.raw_call:
-            if len(i[1])==1 and i[1][0] in build_in_name:
+            if i[1][1]==None:
+                continue
+            if len(i[1][1])==1 and i[1][1][0] in build_in_name:
                 build_in_list.append(i)
         for i in build_in_list:
             self.raw_call.remove(i)
@@ -104,7 +106,9 @@ class AST:
     def process_call(self):
         self.filter_call()
         for i in self.raw_call:
-            call = Call(i)
+            if i[1][1]==None:
+                continue
+            call = Call(i[0],i[1])
             self.calls.append(call)
         for i in self.calls:
             if len(i.name)==1:
@@ -186,6 +190,8 @@ class AST:
             file.write("line:"+str(i.line)+"\n")
             file.write("scope:"+str(i.scope)+"\n")
             file.write("source:"+str(i.source)+"\n")
+            file.write("tree:"+str(i.tree)+"\n")
+        file.write("=======================\n\n")
         file.write(self.visualizeTree(self.tree, 0))
         
     def visualizeTree(self, tree, height):
@@ -223,8 +229,9 @@ class Class:
         self.scope = clas[:-1]
         
 class Call:
-    def __init__(self, call):
+    def __init__(self, tree, call):
         self.source = -1
+        self.tree = tree
         self.line = call[0]
         self.name = call[1]
         self.env = call[2]

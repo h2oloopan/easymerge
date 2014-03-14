@@ -131,6 +131,8 @@ def main(cmdline):
         arguments.size_threshold = supplier.size_threshold
     
     report.startTimer('Construction of AST')
+    
+    src_ast_list = {}
 
     def parse_file(file_name, func_prefixes):
         try:
@@ -145,7 +147,7 @@ def main(cmdline):
             source_file.getTree().propagateCoveredLineNumbers()
             source_file.getTree().propagateHeight()
             source_files.append(source_file)
-            #debug.AST(source_file.getTree()).output(file_name+".out")
+            src_ast_list[file_name] = debug.AST(source_file.getTree())
             report.addFileName(file_name)                
             print 'done'
         except:
@@ -193,6 +195,7 @@ def main(cmdline):
             
     
     try:
+        print "Writting Report"
         report.writeReport(output_file_name)
     except:
         print "catched error, removing output file"
@@ -201,11 +204,9 @@ def main(cmdline):
         raise 
     
     
-    return duplicates   
+    return (src_ast_list, duplicates)   
         
-    report.sortByCloneSize()
-    
-     
+  
         
     '''for s in duplicate_set:
         print duplicate_set.index(s),":", tagging(s[0])[2]-tagging(s[0])[1]

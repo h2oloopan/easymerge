@@ -6,6 +6,9 @@ Created on Mar 12, 2014
 from optparse import OptionParser
 import clonedigger.clonedigger as digger
 import clonedigger.anti_unification as anti_unification
+from clonedigger.abstract_syntax_tree import StatementSequence
+
+import test
 
 def sortDuplicates(duplicates):
     def f(a,b):
@@ -97,14 +100,15 @@ Don't forget to remove automatically generated sources, tests and third party li
 Notice:
 The semantics of threshold options is discussed in the paper "Duplicate code detection using anti-unification", which can be downloaded from the site http://clonedigger.sourceforge.net . All arguments are optional. Supported options are: 
 """)
-    orig_duplicates = digger.main(cmdline)
+    (src_ast_list, orig_duplicates) = digger.main(cmdline)
     sortDuplicates(orig_duplicates)
     duplicate_set = mergeStmtSeqs(orig_duplicates) 
     removeOverlappedSeqs(duplicate_set)
-    return duplicate_set
+    return (src_ast_list,duplicate_set)
 
 
 def checkSeqType(seq):
+    threshold = 4
     type = "Unknown"
     type_set = []
     for i in range(len(seq)):
@@ -115,33 +119,57 @@ def checkSeqType(seq):
                 type = "Def"
             else:
                 type = "Stmt"
-            type_set.append((0,type))
+            type_set.append(([0],type,len(i.getSourceLines())))
         else:
             if i.getName()=="Function":
                 type = "Def"
             else:
                 type = "Stmt"
             if type!=type_set[-1][1]:
-                type_set.append((id, type))
+                type_set.append(([id], type,len(i.getSourceLines())))
             else:
-                type_set[-1]=(id,type)
+                li = list(type_set[-1][0])
+                li.append(id)
+                type_set[-1]=(li,type,type_set[-1][2]+len(i.getSourceLines()))
     if len(type_set)==1:
         return type_set[0][1]
     else:
-        return type_set
+        new_set = []
+        for i in type_set:
+            if i[2]>=threshold:
+                new_seq = []
+                for j in i[0]:
+                    new_seq.append(seq[j])
+                new_set.append(new_seq)
+        return ("Mix",new_set)
 
-def checkSetType(cluster):
-    type = "Unknown"
-    for seq in cluster:
-        cur_type = checkSeqType(seq)
-        if type!="Unknown" and type!=cur_type:
-            print "Mixed in this Set"
-            type = "Error"
-            break
-        elif type=="Unknown":
-            type = cur_type
-    
-    return type 
+def checkSetType(dSet):
+    def same_type(t1,t2):
+        if t1==t2 or (isinstance(t1,tuple) and isinstance(t2,tuple)):
+            return True
+        else:
+            return False
+        
+    type_list = []
+    for cluster in dSet:
+        type = "Unknown"
+        for seq in cluster:
+            cur_type = checkSeqType(seq)
+            if type!="Unknown" and not same_type(type,cur_type):
+                print "Mixed in this Set"
+                type = "Error"
+                break
+            elif type=="Unknown":            
+                if isinstance(cur_type,tuple):
+                    type = (cur_type[0],[cur_type[1]])
+                else:
+                    type = cur_type
+            elif isinstance(cur_type,tuple) and isinstance(type,tuple):
+                seqs = type[1]
+                seqs.append(cur_type[1])
+                type = (type[0],seqs) 
+        type_list.append(type)
+    return type_list 
 
 def checkPairDiff(pair):
     diff_rec = []
@@ -165,7 +193,7 @@ def checkPairDiff(pair):
 def checkFileDiff(cluster):
     filename = cluster[0].getSourceFile()
     for i in cluster[1:]:
-        if i.getSourceFile!=filename:
+        if i.getSourceFile()!=filename:
             return False
     return True
 
@@ -176,20 +204,69 @@ def checkSetDiff(cluster):
         diff_sum.append(sum(diff))
         
     diff_file = checkFileDiff(cluster) 
-    return (diff_file, sum(diff_sum))    
+    return (diff_file, sum(diff_sum))
+
+def spreadMixSet(dSet, type_list):
     
-def showSeq(dSet):
     for cluster in dSet:
-        print len(cluster),
-        print checkSetType(cluster),
-        print checkSetDiff(cluster)
-        #raw_input()
-        #if checkSetType(cluster)=="Stmt":
-            #process_stmt(cluster)
-          
+        type = type_list[dSet.index(cluster)]
+        if isinstance(type,tuple):
+            new_clusters = type[1]
+            new_insert = []
+            for i in range(len(new_clusters[0])):
+                new_set = []
+                for d in new_clusters:
+                    new_set.append(StatementSequence(d[i]))
+                new_insert.append(new_set)
+            dSet[dSet.index(cluster)] = new_insert
+    
+    i = 0
+    while True:
+        cluster = dSet[i]        
+        if isinstance(cluster[0],list):
+            dSet = dSet[:i]+cluster+dSet[i+1:]
+            type_list = type_list[:i]+checkSetType(cluster)+type_list[i+1:]
+        i+=1
+        if i>=len(dSet):
+            break 
+    return (dSet, type_list)
+    
+def refineDuplicateSet(dSet):
+    type_list = checkSetType(dSet)
+    (dSet,type_list) = spreadMixSet(dSet,type_list)
+        
+    for i in dSet:        
+        type = 0
+        if type_list[dSet.index(i)]=="Stmt":
+            type+=2
+        elif type_list[dSet.index(i)]=="Def":
+            pass
+        else:
+            print type_list[dSet.index(i)],
+            
+        diff = checkSetDiff(i)
+        if diff[1]>0:
+            type+=1
+        else:
+            pass
+        print "type"+str(type),",",         
+        
+        print len(i),"Duplicates",
+        if diff[0]:
+            print "in Same File,",
+        else:
+            print "in Different Files,",
+        print tagging(i[0])
+        
+    return dSet
+    #test.generateCodeSnippet(dSet[0][0],"helper.py")
     
 if __name__ == '__main__':
-    duplicate_set = getCloneStmt()
-    showSeq(duplicate_set)
+    (src_ast_list, duplicate_set) = getCloneStmt()
+    duplicate_set = refineDuplicateSet(duplicate_set)
+    
+    
+    
+    
     
     

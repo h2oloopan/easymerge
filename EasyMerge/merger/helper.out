@@ -1,0 +1,219 @@
+=======================
+Name:['re', 'match']
+line:142
+scope:(0, 999998)
+source:('member', -1, 'followed')
+tree: ( CallFunc ( Getattr ( CallFunc ( Getattr ( Name ( 're' )  )   ( 'match' )  )   ( Const ( "'[\\\\+-]?[0-9\\\\.]*'" )  )   ( CallFunc ( Getattr ( Name ( 'val' )  )   ( 'strip' )  )   ( None )   ( None )  )   ( None )   ( None )  )   ( 'group' )  )   ( Const ( '0' )  )   ( None )   ( None )  ) 
+=======================
+
+If
+Compare
+	Name
+		'val'
+
+
+	'is'
+
+	Name
+		'None'
+
+
+
+Stmt
+	Return
+		Const
+			'0.0'
+
+
+
+
+Or
+	CallFunc
+		Name
+			'isinstance'
+
+
+		Name
+			'val'
+
+
+		Name
+			'int'
+
+
+		None
+
+		None
+
+
+	CallFunc
+		Name
+			'isinstance'
+
+
+		Name
+			'val'
+
+
+		Name
+			'float'
+
+
+		None
+
+		None
+
+
+
+Stmt
+	Return
+		CallFunc
+			Name
+				'float'
+
+
+			Name
+				'val'
+
+
+			None
+
+			None
+
+
+
+
+Stmt
+	If
+		Not
+			CallFunc
+				Name
+					'isinstance'
+
+
+				Name
+					'val'
+
+
+				Name
+					'basestring'
+
+
+				None
+
+				None
+
+
+
+		Stmt
+			Assign
+				AssName
+					'val'
+
+
+				CallFunc
+					Name
+						'unicode'
+
+
+					Name
+						'val'
+
+
+					None
+
+					None
+
+
+
+
+		None
+
+
+	Assign
+		AssName
+			'val'
+
+
+		CallFunc
+			Getattr
+				CallFunc
+					Getattr
+						Name
+							're'
+
+
+						'match'
+
+
+					Const
+						"'[\\\\+-]?[0-9\\\\.]*'"
+
+
+					CallFunc
+						Getattr
+							Name
+								'val'
+
+
+							'strip'
+
+
+						None
+
+						None
+
+
+					None
+
+					None
+
+
+				'group'
+
+
+			Const
+				'0'
+
+
+			None
+
+			None
+
+
+
+	If
+		Not
+			Name
+				'val'
+
+
+
+		Stmt
+			Return
+				Const
+					'0.0'
+
+
+
+
+		Stmt
+			Return
+				CallFunc
+					Name
+						'float'
+
+
+					Name
+						'val'
+
+
+					None
+
+					None
+
+
+
+
+
+
