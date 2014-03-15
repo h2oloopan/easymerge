@@ -1,784 +1,1657 @@
-[0, 'os']
-[1, 'ConfigParser']
-[2, 'codecs']
-[3, 'yaml']
-[4, 'logging']
-[5, 'time']
-[6, 'itertools']
-[7, 're']
-[8, 'beets']
+[0, 'platform']
+[1, 'os']
+[2, 'pkgutil']
+[3, 'sys']
+[4, 'yaml']
+[5, 'types']
 =======================
 ID:0
-Name:grouper
-lines:(60, 62)
+Name:iter_first
+lines:(49, 60)
 scope:[('Global', '', (0, 999998))]
 member:False
 =======================
 ID:1
-Name:_displace
-lines:(64, 71)
-scope:[('Global', '', (0, 999998))]
-member:False
+Name:__init__
+lines:(82, 98)
+scope:[('Class', 'ConfigReadError', (80, 98))]
+member:True
 =======================
 ID:2
-Name:default_paths
-lines:(74, 96)
-scope:[('Global', '', (0, 999998))]
-member:False
+Name:__init__
+lines:(107, 112)
+scope:[('Class', 'ConfigSource', (103, 132))]
+member:True
 =======================
 ID:3
-Name:exp
-lines:(85, 86)
-scope:[('Function', 'default_paths', (74, 96))]
-member:False
+Name:__repr__
+lines:(114, 118)
+scope:[('Class', 'ConfigSource', (103, 132))]
+member:True
 =======================
 ID:4
-Name:get_config
-lines:(98, 115)
-scope:[('Global', '', (0, 999998))]
-member:False
+Name:of
+lines:(122, 132)
+scope:[('Class', 'ConfigSource', (103, 132))]
+member:True
 =======================
 ID:5
-Name:flatten_config
-lines:(117, 126)
-scope:[('Global', '', (0, 999998))]
-member:False
+Name:resolve
+lines:(148, 154)
+scope:[('Class', 'ConfigView', (134, 415))]
+member:True
 =======================
 ID:6
-Name:transform_value
-lines:(128, 150)
-scope:[('Global', '', (0, 999998))]
-member:False
+Name:first
+lines:(156, 166)
+scope:[('Class', 'ConfigView', (134, 415))]
+member:True
 =======================
 ID:7
-Name:transform_data
-lines:(152, 214)
-scope:[('Global', '', (0, 999998))]
-member:False
+Name:exists
+lines:(168, 175)
+scope:[('Class', 'ConfigView', (134, 415))]
+member:True
 =======================
 ID:8
-Name:outsideFunc
-lines:(216, 217)
-scope:[('Global', '', (0, 999998))]
-member:False
+Name:add
+lines:(177, 182)
+scope:[('Class', 'ConfigView', (134, 415))]
+member:True
 =======================
 ID:9
-Name:__init__
-lines:(219, 220)
-scope:[('Class', 'outsideClass', (218, 220))]
+Name:set
+lines:(184, 189)
+scope:[('Class', 'ConfigView', (134, 415))]
 member:True
 =======================
 ID:10
-Name:__init__
-lines:(228, 229)
-scope:[('Class', 'Dumper', (222, 259)), ('Class', 'insideClass', (227, 229))]
+Name:root
+lines:(191, 194)
+scope:[('Class', 'ConfigView', (134, 415))]
 member:True
 =======================
 ID:11
-Name:represent_mapping
-lines:(230, 259)
-scope:[('Class', 'Dumper', (222, 259))]
+Name:__repr__
+lines:(196, 197)
+scope:[('Class', 'ConfigView', (134, 415))]
 member:True
 =======================
 ID:12
-Name:insideFunc
-lines:(231, 232)
-scope:[('Class', 'Dumper', (222, 259)), ('Function', 'represent_mapping', (230, 259))]
-member:False
+Name:__getitem__
+lines:(199, 201)
+scope:[('Class', 'ConfigView', (134, 415))]
+member:True
 =======================
 ID:13
-Name:migrate_config
-lines:(262, 317)
-scope:[('Global', '', (0, 999998))]
-member:False
+Name:__setitem__
+lines:(203, 207)
+scope:[('Class', 'ConfigView', (134, 415))]
+member:True
 =======================
 ID:14
-Name:migrate_db
-lines:(319, 344)
-scope:[('Global', '', (0, 999998))]
-member:False
+Name:set_args
+lines:(209, 217)
+scope:[('Class', 'ConfigView', (134, 415))]
+member:True
 =======================
 ID:15
-Name:migrate_state
-lines:(346, 365)
-scope:[('Global', '', (0, 999998))]
-member:False
+Name:__str__
+lines:(224, 226)
+scope:[('Class', 'ConfigView', (134, 415))]
+member:True
 =======================
 ID:16
-Name:automigrate
-lines:(370, 390)
-scope:[('Global', '', (0, 999998))]
-member:False
+Name:__unicode__
+lines:(228, 232)
+scope:[('Class', 'ConfigView', (134, 415))]
+member:True
 =======================
 ID:17
-Name:migrate_func
-lines:(396, 413)
+Name:__nonzero__
+lines:(234, 237)
+scope:[('Class', 'ConfigView', (134, 415))]
+member:True
+=======================
+ID:18
+Name:__bool__
+lines:(239, 242)
+scope:[('Class', 'ConfigView', (134, 415))]
+member:True
+=======================
+ID:19
+Name:keys
+lines:(246, 271)
+scope:[('Class', 'ConfigView', (134, 415))]
+member:True
+=======================
+ID:20
+Name:items
+lines:(273, 279)
+scope:[('Class', 'ConfigView', (134, 415))]
+member:True
+=======================
+ID:21
+Name:values
+lines:(281, 287)
+scope:[('Class', 'ConfigView', (134, 415))]
+member:True
+=======================
+ID:22
+Name:all_contents
+lines:(291, 308)
+scope:[('Class', 'ConfigView', (134, 415))]
+member:True
+=======================
+ID:23
+Name:get
+lines:(312, 331)
+scope:[('Class', 'ConfigView', (134, 415))]
+member:True
+=======================
+ID:24
+Name:as_filename
+lines:(333, 352)
+scope:[('Class', 'ConfigView', (134, 415))]
+member:True
+=======================
+ID:25
+Name:as_choice
+lines:(354, 371)
+scope:[('Class', 'ConfigView', (134, 415))]
+member:True
+=======================
+ID:26
+Name:as_number
+lines:(373, 380)
+scope:[('Class', 'ConfigView', (134, 415))]
+member:True
+=======================
+ID:27
+Name:as_str_seq
+lines:(384, 401)
+scope:[('Class', 'ConfigView', (134, 415))]
+member:True
+=======================
+ID:28
+Name:flatten
+lines:(404, 415)
+scope:[('Class', 'ConfigView', (134, 415))]
+member:True
+=======================
+ID:29
+Name:__init__
+lines:(422, 428)
+scope:[('Class', 'RootView', (418, 444))]
+member:True
+=======================
+ID:30
+Name:add
+lines:(430, 431)
+scope:[('Class', 'RootView', (418, 444))]
+member:True
+=======================
+ID:31
+Name:set
+lines:(433, 434)
+scope:[('Class', 'RootView', (418, 444))]
+member:True
+=======================
+ID:32
+Name:resolve
+lines:(436, 437)
+scope:[('Class', 'RootView', (418, 444))]
+member:True
+=======================
+ID:33
+Name:clear
+lines:(439, 441)
+scope:[('Class', 'RootView', (418, 444))]
+member:True
+=======================
+ID:34
+Name:root
+lines:(443, 444)
+scope:[('Class', 'RootView', (418, 444))]
+member:True
+=======================
+ID:35
+Name:__init__
+lines:(449, 467)
+scope:[('Class', 'Subview', (447, 495))]
+member:True
+=======================
+ID:36
+Name:resolve
+lines:(469, 486)
+scope:[('Class', 'Subview', (447, 495))]
+member:True
+=======================
+ID:37
+Name:set
+lines:(488, 489)
+scope:[('Class', 'Subview', (447, 495))]
+member:True
+=======================
+ID:38
+Name:add
+lines:(491, 492)
+scope:[('Class', 'Subview', (447, 495))]
+member:True
+=======================
+ID:39
+Name:root
+lines:(494, 495)
+scope:[('Class', 'Subview', (447, 495))]
+member:True
+=======================
+ID:40
+Name:_package_path
+lines:(502, 518)
 scope:[('Global', '', (0, 999998))]
 member:False
 =======================
+ID:41
+Name:config_dirs
+lines:(520, 553)
+scope:[('Global', '', (0, 999998))]
+member:False
+=======================
+ID:42
+Name:_construct_unicode
+lines:(567, 568)
+scope:[('Class', 'Loader', (558, 606))]
+member:True
+=======================
+ID:43
+Name:construct_yaml_map
+lines:(572, 576)
+scope:[('Class', 'Loader', (558, 606))]
+member:True
+=======================
+ID:44
+Name:construct_mapping
+lines:(578, 601)
+scope:[('Class', 'Loader', (558, 606))]
+member:True
+=======================
+ID:45
+Name:check_plain
+lines:(604, 606)
+scope:[('Class', 'Loader', (558, 606))]
+member:True
+=======================
+ID:46
+Name:load_yaml
+lines:(612, 620)
+scope:[('Global', '', (0, 999998))]
+member:False
+=======================
+ID:47
+Name:outsideFunc
+lines:(624, 625)
+scope:[('Global', '', (0, 999998))]
+member:False
+=======================
+ID:48
+Name:__init__
+lines:(627, 628)
+scope:[('Class', 'outsideClass', (626, 628))]
+member:True
+=======================
+ID:49
+Name:__init__
+lines:(636, 637)
+scope:[('Class', 'Dumper', (630, 694)), ('Class', 'insideClass', (635, 637))]
+member:True
+=======================
+ID:50
+Name:represent_mapping
+lines:(639, 668)
+scope:[('Class', 'Dumper', (630, 694))]
+member:True
+=======================
+ID:51
+Name:insideFunc
+lines:(640, 641)
+scope:[('Class', 'Dumper', (630, 694)), ('Function', 'represent_mapping', (639, 668))]
+member:False
+=======================
+ID:52
+Name:represent_list
+lines:(670, 680)
+scope:[('Class', 'Dumper', (630, 694))]
+member:True
+=======================
+ID:53
+Name:represent_bool
+lines:(682, 689)
+scope:[('Class', 'Dumper', (630, 694))]
+member:True
+=======================
+ID:54
+Name:represent_none
+lines:(691, 694)
+scope:[('Class', 'Dumper', (630, 694))]
+member:True
+=======================
+ID:55
+Name:restore_yaml_comments
+lines:(701, 730)
+scope:[('Global', '', (0, 999998))]
+member:False
+=======================
+ID:56
+Name:__init__
+lines:(736, 754)
+scope:[('Class', 'Configuration', (735, 870))]
+member:True
+=======================
+ID:57
+Name:user_config_path
+lines:(756, 761)
+scope:[('Class', 'Configuration', (735, 870))]
+member:True
+=======================
+ID:58
+Name:_add_user_source
+lines:(763, 770)
+scope:[('Class', 'Configuration', (735, 870))]
+member:True
+=======================
+ID:59
+Name:_add_default_source
+lines:(772, 782)
+scope:[('Class', 'Configuration', (735, 870))]
+member:True
+=======================
+ID:60
+Name:read
+lines:(784, 793)
+scope:[('Class', 'Configuration', (735, 870))]
+member:True
+=======================
+ID:61
+Name:config_dir
+lines:(795, 826)
+scope:[('Class', 'Configuration', (735, 870))]
+member:True
+=======================
+ID:62
+Name:set_file
+lines:(828, 833)
+scope:[('Class', 'Configuration', (735, 870))]
+member:True
+=======================
+ID:63
+Name:dump
+lines:(835, 870)
+scope:[('Class', 'Configuration', (735, 870))]
+member:True
+=======================
+ID:64
+Name:__init__
+lines:(878, 882)
+scope:[('Class', 'LazyConfig', (873, 914))]
+member:True
+=======================
+ID:65
+Name:read
+lines:(884, 886)
+scope:[('Class', 'LazyConfig', (873, 914))]
+member:True
+=======================
+ID:66
+Name:resolve
+lines:(888, 894)
+scope:[('Class', 'LazyConfig', (873, 914))]
+member:True
+=======================
+ID:67
+Name:add
+lines:(896, 901)
+scope:[('Class', 'LazyConfig', (873, 914))]
+member:True
+=======================
+ID:68
+Name:set
+lines:(903, 908)
+scope:[('Class', 'LazyConfig', (873, 914))]
+member:True
+=======================
+ID:69
+Name:clear
+lines:(910, 914)
+scope:[('Class', 'LazyConfig', (873, 914))]
+member:True
+=======================
 ID:0
-Name:util
+Name:unicode_literals
 lines:(-1, -1)
 scope:[]
 =======================
 ID:1
-Name:ui
+Name:OrderedDict
 lines:(-1, -1)
 scope:[]
 =======================
 ID:2
-Name:confit
+Name:OrderedDict
 lines:(-1, -1)
 scope:[]
 =======================
 ID:3
-Name:outsideClass
-lines:(218, 220)
+Name:ConfigError
+lines:(65, 65)
 scope:[]
 =======================
 ID:4
-Name:Dumper
-lines:(222, 259)
+Name:NotFoundError
+lines:(69, 69)
 scope:[]
 =======================
 ID:5
+Name:ConfigTypeError
+lines:(73, 73)
+scope:[]
+=======================
+ID:6
+Name:ConfigValueError
+lines:(77, 77)
+scope:[]
+=======================
+ID:7
+Name:ConfigReadError
+lines:(80, 98)
+scope:[]
+=======================
+ID:8
+Name:ConfigSource
+lines:(103, 132)
+scope:[]
+=======================
+ID:9
+Name:ConfigView
+lines:(134, 415)
+scope:[]
+=======================
+ID:10
+Name:RootView
+lines:(418, 444)
+scope:[]
+=======================
+ID:11
+Name:Subview
+lines:(447, 495)
+scope:[]
+=======================
+ID:12
+Name:Loader
+lines:(558, 606)
+scope:[]
+=======================
+ID:13
+Name:outsideClass
+lines:(626, 628)
+scope:[]
+=======================
+ID:14
+Name:Dumper
+lines:(630, 694)
+scope:[]
+=======================
+ID:15
 Name:insideClass
-lines:(227, 229)
-scope:[('Class', 'Dumper', (222, 259))]
+lines:(635, 637)
+scope:[('Class', 'Dumper', (630, 694))]
 =======================
-Name:['os', 'environ', 'get']
-line:36
-scope:(0, 999998)
-source:('member', -1)
-tree: ( CallFunc ( Getattr ( Getattr ( Name ( 'os' )  )   ( 'environ' )  )   ( 'get' )  )   ( Const ( "'APPDATA'" )  )   ( None )   ( None )  ) 
+ID:16
+Name:Configuration
+lines:(735, 870)
+scope:[]
 =======================
-Name:['Const: ( Const ( \'u\\\'\\\\nYou appear to be upgrading from beets 1.0 (or earlier) to 1.1. Your\\\\nconfiguration file has been migrated automatically to:\\\\n{newconfig}\\\\nEdit this file to configure beets. You might want to remove your\\\\nold-style ".beetsconfig" file now. See the documentation for more\\\\ndetails on the new configuration system:\\\\nhttp://beets.readthedocs.org/page/reference/config.html\\\\n\\\'\' )  ) ', 'strip']
-line:53
-scope:(0, 999998)
-source:('member', -1)
-tree: ( CallFunc ( Getattr ( Const ( 'u\'\\nYou appear to be upgrading from beets 1.0 (or earlier) to 1.1. Your\\nconfiguration file has been migrated automatically to:\\n{newconfig}\\nEdit this file to configure beets. You might want to remove your\\nold-style ".beetsconfig" file now. See the documentation for more\\ndetails on the new configuration system:\\nhttp://beets.readthedocs.org/page/reference/config.html\\n\'' )  )   ( 'strip' )  )   ( None )   ( None )  ) 
-=======================
-Name:['logging', 'getLogger']
-line:57
-scope:(0, 999998)
-source:('import', 4)
-tree: ( CallFunc ( Getattr ( Name ( 'logging' )  )   ( 'getLogger' )  )   ( Const ( "'beets'" )  )   ( None )   ( None )  ) 
+ID:17
+Name:LazyConfig
+lines:(873, 914)
+scope:[]
 =======================
 Name:['iter']
-line:61
-scope:(60, 62)
+line:53
+scope:(49, 60)
 source:-1
-tree: ( CallFunc ( Name ( 'iter' )  )   ( Name ( 'iterable' )  )   ( None )   ( None )  ) 
+tree: ( CallFunc ( Name ( 'iter' )  )   ( Name ( 'sequence' )  )   ( None )   ( None )  ) 
 =======================
-Name:['itertools', 'izip_longest']
-line:62
-scope:(60, 62)
-source:('import', 6)
-tree: ( CallFunc ( Getattr ( Name ( 'itertools' )  )   ( 'izip_longest' )  )   ( Name ( 'args' )  )   ( None )  ) 
+Name:['next']
+line:56
+scope:(49, 60)
+source:-1
+tree: ( CallFunc ( Name ( 'next' )  )   ( Name ( 'it' )  )   ( None )   ( None )  ) 
 =======================
-Name:['util', 'move']
-line:69
-scope:(64, 71)
+Name:['it', 'next']
+line:58
+scope:(49, 60)
 source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'util' )  )   ( 'move' )  )   ( Name ( 'fn' )  )   ( CallFunc ( Getattr ( Const ( "u'{0}.old.{1}'" )  )   ( 'format' )  )   ( Name ( 'fn' )  )   ( CallFunc ( Name ( 'int' )  )   ( CallFunc ( Getattr ( Name ( 'time' )  )   ( 'time' )  )   ( None )   ( None )  )   ( None )   ( None )  )   ( None )   ( None )  )   ( Name ( 'True' )  )   ( None )   ( None )  ) 
+tree: ( CallFunc ( Getattr ( Name ( 'it' )  )   ( 'next' )  )   ( None )   ( None )  ) 
 =======================
-Name:['os', 'environ', 'get']
-line:82
-scope:(74, 96)
-source:('member', -1)
-tree: ( CallFunc ( Getattr ( Getattr ( Name ( 'os' )  )   ( 'environ' )  )   ( 'get' )  )   ( Const ( "'APPDATA'" )  )   ( None )   ( None )  ) 
+Name:['ValueError']
+line:60
+scope:(49, 60)
+source:-1
+tree: ( CallFunc ( Name ( 'ValueError' )  )   ( None )   ( None )  ) 
 =======================
-Name:['os', 'path', 'expanduser']
+Name:['Const: ( Const ( "\'file {0} could not be read\'" )  ) ', 'format']
 line:86
-scope:(85, 86)
+scope:(82, 98)
 source:('member', -1)
-tree: ( CallFunc ( Getattr ( Getattr ( Name ( 'os' )  )   ( 'path' )  )   ( 'expanduser' )  )   ( CallFunc ( Getattr ( Getattr ( Name ( 'os' )  )   ( 'path' )  )   ( 'join' )  )   ( Name ( 'vals' )  )   ( None )  )   ( None )   ( None )  ) 
+tree: ( CallFunc ( Getattr ( Const ( "'file {0} could not be read'" )  )   ( 'format' )  )   ( Name ( 'filename' )  )   ( None )   ( None )  ) 
 =======================
-Name:['exp']
-line:88
-scope:(74, 96)
-source:('function', 3)
-tree: ( CallFunc ( Name ( 'exp' )  )   ( Const ( "'~'" )  )   ( Name ( 'DEFAULT_CONFIG_FILENAME_UNIX' )  )   ( None )   ( None )  ) 
+Name:['isinstance']
+line:87
+scope:(82, 98)
+source:-1
+tree: ( CallFunc ( Name ( 'isinstance' )  )   ( Name ( 'reason' )  )   ( Getattr ( Getattr ( Name ( 'yaml' )  )   ( 'scanner' )  )   ( 'ScannerError' )  )   ( None )   ( None )  ) 
 =======================
-Name:['os', 'path', 'exists']
-line:89
-scope:(74, 96)
+Name:['Const: ( Const ( "\': found tab character at line {0}, column {1}\'" )  ) ', 'format']
+line:91
+scope:(82, 98)
 source:('member', -1)
-tree: ( CallFunc ( Getattr ( Getattr ( Name ( 'os' )  )   ( 'path' )  )   ( 'exists' )  )   ( Name ( 'config' )  )   ( None )   ( None )  ) 
+tree: ( CallFunc ( Getattr ( Const ( "': found tab character at line {0}, column {1}'" )  )   ( 'format' )  )   ( Add ( Getattr ( Getattr ( Name ( 'reason' )  )   ( 'problem_mark' )  )   ( 'line' )  )   ( Const ( '1' )  )  )   ( Add ( Getattr ( Getattr ( Name ( 'reason' )  )   ( 'problem_mark' )  )   ( 'column' )  )   ( Const ( '1' )  )  )   ( None )   ( None )  ) 
 =======================
-Name:['exp']
-line:90
-scope:(74, 96)
-source:('function', 3)
-tree: ( CallFunc ( Name ( 'exp' )  )   ( Name ( 'windata' )  )   ( Name ( 'DEFAULT_CONFIG_FILENAME_WINDOWS' )  )   ( None )   ( None )  ) 
-=======================
-Name:['exp']
-line:92
-scope:(74, 96)
-source:('function', 3)
-tree: ( CallFunc ( Name ( 'exp' )  )   ( Const ( "'~'" )  )   ( Name ( 'DEFAULT_LIBRARY_FILENAME_UNIX' )  )   ( None )   ( None )  ) 
-=======================
-Name:['os', 'path', 'exists']
-line:93
-scope:(74, 96)
+Name:['Const: ( Const ( "\': {0}\'" )  ) ', 'format']
+line:96
+scope:(82, 98)
 source:('member', -1)
-tree: ( CallFunc ( Getattr ( Getattr ( Name ( 'os' )  )   ( 'path' )  )   ( 'exists' )  )   ( Name ( 'libpath' )  )   ( None )   ( None )  ) 
+tree: ( CallFunc ( Getattr ( Const ( "': {0}'" )  )   ( 'format' )  )   ( Name ( 'reason' )  )   ( None )   ( None )  ) 
 =======================
-Name:['exp']
-line:94
-scope:(74, 96)
-source:('function', 3)
-tree: ( CallFunc ( Name ( 'exp' )  )   ( Name ( 'windata' )  )   ( Name ( 'DEFAULT_LIBRARY_FILENAME_WINDOWS' )  )   ( None )   ( None )  ) 
+Name:['super']
+line:98
+scope:(82, 98)
+source:('member', -1, 'followed')
+tree: ( CallFunc ( Getattr ( CallFunc ( Name ( 'super' )  )   ( Name ( 'ConfigReadError' )  )   ( Name ( 'self' )  )   ( None )   ( None )  )   ( '__init__' )  )   ( Name ( 'message' )  )   ( None )   ( None )  ) 
 =======================
-Name:['default_paths']
-line:103
-scope:(98, 115)
-source:('function', 2)
-tree: ( CallFunc ( Name ( 'default_paths' )  )   ( None )   ( None )  ) 
+Name:['super']
+line:108
+scope:(107, 112)
+source:('member', -1, 'followed')
+tree: ( CallFunc ( Getattr ( CallFunc ( Name ( 'super' )  )   ( Name ( 'ConfigSource' )  )   ( Name ( 'self' )  )   ( None )   ( None )  )   ( '__init__' )  )   ( Name ( 'value' )  )   ( None )   ( None )  ) 
+=======================
+Name:['isinstance']
+line:109
+scope:(107, 112)
+source:-1
+tree: ( CallFunc ( Name ( 'isinstance' )  )   ( Name ( 'filename' )  )   ( Name ( 'BASESTRING' )  )   ( None )   ( None )  ) 
+=======================
+Name:['TypeError']
+line:110
+scope:(107, 112)
+source:-1
+tree: ( CallFunc ( Name ( 'TypeError' )  )   ( Const ( "'filename must be a string or None'" )  )   ( None )   ( None )  ) 
+=======================
+Name:['Const: ( Const ( "\'ConfigSource({0}, {1}, {2})\'" )  ) ', 'format']
+line:116
+scope:(114, 118)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Const ( "'ConfigSource({0}, {1}, {2})'" )  )   ( 'format' )  )   ( CallFunc ( Getattr ( CallFunc ( Name ( 'super' )  )   ( Name ( 'ConfigSource' )  )   ( Name ( 'self' )  )   ( None )   ( None )  )   ( '__repr__' )  )   ( None )   ( None )  )   ( CallFunc ( Name ( 'repr' )  )   ( Getattr ( Name ( 'self' )  )   ( 'filename' )  )   ( None )   ( None )  )   ( CallFunc ( Name ( 'repr' )  )   ( Getattr ( Name ( 'self' )  )   ( 'default' )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
+=======================
+Name:['isinstance']
+line:127
+scope:(122, 132)
+source:-1
+tree: ( CallFunc ( Name ( 'isinstance' )  )   ( Name ( 'value' )  )   ( Name ( 'ConfigSource' )  )   ( None )   ( None )  ) 
+=======================
+Name:['isinstance']
+line:129
+scope:(122, 132)
+source:-1
+tree: ( CallFunc ( Name ( 'isinstance' )  )   ( Name ( 'value' )  )   ( Name ( 'dict' )  )   ( None )   ( None )  ) 
+=======================
+Name:['ConfigSource']
+line:130
+scope:(122, 132)
+source:('class', 8)
+tree: ( CallFunc ( Name ( 'ConfigSource' )  )   ( Name ( 'value' )  )   ( None )   ( None )  ) 
+=======================
+Name:['TypeError']
+line:132
+scope:(122, 132)
+source:-1
+tree: ( CallFunc ( Name ( 'TypeError' )  )   ( Const ( "'source value must be a dict'" )  )   ( None )   ( None )  ) 
+=======================
+Name:['self', 'resolve']
+line:162
+scope:(156, 166)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'self' )  )   ( 'resolve' )  )   ( None )   ( None )  ) 
+=======================
+Name:['iter_first']
+line:164
+scope:(156, 166)
+source:('function', 0)
+tree: ( CallFunc ( Name ( 'iter_first' )  )   ( Name ( 'pairs' )  )   ( None )   ( None )  ) 
+=======================
+Name:['NotFoundError']
+line:166
+scope:(156, 166)
+source:('class', 4)
+tree: ( CallFunc ( Name ( 'NotFoundError' )  )   ( CallFunc ( Getattr ( Const ( "'{0} not found'" )  )   ( 'format' )  )   ( Getattr ( Name ( 'self' )  )   ( 'name' )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
+=======================
+Name:['self', 'first']
+line:172
+scope:(168, 175)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'self' )  )   ( 'first' )  )   ( None )   ( None )  ) 
+=======================
+Name:['Subview']
+line:201
+scope:(199, 201)
+source:('class', 11)
+tree: ( CallFunc ( Name ( 'Subview' )  )   ( Name ( 'self' )  )   ( Name ( 'key' )  )   ( None )   ( None )  ) 
+=======================
+Name:['self', 'set']
+line:207
+scope:(203, 207)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'self' )  )   ( 'set' )  )   ( Dict ( Name ( 'key' )  )   ( Name ( 'value' )  )  )   ( None )   ( None )  ) 
+=======================
+Name:['namespace', '__dict__', 'items']
+line:214
+scope:(209, 217)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Getattr ( Name ( 'namespace' )  )   ( '__dict__' )  )   ( 'items' )  )   ( None )   ( None )  ) 
+=======================
+Name:['self', 'set']
+line:217
+scope:(209, 217)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'self' )  )   ( 'set' )  )   ( Name ( 'args' )  )   ( None )   ( None )  ) 
+=======================
+Name:['str']
+line:226
+scope:(224, 226)
+source:-1
+tree: ( CallFunc ( Name ( 'str' )  )   ( CallFunc ( Getattr ( Name ( 'self' )  )   ( 'get' )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
+=======================
+Name:['unicode']
+line:232
+scope:(228, 232)
+source:-1
+tree: ( CallFunc ( Name ( 'unicode' )  )   ( CallFunc ( Getattr ( Name ( 'self' )  )   ( 'get' )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
+=======================
+Name:['self', '__bool__']
+line:237
+scope:(234, 237)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'self' )  )   ( '__bool__' )  )   ( None )   ( None )  ) 
+=======================
+Name:['bool']
+line:242
+scope:(239, 242)
+source:-1
+tree: ( CallFunc ( Name ( 'bool' )  )   ( CallFunc ( Getattr ( Name ( 'self' )  )   ( 'get' )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
+=======================
+Name:['self', 'resolve']
+line:257
+scope:(246, 271)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'self' )  )   ( 'resolve' )  )   ( None )   ( None )  ) 
+=======================
+Name:['dic', 'keys']
+line:259
+scope:(246, 271)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'dic' )  )   ( 'keys' )  )   ( None )   ( None )  ) 
+=======================
+Name:['ConfigTypeError']
+line:262
+scope:(246, 271)
+source:('class', 5)
+tree: ( CallFunc ( Name ( 'ConfigTypeError' )  )   ( CallFunc ( Getattr ( Const ( "'{0} must be a dict, not {1}'" )  )   ( 'format' )  )   ( Getattr ( Name ( 'self' )  )   ( 'name' )  )   ( Getattr ( CallFunc ( Name ( 'type' )  )   ( Name ( 'dic' )  )   ( None )   ( None )  )   ( '__name__' )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
+=======================
+Name:['keys', 'append']
+line:269
+scope:(246, 271)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'keys' )  )   ( 'append' )  )   ( Name ( 'key' )  )   ( None )   ( None )  ) 
+=======================
+Name:['self', 'keys']
+line:278
+scope:(273, 279)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'self' )  )   ( 'keys' )  )   ( None )   ( None )  ) 
+=======================
+Name:['self', 'keys']
+line:286
+scope:(281, 287)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'self' )  )   ( 'keys' )  )   ( None )   ( None )  ) 
+=======================
+Name:['self', 'resolve']
+line:298
+scope:(291, 308)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'self' )  )   ( 'resolve' )  )   ( None )   ( None )  ) 
+=======================
+Name:['iter']
+line:300
+scope:(291, 308)
+source:-1
+tree: ( CallFunc ( Name ( 'iter' )  )   ( Name ( 'collection' )  )   ( None )   ( None )  ) 
+=======================
+Name:['ConfigTypeError']
+line:303
+scope:(291, 308)
+source:('class', 5)
+tree: ( CallFunc ( Name ( 'ConfigTypeError' )  )   ( CallFunc ( Getattr ( Const ( "'{0} must be an iterable, not {1}'" )  )   ( 'format' )  )   ( Getattr ( Name ( 'self' )  )   ( 'name' )  )   ( Getattr ( CallFunc ( Name ( 'type' )  )   ( Name ( 'collection' )  )   ( None )   ( None )  )   ( '__name__' )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
+=======================
+Name:['self', 'first']
+line:318
+scope:(312, 331)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'self' )  )   ( 'first' )  )   ( None )   ( None )  ) 
+=======================
+Name:['isinstance']
+line:321
+scope:(312, 331)
+source:-1
+tree: ( CallFunc ( Name ( 'isinstance' )  )   ( Name ( 'typ' )  )   ( Name ( 'TYPE_TYPES' )  )   ( None )   ( None )  ) 
+=======================
+Name:['TypeError']
+line:322
+scope:(312, 331)
+source:-1
+tree: ( CallFunc ( Name ( 'TypeError' )  )   ( Const ( "'argument to get() must be a type'" )  )   ( None )   ( None )  ) 
+=======================
+Name:['isinstance']
+line:324
+scope:(312, 331)
+source:-1
+tree: ( CallFunc ( Name ( 'isinstance' )  )   ( Name ( 'value' )  )   ( Name ( 'typ' )  )   ( None )   ( None )  ) 
+=======================
+Name:['ConfigTypeError']
+line:326
+scope:(312, 331)
+source:('class', 5)
+tree: ( CallFunc ( Name ( 'ConfigTypeError' )  )   ( CallFunc ( Getattr ( Const ( "'{0} must be of type {1}, not {2}'" )  )   ( 'format' )  )   ( Getattr ( Name ( 'self' )  )   ( 'name' )  )   ( Getattr ( Name ( 'typ' )  )   ( '__name__' )  )   ( Getattr ( CallFunc ( Name ( 'type' )  )   ( Name ( 'value' )  )   ( None )   ( None )  )   ( '__name__' )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
+=======================
+Name:['self', 'first']
+line:341
+scope:(333, 352)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'self' )  )   ( 'first' )  )   ( None )   ( None )  ) 
+=======================
+Name:['isinstance']
+line:342
+scope:(333, 352)
+source:-1
+tree: ( CallFunc ( Name ( 'isinstance' )  )   ( Name ( 'path' )  )   ( Name ( 'BASESTRING' )  )   ( None )   ( None )  ) 
+=======================
+Name:['ConfigTypeError']
+line:343
+scope:(333, 352)
+source:('class', 5)
+tree: ( CallFunc ( Name ( 'ConfigTypeError' )  )   ( CallFunc ( Getattr ( Const ( "'{0} must be a filename, not {1}'" )  )   ( 'format' )  )   ( Getattr ( Name ( 'self' )  )   ( 'name' )  )   ( Getattr ( CallFunc ( Name ( 'type' )  )   ( Name ( 'path' )  )   ( None )   ( None )  )   ( '__name__' )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
 =======================
 Name:['os', 'path', 'expanduser']
-line:105
-scope:(98, 115)
+line:346
+scope:(333, 352)
 source:('member', -1)
-tree: ( CallFunc ( Getattr ( Getattr ( Name ( 'os' )  )   ( 'path' )  )   ( 'expanduser' )  )   ( Subscript ( Getattr ( Name ( 'os' )  )   ( 'environ' )  )   ( 'OP_APPLY' )   ( Name ( 'CONFIG_PATH_VAR' )  )  )   ( None )   ( None )  ) 
+tree: ( CallFunc ( Getattr ( Getattr ( Name ( 'os' )  )   ( 'path' )  )   ( 'expanduser' )  )   ( CallFunc ( Name ( 'STRING' )  )   ( Name ( 'path' )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
 =======================
-Name:['ConfigParser', 'SafeConfigParser']
-line:109
-scope:(98, 115)
-source:('import', 1)
-tree: ( CallFunc ( Getattr ( Name ( 'ConfigParser' )  )   ( 'SafeConfigParser' )  )   ( None )   ( None )  ) 
-=======================
-Name:['os', 'path', 'exists']
-line:110
-scope:(98, 115)
+Name:['os', 'path', 'isabs']
+line:348
+scope:(333, 352)
 source:('member', -1)
-tree: ( CallFunc ( Getattr ( Getattr ( Name ( 'os' )  )   ( 'path' )  )   ( 'exists' )  )   ( CallFunc ( Getattr ( Name ( 'util' )  )   ( 'syspath' )  )   ( Name ( 'configpath' )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
+tree: ( CallFunc ( Getattr ( Getattr ( Name ( 'os' )  )   ( 'path' )  )   ( 'isabs' )  )   ( Name ( 'path' )  )   ( None )   ( None )  ) 
 =======================
-Name:['codecs', 'open']
-line:111
-scope:(98, 115)
-source:('import', 2)
-tree: ( CallFunc ( Getattr ( Name ( 'codecs' )  )   ( 'open' )  )   ( Name ( 'configpath' )  )   ( Const ( "'r'" )  )   ( Keyword ( 'encoding' )   ( Const ( "'utf-8'" )  )  )   ( None )   ( None )  ) 
-=======================
-Name:['config', 'readfp']
-line:112
-scope:(98, 115)
+Name:['os', 'path', 'join']
+line:350
+scope:(333, 352)
 source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'config' )  )   ( 'readfp' )  )   ( Name ( 'f' )  )   ( None )   ( None )  ) 
+tree: ( CallFunc ( Getattr ( Getattr ( Name ( 'os' )  )   ( 'path' )  )   ( 'join' )  )   ( CallFunc ( Getattr ( CallFunc ( Getattr ( Name ( 'self' )  )   ( 'root' )  )   ( None )   ( None )  )   ( 'config_dir' )  )   ( None )   ( None )  )   ( Name ( 'path' )  )   ( None )   ( None )  ) 
 =======================
-Name:['confit', 'OrderedDict']
-line:121
-scope:(117, 126)
+Name:['os', 'path', 'abspath']
+line:352
+scope:(333, 352)
 source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'confit' )  )   ( 'OrderedDict' )  )   ( None )   ( None )  ) 
+tree: ( CallFunc ( Getattr ( Getattr ( Name ( 'os' )  )   ( 'path' )  )   ( 'abspath' )  )   ( Name ( 'path' )  )   ( None )   ( None )  ) 
 =======================
-Name:['config', 'sections']
-line:122
-scope:(117, 126)
+Name:['self', 'get']
+line:359
+scope:(354, 371)
 source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'config' )  )   ( 'sections' )  )   ( None )   ( None )  ) 
+tree: ( CallFunc ( Getattr ( Name ( 'self' )  )   ( 'get' )  )   ( None )   ( None )  ) 
 =======================
-Name:['confit', 'OrderedDict']
-line:123
-scope:(117, 126)
-source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'confit' )  )   ( 'OrderedDict' )  )   ( None )   ( None )  ) 
+Name:['ConfigValueError']
+line:363
+scope:(354, 371)
+source:('class', 6)
+tree: ( CallFunc ( Name ( 'ConfigValueError' )  )   ( CallFunc ( Getattr ( Const ( "'{0} must be one of {1}, not {2}'" )  )   ( 'format' )  )   ( Getattr ( Name ( 'self' )  )   ( 'name' )  )   ( CallFunc ( Name ( 'repr' )  )   ( CallFunc ( Name ( 'list' )  )   ( Name ( 'choices' )  )   ( None )   ( None )  )   ( None )   ( None )  )   ( CallFunc ( Name ( 'repr' )  )   ( Name ( 'value' )  )   ( None )   ( None )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
 =======================
-Name:['config', 'options']
-line:124
-scope:(117, 126)
-source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'config' )  )   ( 'options' )  )   ( Name ( 'section' )  )   ( None )   ( None )  ) 
-=======================
-Name:['config', 'get']
-line:125
-scope:(117, 126)
-source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'config' )  )   ( 'get' )  )   ( Name ( 'section' )  )   ( Name ( 'option' )  )   ( Name ( 'True' )  )   ( None )   ( None )  ) 
-=======================
-Name:['value', 'lower']
-line:133
-scope:(128, 150)
-source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'value' )  )   ( 'lower' )  )   ( None )   ( None )  ) 
-=======================
-Name:['value', 'lower']
-line:135
-scope:(128, 150)
-source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'value' )  )   ( 'lower' )  )   ( None )   ( None )  ) 
-=======================
-Name:['int']
-line:140
-scope:(128, 150)
+Name:['isinstance']
+line:368
+scope:(354, 371)
 source:-1
-tree: ( CallFunc ( Name ( 'int' )  )   ( Name ( 'value' )  )   ( None )   ( None )  ) 
+tree: ( CallFunc ( Name ( 'isinstance' )  )   ( Name ( 'choices' )  )   ( Name ( 'dict' )  )   ( None )   ( None )  ) 
 =======================
-Name:['float']
-line:146
-scope:(128, 150)
+Name:['self', 'get']
+line:375
+scope:(373, 380)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'self' )  )   ( 'get' )  )   ( None )   ( None )  ) 
+=======================
+Name:['isinstance']
+line:376
+scope:(373, 380)
 source:-1
-tree: ( CallFunc ( Name ( 'float' )  )   ( Name ( 'value' )  )   ( None )   ( None )  ) 
+tree: ( CallFunc ( Name ( 'isinstance' )  )   ( Name ( 'value' )  )   ( Name ( 'NUMERIC_TYPES' )  )   ( None )   ( None )  ) 
 =======================
-Name:['confit', 'OrderedDict']
-line:157
-scope:(152, 214)
+Name:['ConfigTypeError']
+line:379
+scope:(373, 380)
+source:('class', 5)
+tree: ( CallFunc ( Name ( 'ConfigTypeError' )  )   ( CallFunc ( Getattr ( Const ( "'{0} must be numeric, not {1}'" )  )   ( 'format' )  )   ( Getattr ( Name ( 'self' )  )   ( 'name' )  )   ( Getattr ( CallFunc ( Name ( 'type' )  )   ( Name ( 'value' )  )   ( None )   ( None )  )   ( '__name__' )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
+=======================
+Name:['self', 'get']
+line:389
+scope:(384, 401)
 source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'confit' )  )   ( 'OrderedDict' )  )   ( None )   ( None )  ) 
+tree: ( CallFunc ( Getattr ( Name ( 'self' )  )   ( 'get' )  )   ( None )   ( None )  ) 
 =======================
-Name:['data', 'items']
-line:159
-scope:(152, 214)
+Name:['isinstance']
+line:390
+scope:(384, 401)
+source:-1
+tree: ( CallFunc ( Name ( 'isinstance' )  )   ( Name ( 'value' )  )   ( Name ( 'bytes' )  )   ( None )   ( None )  ) 
+=======================
+Name:['value', 'decode']
+line:391
+scope:(384, 401)
 source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'data' )  )   ( 'items' )  )   ( None )   ( None )  ) 
+tree: ( CallFunc ( Getattr ( Name ( 'value' )  )   ( 'decode' )  )   ( Const ( "'utf8'" )  )   ( Const ( "'ignore'" )  )   ( None )   ( None )  ) 
 =======================
-Name:['pairs', 'items']
-line:163
-scope:(152, 214)
-source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'pairs' )  )   ( 'items' )  )   ( None )   ( None )  ) 
-=======================
-Name:['transform_value']
-line:164
-scope:(152, 214)
-source:('function', 6)
-tree: ( CallFunc ( Name ( 'transform_value' )  )   ( Name ( 'value' )  )   ( None )   ( None )  ) 
-=======================
-Name:['key', 'startswith']
-line:166
-scope:(152, 214)
-source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'key' )  )   ( 'startswith' )  )   ( Const ( "'import_'" )  )   ( None )   ( None )  ) 
-=======================
-Name:['confit', 'OrderedDict']
-line:169
-scope:(152, 214)
-source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'confit' )  )   ( 'OrderedDict' )  )   ( None )   ( None )  ) 
+Name:['isinstance']
+line:393
+scope:(384, 401)
+source:-1
+tree: ( CallFunc ( Name ( 'isinstance' )  )   ( Name ( 'value' )  )   ( Name ( 'STRING' )  )   ( None )   ( None )  ) 
 =======================
 Name:['value', 'split']
-line:174
-scope:(152, 214)
+line:394
+scope:(384, 401)
 source:('member', -1)
 tree: ( CallFunc ( Getattr ( Name ( 'value' )  )   ( 'split' )  )   ( None )   ( None )  ) 
 =======================
-Name:['PLUGIN_NAMES', 'get']
-line:175
-scope:(152, 214)
-source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'PLUGIN_NAMES' )  )   ( 'get' )  )   ( Name ( 'p' )  )   ( Name ( 'p' )  )   ( None )   ( None )  ) 
-=======================
-Name:['Const: ( Const ( "\' \'" )  ) ', 'join']
-line:176
-scope:(152, 214)
-source:('member', -1)
-tree: ( CallFunc ( Getattr ( Const ( "' '" )  )   ( 'join' )  )   ( Name ( 'new_plugins' )  )   ( None )   ( None )  ) 
-=======================
-Name:['confit', 'OrderedDict']
-line:180
-scope:(152, 214)
-source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'confit' )  )   ( 'OrderedDict' )  )   ( None )   ( None )  ) 
-=======================
-Name:['grouper']
-line:181
-scope:(152, 214)
-source:('function', 0)
-tree: ( CallFunc ( Name ( 'grouper' )  )   ( Const ( '2' )  )   ( CallFunc ( Getattr ( Name ( 'value' )  )   ( 'split' )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
-=======================
-Name:['value', 'split']
-line:189
-scope:(152, 214)
-source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'value' )  )   ( 'split' )  )   ( Const ( "':'" )  )   ( None )   ( None )  ) 
-=======================
-Name:['confit', 'OrderedDict']
-line:196
-scope:(152, 214)
-source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'confit' )  )   ( 'OrderedDict' )  )   ( None )   ( None )  ) 
-=======================
-Name:['pairs', 'items']
-line:197
-scope:(152, 214)
-source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'pairs' )  )   ( 'items' )  )   ( None )   ( None )  ) 
-=======================
-Name:['key', 'replace']
-line:205
-scope:(152, 214)
-source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'key' )  )   ( 'replace' )  )   ( Const ( "'_'" )  )   ( Const ( "':'" )  )   ( None )   ( None )  ) 
-=======================
-Name:['key', 'startswith']
-line:209
-scope:(152, 214)
-source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'key' )  )   ( 'startswith' )  )   ( Name ( 'IMPORTFEEDS_PREFIX' )  )   ( None )   ( None )  ) 
-=======================
-Name:['len']
-line:210
-scope:(152, 214)
+Name:['list']
+line:397
+scope:(384, 401)
 source:-1
-tree: ( CallFunc ( Name ( 'len' )  )   ( Name ( 'IMPORTFEEDS_PREFIX' )  )   ( None )   ( None )  ) 
+tree: ( CallFunc ( Name ( 'list' )  )   ( Name ( 'value' )  )   ( None )   ( None )  ) 
 =======================
-Name:['transform_value']
-line:212
-scope:(152, 214)
-source:('function', 6)
-tree: ( CallFunc ( Name ( 'transform_value' )  )   ( Name ( 'value' )  )   ( None )   ( None )  ) 
+Name:['ConfigTypeError']
+line:400
+scope:(384, 401)
+source:('class', 5)
+tree: ( CallFunc ( Name ( 'ConfigTypeError' )  )   ( CallFunc ( Getattr ( Const ( "'{0} must be a whitespace-separated string or a list'" )  )   ( 'format' )  )   ( Getattr ( Name ( 'self' )  )   ( 'name' )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
+=======================
+Name:['OrderedDict']
+line:409
+scope:(404, 415)
+source:('class', 1)
+tree: ( CallFunc ( Name ( 'OrderedDict' )  )   ( None )   ( None )  ) 
+=======================
+Name:['self', 'items']
+line:410
+scope:(404, 415)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'self' )  )   ( 'items' )  )   ( None )   ( None )  ) 
+=======================
+Name:['view', 'flatten']
+line:412
+scope:(404, 415)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'view' )  )   ( 'flatten' )  )   ( None )   ( None )  ) 
+=======================
+Name:['view', 'get']
+line:414
+scope:(404, 415)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'view' )  )   ( 'get' )  )   ( None )   ( None )  ) 
+=======================
+Name:['list']
+line:427
+scope:(422, 428)
+source:-1
+tree: ( CallFunc ( Name ( 'list' )  )   ( Name ( 'sources' )  )   ( None )   ( None )  ) 
+=======================
+Name:['self', 'sources', 'append']
+line:431
+scope:(430, 431)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Getattr ( Name ( 'self' )  )   ( 'sources' )  )   ( 'append' )  )   ( CallFunc ( Getattr ( Name ( 'ConfigSource' )  )   ( 'of' )  )   ( Name ( 'obj' )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
+=======================
+Name:['self', 'sources', 'insert']
+line:434
+scope:(433, 434)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Getattr ( Name ( 'self' )  )   ( 'sources' )  )   ( 'insert' )  )   ( Const ( '0' )  )   ( CallFunc ( Getattr ( Name ( 'ConfigSource' )  )   ( 'of' )  )   ( Name ( 'value' )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
+=======================
+Name:['dict']
+line:437
+scope:(436, 437)
+source:-1
+tree: ( CallFunc ( Name ( 'dict' )  )   ( Name ( 's' )  )   ( None )   ( None )  ) 
+=======================
+Name:['isinstance']
+line:456
+scope:(449, 467)
+source:-1
+tree: ( CallFunc ( Name ( 'isinstance' )  )   ( Getattr ( Name ( 'self' )  )   ( 'parent' )  )   ( Name ( 'RootView' )  )   ( None )   ( None )  ) 
+=======================
+Name:['isinstance']
+line:460
+scope:(449, 467)
+source:-1
+tree: ( CallFunc ( Name ( 'isinstance' )  )   ( Getattr ( Name ( 'self' )  )   ( 'key' )  )   ( Name ( 'int' )  )   ( None )   ( None )  ) 
+=======================
+Name:['isinstance']
+line:462
+scope:(449, 467)
+source:-1
+tree: ( CallFunc ( Name ( 'isinstance' )  )   ( Getattr ( Name ( 'self' )  )   ( 'key' )  )   ( Name ( 'int' )  )   ( None )   ( None )  ) 
+=======================
+Name:['Const: ( Const ( "\'#{0}\'" )  ) ', 'format']
+line:463
+scope:(449, 467)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Const ( "'#{0}'" )  )   ( 'format' )  )   ( Getattr ( Name ( 'self' )  )   ( 'key' )  )   ( None )   ( None )  ) 
+=======================
+Name:['isinstance']
+line:464
+scope:(449, 467)
+source:-1
+tree: ( CallFunc ( Name ( 'isinstance' )  )   ( Getattr ( Name ( 'self' )  )   ( 'key' )  )   ( Name ( 'BASESTRING' )  )   ( None )   ( None )  ) 
+=======================
+Name:['Const: ( Const ( "\'{0}\'" )  ) ', 'format']
+line:465
+scope:(449, 467)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Const ( "'{0}'" )  )   ( 'format' )  )   ( Getattr ( Name ( 'self' )  )   ( 'key' )  )   ( None )   ( None )  ) 
+=======================
+Name:['Const: ( Const ( "\'{0}\'" )  ) ', 'format']
+line:467
+scope:(449, 467)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Const ( "'{0}'" )  )   ( 'format' )  )   ( CallFunc ( Name ( 'repr' )  )   ( Getattr ( Name ( 'self' )  )   ( 'key' )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
+=======================
+Name:['self', 'parent', 'resolve']
+line:470
+scope:(469, 486)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Getattr ( Name ( 'self' )  )   ( 'parent' )  )   ( 'resolve' )  )   ( None )   ( None )  ) 
+=======================
+Name:['ConfigTypeError']
+line:482
+scope:(469, 486)
+source:('class', 5)
+tree: ( CallFunc ( Name ( 'ConfigTypeError' )  )   ( CallFunc ( Getattr ( Const ( "'{0} must be a collection, not {1}'" )  )   ( 'format' )  )   ( Getattr ( Getattr ( Name ( 'self' )  )   ( 'parent' )  )   ( 'name' )  )   ( Getattr ( CallFunc ( Name ( 'type' )  )   ( Name ( 'collection' )  )   ( None )   ( None )  )   ( '__name__' )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
+=======================
+Name:['self', 'parent', 'set']
+line:489
+scope:(488, 489)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Getattr ( Name ( 'self' )  )   ( 'parent' )  )   ( 'set' )  )   ( Dict ( Getattr ( Name ( 'self' )  )   ( 'key' )  )   ( Name ( 'value' )  )  )   ( None )   ( None )  ) 
+=======================
+Name:['self', 'parent', 'add']
+line:492
+scope:(491, 492)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Getattr ( Name ( 'self' )  )   ( 'parent' )  )   ( 'add' )  )   ( Dict ( Getattr ( Name ( 'self' )  )   ( 'key' )  )   ( Name ( 'value' )  )  )   ( None )   ( None )  ) 
+=======================
+Name:['self', 'parent', 'root']
+line:495
+scope:(494, 495)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Getattr ( Name ( 'self' )  )   ( 'parent' )  )   ( 'root' )  )   ( None )   ( None )  ) 
+=======================
+Name:['pkgutil', 'get_loader']
+line:507
+scope:(502, 518)
+source:('import', 2)
+tree: ( CallFunc ( Getattr ( Name ( 'pkgutil' )  )   ( 'get_loader' )  )   ( Name ( 'name' )  )   ( None )   ( None )  ) 
+=======================
+Name:['hasattr']
+line:511
+scope:(502, 518)
+source:-1
+tree: ( CallFunc ( Name ( 'hasattr' )  )   ( Name ( 'loader' )  )   ( Const ( "'get_filename'" )  )   ( None )   ( None )  ) 
+=======================
+Name:['loader', 'get_filename']
+line:512
+scope:(502, 518)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'loader' )  )   ( 'get_filename' )  )   ( Name ( 'name' )  )   ( None )   ( None )  ) 
+=======================
+Name:['__import__']
+line:515
+scope:(502, 518)
+source:-1
+tree: ( CallFunc ( Name ( '__import__' )  )   ( Name ( 'name' )  )   ( None )   ( None )  ) 
+=======================
+Name:['os', 'path', 'dirname']
+line:518
+scope:(502, 518)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Getattr ( Name ( 'os' )  )   ( 'path' )  )   ( 'dirname' )  )   ( CallFunc ( Getattr ( Getattr ( Name ( 'os' )  )   ( 'path' )  )   ( 'abspath' )  )   ( Name ( 'filepath' )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
+=======================
+Name:['platform', 'system']
+line:530
+scope:(520, 553)
+source:('import', 0)
+tree: ( CallFunc ( Getattr ( Name ( 'platform' )  )   ( 'system' )  )   ( None )   ( None )  ) 
+=======================
+Name:['paths', 'append']
+line:531
+scope:(520, 553)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'paths' )  )   ( 'append' )  )   ( Name ( 'MAC_DIR' )  )   ( None )   ( None )  ) 
+=======================
+Name:['paths', 'append']
+line:532
+scope:(520, 553)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'paths' )  )   ( 'append' )  )   ( Name ( 'UNIX_DIR_FALLBACK' )  )   ( None )   ( None )  ) 
+=======================
+Name:['paths', 'append']
+line:534
+scope:(520, 553)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'paths' )  )   ( 'append' )  )   ( Subscript ( Getattr ( Name ( 'os' )  )   ( 'environ' )  )   ( 'OP_APPLY' )   ( Name ( 'UNIX_DIR_VAR' )  )  )   ( None )   ( None )  ) 
+=======================
+Name:['platform', 'system']
+line:536
+scope:(520, 553)
+source:('import', 0)
+tree: ( CallFunc ( Getattr ( Name ( 'platform' )  )   ( 'system' )  )   ( None )   ( None )  ) 
+=======================
+Name:['paths', 'append']
+line:537
+scope:(520, 553)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'paths' )  )   ( 'append' )  )   ( Name ( 'WINDOWS_DIR_FALLBACK' )  )   ( None )   ( None )  ) 
+=======================
+Name:['paths', 'append']
+line:539
+scope:(520, 553)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'paths' )  )   ( 'append' )  )   ( Subscript ( Getattr ( Name ( 'os' )  )   ( 'environ' )  )   ( 'OP_APPLY' )   ( Name ( 'WINDOWS_DIR_VAR' )  )  )   ( None )   ( None )  ) 
+=======================
+Name:['paths', 'append']
+line:543
+scope:(520, 553)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'paths' )  )   ( 'append' )  )   ( Name ( 'UNIX_DIR_FALLBACK' )  )   ( None )   ( None )  ) 
+=======================
+Name:['paths', 'append']
+line:545
+scope:(520, 553)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'paths' )  )   ( 'append' )  )   ( Subscript ( Getattr ( Name ( 'os' )  )   ( 'environ' )  )   ( 'OP_APPLY' )   ( Name ( 'UNIX_DIR_VAR' )  )  )   ( None )   ( None )  ) 
+=======================
+Name:['os', 'path', 'abspath']
+line:550
+scope:(520, 553)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Getattr ( Name ( 'os' )  )   ( 'path' )  )   ( 'abspath' )  )   ( CallFunc ( Getattr ( Getattr ( Name ( 'os' )  )   ( 'path' )  )   ( 'expanduser' )  )   ( Name ( 'path' )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
+=======================
+Name:['out', 'append']
+line:552
+scope:(520, 553)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'out' )  )   ( 'append' )  )   ( Name ( 'path' )  )   ( None )   ( None )  ) 
+=======================
+Name:['self', 'construct_scalar']
+line:568
+scope:(567, 568)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'self' )  )   ( 'construct_scalar' )  )   ( Name ( 'node' )  )   ( None )   ( None )  ) 
+=======================
+Name:['OrderedDict']
+line:573
+scope:(572, 576)
+source:('class', 1)
+tree: ( CallFunc ( Name ( 'OrderedDict' )  )   ( None )   ( None )  ) 
+=======================
+Name:['self', 'construct_mapping']
+line:575
+scope:(572, 576)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'self' )  )   ( 'construct_mapping' )  )   ( Name ( 'node' )  )   ( None )   ( None )  ) 
+=======================
+Name:['data', 'update']
+line:576
+scope:(572, 576)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'data' )  )   ( 'update' )  )   ( Name ( 'value' )  )   ( None )   ( None )  ) 
+=======================
+Name:['isinstance']
+line:579
+scope:(578, 601)
+source:-1
+tree: ( CallFunc ( Name ( 'isinstance' )  )   ( Name ( 'node' )  )   ( Getattr ( Name ( 'yaml' )  )   ( 'MappingNode' )  )   ( None )   ( None )  ) 
+=======================
+Name:['self', 'flatten_mapping']
+line:580
+scope:(578, 601)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'self' )  )   ( 'flatten_mapping' )  )   ( Name ( 'node' )  )   ( None )   ( None )  ) 
+=======================
+Name:['yaml', 'constructor', 'ConstructorError']
+line:583
+scope:(578, 601)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Getattr ( Name ( 'yaml' )  )   ( 'constructor' )  )   ( 'ConstructorError' )  )   ( Name ( 'None' )  )   ( Name ( 'None' )  )   ( Mod ( Const ( "'expected a mapping node, but found %s'" )  )   ( Getattr ( Name ( 'node' )  )   ( 'id' )  )  )   ( Getattr ( Name ( 'node' )  )   ( 'start_mark' )  )   ( None )   ( None )  ) 
+=======================
+Name:['OrderedDict']
+line:588
+scope:(578, 601)
+source:('class', 1)
+tree: ( CallFunc ( Name ( 'OrderedDict' )  )   ( None )   ( None )  ) 
+=======================
+Name:['self', 'construct_object']
+line:590
+scope:(578, 601)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'self' )  )   ( 'construct_object' )  )   ( Name ( 'key_node' )  )   ( Keyword ( 'deep' )   ( Name ( 'deep' )  )  )   ( None )   ( None )  ) 
+=======================
+Name:['hash']
+line:592
+scope:(578, 601)
+source:-1
+tree: ( CallFunc ( Name ( 'hash' )  )   ( Name ( 'key' )  )   ( None )   ( None )  ) 
+=======================
+Name:['yaml', 'constructor', 'ConstructorError']
+line:595
+scope:(578, 601)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Getattr ( Name ( 'yaml' )  )   ( 'constructor' )  )   ( 'ConstructorError' )  )   ( Const ( "'while constructing a mapping'" )  )   ( Getattr ( Name ( 'node' )  )   ( 'start_mark' )  )   ( Mod ( Const ( "'found unacceptable key (%s)'" )  )   ( Name ( 'exc' )  )  )   ( Getattr ( Name ( 'key_node' )  )   ( 'start_mark' )  )   ( None )   ( None )  ) 
+=======================
+Name:['self', 'construct_object']
+line:599
+scope:(578, 601)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'self' )  )   ( 'construct_object' )  )   ( Name ( 'value_node' )  )   ( Keyword ( 'deep' )   ( Name ( 'deep' )  )  )   ( None )   ( None )  ) 
+=======================
+Name:['super']
+line:605
+scope:(604, 606)
+source:('member', -1, 'followed')
+tree: ( CallFunc ( Getattr ( CallFunc ( Name ( 'super' )  )   ( Name ( 'Loader' )  )   ( Name ( 'self' )  )   ( None )   ( None )  )   ( 'check_plain' )  )   ( None )   ( None )  ) 
+=======================
+Name:['self', 'peek']
+line:606
+scope:(604, 606)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'self' )  )   ( 'peek' )  )   ( None )   ( None )  ) 
+=======================
+Name:['Loader', 'add_constructor']
+line:608
+scope:(0, 999998)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'Loader' )  )   ( 'add_constructor' )  )   ( Const ( "'tag:yaml.org,2002:str'" )  )   ( Getattr ( Name ( 'Loader' )  )   ( '_construct_unicode' )  )   ( None )   ( None )  ) 
+=======================
+Name:['Loader', 'add_constructor']
+line:609
+scope:(0, 999998)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'Loader' )  )   ( 'add_constructor' )  )   ( Const ( "'tag:yaml.org,2002:map'" )  )   ( Getattr ( Name ( 'Loader' )  )   ( 'construct_yaml_map' )  )   ( None )   ( None )  ) 
+=======================
+Name:['Loader', 'add_constructor']
+line:610
+scope:(0, 999998)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'Loader' )  )   ( 'add_constructor' )  )   ( Const ( "'tag:yaml.org,2002:omap'" )  )   ( Getattr ( Name ( 'Loader' )  )   ( 'construct_yaml_map' )  )   ( None )   ( None )  ) 
+=======================
+Name:['open']
+line:617
+scope:(612, 620)
+source:-1
+tree: ( CallFunc ( Name ( 'open' )  )   ( Name ( 'filename' )  )   ( Const ( "'r'" )  )   ( None )   ( None )  ) 
+=======================
+Name:['yaml', 'load']
+line:618
+scope:(612, 620)
+source:('import', 4)
+tree: ( CallFunc ( Getattr ( Name ( 'yaml' )  )   ( 'load' )  )   ( Name ( 'f' )  )   ( Keyword ( 'Loader' )   ( Name ( 'Loader' )  )  )   ( None )   ( None )  ) 
+=======================
+Name:['ConfigReadError']
+line:620
+scope:(612, 620)
+source:('class', 7)
+tree: ( CallFunc ( Name ( 'ConfigReadError' )  )   ( Name ( 'filename' )  )   ( Name ( 'exc' )  )   ( None )   ( None )  ) 
 =======================
 Name:['yaml', 'MappingNode']
-line:234
-scope:(230, 259)
-source:('import', 3)
+line:643
+scope:(639, 668)
+source:('import', 4)
 tree: ( CallFunc ( Getattr ( Name ( 'yaml' )  )   ( 'MappingNode' )  )   ( Name ( 'tag' )  )   ( Name ( 'value' )  )   ( Keyword ( 'flow_style' )   ( Name ( 'flow_style' )  )  )   ( None )   ( None )  ) 
 =======================
 Name:['outsideFunc']
-line:238
-scope:(230, 259)
-source:('function', 8)
+line:647
+scope:(639, 668)
+source:('function', 47)
 tree: ( CallFunc ( Name ( 'outsideFunc' )  )   ( None )   ( None )  ) 
 =======================
 Name:['insideFunc']
-line:239
-scope:(230, 259)
-source:('function', 12)
+line:648
+scope:(639, 668)
+source:('function', 51)
 tree: ( CallFunc ( Name ( 'insideFunc' )  )   ( None )   ( None )  ) 
 =======================
 Name:['outsideClass']
-line:240
-scope:(230, 259)
-source:('class', 3)
+line:649
+scope:(639, 668)
+source:('class', 13)
 tree: ( CallFunc ( Name ( 'outsideClass' )  )   ( None )   ( None )  ) 
 =======================
-Name:['insideClass']
-line:241
-scope:(230, 259)
-source:-1
-tree: ( CallFunc ( Name ( 'insideClass' )  )   ( None )   ( None )  ) 
+Name:['Dumper', 'insideClass']
+line:650
+scope:(639, 668)
+source:('class', 15)
+tree: ( CallFunc ( Getattr ( Name ( 'Dumper' )  )   ( 'insideClass' )  )   ( None )   ( None )  ) 
 =======================
 Name:['hasattr']
-line:242
-scope:(230, 259)
+line:651
+scope:(639, 668)
 source:-1
 tree: ( CallFunc ( Name ( 'hasattr' )  )   ( Name ( 'mapping' )  )   ( Const ( "'items'" )  )   ( None )   ( None )  ) 
 =======================
 Name:['list']
-line:243
-scope:(230, 259)
+line:652
+scope:(639, 668)
 source:-1
 tree: ( CallFunc ( Name ( 'list' )  )   ( CallFunc ( Getattr ( Name ( 'mapping' )  )   ( 'items' )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
 =======================
 Name:['self', 'represent_data']
-line:245
-scope:(230, 259)
+line:654
+scope:(639, 668)
 source:('member', -1)
 tree: ( CallFunc ( Getattr ( Name ( 'self' )  )   ( 'represent_data' )  )   ( Name ( 'item_key' )  )   ( None )   ( None )  ) 
 =======================
 Name:['self', 'represent_data']
-line:246
-scope:(230, 259)
+line:655
+scope:(639, 668)
 source:('member', -1)
 tree: ( CallFunc ( Getattr ( Name ( 'self' )  )   ( 'represent_data' )  )   ( Name ( 'item_value' )  )   ( None )   ( None )  ) 
 =======================
 Name:['isinstance']
-line:247
-scope:(230, 259)
+line:656
+scope:(639, 668)
 source:-1
 tree: ( CallFunc ( Name ( 'isinstance' )  )   ( Name ( 'node_key' )  )   ( Getattr ( Name ( 'yaml' )  )   ( 'ScalarNode' )  )   ( None )   ( None )  ) 
 =======================
 Name:['isinstance']
-line:250
-scope:(230, 259)
+line:659
+scope:(639, 668)
 source:-1
 tree: ( CallFunc ( Name ( 'isinstance' )  )   ( Name ( 'node_value' )  )   ( Getattr ( Name ( 'yaml' )  )   ( 'ScalarNode' )  )   ( None )   ( None )  ) 
 =======================
 Name:['value', 'append']
-line:253
-scope:(230, 259)
+line:662
+scope:(639, 668)
 source:('member', -1)
 tree: ( CallFunc ( Getattr ( Name ( 'value' )  )   ( 'append' )  )   ( Tuple ( Name ( 'node_key' )  )   ( Name ( 'node_value' )  )  )   ( None )   ( None )  ) 
 =======================
+Name:['super']
+line:674
+scope:(670, 680)
+source:('member', -1, 'followed')
+tree: ( CallFunc ( Getattr ( CallFunc ( Name ( 'super' )  )   ( Name ( 'Dumper' )  )   ( Name ( 'self' )  )   ( None )   ( None )  )   ( 'represent_list' )  )   ( Name ( 'data' )  )   ( None )   ( None )  ) 
+=======================
+Name:['len']
+line:675
+scope:(670, 680)
+source:-1
+tree: ( CallFunc ( Name ( 'len' )  )   ( Name ( 'data' )  )   ( None )   ( None )  ) 
+=======================
+Name:['self', 'represent_scalar']
+line:689
+scope:(682, 689)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'self' )  )   ( 'represent_scalar' )  )   ( Const ( "'tag:yaml.org,2002:bool'" )  )   ( Name ( 'value' )  )   ( None )   ( None )  ) 
+=======================
+Name:['self', 'represent_scalar']
+line:694
+scope:(691, 694)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'self' )  )   ( 'represent_scalar' )  )   ( Const ( "'tag:yaml.org,2002:null'" )  )   ( Const ( "''" )  )   ( None )   ( None )  ) 
+=======================
 Name:['Dumper', 'add_representer']
-line:260
+line:696
 scope:(0, 999998)
 source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'Dumper' )  )   ( 'add_representer' )  )   ( Getattr ( Name ( 'confit' )  )   ( 'OrderedDict' )  )   ( Getattr ( Name ( 'Dumper' )  )   ( 'represent_dict' )  )   ( None )   ( None )  ) 
+tree: ( CallFunc ( Getattr ( Name ( 'Dumper' )  )   ( 'add_representer' )  )   ( Name ( 'OrderedDict' )  )   ( Getattr ( Name ( 'Dumper' )  )   ( 'represent_dict' )  )   ( None )   ( None )  ) 
 =======================
-Name:['get_config']
-line:270
-scope:(262, 317)
-source:('function', 4)
-tree: ( CallFunc ( Name ( 'get_config' )  )   ( None )   ( None )  ) 
-=======================
-Name:['log', 'debug']
-line:272
-scope:(262, 317)
+Name:['Dumper', 'add_representer']
+line:697
+scope:(0, 999998)
 source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'log' )  )   ( 'debug' )  )   ( CallFunc ( Getattr ( Const ( "u'no config file found at {0}'" )  )   ( 'format' )  )   ( CallFunc ( Getattr ( Name ( 'util' )  )   ( 'displayable_path' )  )   ( Name ( 'configpath' )  )   ( None )   ( None )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
+tree: ( CallFunc ( Getattr ( Name ( 'Dumper' )  )   ( 'add_representer' )  )   ( Name ( 'bool' )  )   ( Getattr ( Name ( 'Dumper' )  )   ( 'represent_bool' )  )   ( None )   ( None )  ) 
+=======================
+Name:['Dumper', 'add_representer']
+line:698
+scope:(0, 999998)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'Dumper' )  )   ( 'add_representer' )  )   ( CallFunc ( Name ( 'type' )  )   ( Name ( 'None' )  )   ( None )   ( None )  )   ( Getattr ( Name ( 'Dumper' )  )   ( 'represent_none' )  )   ( None )   ( None )  ) 
+=======================
+Name:['Dumper', 'add_representer']
+line:699
+scope:(0, 999998)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'Dumper' )  )   ( 'add_representer' )  )   ( Name ( 'list' )  )   ( Getattr ( Name ( 'Dumper' )  )   ( 'represent_list' )  )   ( None )   ( None )  ) 
+=======================
+Name:['dict']
+line:707
+scope:(701, 730)
+source:-1
+tree: ( CallFunc ( Name ( 'dict' )  )   ( None )   ( None )  ) 
+=======================
+Name:['iter']
+line:708
+scope:(701, 730)
+source:-1
+tree: ( CallFunc ( Name ( 'iter' )  )   ( CallFunc ( Getattr ( Name ( 'default_data' )  )   ( 'splitlines' )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
+=======================
+Name:['line', 'startswith']
+line:712
+scope:(701, 730)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'line' )  )   ( 'startswith' )  )   ( Const ( "'#'" )  )   ( None )   ( None )  ) 
+=======================
+Name:['Const: ( Const ( "\'{0}\\\\n\'" )  ) ', 'format']
+line:713
+scope:(701, 730)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Const ( "'{0}\\n'" )  )   ( 'format' )  )   ( Name ( 'line' )  )   ( None )   ( None )  ) 
+=======================
+Name:['next']
+line:717
+scope:(701, 730)
+source:-1
+tree: ( CallFunc ( Name ( 'next' )  )   ( Name ( 'default_lines' )  )   ( None )   ( None )  ) 
+=======================
+Name:['line', 'startswith']
+line:718
+scope:(701, 730)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'line' )  )   ( 'startswith' )  )   ( Const ( "'#'" )  )   ( None )   ( None )  ) 
+=======================
+Name:['Const: ( Const ( "\'{0}\\\\n\'" )  ) ', 'format']
+line:720
+scope:(701, 730)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Const ( "'{0}\\n'" )  )   ( 'format' )  )   ( Name ( 'line' )  )   ( None )   ( None )  ) 
+=======================
+Name:[' ( Subscript ( CallFunc ( Getattr ( Name ( \'line\' )  )   ( \'split\' )  )   ( Const ( "\':\'" )  )   ( None )   ( None )  )   ( \'OP_APPLY\' )   ( Const ( \'0\' )  )  ) ', 'strip']
+line:721
+scope:(701, 730)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Subscript ( CallFunc ( Getattr ( Name ( 'line' )  )   ( 'split' )  )   ( Const ( "':'" )  )   ( None )   ( None )  )   ( 'OP_APPLY' )   ( Const ( '0' )  )  )   ( 'strip' )  )   ( None )   ( None )  ) 
+=======================
+Name:['iter']
+line:723
+scope:(701, 730)
+source:-1
+tree: ( CallFunc ( Name ( 'iter' )  )   ( CallFunc ( Getattr ( Name ( 'data' )  )   ( 'splitlines' )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
+=======================
+Name:[' ( Subscript ( CallFunc ( Getattr ( Name ( \'line\' )  )   ( \'split\' )  )   ( Const ( "\':\'" )  )   ( None )   ( None )  )   ( \'OP_APPLY\' )   ( Const ( \'0\' )  )  ) ', 'strip']
+line:726
+scope:(701, 730)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Subscript ( CallFunc ( Getattr ( Name ( 'line' )  )   ( 'split' )  )   ( Const ( "':'" )  )   ( None )   ( None )  )   ( 'OP_APPLY' )   ( Const ( '0' )  )  )   ( 'strip' )  )   ( None )   ( None )  ) 
+=======================
+Name:['Const: ( Const ( "\'{0}\\\\n\'" )  ) ', 'format']
+line:729
+scope:(701, 730)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Const ( "'{0}\\n'" )  )   ( 'format' )  )   ( Name ( 'line' )  )   ( None )   ( None )  ) 
+=======================
+Name:['super']
+line:747
+scope:(736, 754)
+source:('member', -1, 'followed')
+tree: ( CallFunc ( Getattr ( CallFunc ( Name ( 'super' )  )   ( Name ( 'Configuration' )  )   ( Name ( 'self' )  )   ( None )   ( None )  )   ( '__init__' )  )   ( List )   ( None )   ( None )  ) 
+=======================
+Name:['Const: ( Const ( "\'{0}DIR\'" )  ) ', 'format']
+line:751
+scope:(736, 754)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Const ( "'{0}DIR'" )  )   ( 'format' )  )   ( CallFunc ( Getattr ( Getattr ( Name ( 'self' )  )   ( 'appname' )  )   ( 'upper' )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
+=======================
+Name:['self', 'read']
+line:754
+scope:(736, 754)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'self' )  )   ( 'read' )  )   ( None )   ( None )  ) 
 =======================
 Name:['os', 'path', 'join']
-line:279
-scope:(262, 317)
+line:761
+scope:(756, 761)
 source:('member', -1)
-tree: ( CallFunc ( Getattr ( Getattr ( Name ( 'os' )  )   ( 'path' )  )   ( 'join' )  )   ( CallFunc ( Getattr ( Getattr ( Name ( 'beets' )  )   ( 'config' )  )   ( 'config_dir' )  )   ( None )   ( None )  )   ( Getattr ( Name ( 'confit' )  )   ( 'CONFIG_FILENAME' )  )   ( None )   ( None )  ) 
+tree: ( CallFunc ( Getattr ( Getattr ( Name ( 'os' )  )   ( 'path' )  )   ( 'join' )  )   ( CallFunc ( Getattr ( Name ( 'self' )  )   ( 'config_dir' )  )   ( None )   ( None )  )   ( Name ( 'CONFIG_FILENAME' )  )   ( None )   ( None )  ) 
 =======================
-Name:['os', 'path', 'exists']
-line:280
-scope:(262, 317)
+Name:['self', 'user_config_path']
+line:768
+scope:(763, 770)
 source:('member', -1)
-tree: ( CallFunc ( Getattr ( Getattr ( Name ( 'os' )  )   ( 'path' )  )   ( 'exists' )  )   ( Name ( 'destfn' )  )   ( None )   ( None )  ) 
+tree: ( CallFunc ( Getattr ( Name ( 'self' )  )   ( 'user_config_path' )  )   ( None )   ( None )  ) 
 =======================
-Name:['log', 'debug']
-line:282
-scope:(262, 317)
+Name:['os', 'path', 'isfile']
+line:769
+scope:(763, 770)
 source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'log' )  )   ( 'debug' )  )   ( CallFunc ( Getattr ( Const ( "u'moving old config aside: {0}'" )  )   ( 'format' )  )   ( CallFunc ( Getattr ( Name ( 'util' )  )   ( 'displayable_path' )  )   ( Name ( 'destfn' )  )   ( None )   ( None )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
+tree: ( CallFunc ( Getattr ( Getattr ( Name ( 'os' )  )   ( 'path' )  )   ( 'isfile' )  )   ( Name ( 'filename' )  )   ( None )   ( None )  ) 
 =======================
-Name:['_displace']
-line:285
-scope:(262, 317)
-source:('function', 1)
-tree: ( CallFunc ( Name ( '_displace' )  )   ( Name ( 'destfn' )  )   ( None )   ( None )  ) 
-=======================
-Name:['log', 'debug']
-line:290
-scope:(262, 317)
+Name:['self', 'add']
+line:770
+scope:(763, 770)
 source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'log' )  )   ( 'debug' )  )   ( CallFunc ( Getattr ( Const ( "u'migrating config file {0}'" )  )   ( 'format' )  )   ( CallFunc ( Getattr ( Name ( 'util' )  )   ( 'displayable_path' )  )   ( Name ( 'configpath' )  )   ( None )   ( None )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
+tree: ( CallFunc ( Getattr ( Name ( 'self' )  )   ( 'add' )  )   ( CallFunc ( Name ( 'ConfigSource' )  )   ( Or ( CallFunc ( Name ( 'load_yaml' )  )   ( Name ( 'filename' )  )   ( None )   ( None )  )   ( Dict )  )   ( Name ( 'filename' )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
 =======================
-Name:['transform_data']
-line:296
-scope:(262, 317)
-source:('function', 7)
-tree: ( CallFunc ( Name ( 'transform_data' )  )   ( CallFunc ( Name ( 'flatten_config' )  )   ( Name ( 'config' )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
+Name:['_package_path']
+line:778
+scope:(772, 782)
+source:('function', 40)
+tree: ( CallFunc ( Name ( '_package_path' )  )   ( Getattr ( Name ( 'self' )  )   ( 'modname' )  )   ( None )   ( None )  ) 
+=======================
+Name:['os', 'path', 'join']
+line:780
+scope:(772, 782)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Getattr ( Name ( 'os' )  )   ( 'path' )  )   ( 'join' )  )   ( Name ( 'pkg_path' )  )   ( Name ( 'DEFAULT_FILENAME' )  )   ( None )   ( None )  ) 
+=======================
+Name:['os', 'path', 'isfile']
+line:781
+scope:(772, 782)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Getattr ( Name ( 'os' )  )   ( 'path' )  )   ( 'isfile' )  )   ( Name ( 'filename' )  )   ( None )   ( None )  ) 
+=======================
+Name:['self', 'add']
+line:782
+scope:(772, 782)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'self' )  )   ( 'add' )  )   ( CallFunc ( Name ( 'ConfigSource' )  )   ( CallFunc ( Name ( 'load_yaml' )  )   ( Name ( 'filename' )  )   ( None )   ( None )  )   ( Name ( 'filename' )  )   ( Name ( 'True' )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
+=======================
+Name:['self', '_add_user_source']
+line:791
+scope:(784, 793)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'self' )  )   ( '_add_user_source' )  )   ( None )   ( None )  ) 
+=======================
+Name:['self', '_add_default_source']
+line:793
+scope:(784, 793)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'self' )  )   ( '_add_default_source' )  )   ( None )   ( None )  ) 
+=======================
+Name:['os', 'path', 'abspath']
+line:809
+scope:(795, 826)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Getattr ( Name ( 'os' )  )   ( 'path' )  )   ( 'abspath' )  )   ( CallFunc ( Getattr ( Getattr ( Name ( 'os' )  )   ( 'path' )  )   ( 'expanduser' )  )   ( Name ( 'appdir' )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
+=======================
+Name:['os', 'path', 'isfile']
+line:810
+scope:(795, 826)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Getattr ( Name ( 'os' )  )   ( 'path' )  )   ( 'isfile' )  )   ( Name ( 'appdir' )  )   ( None )   ( None )  ) 
+=======================
+Name:['ConfigError']
+line:811
+scope:(795, 826)
+source:('class', 3)
+tree: ( CallFunc ( Name ( 'ConfigError' )  )   ( CallFunc ( Getattr ( Const ( "'{0} must be a directory'" )  )   ( 'format' )  )   ( Getattr ( Name ( 'self' )  )   ( '_env_var' )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
+=======================
+Name:['config_dirs']
+line:818
+scope:(795, 826)
+source:('function', 41)
+tree: ( CallFunc ( Name ( 'config_dirs' )  )   ( None )   ( None )  ) 
+=======================
+Name:['os', 'path', 'join']
+line:819
+scope:(795, 826)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Getattr ( Name ( 'os' )  )   ( 'path' )  )   ( 'join' )  )   ( Name ( 'confdir' )  )   ( Getattr ( Name ( 'self' )  )   ( 'appname' )  )   ( None )   ( None )  ) 
+=======================
+Name:['os', 'path', 'isfile']
+line:820
+scope:(795, 826)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Getattr ( Name ( 'os' )  )   ( 'path' )  )   ( 'isfile' )  )   ( CallFunc ( Getattr ( Getattr ( Name ( 'os' )  )   ( 'path' )  )   ( 'join' )  )   ( Name ( 'appdir' )  )   ( Name ( 'CONFIG_FILENAME' )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
+=======================
+Name:['os', 'path', 'isdir']
+line:824
+scope:(795, 826)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Getattr ( Name ( 'os' )  )   ( 'path' )  )   ( 'isdir' )  )   ( Name ( 'appdir' )  )   ( None )   ( None )  ) 
+=======================
+Name:['os', 'makedirs']
+line:825
+scope:(795, 826)
+source:('import', 1)
+tree: ( CallFunc ( Getattr ( Name ( 'os' )  )   ( 'makedirs' )  )   ( Name ( 'appdir' )  )   ( None )   ( None )  ) 
+=======================
+Name:['os', 'path', 'abspath']
+line:832
+scope:(828, 833)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Getattr ( Name ( 'os' )  )   ( 'path' )  )   ( 'abspath' )  )   ( Name ( 'filename' )  )   ( None )   ( None )  ) 
+=======================
+Name:['self', 'set']
+line:833
+scope:(828, 833)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'self' )  )   ( 'set' )  )   ( CallFunc ( Name ( 'ConfigSource' )  )   ( CallFunc ( Name ( 'load_yaml' )  )   ( Name ( 'filename' )  )   ( None )   ( None )  )   ( Name ( 'filename' )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
+=======================
+Name:['self', 'flatten']
+line:849
+scope:(835, 870)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'self' )  )   ( 'flatten' )  )   ( None )   ( None )  ) 
+=======================
+Name:['RootView']
+line:853
+scope:(835, 870)
+source:('class', 10, 'followed')
+tree: ( CallFunc ( Getattr ( CallFunc ( Name ( 'RootView' )  )   ( Name ( 'sources' )  )   ( None )   ( None )  )   ( 'flatten' )  )   ( None )   ( None )  ) 
 =======================
 Name:['yaml', 'dump']
-line:300
-scope:(262, 317)
-source:('import', 3)
-tree: ( CallFunc ( Getattr ( Name ( 'yaml' )  )   ( 'dump' )  )   ( Name ( 'data' )  )   ( Keyword ( 'Dumper' )   ( Name ( 'Dumper' )  )  )   ( Keyword ( 'default_flow_style' )   ( Name ( 'False' )  )  )   ( Keyword ( 'indent' )   ( Const ( '4' )  )  )   ( Keyword ( 'width' )   ( Const ( '1000' )  )  )   ( None )   ( None )  ) 
-=======================
-Name:['re', 'sub']
-line:308
-scope:(262, 317)
-source:('import', 7)
-tree: ( CallFunc ( Getattr ( Name ( 're' )  )   ( 'sub' )  )   ( Const ( "'(\\\\n\\\\w+:\\\\n    [^-\\\\s])'" )  )   ( Const ( "'\\n\\\\1'" )  )   ( Name ( 'yaml_out' )  )   ( None )   ( None )  ) 
-=======================
-Name:['log', 'debug']
-line:312
-scope:(262, 317)
-source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'log' )  )   ( 'debug' )  )   ( CallFunc ( Getattr ( Const ( "u'writing migrated config to {0}'" )  )   ( 'format' )  )   ( CallFunc ( Getattr ( Name ( 'util' )  )   ( 'displayable_path' )  )   ( Name ( 'destfn' )  )   ( None )   ( None )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
+line:855
+scope:(835, 870)
+source:('import', 4)
+tree: ( CallFunc ( Getattr ( Name ( 'yaml' )  )   ( 'dump' )  )   ( Name ( 'out_dict' )  )   ( Keyword ( 'Dumper' )   ( Name ( 'Dumper' )  )  )   ( Keyword ( 'default_flow_style' )   ( Name ( 'None' )  )  )   ( Keyword ( 'indent' )   ( Const ( '4' )  )  )   ( Keyword ( 'width' )   ( Const ( '1000' )  )  )   ( None )   ( None )  ) 
 =======================
 Name:['open']
-line:315
-scope:(262, 317)
+line:866
+scope:(835, 870)
 source:-1
-tree: ( CallFunc ( Name ( 'open' )  )   ( Name ( 'destfn' )  )   ( Const ( "'w'" )  )   ( None )   ( None )  ) 
+tree: ( CallFunc ( Name ( 'open' )  )   ( Getattr ( Name ( 'default_source' )  )   ( 'filename' )  )   ( Const ( "'r'" )  )   ( None )   ( None )  ) 
 =======================
-Name:['f', 'write']
-line:316
-scope:(262, 317)
+Name:['fp', 'read']
+line:867
+scope:(835, 870)
 source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'f' )  )   ( 'write' )  )   ( Name ( 'yaml_out' )  )   ( None )   ( None )  ) 
+tree: ( CallFunc ( Getattr ( Name ( 'fp' )  )   ( 'read' )  )   ( None )   ( None )  ) 
 =======================
-Name:['default_paths']
-line:323
-scope:(319, 344)
-source:('function', 2)
-tree: ( CallFunc ( Name ( 'default_paths' )  )   ( None )   ( None )  ) 
+Name:['restore_yaml_comments']
+line:868
+scope:(835, 870)
+source:('function', 55)
+tree: ( CallFunc ( Name ( 'restore_yaml_comments' )  )   ( Name ( 'yaml_out' )  )   ( Name ( 'default_data' )  )   ( None )   ( None )  ) 
 =======================
-Name:[' ( Subscript ( Getattr ( Name ( \'beets\' )  )   ( \'config\' )  )   ( \'OP_APPLY\' )   ( Const ( "\'library\'" )  )  ) ', 'as_filename']
-line:324
-scope:(319, 344)
+Name:['super']
+line:879
+scope:(878, 882)
+source:('member', -1, 'followed')
+tree: ( CallFunc ( Getattr ( CallFunc ( Name ( 'super' )  )   ( Name ( 'LazyConfig' )  )   ( Name ( 'self' )  )   ( None )   ( None )  )   ( '__init__' )  )   ( Name ( 'appname' )  )   ( Name ( 'modname' )  )   ( Name ( 'False' )  )   ( None )   ( None )  ) 
+=======================
+Name:['super']
+line:886
+scope:(884, 886)
+source:('member', -1, 'followed')
+tree: ( CallFunc ( Getattr ( CallFunc ( Name ( 'super' )  )   ( Name ( 'LazyConfig' )  )   ( Name ( 'self' )  )   ( None )   ( None )  )   ( 'read' )  )   ( Name ( 'user' )  )   ( Name ( 'defaults' )  )   ( None )   ( None )  ) 
+=======================
+Name:['self', 'read']
+line:891
+scope:(888, 894)
 source:('member', -1)
-tree: ( CallFunc ( Getattr ( Subscript ( Getattr ( Name ( 'beets' )  )   ( 'config' )  )   ( 'OP_APPLY' )   ( Const ( "'library'" )  )  )   ( 'as_filename' )  )   ( None )   ( None )  ) 
+tree: ( CallFunc ( Getattr ( Name ( 'self' )  )   ( 'read' )  )   ( None )   ( None )  ) 
 =======================
-Name:['os', 'path', 'exists']
-line:326
-scope:(319, 344)
-source:('member', -1)
-tree: ( CallFunc ( Getattr ( Getattr ( Name ( 'os' )  )   ( 'path' )  )   ( 'exists' )  )   ( Name ( 'srcfn' )  )   ( None )   ( None )  ) 
+Name:['super']
+line:894
+scope:(888, 894)
+source:('member', -1, 'followed')
+tree: ( CallFunc ( Getattr ( CallFunc ( Name ( 'super' )  )   ( Name ( 'LazyConfig' )  )   ( Name ( 'self' )  )   ( None )   ( None )  )   ( 'resolve' )  )   ( None )   ( None )  ) 
 =======================
-Name:['os', 'path', 'exists']
-line:331
-scope:(319, 344)
-source:('member', -1)
-tree: ( CallFunc ( Getattr ( Getattr ( Name ( 'os' )  )   ( 'path' )  )   ( 'exists' )  )   ( Name ( 'destfn' )  )   ( None )   ( None )  ) 
+Name:['super']
+line:897
+scope:(896, 901)
+source:('member', -1, 'followed')
+tree: ( CallFunc ( Getattr ( CallFunc ( Name ( 'super' )  )   ( Name ( 'LazyConfig' )  )   ( Name ( 'self' )  )   ( None )   ( None )  )   ( 'add' )  )   ( Name ( 'value' )  )   ( None )   ( None )  ) 
 =======================
-Name:['log', 'debug']
-line:333
-scope:(319, 344)
-source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'log' )  )   ( 'debug' )  )   ( CallFunc ( Getattr ( Const ( "u'moving old database aside: {0}'" )  )   ( 'format' )  )   ( CallFunc ( Getattr ( Name ( 'util' )  )   ( 'displayable_path' )  )   ( Name ( 'destfn' )  )   ( None )   ( None )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
-=======================
-Name:['_displace']
-line:336
-scope:(319, 344)
-source:('function', 1)
-tree: ( CallFunc ( Name ( '_displace' )  )   ( Name ( 'destfn' )  )   ( None )   ( None )  ) 
-=======================
-Name:['log', 'debug']
-line:340
-scope:(319, 344)
-source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'log' )  )   ( 'debug' )  )   ( CallFunc ( Getattr ( Const ( "u'copying database from {0} to {1}'" )  )   ( 'format' )  )   ( CallFunc ( Getattr ( Name ( 'util' )  )   ( 'displayable_path' )  )   ( Name ( 'srcfn' )  )   ( None )   ( None )  )   ( CallFunc ( Getattr ( Name ( 'util' )  )   ( 'displayable_path' )  )   ( Name ( 'destfn' )  )   ( None )   ( None )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
-=======================
-Name:['util', 'copy']
-line:343
-scope:(319, 344)
-source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'util' )  )   ( 'copy' )  )   ( Name ( 'srcfn' )  )   ( Name ( 'destfn' )  )   ( None )   ( None )  ) 
-=======================
-Name:['os', 'path', 'expanduser']
-line:350
-scope:(346, 365)
-source:('member', -1)
-tree: ( CallFunc ( Getattr ( Getattr ( Name ( 'os' )  )   ( 'path' )  )   ( 'expanduser' )  )   ( CallFunc ( Getattr ( Getattr ( Name ( 'os' )  )   ( 'path' )  )   ( 'join' )  )   ( Const ( "'~'" )  )   ( Const ( "'.beetsstate'" )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
-=======================
-Name:['os', 'path', 'exists']
-line:351
-scope:(346, 365)
-source:('member', -1)
-tree: ( CallFunc ( Getattr ( Getattr ( Name ( 'os' )  )   ( 'path' )  )   ( 'exists' )  )   ( Name ( 'srcfn' )  )   ( None )   ( None )  ) 
-=======================
-Name:[' ( Subscript ( Getattr ( Name ( \'beets\' )  )   ( \'config\' )  )   ( \'OP_APPLY\' )   ( Const ( "\'statefile\'" )  )  ) ', 'as_filename']
-line:354
-scope:(346, 365)
-source:('member', -1)
-tree: ( CallFunc ( Getattr ( Subscript ( Getattr ( Name ( 'beets' )  )   ( 'config' )  )   ( 'OP_APPLY' )   ( Const ( "'statefile'" )  )  )   ( 'as_filename' )  )   ( None )   ( None )  ) 
-=======================
-Name:['os', 'path', 'exists']
-line:355
-scope:(346, 365)
-source:('member', -1)
-tree: ( CallFunc ( Getattr ( Getattr ( Name ( 'os' )  )   ( 'path' )  )   ( 'exists' )  )   ( Name ( 'destfn' )  )   ( None )   ( None )  ) 
-=======================
-Name:['_displace']
-line:357
-scope:(346, 365)
-source:('function', 1)
-tree: ( CallFunc ( Name ( '_displace' )  )   ( Name ( 'destfn' )  )   ( None )   ( None )  ) 
-=======================
-Name:['log', 'debug']
-line:361
-scope:(346, 365)
-source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'log' )  )   ( 'debug' )  )   ( CallFunc ( Getattr ( Const ( "u'copying state file from {0} to {1}'" )  )   ( 'format' )  )   ( CallFunc ( Getattr ( Name ( 'util' )  )   ( 'displayable_path' )  )   ( Name ( 'srcfn' )  )   ( None )   ( None )  )   ( CallFunc ( Getattr ( Name ( 'util' )  )   ( 'displayable_path' )  )   ( Name ( 'destfn' )  )   ( None )   ( None )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
-=======================
-Name:['util', 'copy']
-line:364
-scope:(346, 365)
-source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'util' )  )   ( 'copy' )  )   ( Name ( 'srcfn' )  )   ( Name ( 'destfn' )  )   ( None )   ( None )  ) 
-=======================
-Name:['migrate_config']
-line:374
-scope:(370, 390)
-source:('function', 13)
-tree: ( CallFunc ( Name ( 'migrate_config' )  )   ( None )   ( None )  ) 
-=======================
-Name:['migrate_db']
-line:375
-scope:(370, 390)
-source:('function', 14)
-tree: ( CallFunc ( Name ( 'migrate_db' )  )   ( None )   ( None )  ) 
-=======================
-Name:['migrate_state']
-line:376
-scope:(370, 390)
-source:('function', 15)
-tree: ( CallFunc ( Name ( 'migrate_state' )  )   ( None )   ( None )  ) 
-=======================
-Name:['ui', 'print_']
-line:379
-scope:(370, 390)
-source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'ui' )  )   ( 'print_' )  )   ( CallFunc ( Getattr ( Name ( 'ui' )  )   ( 'colorize' )  )   ( Const ( "'fuchsia'" )  )   ( Const ( "u'MIGRATED CONFIGURATION'" )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
-=======================
-Name:['ui', 'print_']
-line:381
-scope:(370, 390)
-source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'ui' )  )   ( 'print_' )  )   ( CallFunc ( Getattr ( Name ( 'CONFIG_MIGRATED_MESSAGE' )  )   ( 'format' )  )   ( Keyword ( 'newconfig' )   ( CallFunc ( Getattr ( Name ( 'util' )  )   ( 'displayable_path' )  )   ( Name ( 'config_fn' )  )   ( None )   ( None )  )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
-=======================
-Name:['ui', 'print_']
-line:385
-scope:(370, 390)
-source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'ui' )  )   ( 'print_' )  )   ( CallFunc ( Getattr ( Name ( 'DB_MIGRATED_MESSAGE' )  )   ( 'format' )  )   ( Keyword ( 'newdb' )   ( CallFunc ( Getattr ( Name ( 'util' )  )   ( 'displayable_path' )  )   ( Name ( 'db_fn' )  )   ( None )   ( None )  )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
-=======================
-Name:['ui', 'input_']
-line:389
-scope:(370, 390)
-source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'ui' )  )   ( 'input_' )  )   ( CallFunc ( Getattr ( Name ( 'ui' )  )   ( 'colorize' )  )   ( Const ( "'fuchsia'" )  )   ( Const ( "u'Press ENTER to continue:'" )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
-=======================
-Name:['ui', 'print_']
-line:390
-scope:(370, 390)
-source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'ui' )  )   ( 'print_' )  )   ( None )   ( None )  ) 
-=======================
-Name:['ui', 'Subcommand']
-line:395
-scope:(0, 999998)
-source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'ui' )  )   ( 'Subcommand' )  )   ( Const ( "'migrate'" )  )   ( Keyword ( 'help' )   ( Const ( "'convert legacy config'" )  )  )   ( None )   ( None )  ) 
-=======================
-Name:['migrate_config']
-line:400
-scope:(396, 413)
-source:('function', 13)
-tree: ( CallFunc ( Name ( 'migrate_config' )  )   ( Keyword ( 'replace' )   ( Name ( 'True' )  )  )   ( None )   ( None )  ) 
-=======================
-Name:['log', 'info']
-line:402
-scope:(396, 413)
-source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'log' )  )   ( 'info' )  )   ( CallFunc ( Getattr ( Const ( "u'Migrated configuration to: {0}'" )  )   ( 'format' )  )   ( CallFunc ( Getattr ( Name ( 'util' )  )   ( 'displayable_path' )  )   ( Name ( 'config_fn' )  )   ( None )   ( None )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
-=======================
-Name:['migrate_db']
-line:405
-scope:(396, 413)
-source:('function', 14)
-tree: ( CallFunc ( Name ( 'migrate_db' )  )   ( Keyword ( 'replace' )   ( Name ( 'True' )  )  )   ( None )   ( None )  ) 
-=======================
-Name:['log', 'info']
-line:407
-scope:(396, 413)
-source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'log' )  )   ( 'info' )  )   ( CallFunc ( Getattr ( Const ( "u'Migrated library database to: {0}'" )  )   ( 'format' )  )   ( CallFunc ( Getattr ( Name ( 'util' )  )   ( 'displayable_path' )  )   ( Name ( 'db_fn' )  )   ( None )   ( None )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
-=======================
-Name:['migrate_state']
-line:410
-scope:(396, 413)
-source:('function', 15)
-tree: ( CallFunc ( Name ( 'migrate_state' )  )   ( Keyword ( 'replace' )   ( Name ( 'True' )  )  )   ( None )   ( None )  ) 
-=======================
-Name:['log', 'info']
-line:412
-scope:(396, 413)
-source:('member', -1)
-tree: ( CallFunc ( Getattr ( Name ( 'log' )  )   ( 'info' )  )   ( CallFunc ( Getattr ( Const ( "u'Migrated state file to: {0}'" )  )   ( 'format' )  )   ( CallFunc ( Getattr ( Name ( 'util' )  )   ( 'displayable_path' )  )   ( Name ( 'state_fn' )  )   ( None )   ( None )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
+Name:['super']
+line:904
+scope:(903, 908)
+source:('member', -1, 'followed')
+tree: ( CallFunc ( Getattr ( CallFunc ( Name ( 'super' )  )   ( Name ( 'LazyConfig' )  )   ( Name ( 'self' )  )   ( None )   ( None )  )   ( 'set' )  )   ( Name ( 'value' )  )   ( None )   ( None )  ) 
 =======================
 
 Module
-'Conversion from legacy (pre-1.1) configuration to Confit/YAML\nconfiguration.\n'
+'Worry-free YAML configuration files.\n'
 
 Stmt
+	From
+		'__future__'
+
+		[('unicode_literals', None)]
+
+		0
+
+
+	Import
+		[('platform', None)]
+
+
 	Import
 		[('os', None)]
 
 
 	Import
-		[('ConfigParser', None)]
+		[('pkgutil', None)]
 
 
 	Import
-		[('codecs', None)]
+		[('sys', None)]
 
 
 	Import
@@ -786,484 +1659,2400 @@ Stmt
 
 
 	Import
-		[('logging', None)]
+		[('types', None)]
 
 
-	Import
-		[('time', None)]
+	TryExcept
+		Stmt
+			From
+				'collections'
+
+				[('OrderedDict', None)]
+
+				0
 
 
-	Import
-		[('itertools', None)]
+
+		Name
+			'ImportError'
 
 
-	Import
-		[('re', None)]
+		None
+
+		Stmt
+			From
+				'ordereddict'
+
+				[('OrderedDict', None)]
+
+				0
 
 
-	Import
-		[('beets', None)]
 
-
-	From
-		'beets'
-
-		[('util', None)]
-
-		0
-
-
-	From
-		'beets'
-
-		[('ui', None)]
-
-		0
-
-
-	From
-		'beets.util'
-
-		[('confit', None)]
-
-		0
+		None
 
 
 	Assign
 		AssName
-			'CONFIG_PATH_VAR'
+			'UNIX_DIR_VAR'
 
 
 		Const
-			"'BEETSCONFIG'"
+			"'XDG_CONFIG_HOME'"
 
 
 
 	Assign
 		AssName
-			'DEFAULT_CONFIG_FILENAME_UNIX'
+			'UNIX_DIR_FALLBACK'
 
 
 		Const
-			"'.beetsconfig'"
+			"'~/.config'"
 
 
 
 	Assign
 		AssName
-			'DEFAULT_CONFIG_FILENAME_WINDOWS'
+			'WINDOWS_DIR_VAR'
 
 
 		Const
-			"'beetsconfig.ini'"
+			"'APPDATA'"
 
 
 
 	Assign
 		AssName
-			'DEFAULT_LIBRARY_FILENAME_UNIX'
+			'WINDOWS_DIR_FALLBACK'
 
 
 		Const
-			"'.beetsmusic.blb'"
+			"'~\\\\AppData\\\\Roaming'"
 
 
 
 	Assign
 		AssName
-			'DEFAULT_LIBRARY_FILENAME_WINDOWS'
+			'MAC_DIR'
 
 
 		Const
-			"'beetsmusic.blb'"
+			"'~/Library/Application Support'"
 
 
 
 	Assign
 		AssName
-			'WINDOWS_BASEDIR'
+			'CONFIG_FILENAME'
 
 
-		Or
-			CallFunc
+		Const
+			"'config.yaml'"
+
+
+
+	Assign
+		AssName
+			'DEFAULT_FILENAME'
+
+
+		Const
+			"'config_default.yaml'"
+
+
+
+	Assign
+		AssName
+			'ROOT_NAME'
+
+
+		Const
+			"'root'"
+
+
+
+	Assign
+		AssName
+			'YAML_TAB_PROBLEM'
+
+
+		Const
+			'"found character \'\\\\t\' that cannot start any token"'
+
+
+
+	Assign
+		AssName
+			'PY3'
+
+
+		Compare
+			Subscript
 				Getattr
-					Getattr
-						Name
-							'os'
+					Name
+						'sys'
 
 
-						'environ'
+					'version_info'
 
 
-					'get'
-
+				'OP_APPLY'
 
 				Const
-					"'APPDATA'"
+					'0'
 
 
-				None
 
-				None
-
+			'=='
 
 			Const
-				"'~'"
+				'3'
 
 
 
 
 	Assign
 		AssName
-			'OLD_CONFIG_SUFFIX'
+			'STRING'
 
 
-		Const
-			"'.old'"
+		IfExp
+			Name
+				'PY3'
 
 
-
-	Assign
-		AssName
-			'PLUGIN_NAMES'
+			Name
+				'str'
 
 
-		Dict
-			Const
-				"'rdm'"
-
-
-			Const
-				"'random'"
-
-
-			Const
-				"'fuzzy_search'"
-
-
-			Const
-				"'fuzzy'"
+			Name
+				'unicode'
 
 
 
 
 	Assign
 		AssName
-			'AUTO_KEYS'
+			'BASESTRING'
 
 
-		Tuple
-			Const
-				"'automatic'"
+		IfExp
+			Name
+				'PY3'
 
 
-			Const
-				"'autofetch'"
+			Name
+				'str'
 
 
-			Const
-				"'autoembed'"
-
-
-			Const
-				"'autoscrub'"
+			Name
+				'basestring'
 
 
 
 
 	Assign
 		AssName
-			'IMPORTFEEDS_PREFIX'
+			'NUMERIC_TYPES'
 
 
-		Const
-			"'feeds_'"
+		IfExp
+			Name
+				'PY3'
 
 
-
-	Assign
-		AssName
-			'CONFIG_MIGRATED_MESSAGE'
-
-
-		CallFunc
-			Getattr
-				Const
-					'u\'\\nYou appear to be upgrading from beets 1.0 (or earlier) to 1.1. Your\\nconfiguration file has been migrated automatically to:\\n{newconfig}\\nEdit this file to configure beets. You might want to remove your\\nold-style ".beetsconfig" file now. See the documentation for more\\ndetails on the new configuration system:\\nhttp://beets.readthedocs.org/page/reference/config.html\\n\''
-
-
-				'strip'
-
-
-			None
-
-			None
-
-
-
-	Assign
-		AssName
-			'DB_MIGRATED_MESSAGE'
-
-
-		Const
-			"u'Your database file has also been copied to:\\n{newdb}'"
-
-
-
-	Assign
-		AssName
-			'YAML_COMMENT'
-
-
-		Const
-			"'# Automatically migrated from legacy .beetsconfig.\\n\\n'"
-
-
-
-	Assign
-		AssName
-			'log'
-
-
-		CallFunc
-			Getattr
+			Tuple
 				Name
-					'logging'
+					'int'
 
 
-				'getLogger'
+				Name
+					'float'
 
 
-			Const
-				"'beets'"
+
+			Tuple
+				Name
+					'int'
 
 
-			None
+				Name
+					'float'
 
-			None
+
+				Name
+					'long'
+
+
+
+
+
+	Assign
+		AssName
+			'TYPE_TYPES'
+
+
+		IfExp
+			Name
+				'PY3'
+
+
+			Tuple
+				Name
+					'type'
+
+
+
+			Tuple
+				Name
+					'type'
+
+
+				Getattr
+					Name
+						'types'
+
+
+					'ClassType'
+
+
 
 
 
 	Function
-		'grouper'
+		'iter_first'
 
-		'n'
-
-		'iterable'
+		'sequence'
 
 		0
 
 		Stmt
 			Assign
 				AssName
-					'args'
+					'it'
 
 
-				Mul
-					List
-						CallFunc
-							Name
-								'iter'
-
-
-							Name
-								'iterable'
-
-
-							None
-
-							None
-
-
-
-					Name
-						'n'
-
-
-
-
-			Return
 				CallFunc
-					Getattr
-						Name
-							'itertools'
-
-
-						'izip_longest'
+					Name
+						'iter'
 
 
 					Name
-						'args'
+						'sequence'
 
+
+					None
 
 					None
 
 
 
+			TryExcept
+				Stmt
+					If
+						Name
+							'PY3'
 
 
-	Function
-		'_displace'
+						Stmt
+							Return
+								CallFunc
+									Name
+										'next'
 
-		'fn'
 
-		0
+									Name
+										'it'
+
+
+									None
+
+									None
+
+
+
+
+						Stmt
+							Return
+								CallFunc
+									Getattr
+										Name
+											'it'
+
+
+										'next'
+
+
+									None
+
+									None
+
+
+
+
+
+
+				Name
+					'StopIteration'
+
+
+				None
+
+				Stmt
+					Raise
+						CallFunc
+							Name
+								'ValueError'
+
+
+							None
+
+							None
+
+
+						None
+
+						None
+
+
+
+				None
+
+
+
+
+	Class
+		'ConfigError'
+
+		Name
+			'Exception'
+
 
 		Stmt
-			Discard
-				CallFunc
-					Getattr
+
+
+	Class
+		'NotFoundError'
+
+		Name
+			'ConfigError'
+
+
+		Stmt
+
+
+	Class
+		'ConfigTypeError'
+
+		Name
+			'ConfigError'
+
+
+		Name
+			'TypeError'
+
+
+		Stmt
+
+
+	Class
+		'ConfigValueError'
+
+		Name
+			'ConfigError'
+
+
+		Name
+			'ValueError'
+
+
+		Stmt
+
+
+	Class
+		'ConfigReadError'
+
+		Name
+			'ConfigError'
+
+
+		Stmt
+			Function
+				'__init__'
+
+				'self'
+
+				'filename'
+
+				'reason'
+
+				Name
+					'None'
+
+
+				0
+
+				Stmt
+					Assign
+						AssAttr
+							Name
+								'self'
+
+
+							'filename'
+
+							'OP_ASSIGN'
+
+
 						Name
-							'util'
+							'filename'
 
 
-						'move'
+
+					Assign
+						AssAttr
+							Name
+								'self'
 
 
-					Name
-						'fn'
+							'reason'
 
-
-					CallFunc
-						Getattr
-							Const
-								"u'{0}.old.{1}'"
-
-
-							'format'
+							'OP_ASSIGN'
 
 
 						Name
-							'fn'
+							'reason'
+
+
+
+					Assign
+						AssName
+							'message'
+
+
+						CallFunc
+							Getattr
+								Const
+									"'file {0} could not be read'"
+
+
+								'format'
+
+
+							Name
+								'filename'
+
+
+							None
+
+							None
+
+
+
+					If
+						And
+							CallFunc
+								Name
+									'isinstance'
+
+
+								Name
+									'reason'
+
+
+								Getattr
+									Getattr
+										Name
+											'yaml'
+
+
+										'scanner'
+
+
+									'ScannerError'
+
+
+								None
+
+								None
+
+
+							Compare
+								Getattr
+									Name
+										'reason'
+
+
+									'problem'
+
+
+								'=='
+
+								Name
+									'YAML_TAB_PROBLEM'
+
+
+
+
+						Stmt
+							AugAssign
+								Name
+									'message'
+
+
+								'+='
+
+								CallFunc
+									Getattr
+										Const
+											"': found tab character at line {0}, column {1}'"
+
+
+										'format'
+
+
+									Add
+										Getattr
+											Getattr
+												Name
+													'reason'
+
+
+												'problem_mark'
+
+
+											'line'
+
+
+										Const
+											'1'
+
+
+
+									Add
+										Getattr
+											Getattr
+												Name
+													'reason'
+
+
+												'problem_mark'
+
+
+											'column'
+
+
+										Const
+											'1'
+
+
+
+									None
+
+									None
+
+
+
+
+						Name
+							'reason'
+
+
+						Stmt
+							AugAssign
+								Name
+									'message'
+
+
+								'+='
+
+								CallFunc
+									Getattr
+										Const
+											"': {0}'"
+
+
+										'format'
+
+
+									Name
+										'reason'
+
+
+									None
+
+									None
+
+
+
+
+						None
+
+
+					Discard
+						CallFunc
+							Getattr
+								CallFunc
+									Name
+										'super'
+
+
+									Name
+										'ConfigReadError'
+
+
+									Name
+										'self'
+
+
+									None
+
+									None
+
+
+								'__init__'
+
+
+							Name
+								'message'
+
+
+							None
+
+							None
+
+
+
+
+
+
+
+	Class
+		'ConfigSource'
+
+		Name
+			'dict'
+
+
+		Stmt
+			Function
+				'__init__'
+
+				'self'
+
+				'value'
+
+				'filename'
+
+				'default'
+
+				Name
+					'None'
+
+
+				Name
+					'False'
+
+
+				0
+
+				Stmt
+					Discard
+						CallFunc
+							Getattr
+								CallFunc
+									Name
+										'super'
+
+
+									Name
+										'ConfigSource'
+
+
+									Name
+										'self'
+
+
+									None
+
+									None
+
+
+								'__init__'
+
+
+							Name
+								'value'
+
+
+							None
+
+							None
+
+
+
+					If
+						And
+							Compare
+								Name
+									'filename'
+
+
+								'is not'
+
+								Name
+									'None'
+
+
+
+							Not
+								CallFunc
+									Name
+										'isinstance'
+
+
+									Name
+										'filename'
+
+
+									Name
+										'BASESTRING'
+
+
+									None
+
+									None
+
+
+
+
+						Stmt
+							Raise
+								CallFunc
+									Name
+										'TypeError'
+
+
+									Const
+										"'filename must be a string or None'"
+
+
+									None
+
+									None
+
+
+								None
+
+								None
+
+
+
+						None
+
+
+					Assign
+						AssAttr
+							Name
+								'self'
+
+
+							'filename'
+
+							'OP_ASSIGN'
+
+
+						Name
+							'filename'
+
+
+
+					Assign
+						AssAttr
+							Name
+								'self'
+
+
+							'default'
+
+							'OP_ASSIGN'
+
+
+						Name
+							'default'
+
+
+
+
+
+			Function
+				'__repr__'
+
+				'self'
+
+				0
+
+				Stmt
+					Return
+						CallFunc
+							Getattr
+								Const
+									"'ConfigSource({0}, {1}, {2})'"
+
+
+								'format'
+
+
+							CallFunc
+								Getattr
+									CallFunc
+										Name
+											'super'
+
+
+										Name
+											'ConfigSource'
+
+
+										Name
+											'self'
+
+
+										None
+
+										None
+
+
+									'__repr__'
+
+
+								None
+
+								None
+
+
+							CallFunc
+								Name
+									'repr'
+
+
+								Getattr
+									Name
+										'self'
+
+
+									'filename'
+
+
+								None
+
+								None
+
+
+							CallFunc
+								Name
+									'repr'
+
+
+								Getattr
+									Name
+										'self'
+
+
+									'default'
+
+
+								None
+
+								None
+
+
+							None
+
+							None
+
+
+
+
+
+			Function
+				'of'
+
+				'self'
+
+				'value'
+
+				0
+
+				Stmt
+					If
+						CallFunc
+							Name
+								'isinstance'
+
+
+							Name
+								'value'
+
+
+							Name
+								'ConfigSource'
+
+
+							None
+
+							None
+
+
+						Stmt
+							Return
+								Name
+									'value'
+
+
 
 
 						CallFunc
 							Name
-								'int'
+								'isinstance'
+
+
+							Name
+								'value'
+
+
+							Name
+								'dict'
+
+
+							None
+
+							None
+
+
+						Stmt
+							Return
+								CallFunc
+									Name
+										'ConfigSource'
+
+
+									Name
+										'value'
+
+
+									None
+
+									None
+
+
+
+
+						Stmt
+							Raise
+								CallFunc
+									Name
+										'TypeError'
+
+
+									Const
+										"'source value must be a dict'"
+
+
+									None
+
+									None
+
+
+								None
+
+								None
+
+
+
+
+
+
+
+
+	Class
+		'ConfigView'
+
+		Name
+			'object'
+
+
+		Stmt
+			Assign
+				AssName
+					'name'
+
+
+				Name
+					'None'
+
+
+
+			Discard
+				Const
+					'"The name of the view, depicting the path taken through the\\n    configuration in Python-like syntax (e.g., ``foo[\'bar\'][42]``).\\n    "'
+
+
+
+			Function
+				'resolve'
+
+				'self'
+
+				0
+
+				Stmt
+					Raise
+						Name
+							'NotImplementedError'
+
+
+						None
+
+						None
+
+
+
+
+			Function
+				'first'
+
+				'self'
+
+				0
+
+				Stmt
+					Assign
+						AssName
+							'pairs'
+
+
+						CallFunc
+							Getattr
+								Name
+									'self'
+
+
+								'resolve'
+
+
+							None
+
+							None
+
+
+
+					TryExcept
+						Stmt
+							Return
+								CallFunc
+									Name
+										'iter_first'
+
+
+									Name
+										'pairs'
+
+
+									None
+
+									None
+
+
+
+
+						Name
+							'ValueError'
+
+
+						None
+
+						Stmt
+							Raise
+								CallFunc
+									Name
+										'NotFoundError'
+
+
+									CallFunc
+										Getattr
+											Const
+												"'{0} not found'"
+
+
+											'format'
+
+
+										Getattr
+											Name
+												'self'
+
+
+											'name'
+
+
+										None
+
+										None
+
+
+									None
+
+									None
+
+
+								None
+
+								None
+
+
+
+						None
+
+
+
+
+			Function
+				'exists'
+
+				'self'
+
+				0
+
+				Stmt
+					TryExcept
+						Stmt
+							Discard
+								CallFunc
+									Getattr
+										Name
+											'self'
+
+
+										'first'
+
+
+									None
+
+									None
+
+
+
+
+						Name
+							'NotFoundError'
+
+
+						None
+
+						Stmt
+							Return
+								Name
+									'False'
+
+
+
+
+						None
+
+
+					Return
+						Name
+							'True'
+
+
+
+
+
+			Function
+				'add'
+
+				'self'
+
+				'value'
+
+				0
+
+				Stmt
+					Raise
+						Name
+							'NotImplementedError'
+
+
+						None
+
+						None
+
+
+
+
+			Function
+				'set'
+
+				'self'
+
+				'value'
+
+				0
+
+				Stmt
+					Raise
+						Name
+							'NotImplementedError'
+
+
+						None
+
+						None
+
+
+
+
+			Function
+				'root'
+
+				'self'
+
+				0
+
+				Stmt
+					Raise
+						Name
+							'NotImplementedError'
+
+
+						None
+
+						None
+
+
+
+
+			Function
+				'__repr__'
+
+				'self'
+
+				0
+
+				Stmt
+					Return
+						Mod
+							Const
+								"'<ConfigView: %s>'"
+
+
+							Getattr
+								Name
+									'self'
+
+
+								'name'
+
+
+
+
+
+
+			Function
+				'__getitem__'
+
+				'self'
+
+				'key'
+
+				0
+
+				Stmt
+					Return
+						CallFunc
+							Name
+								'Subview'
+
+
+							Name
+								'self'
+
+
+							Name
+								'key'
+
+
+							None
+
+							None
+
+
+
+
+
+			Function
+				'__setitem__'
+
+				'self'
+
+				'key'
+
+				'value'
+
+				0
+
+				Stmt
+					Discard
+						CallFunc
+							Getattr
+								Name
+									'self'
+
+
+								'set'
+
+
+							Dict
+								Name
+									'key'
+
+
+								Name
+									'value'
+
+
+
+							None
+
+							None
+
+
+
+
+
+			Function
+				'set_args'
+
+				'self'
+
+				'namespace'
+
+				0
+
+				Stmt
+					Assign
+						AssName
+							'args'
+
+
+						Dict
+
+
+					For
+						AssTuple
+							AssName
+								'key'
+
+
+							AssName
+								'value'
+
+
+
+						CallFunc
+							Getattr
+								Getattr
+									Name
+										'namespace'
+
+
+									'__dict__'
+
+
+								'items'
+
+
+							None
+
+							None
+
+
+						Stmt
+							If
+								Compare
+									Name
+										'value'
+
+
+									'is not'
+
+									Name
+										'None'
+
+
+
+								Stmt
+									Assign
+										Subscript
+											Name
+												'args'
+
+
+											'OP_ASSIGN'
+
+											Name
+												'key'
+
+
+
+										Name
+											'value'
+
+
+
+
+								None
+
+
+
+						None
+
+
+					Discard
+						CallFunc
+							Getattr
+								Name
+									'self'
+
+
+								'set'
+
+
+							Name
+								'args'
+
+
+							None
+
+							None
+
+
+
+
+
+			Function
+				'__str__'
+
+				'self'
+
+				0
+
+				Stmt
+					Return
+						CallFunc
+							Name
+								'str'
 
 
 							CallFunc
 								Getattr
 									Name
-										'time'
-
-
-									'time'
-
-
-								None
-
-								None
-
-
-							None
-
-							None
-
-
-						None
-
-						None
-
-
-					Name
-						'True'
-
-
-					None
-
-					None
-
-
-
-
-
-	Function
-		'default_paths'
-
-		0
-
-		Stmt
-			Assign
-				AssName
-					'windows'
-
-
-				Compare
-					Getattr
-						Getattr
-							Name
-								'os'
-
-
-							'path'
-
-
-						'__name__'
-
-
-					'=='
-
-					Const
-						"'ntpath'"
-
-
-
-
-			If
-				Name
-					'windows'
-
-
-				Stmt
-					Assign
-						AssName
-							'windata'
-
-
-						Or
-							CallFunc
-								Getattr
-									Getattr
-										Name
-											'os'
-
-
-										'environ'
+										'self'
 
 
 									'get'
 
 
-								Const
-									"'APPDATA'"
-
-
 								None
 
 								None
 
 
-							Const
-								"'~'"
+							None
+
+							None
 
 
 
-
-
-				None
 
 
 			Function
-				'exp'
+				'__unicode__'
 
-				'vals'
+				'self'
 
-				4
+				0
 
 				Stmt
 					Return
+						CallFunc
+							Name
+								'unicode'
+
+
+							CallFunc
+								Getattr
+									Name
+										'self'
+
+
+									'get'
+
+
+								None
+
+								None
+
+
+							None
+
+							None
+
+
+
+
+
+			Function
+				'__nonzero__'
+
+				'self'
+
+				0
+
+				Stmt
+					Return
+						CallFunc
+							Getattr
+								Name
+									'self'
+
+
+								'__bool__'
+
+
+							None
+
+							None
+
+
+
+
+
+			Function
+				'__bool__'
+
+				'self'
+
+				0
+
+				Stmt
+					Return
+						CallFunc
+							Name
+								'bool'
+
+
+							CallFunc
+								Getattr
+									Name
+										'self'
+
+
+									'get'
+
+
+								None
+
+								None
+
+
+							None
+
+							None
+
+
+
+
+
+			Function
+				'keys'
+
+				'self'
+
+				0
+
+				Stmt
+					Assign
+						AssName
+							'keys'
+
+
+						List
+
+
+					For
+						AssTuple
+							AssName
+								'dic'
+
+
+							AssName
+								'_'
+
+
+
+						CallFunc
+							Getattr
+								Name
+									'self'
+
+
+								'resolve'
+
+
+							None
+
+							None
+
+
+						Stmt
+							TryExcept
+								Stmt
+									Assign
+										AssName
+											'cur_keys'
+
+
+										CallFunc
+											Getattr
+												Name
+													'dic'
+
+
+												'keys'
+
+
+											None
+
+											None
+
+
+
+
+								Name
+									'AttributeError'
+
+
+								None
+
+								Stmt
+									Raise
+										CallFunc
+											Name
+												'ConfigTypeError'
+
+
+											CallFunc
+												Getattr
+													Const
+														"'{0} must be a dict, not {1}'"
+
+
+													'format'
+
+
+												Getattr
+													Name
+														'self'
+
+
+													'name'
+
+
+												Getattr
+													CallFunc
+														Name
+															'type'
+
+
+														Name
+															'dic'
+
+
+														None
+
+														None
+
+
+													'__name__'
+
+
+												None
+
+												None
+
+
+											None
+
+											None
+
+
+										None
+
+										None
+
+
+
+								None
+
+
+							For
+								AssName
+									'key'
+
+
+								Name
+									'cur_keys'
+
+
+								Stmt
+									If
+										Compare
+											Name
+												'key'
+
+
+											'not in'
+
+											Name
+												'keys'
+
+
+
+										Stmt
+											Discard
+												CallFunc
+													Getattr
+														Name
+															'keys'
+
+
+														'append'
+
+
+													Name
+														'key'
+
+
+													None
+
+													None
+
+
+
+
+										None
+
+
+
+								None
+
+
+
+						None
+
+
+					Return
+						Name
+							'keys'
+
+
+
+
+
+			Function
+				'items'
+
+				'self'
+
+				0
+
+				Stmt
+					For
+						AssName
+							'key'
+
+
+						CallFunc
+							Getattr
+								Name
+									'self'
+
+
+								'keys'
+
+
+							None
+
+							None
+
+
+						Stmt
+							Discard
+								Yield
+									Tuple
+										Name
+											'key'
+
+
+										Subscript
+											Name
+												'self'
+
+
+											'OP_APPLY'
+
+											Name
+												'key'
+
+
+
+
+
+
+
+						None
+
+
+
+
+			Function
+				'values'
+
+				'self'
+
+				0
+
+				Stmt
+					For
+						AssName
+							'key'
+
+
+						CallFunc
+							Getattr
+								Name
+									'self'
+
+
+								'keys'
+
+
+							None
+
+							None
+
+
+						Stmt
+							Discard
+								Yield
+									Subscript
+										Name
+											'self'
+
+
+										'OP_APPLY'
+
+										Name
+											'key'
+
+
+
+
+
+
+						None
+
+
+
+
+			Function
+				'all_contents'
+
+				'self'
+
+				0
+
+				Stmt
+					For
+						AssTuple
+							AssName
+								'collection'
+
+
+							AssName
+								'_'
+
+
+
+						CallFunc
+							Getattr
+								Name
+									'self'
+
+
+								'resolve'
+
+
+							None
+
+							None
+
+
+						Stmt
+							TryExcept
+								Stmt
+									Assign
+										AssName
+											'it'
+
+
+										CallFunc
+											Name
+												'iter'
+
+
+											Name
+												'collection'
+
+
+											None
+
+											None
+
+
+
+
+								Name
+									'TypeError'
+
+
+								None
+
+								Stmt
+									Raise
+										CallFunc
+											Name
+												'ConfigTypeError'
+
+
+											CallFunc
+												Getattr
+													Const
+														"'{0} must be an iterable, not {1}'"
+
+
+													'format'
+
+
+												Getattr
+													Name
+														'self'
+
+
+													'name'
+
+
+												Getattr
+													CallFunc
+														Name
+															'type'
+
+
+														Name
+															'collection'
+
+
+														None
+
+														None
+
+
+													'__name__'
+
+
+												None
+
+												None
+
+
+											None
+
+											None
+
+
+										None
+
+										None
+
+
+
+								None
+
+
+							For
+								AssName
+									'value'
+
+
+								Name
+									'it'
+
+
+								Stmt
+									Discard
+										Yield
+											Name
+												'value'
+
+
+
+
+
+								None
+
+
+
+						None
+
+
+
+
+			Function
+				'get'
+
+				'self'
+
+				'typ'
+
+				Name
+					'None'
+
+
+				0
+
+				Stmt
+					Assign
+						AssTuple
+							AssName
+								'value'
+
+
+							AssName
+								'_'
+
+
+
+						CallFunc
+							Getattr
+								Name
+									'self'
+
+
+								'first'
+
+
+							None
+
+							None
+
+
+
+					If
+						Compare
+							Name
+								'typ'
+
+
+							'is not'
+
+							Name
+								'None'
+
+
+
+						Stmt
+							If
+								Not
+									CallFunc
+										Name
+											'isinstance'
+
+
+										Name
+											'typ'
+
+
+										Name
+											'TYPE_TYPES'
+
+
+										None
+
+										None
+
+
+
+								Stmt
+									Raise
+										CallFunc
+											Name
+												'TypeError'
+
+
+											Const
+												"'argument to get() must be a type'"
+
+
+											None
+
+											None
+
+
+										None
+
+										None
+
+
+
+								None
+
+
+							If
+								Not
+									CallFunc
+										Name
+											'isinstance'
+
+
+										Name
+											'value'
+
+
+										Name
+											'typ'
+
+
+										None
+
+										None
+
+
+
+								Stmt
+									Raise
+										CallFunc
+											Name
+												'ConfigTypeError'
+
+
+											CallFunc
+												Getattr
+													Const
+														"'{0} must be of type {1}, not {2}'"
+
+
+													'format'
+
+
+												Getattr
+													Name
+														'self'
+
+
+													'name'
+
+
+												Getattr
+													Name
+														'typ'
+
+
+													'__name__'
+
+
+												Getattr
+													CallFunc
+														Name
+															'type'
+
+
+														Name
+															'value'
+
+
+														None
+
+														None
+
+
+													'__name__'
+
+
+												None
+
+												None
+
+
+											None
+
+											None
+
+
+										None
+
+										None
+
+
+
+								None
+
+
+
+						None
+
+
+					Return
+						Name
+							'value'
+
+
+
+
+
+			Function
+				'as_filename'
+
+				'self'
+
+				0
+
+				Stmt
+					Assign
+						AssTuple
+							AssName
+								'path'
+
+
+							AssName
+								'source'
+
+
+
+						CallFunc
+							Getattr
+								Name
+									'self'
+
+
+								'first'
+
+
+							None
+
+							None
+
+
+
+					If
+						Not
+							CallFunc
+								Name
+									'isinstance'
+
+
+								Name
+									'path'
+
+
+								Name
+									'BASESTRING'
+
+
+								None
+
+								None
+
+
+
+						Stmt
+							Raise
+								CallFunc
+									Name
+										'ConfigTypeError'
+
+
+									CallFunc
+										Getattr
+											Const
+												"'{0} must be a filename, not {1}'"
+
+
+											'format'
+
+
+										Getattr
+											Name
+												'self'
+
+
+											'name'
+
+
+										Getattr
+											CallFunc
+												Name
+													'type'
+
+
+												Name
+													'path'
+
+
+												None
+
+												None
+
+
+											'__name__'
+
+
+										None
+
+										None
+
+
+									None
+
+									None
+
+
+								None
+
+								None
+
+
+
+						None
+
+
+					Assign
+						AssName
+							'path'
+
+
 						CallFunc
 							Getattr
 								Getattr
@@ -1275,6 +4064,2192 @@ Stmt
 
 
 								'expanduser'
+
+
+							CallFunc
+								Name
+									'STRING'
+
+
+								Name
+									'path'
+
+
+								None
+
+								None
+
+
+							None
+
+							None
+
+
+
+					If
+						And
+							Not
+								CallFunc
+									Getattr
+										Getattr
+											Name
+												'os'
+
+
+											'path'
+
+
+										'isabs'
+
+
+									Name
+										'path'
+
+
+									None
+
+									None
+
+
+
+							Getattr
+								Name
+									'source'
+
+
+								'filename'
+
+
+
+						Stmt
+							Assign
+								AssName
+									'path'
+
+
+								CallFunc
+									Getattr
+										Getattr
+											Name
+												'os'
+
+
+											'path'
+
+
+										'join'
+
+
+									CallFunc
+										Getattr
+											CallFunc
+												Getattr
+													Name
+														'self'
+
+
+													'root'
+
+
+												None
+
+												None
+
+
+											'config_dir'
+
+
+										None
+
+										None
+
+
+									Name
+										'path'
+
+
+									None
+
+									None
+
+
+
+
+						None
+
+
+					Return
+						CallFunc
+							Getattr
+								Getattr
+									Name
+										'os'
+
+
+									'path'
+
+
+								'abspath'
+
+
+							Name
+								'path'
+
+
+							None
+
+							None
+
+
+
+
+
+			Function
+				'as_choice'
+
+				'self'
+
+				'choices'
+
+				0
+
+				Stmt
+					Assign
+						AssName
+							'value'
+
+
+						CallFunc
+							Getattr
+								Name
+									'self'
+
+
+								'get'
+
+
+							None
+
+							None
+
+
+
+					If
+						Compare
+							Name
+								'value'
+
+
+							'not in'
+
+							Name
+								'choices'
+
+
+
+						Stmt
+							Raise
+								CallFunc
+									Name
+										'ConfigValueError'
+
+
+									CallFunc
+										Getattr
+											Const
+												"'{0} must be one of {1}, not {2}'"
+
+
+											'format'
+
+
+										Getattr
+											Name
+												'self'
+
+
+											'name'
+
+
+										CallFunc
+											Name
+												'repr'
+
+
+											CallFunc
+												Name
+													'list'
+
+
+												Name
+													'choices'
+
+
+												None
+
+												None
+
+
+											None
+
+											None
+
+
+										CallFunc
+											Name
+												'repr'
+
+
+											Name
+												'value'
+
+
+											None
+
+											None
+
+
+										None
+
+										None
+
+
+									None
+
+									None
+
+
+								None
+
+								None
+
+
+
+						None
+
+
+					If
+						CallFunc
+							Name
+								'isinstance'
+
+
+							Name
+								'choices'
+
+
+							Name
+								'dict'
+
+
+							None
+
+							None
+
+
+						Stmt
+							Return
+								Subscript
+									Name
+										'choices'
+
+
+									'OP_APPLY'
+
+									Name
+										'value'
+
+
+
+
+
+						Stmt
+							Return
+								Name
+									'value'
+
+
+
+
+
+
+
+			Function
+				'as_number'
+
+				'self'
+
+				0
+
+				Stmt
+					Assign
+						AssName
+							'value'
+
+
+						CallFunc
+							Getattr
+								Name
+									'self'
+
+
+								'get'
+
+
+							None
+
+							None
+
+
+
+					If
+						CallFunc
+							Name
+								'isinstance'
+
+
+							Name
+								'value'
+
+
+							Name
+								'NUMERIC_TYPES'
+
+
+							None
+
+							None
+
+
+						Stmt
+							Return
+								Name
+									'value'
+
+
+
+
+						None
+
+
+					Raise
+						CallFunc
+							Name
+								'ConfigTypeError'
+
+
+							CallFunc
+								Getattr
+									Const
+										"'{0} must be numeric, not {1}'"
+
+
+									'format'
+
+
+								Getattr
+									Name
+										'self'
+
+
+									'name'
+
+
+								Getattr
+									CallFunc
+										Name
+											'type'
+
+
+										Name
+											'value'
+
+
+										None
+
+										None
+
+
+									'__name__'
+
+
+								None
+
+								None
+
+
+							None
+
+							None
+
+
+						None
+
+						None
+
+
+
+
+			Function
+				'as_str_seq'
+
+				'self'
+
+				0
+
+				Stmt
+					Assign
+						AssName
+							'value'
+
+
+						CallFunc
+							Getattr
+								Name
+									'self'
+
+
+								'get'
+
+
+							None
+
+							None
+
+
+
+					If
+						CallFunc
+							Name
+								'isinstance'
+
+
+							Name
+								'value'
+
+
+							Name
+								'bytes'
+
+
+							None
+
+							None
+
+
+						Stmt
+							Assign
+								AssName
+									'value'
+
+
+								CallFunc
+									Getattr
+										Name
+											'value'
+
+
+										'decode'
+
+
+									Const
+										"'utf8'"
+
+
+									Const
+										"'ignore'"
+
+
+									None
+
+									None
+
+
+
+
+						None
+
+
+					If
+						CallFunc
+							Name
+								'isinstance'
+
+
+							Name
+								'value'
+
+
+							Name
+								'STRING'
+
+
+							None
+
+							None
+
+
+						Stmt
+							Return
+								CallFunc
+									Getattr
+										Name
+											'value'
+
+
+										'split'
+
+
+									None
+
+									None
+
+
+
+
+						Stmt
+							TryExcept
+								Stmt
+									Return
+										CallFunc
+											Name
+												'list'
+
+
+											Name
+												'value'
+
+
+											None
+
+											None
+
+
+
+
+								Name
+									'TypeError'
+
+
+								None
+
+								Stmt
+									Raise
+										CallFunc
+											Name
+												'ConfigTypeError'
+
+
+											CallFunc
+												Getattr
+													Const
+														"'{0} must be a whitespace-separated string or a list'"
+
+
+													'format'
+
+
+												Getattr
+													Name
+														'self'
+
+
+													'name'
+
+
+												None
+
+												None
+
+
+											None
+
+											None
+
+
+										None
+
+										None
+
+
+
+								None
+
+
+
+
+
+
+			Function
+				'flatten'
+
+				'self'
+
+				0
+
+				Stmt
+					Assign
+						AssName
+							'od'
+
+
+						CallFunc
+							Name
+								'OrderedDict'
+
+
+							None
+
+							None
+
+
+
+					For
+						AssTuple
+							AssName
+								'key'
+
+
+							AssName
+								'view'
+
+
+
+						CallFunc
+							Getattr
+								Name
+									'self'
+
+
+								'items'
+
+
+							None
+
+							None
+
+
+						Stmt
+							TryExcept
+								Stmt
+									Assign
+										Subscript
+											Name
+												'od'
+
+
+											'OP_ASSIGN'
+
+											Name
+												'key'
+
+
+
+										CallFunc
+											Getattr
+												Name
+													'view'
+
+
+												'flatten'
+
+
+											None
+
+											None
+
+
+
+
+								Name
+									'ConfigTypeError'
+
+
+								None
+
+								Stmt
+									Assign
+										Subscript
+											Name
+												'od'
+
+
+											'OP_ASSIGN'
+
+											Name
+												'key'
+
+
+
+										CallFunc
+											Getattr
+												Name
+													'view'
+
+
+												'get'
+
+
+											None
+
+											None
+
+
+
+
+								None
+
+
+
+						None
+
+
+					Return
+						Name
+							'od'
+
+
+
+
+
+
+
+	Class
+		'RootView'
+
+		Name
+			'ConfigView'
+
+
+		Stmt
+			Function
+				'__init__'
+
+				'self'
+
+				'sources'
+
+				0
+
+				Stmt
+					Assign
+						AssAttr
+							Name
+								'self'
+
+
+							'sources'
+
+							'OP_ASSIGN'
+
+
+						CallFunc
+							Name
+								'list'
+
+
+							Name
+								'sources'
+
+
+							None
+
+							None
+
+
+
+					Assign
+						AssAttr
+							Name
+								'self'
+
+
+							'name'
+
+							'OP_ASSIGN'
+
+
+						Name
+							'ROOT_NAME'
+
+
+
+
+
+			Function
+				'add'
+
+				'self'
+
+				'obj'
+
+				0
+
+				Stmt
+					Discard
+						CallFunc
+							Getattr
+								Getattr
+									Name
+										'self'
+
+
+									'sources'
+
+
+								'append'
+
+
+							CallFunc
+								Getattr
+									Name
+										'ConfigSource'
+
+
+									'of'
+
+
+								Name
+									'obj'
+
+
+								None
+
+								None
+
+
+							None
+
+							None
+
+
+
+
+
+			Function
+				'set'
+
+				'self'
+
+				'value'
+
+				0
+
+				Stmt
+					Discard
+						CallFunc
+							Getattr
+								Getattr
+									Name
+										'self'
+
+
+									'sources'
+
+
+								'insert'
+
+
+							Const
+								'0'
+
+
+							CallFunc
+								Getattr
+									Name
+										'ConfigSource'
+
+
+									'of'
+
+
+								Name
+									'value'
+
+
+								None
+
+								None
+
+
+							None
+
+							None
+
+
+
+
+
+			Function
+				'resolve'
+
+				'self'
+
+				0
+
+				Stmt
+					Return
+						GenExpr
+							GenExprInner
+								Tuple
+									CallFunc
+										Name
+											'dict'
+
+
+										Name
+											's'
+
+
+										None
+
+										None
+
+
+									Name
+										's'
+
+
+
+								GenExprFor
+									AssName
+										's'
+
+
+									Getattr
+										Name
+											'self'
+
+
+										'sources'
+
+
+
+
+
+
+
+
+			Function
+				'clear'
+
+				'self'
+
+				0
+
+				Stmt
+					Slice
+						Getattr
+							Name
+								'self'
+
+
+							'sources'
+
+
+						'OP_DELETE'
+
+						None
+
+						None
+
+
+
+
+			Function
+				'root'
+
+				'self'
+
+				0
+
+				Stmt
+					Return
+						Name
+							'self'
+
+
+
+
+
+
+
+	Class
+		'Subview'
+
+		Name
+			'ConfigView'
+
+
+		Stmt
+			Function
+				'__init__'
+
+				'self'
+
+				'parent'
+
+				'key'
+
+				0
+
+				Stmt
+					Assign
+						AssAttr
+							Name
+								'self'
+
+
+							'parent'
+
+							'OP_ASSIGN'
+
+
+						Name
+							'parent'
+
+
+
+					Assign
+						AssAttr
+							Name
+								'self'
+
+
+							'key'
+
+							'OP_ASSIGN'
+
+
+						Name
+							'key'
+
+
+
+					If
+						CallFunc
+							Name
+								'isinstance'
+
+
+							Getattr
+								Name
+									'self'
+
+
+								'parent'
+
+
+							Name
+								'RootView'
+
+
+							None
+
+							None
+
+
+						Stmt
+							Assign
+								AssAttr
+									Name
+										'self'
+
+
+									'name'
+
+									'OP_ASSIGN'
+
+
+								Const
+									"''"
+
+
+
+
+						Stmt
+							Assign
+								AssAttr
+									Name
+										'self'
+
+
+									'name'
+
+									'OP_ASSIGN'
+
+
+								Getattr
+									Getattr
+										Name
+											'self'
+
+
+										'parent'
+
+
+									'name'
+
+
+
+							If
+								Not
+									CallFunc
+										Name
+											'isinstance'
+
+
+										Getattr
+											Name
+												'self'
+
+
+											'key'
+
+
+										Name
+											'int'
+
+
+										None
+
+										None
+
+
+
+								Stmt
+									AugAssign
+										Getattr
+											Name
+												'self'
+
+
+											'name'
+
+
+										'+='
+
+										Const
+											"'.'"
+
+
+
+
+								None
+
+
+
+
+					If
+						CallFunc
+							Name
+								'isinstance'
+
+
+							Getattr
+								Name
+									'self'
+
+
+								'key'
+
+
+							Name
+								'int'
+
+
+							None
+
+							None
+
+
+						Stmt
+							AugAssign
+								Getattr
+									Name
+										'self'
+
+
+									'name'
+
+
+								'+='
+
+								CallFunc
+									Getattr
+										Const
+											"'#{0}'"
+
+
+										'format'
+
+
+									Getattr
+										Name
+											'self'
+
+
+										'key'
+
+
+									None
+
+									None
+
+
+
+
+						CallFunc
+							Name
+								'isinstance'
+
+
+							Getattr
+								Name
+									'self'
+
+
+								'key'
+
+
+							Name
+								'BASESTRING'
+
+
+							None
+
+							None
+
+
+						Stmt
+							AugAssign
+								Getattr
+									Name
+										'self'
+
+
+									'name'
+
+
+								'+='
+
+								CallFunc
+									Getattr
+										Const
+											"'{0}'"
+
+
+										'format'
+
+
+									Getattr
+										Name
+											'self'
+
+
+										'key'
+
+
+									None
+
+									None
+
+
+
+
+						Stmt
+							AugAssign
+								Getattr
+									Name
+										'self'
+
+
+									'name'
+
+
+								'+='
+
+								CallFunc
+									Getattr
+										Const
+											"'{0}'"
+
+
+										'format'
+
+
+									CallFunc
+										Name
+											'repr'
+
+
+										Getattr
+											Name
+												'self'
+
+
+											'key'
+
+
+										None
+
+										None
+
+
+									None
+
+									None
+
+
+
+
+
+
+
+			Function
+				'resolve'
+
+				'self'
+
+				0
+
+				Stmt
+					For
+						AssTuple
+							AssName
+								'collection'
+
+
+							AssName
+								'source'
+
+
+
+						CallFunc
+							Getattr
+								Getattr
+									Name
+										'self'
+
+
+									'parent'
+
+
+								'resolve'
+
+
+							None
+
+							None
+
+
+						Stmt
+							TryExcept
+								Stmt
+									Assign
+										AssName
+											'value'
+
+
+										Subscript
+											Name
+												'collection'
+
+
+											'OP_APPLY'
+
+											Getattr
+												Name
+													'self'
+
+
+												'key'
+
+
+
+
+
+								Name
+									'IndexError'
+
+
+								None
+
+								Stmt
+									Continue
+
+
+								Name
+									'KeyError'
+
+
+								None
+
+								Stmt
+									Continue
+
+
+								Name
+									'TypeError'
+
+
+								None
+
+								Stmt
+									Raise
+										CallFunc
+											Name
+												'ConfigTypeError'
+
+
+											CallFunc
+												Getattr
+													Const
+														"'{0} must be a collection, not {1}'"
+
+
+													'format'
+
+
+												Getattr
+													Getattr
+														Name
+															'self'
+
+
+														'parent'
+
+
+													'name'
+
+
+												Getattr
+													CallFunc
+														Name
+															'type'
+
+
+														Name
+															'collection'
+
+
+														None
+
+														None
+
+
+													'__name__'
+
+
+												None
+
+												None
+
+
+											None
+
+											None
+
+
+										None
+
+										None
+
+
+
+								None
+
+
+							Discard
+								Yield
+									Tuple
+										Name
+											'value'
+
+
+										Name
+											'source'
+
+
+
+
+
+
+						None
+
+
+
+
+			Function
+				'set'
+
+				'self'
+
+				'value'
+
+				0
+
+				Stmt
+					Discard
+						CallFunc
+							Getattr
+								Getattr
+									Name
+										'self'
+
+
+									'parent'
+
+
+								'set'
+
+
+							Dict
+								Getattr
+									Name
+										'self'
+
+
+									'key'
+
+
+								Name
+									'value'
+
+
+
+							None
+
+							None
+
+
+
+
+
+			Function
+				'add'
+
+				'self'
+
+				'value'
+
+				0
+
+				Stmt
+					Discard
+						CallFunc
+							Getattr
+								Getattr
+									Name
+										'self'
+
+
+									'parent'
+
+
+								'add'
+
+
+							Dict
+								Getattr
+									Name
+										'self'
+
+
+									'key'
+
+
+								Name
+									'value'
+
+
+
+							None
+
+							None
+
+
+
+
+
+			Function
+				'root'
+
+				'self'
+
+				0
+
+				Stmt
+					Return
+						CallFunc
+							Getattr
+								Getattr
+									Name
+										'self'
+
+
+									'parent'
+
+
+								'root'
+
+
+							None
+
+							None
+
+
+
+
+
+
+
+	Function
+		'_package_path'
+
+		'name'
+
+		0
+
+		Stmt
+			Assign
+				AssName
+					'loader'
+
+
+				CallFunc
+					Getattr
+						Name
+							'pkgutil'
+
+
+						'get_loader'
+
+
+					Name
+						'name'
+
+
+					None
+
+					None
+
+
+
+			If
+				Or
+					Compare
+						Name
+							'loader'
+
+
+						'is'
+
+						Name
+							'None'
+
+
+
+					Compare
+						Name
+							'name'
+
+
+						'=='
+
+						Const
+							"'__main__'"
+
+
+
+
+				Stmt
+					Return
+						Name
+							'None'
+
+
+
+
+				None
+
+
+			If
+				CallFunc
+					Name
+						'hasattr'
+
+
+					Name
+						'loader'
+
+
+					Const
+						"'get_filename'"
+
+
+					None
+
+					None
+
+
+				Stmt
+					Assign
+						AssName
+							'filepath'
+
+
+						CallFunc
+							Getattr
+								Name
+									'loader'
+
+
+								'get_filename'
+
+
+							Name
+								'name'
+
+
+							None
+
+							None
+
+
+
+
+				Stmt
+					Discard
+						CallFunc
+							Name
+								'__import__'
+
+
+							Name
+								'name'
+
+
+							None
+
+							None
+
+
+
+					Assign
+						AssName
+							'filepath'
+
+
+						Getattr
+							Subscript
+								Getattr
+									Name
+										'sys'
+
+
+									'modules'
+
+
+								'OP_APPLY'
+
+								Name
+									'name'
+
+
+
+							'__file__'
+
+
+
+
+
+			Return
+				CallFunc
+					Getattr
+						Getattr
+							Name
+								'os'
+
+
+							'path'
+
+
+						'dirname'
+
+
+					CallFunc
+						Getattr
+							Getattr
+								Name
+									'os'
+
+
+								'path'
+
+
+							'abspath'
+
+
+						Name
+							'filepath'
+
+
+						None
+
+						None
+
+
+					None
+
+					None
+
+
+
+
+
+	Function
+		'config_dirs'
+
+		0
+
+		Stmt
+			Assign
+				AssName
+					'paths'
+
+
+				List
+
+
+			If
+				Compare
+					CallFunc
+						Getattr
+							Name
+								'platform'
+
+
+							'system'
+
+
+						None
+
+						None
+
+
+					'=='
+
+					Const
+						"'Darwin'"
+
+
+
+				Stmt
+					Discard
+						CallFunc
+							Getattr
+								Name
+									'paths'
+
+
+								'append'
+
+
+							Name
+								'MAC_DIR'
+
+
+							None
+
+							None
+
+
+
+					Discard
+						CallFunc
+							Getattr
+								Name
+									'paths'
+
+
+								'append'
+
+
+							Name
+								'UNIX_DIR_FALLBACK'
+
+
+							None
+
+							None
+
+
+
+					If
+						Compare
+							Name
+								'UNIX_DIR_VAR'
+
+
+							'in'
+
+							Getattr
+								Name
+									'os'
+
+
+								'environ'
+
+
+
+						Stmt
+							Discard
+								CallFunc
+									Getattr
+										Name
+											'paths'
+
+
+										'append'
+
+
+									Subscript
+										Getattr
+											Name
+												'os'
+
+
+											'environ'
+
+
+										'OP_APPLY'
+
+										Name
+											'UNIX_DIR_VAR'
+
+
+
+									None
+
+									None
+
+
+
+
+						None
+
+
+
+				Compare
+					CallFunc
+						Getattr
+							Name
+								'platform'
+
+
+							'system'
+
+
+						None
+
+						None
+
+
+					'=='
+
+					Const
+						"'Windows'"
+
+
+
+				Stmt
+					Discard
+						CallFunc
+							Getattr
+								Name
+									'paths'
+
+
+								'append'
+
+
+							Name
+								'WINDOWS_DIR_FALLBACK'
+
+
+							None
+
+							None
+
+
+
+					If
+						Compare
+							Name
+								'WINDOWS_DIR_VAR'
+
+
+							'in'
+
+							Getattr
+								Name
+									'os'
+
+
+								'environ'
+
+
+
+						Stmt
+							Discard
+								CallFunc
+									Getattr
+										Name
+											'paths'
+
+
+										'append'
+
+
+									Subscript
+										Getattr
+											Name
+												'os'
+
+
+											'environ'
+
+
+										'OP_APPLY'
+
+										Name
+											'WINDOWS_DIR_VAR'
+
+
+
+									None
+
+									None
+
+
+
+
+						None
+
+
+
+				Stmt
+					Discard
+						CallFunc
+							Getattr
+								Name
+									'paths'
+
+
+								'append'
+
+
+							Name
+								'UNIX_DIR_FALLBACK'
+
+
+							None
+
+							None
+
+
+
+					If
+						Compare
+							Name
+								'UNIX_DIR_VAR'
+
+
+							'in'
+
+							Getattr
+								Name
+									'os'
+
+
+								'environ'
+
+
+
+						Stmt
+							Discard
+								CallFunc
+									Getattr
+										Name
+											'paths'
+
+
+										'append'
+
+
+									Subscript
+										Getattr
+											Name
+												'os'
+
+
+											'environ'
+
+
+										'OP_APPLY'
+
+										Name
+											'UNIX_DIR_VAR'
+
+
+
+									None
+
+									None
+
+
+
+
+						None
+
+
+
+
+			Assign
+				AssName
+					'out'
+
+
+				List
+
+
+			For
+				AssName
+					'path'
+
+
+				Name
+					'paths'
+
+
+				Stmt
+					Assign
+						AssName
+							'path'
+
+
+						CallFunc
+							Getattr
+								Getattr
+									Name
+										'os'
+
+
+									'path'
+
+
+								'abspath'
 
 
 							CallFunc
@@ -1287,12 +6262,14 @@ Stmt
 										'path'
 
 
-									'join'
+									'expanduser'
 
 
 								Name
-									'vals'
+									'path'
 
+
+								None
 
 								None
 
@@ -1303,170 +6280,42 @@ Stmt
 
 
 
+					If
+						Compare
+							Name
+								'path'
 
 
-			Assign
-				AssName
-					'config'
+							'not in'
 
-
-				CallFunc
-					Name
-						'exp'
-
-
-					Const
-						"'~'"
-
-
-					Name
-						'DEFAULT_CONFIG_FILENAME_UNIX'
-
-
-					None
-
-					None
+							Name
+								'out'
 
 
 
-			If
-				And
-					Name
-						'windows'
+						Stmt
+							Discard
+								CallFunc
+									Getattr
+										Name
+											'out'
 
 
-					Not
-						CallFunc
-							Getattr
-								Getattr
+										'append'
+
+
 									Name
-										'os'
+										'path'
 
 
-									'path'
+									None
 
+									None
 
-								'exists'
 
 
-							Name
-								'config'
 
-
-							None
-
-							None
-
-
-
-
-				Stmt
-					Assign
-						AssName
-							'config'
-
-
-						CallFunc
-							Name
-								'exp'
-
-
-							Name
-								'windata'
-
-
-							Name
-								'DEFAULT_CONFIG_FILENAME_WINDOWS'
-
-
-							None
-
-							None
-
-
-
-
-				None
-
-
-			Assign
-				AssName
-					'libpath'
-
-
-				CallFunc
-					Name
-						'exp'
-
-
-					Const
-						"'~'"
-
-
-					Name
-						'DEFAULT_LIBRARY_FILENAME_UNIX'
-
-
-					None
-
-					None
-
-
-
-			If
-				And
-					Name
-						'windows'
-
-
-					Not
-						CallFunc
-							Getattr
-								Getattr
-									Name
-										'os'
-
-
-									'path'
-
-
-								'exists'
-
-
-							Name
-								'libpath'
-
-
-							None
-
-							None
-
-
-
-
-				Stmt
-					Assign
-						AssName
-							'libpath'
-
-
-						CallFunc
-							Name
-								'exp'
-
-
-							Name
-								'windata'
-
-
-							Name
-								'DEFAULT_LIBRARY_FILENAME_WINDOWS'
-
-
-							None
-
-							None
-
+						None
 
 
 
@@ -1474,201 +6323,653 @@ Stmt
 
 
 			Return
-				Tuple
-					Name
-						'config'
-
-
-					Name
-						'libpath'
+				Name
+					'out'
 
 
 
+
+
+	Class
+		'Loader'
+
+		Getattr
+			Name
+				'yaml'
+
+
+			'SafeLoader'
+
+
+		Stmt
+			Function
+				'_construct_unicode'
+
+				'self'
+
+				'node'
+
+				0
+
+				Stmt
+					Return
+						CallFunc
+							Getattr
+								Name
+									'self'
+
+
+								'construct_scalar'
+
+
+							Name
+								'node'
+
+
+							None
+
+							None
+
+
+
+
+
+			Function
+				'construct_yaml_map'
+
+				'self'
+
+				'node'
+
+				0
+
+				Stmt
+					Assign
+						AssName
+							'data'
+
+
+						CallFunc
+							Name
+								'OrderedDict'
+
+
+							None
+
+							None
+
+
+
+					Discard
+						Yield
+							Name
+								'data'
+
+
+
+
+					Assign
+						AssName
+							'value'
+
+
+						CallFunc
+							Getattr
+								Name
+									'self'
+
+
+								'construct_mapping'
+
+
+							Name
+								'node'
+
+
+							None
+
+							None
+
+
+
+					Discard
+						CallFunc
+							Getattr
+								Name
+									'data'
+
+
+								'update'
+
+
+							Name
+								'value'
+
+
+							None
+
+							None
+
+
+
+
+
+			Function
+				'construct_mapping'
+
+				'self'
+
+				'node'
+
+				'deep'
+
+				Name
+					'False'
+
+
+				0
+
+				Stmt
+					If
+						CallFunc
+							Name
+								'isinstance'
+
+
+							Name
+								'node'
+
+
+							Getattr
+								Name
+									'yaml'
+
+
+								'MappingNode'
+
+
+							None
+
+							None
+
+
+						Stmt
+							Discard
+								CallFunc
+									Getattr
+										Name
+											'self'
+
+
+										'flatten_mapping'
+
+
+									Name
+										'node'
+
+
+									None
+
+									None
+
+
+
+
+						Stmt
+							Raise
+								CallFunc
+									Getattr
+										Getattr
+											Name
+												'yaml'
+
+
+											'constructor'
+
+
+										'ConstructorError'
+
+
+									Name
+										'None'
+
+
+									Name
+										'None'
+
+
+									Mod
+										Const
+											"'expected a mapping node, but found %s'"
+
+
+										Getattr
+											Name
+												'node'
+
+
+											'id'
+
+
+
+									Getattr
+										Name
+											'node'
+
+
+										'start_mark'
+
+
+									None
+
+									None
+
+
+								None
+
+								None
+
+
+
+
+					Assign
+						AssName
+							'mapping'
+
+
+						CallFunc
+							Name
+								'OrderedDict'
+
+
+							None
+
+							None
+
+
+
+					For
+						AssTuple
+							AssName
+								'key_node'
+
+
+							AssName
+								'value_node'
+
+
+
+						Getattr
+							Name
+								'node'
+
+
+							'value'
+
+
+						Stmt
+							Assign
+								AssName
+									'key'
+
+
+								CallFunc
+									Getattr
+										Name
+											'self'
+
+
+										'construct_object'
+
+
+									Name
+										'key_node'
+
+
+									Keyword
+										'deep'
+
+										Name
+											'deep'
+
+
+
+									None
+
+									None
+
+
+
+							TryExcept
+								Stmt
+									Discard
+										CallFunc
+											Name
+												'hash'
+
+
+											Name
+												'key'
+
+
+											None
+
+											None
+
+
+
+
+								Name
+									'TypeError'
+
+
+								AssName
+									'exc'
+
+
+								Stmt
+									Raise
+										CallFunc
+											Getattr
+												Getattr
+													Name
+														'yaml'
+
+
+													'constructor'
+
+
+												'ConstructorError'
+
+
+											Const
+												"'while constructing a mapping'"
+
+
+											Getattr
+												Name
+													'node'
+
+
+												'start_mark'
+
+
+											Mod
+												Const
+													"'found unacceptable key (%s)'"
+
+
+												Name
+													'exc'
+
+
+
+											Getattr
+												Name
+													'key_node'
+
+
+												'start_mark'
+
+
+											None
+
+											None
+
+
+										None
+
+										None
+
+
+
+								None
+
+
+							Assign
+								AssName
+									'value'
+
+
+								CallFunc
+									Getattr
+										Name
+											'self'
+
+
+										'construct_object'
+
+
+									Name
+										'value_node'
+
+
+									Keyword
+										'deep'
+
+										Name
+											'deep'
+
+
+
+									None
+
+									None
+
+
+
+							Assign
+								Subscript
+									Name
+										'mapping'
+
+
+									'OP_ASSIGN'
+
+									Name
+										'key'
+
+
+
+								Name
+									'value'
+
+
+
+
+						None
+
+
+					Return
+						Name
+							'mapping'
+
+
+
+
+
+			Function
+				'check_plain'
+
+				'self'
+
+				0
+
+				Stmt
+					Assign
+						AssName
+							'plain'
+
+
+						CallFunc
+							Getattr
+								CallFunc
+									Name
+										'super'
+
+
+									Name
+										'Loader'
+
+
+									Name
+										'self'
+
+
+									None
+
+									None
+
+
+								'check_plain'
+
+
+							None
+
+							None
+
+
+
+					Return
+						Or
+							Name
+								'plain'
+
+
+							Compare
+								CallFunc
+									Getattr
+										Name
+											'self'
+
+
+										'peek'
+
+
+									None
+
+									None
+
+
+								'=='
+
+								Const
+									"'%'"
+
+
+
+
+
+
+
+
+
+	Discard
+		CallFunc
+			Getattr
+				Name
+					'Loader'
+
+
+				'add_constructor'
+
+
+			Const
+				"'tag:yaml.org,2002:str'"
+
+
+			Getattr
+				Name
+					'Loader'
+
+
+				'_construct_unicode'
+
+
+			None
+
+			None
+
+
+
+	Discard
+		CallFunc
+			Getattr
+				Name
+					'Loader'
+
+
+				'add_constructor'
+
+
+			Const
+				"'tag:yaml.org,2002:map'"
+
+
+			Getattr
+				Name
+					'Loader'
+
+
+				'construct_yaml_map'
+
+
+			None
+
+			None
+
+
+
+	Discard
+		CallFunc
+			Getattr
+				Name
+					'Loader'
+
+
+				'add_constructor'
+
+
+			Const
+				"'tag:yaml.org,2002:omap'"
+
+
+			Getattr
+				Name
+					'Loader'
+
+
+				'construct_yaml_map'
+
+
+			None
+
+			None
 
 
 
 	Function
-		'get_config'
+		'load_yaml'
+
+		'filename'
 
 		0
 
 		Stmt
-			Assign
-				AssTuple
-					AssName
-						'default_config'
-
-
-					AssName
-						'default_libpath'
-
-
-
-				CallFunc
-					Name
-						'default_paths'
-
-
-					None
-
-					None
-
-
-
-			If
-				Compare
-					Name
-						'CONFIG_PATH_VAR'
-
-
-					'in'
-
-					Getattr
-						Name
-							'os'
-
-
-						'environ'
-
-
-
-				Stmt
-					Assign
-						AssName
-							'configpath'
-
-
-						CallFunc
-							Getattr
-								Getattr
-									Name
-										'os'
-
-
-									'path'
-
-
-								'expanduser'
-
-
-							Subscript
-								Getattr
-									Name
-										'os'
-
-
-									'environ'
-
-
-								'OP_APPLY'
-
-								Name
-									'CONFIG_PATH_VAR'
-
-
-
-							None
-
-							None
-
-
-
-
-				Stmt
-					Assign
-						AssName
-							'configpath'
-
-
-						Name
-							'default_config'
-
-
-
-
-
-			Assign
-				AssName
-					'config'
-
-
-				CallFunc
-					Getattr
-						Name
-							'ConfigParser'
-
-
-						'SafeConfigParser'
-
-
-					None
-
-					None
-
-
-
-			If
-				CallFunc
-					Getattr
-						Getattr
-							Name
-								'os'
-
-
-							'path'
-
-
-						'exists'
-
-
-					CallFunc
-						Getattr
-							Name
-								'util'
-
-
-							'syspath'
-
-
-						Name
-							'configpath'
-
-
-						None
-
-						None
-
-
-					None
-
-					None
-
-
+			TryExcept
 				Stmt
 					With
 						CallFunc
-							Getattr
-								Name
-									'codecs'
-
-
+							Name
 								'open'
 
 
 							Name
-								'configpath'
+								'filename'
 
 
 							Const
 								"'r'"
-
-
-							Keyword
-								'encoding'
-
-								Const
-									"'utf-8'"
-
 
 
 							None
@@ -1681,194 +6982,26 @@ Stmt
 
 
 						Stmt
-							Discard
+							Return
 								CallFunc
 									Getattr
 										Name
-											'config'
+											'yaml'
 
 
-										'readfp'
+										'load'
 
 
 									Name
 										'f'
 
 
-									None
+									Keyword
+										'Loader'
 
-									None
-
-
-
-
-
-					Return
-						Tuple
-							Name
-								'config'
-
-
-							Name
-								'configpath'
-
-
-
-
-
-				Stmt
-					Return
-						Tuple
-							Name
-								'None'
-
-
-							Name
-								'configpath'
-
-
-
-
-
-
-
-
-	Function
-		'flatten_config'
-
-		'config'
-
-		0
-
-		Stmt
-			Assign
-				AssName
-					'out'
-
-
-				CallFunc
-					Getattr
-						Name
-							'confit'
-
-
-						'OrderedDict'
-
-
-					None
-
-					None
-
-
-
-			For
-				AssName
-					'section'
-
-
-				CallFunc
-					Getattr
-						Name
-							'config'
-
-
-						'sections'
-
-
-					None
-
-					None
-
-
-				Stmt
-					Assign
-						AssName
-							'sec_dict'
-
-
-						Subscript
-							Name
-								'out'
-
-
-							'OP_ASSIGN'
-
-							Name
-								'section'
-
-
-
-						CallFunc
-							Getattr
-								Name
-									'confit'
-
-
-								'OrderedDict'
-
-
-							None
-
-							None
-
-
-
-					For
-						AssName
-							'option'
-
-
-						CallFunc
-							Getattr
-								Name
-									'config'
-
-
-								'options'
-
-
-							Name
-								'section'
-
-
-							None
-
-							None
-
-
-						Stmt
-							Assign
-								Subscript
-									Name
-										'sec_dict'
-
-
-									'OP_ASSIGN'
-
-									Name
-										'option'
-
-
-
-								CallFunc
-									Getattr
 										Name
-											'config'
+											'Loader'
 
-
-										'get'
-
-
-									Name
-										'section'
-
-
-									Name
-										'option'
-
-
-									Name
-										'True'
 
 
 									None
@@ -1878,975 +7011,57 @@ Stmt
 
 
 
-						None
 
 
-
-				None
-
-
-			Return
-				Name
-					'out'
+				Tuple
+					Name
+						'IOError'
 
 
-
-
-
-	Function
-		'transform_value'
-
-		'value'
-
-		0
-
-		Stmt
-			If
-				Compare
-					CallFunc
+					Getattr
 						Getattr
 							Name
-								'value'
+								'yaml'
 
 
-							'lower'
+							'error'
 
 
-						None
+						'YAMLError'
 
-						None
 
 
-					'in'
-
-					Tuple
-						Const
-							"'false'"
-
-
-						Const
-							"'no'"
-
-
-						Const
-							"'off'"
-
-
-
-
-				Stmt
-					Return
-						Name
-							'False'
-
-
-
-
-				Compare
-					CallFunc
-						Getattr
-							Name
-								'value'
-
-
-							'lower'
-
-
-						None
-
-						None
-
-
-					'in'
-
-					Tuple
-						Const
-							"'true'"
-
-
-						Const
-							"'yes'"
-
-
-						Const
-							"'on'"
-
-
-
-
-				Stmt
-					Return
-						Name
-							'True'
-
-
-
-
-				None
-
-
-			TryExcept
-				Stmt
-					Return
-						CallFunc
-							Name
-								'int'
-
-
-							Name
-								'value'
-
-
-							None
-
-							None
-
-
-
-
-				Name
-					'ValueError'
-
-
-				None
-
-				Stmt
-					Pass
-
-
-				None
-
-
-			TryExcept
-				Stmt
-					Return
-						CallFunc
-							Name
-								'float'
-
-
-							Name
-								'value'
-
-
-							None
-
-							None
-
-
-
-
-				Name
-					'ValueError'
-
-
-				None
-
-				Stmt
-					Pass
-
-
-				None
-
-
-			Return
-				Name
-					'value'
-
-
-
-
-
-	Function
-		'transform_data'
-
-		'data'
-
-		0
-
-		Stmt
-			Assign
 				AssName
-					'out'
-
-
-				CallFunc
-					Getattr
-						Name
-							'confit'
-
-
-						'OrderedDict'
-
-
-					None
-
-					None
-
-
-
-			For
-				AssTuple
-					AssName
-						'section'
-
-
-					AssName
-						'pairs'
-
-
-
-				CallFunc
-					Getattr
-						Name
-							'data'
-
-
-						'items'
-
-
-					None
-
-					None
+					'exc'
 
 
 				Stmt
-					If
-						Compare
+					Raise
+						CallFunc
 							Name
-								'section'
+								'ConfigReadError'
 
 
-							'=='
+							Name
+								'filename'
 
-							Const
-								"'beets'"
 
+							Name
+								'exc'
 
 
-						Stmt
-							For
-								AssTuple
-									AssName
-										'key'
+							None
 
+							None
 
-									AssName
-										'value'
 
-
-
-								CallFunc
-									Getattr
-										Name
-											'pairs'
-
-
-										'items'
-
-
-									None
-
-									None
-
-
-								Stmt
-									Assign
-										AssName
-											'value'
-
-
-										CallFunc
-											Name
-												'transform_value'
-
-
-											Name
-												'value'
-
-
-											None
-
-											None
-
-
-
-									If
-										CallFunc
-											Getattr
-												Name
-													'key'
-
-
-												'startswith'
-
-
-											Const
-												"'import_'"
-
-
-											None
-
-											None
-
-
-										Stmt
-											If
-												Compare
-													Const
-														"'import'"
-
-
-													'not in'
-
-													Name
-														'out'
-
-
-
-												Stmt
-													Assign
-														Subscript
-															Name
-																'out'
-
-
-															'OP_ASSIGN'
-
-															Const
-																"'import'"
-
-
-
-														CallFunc
-															Getattr
-																Name
-																	'confit'
-
-
-																'OrderedDict'
-
-
-															None
-
-															None
-
-
-
-
-												None
-
-
-											Assign
-												Subscript
-													Subscript
-														Name
-															'out'
-
-
-														'OP_APPLY'
-
-														Const
-															"'import'"
-
-
-
-													'OP_ASSIGN'
-
-													Slice
-														Name
-															'key'
-
-
-														'OP_APPLY'
-
-														Const
-															'7'
-
-
-														None
-
-
-
-												Name
-													'value'
-
-
-
-
-										Compare
-											Name
-												'key'
-
-
-											'=='
-
-											Const
-												"'plugins'"
-
-
-
-										Stmt
-											Assign
-												AssName
-													'plugins'
-
-
-												CallFunc
-													Getattr
-														Name
-															'value'
-
-
-														'split'
-
-
-													None
-
-													None
-
-
-
-											Assign
-												AssName
-													'new_plugins'
-
-
-												ListComp
-													CallFunc
-														Getattr
-															Name
-																'PLUGIN_NAMES'
-
-
-															'get'
-
-
-														Name
-															'p'
-
-
-														Name
-															'p'
-
-
-														None
-
-														None
-
-
-													ListCompFor
-														AssName
-															'p'
-
-
-														Name
-															'plugins'
-
-
-
-
-
-											Assign
-												Subscript
-													Name
-														'out'
-
-
-													'OP_ASSIGN'
-
-													Const
-														"'plugins'"
-
-
-
-												CallFunc
-													Getattr
-														Const
-															"' '"
-
-
-														'join'
-
-
-													Name
-														'new_plugins'
-
-
-													None
-
-													None
-
-
-
-
-										Compare
-											Name
-												'key'
-
-
-											'=='
-
-											Const
-												"'replace'"
-
-
-
-										Stmt
-											Assign
-												AssName
-													'replacements'
-
-
-												CallFunc
-													Getattr
-														Name
-															'confit'
-
-
-														'OrderedDict'
-
-
-													None
-
-													None
-
-
-
-											For
-												AssTuple
-													AssName
-														'pat'
-
-
-													AssName
-														'repl'
-
-
-
-												CallFunc
-													Name
-														'grouper'
-
-
-													Const
-														'2'
-
-
-													CallFunc
-														Getattr
-															Name
-																'value'
-
-
-															'split'
-
-
-														None
-
-														None
-
-
-													None
-
-													None
-
-
-												Stmt
-													If
-														Compare
-															Name
-																'repl'
-
-
-															'=='
-
-															Const
-																"'<strip>'"
-
-
-
-														Stmt
-															Assign
-																AssName
-																	'repl'
-
-
-																Const
-																	"''"
-
-
-
-
-														None
-
-
-													Assign
-														Subscript
-															Name
-																'replacements'
-
-
-															'OP_ASSIGN'
-
-															Name
-																'pat'
-
-
-
-														Name
-															'repl'
-
-
-
-
-												None
-
-
-											Assign
-												Subscript
-													Name
-														'out'
-
-
-													'OP_ASSIGN'
-
-													Const
-														"'replace'"
-
-
-
-												Name
-													'replacements'
-
-
-
-
-										Compare
-											Name
-												'key'
-
-
-											'=='
-
-											Const
-												"'pluginpath'"
-
-
-
-										Stmt
-											Assign
-												Subscript
-													Name
-														'out'
-
-
-													'OP_ASSIGN'
-
-													Const
-														"'pluginpath'"
-
-
-
-												CallFunc
-													Getattr
-														Name
-															'value'
-
-
-														'split'
-
-
-													Const
-														"':'"
-
-
-													None
-
-													None
-
-
-
-
-										Stmt
-											Assign
-												Subscript
-													Name
-														'out'
-
-
-													'OP_ASSIGN'
-
-													Name
-														'key'
-
-
-
-												Name
-													'value'
-
-
-
-
-
-
-								None
-
-
-
-						Name
-							'pairs'
-
-
-						Stmt
-							Assign
-								AssName
-									'sec_out'
-
-
-								Subscript
-									Name
-										'out'
-
-
-									'OP_ASSIGN'
-
-									Name
-										'section'
-
-
-
-								CallFunc
-									Getattr
-										Name
-											'confit'
-
-
-										'OrderedDict'
-
-
-									None
-
-									None
-
-
-
-							For
-								AssTuple
-									AssName
-										'key'
-
-
-									AssName
-										'value'
-
-
-
-								CallFunc
-									Getattr
-										Name
-											'pairs'
-
-
-										'items'
-
-
-									None
-
-									None
-
-
-								Stmt
-									If
-										Compare
-											Name
-												'key'
-
-
-											'in'
-
-											Name
-												'AUTO_KEYS'
-
-
-
-										Stmt
-											Assign
-												AssName
-													'key'
-
-
-												Const
-													"'auto'"
-
-
-
-
-										None
-
-
-									If
-										Compare
-											Name
-												'section'
-
-
-											'=='
-
-											Const
-												"'paths'"
-
-
-
-										Stmt
-											Assign
-												AssName
-													'key'
-
-
-												CallFunc
-													Getattr
-														Name
-															'key'
-
-
-														'replace'
-
-
-													Const
-														"'_'"
-
-
-													Const
-														"':'"
-
-
-													None
-
-													None
-
-
-
-
-										None
-
-
-									If
-										Compare
-											Name
-												'section'
-
-
-											'=='
-
-											Const
-												"'importfeeds'"
-
-
-
-										Stmt
-											If
-												CallFunc
-													Getattr
-														Name
-															'key'
-
-
-														'startswith'
-
-
-													Name
-														'IMPORTFEEDS_PREFIX'
-
-
-													None
-
-													None
-
-
-												Stmt
-													Assign
-														AssName
-															'key'
-
-
-														Slice
-															Name
-																'key'
-
-
-															'OP_APPLY'
-
-															CallFunc
-																Name
-																	'len'
-
-
-																Name
-																	'IMPORTFEEDS_PREFIX'
-
-
-																None
-
-																None
-
-
-															None
-
-
-
-
-												None
-
-
-
-										None
-
-
-									Assign
-										Subscript
-											Name
-												'sec_out'
-
-
-											'OP_ASSIGN'
-
-											Name
-												'key'
-
-
-
-										CallFunc
-											Name
-												'transform_value'
-
-
-											Name
-												'value'
-
-
-											None
-
-											None
-
-
-
-
-								None
-
-
+						None
 
 						None
 
 
 
 				None
-
-
-			Return
-				Name
-					'out'
-
 
 
 
@@ -2937,6 +7152,10 @@ Stmt
 				'mapping'
 
 				'flow_style'
+
+				Const
+					"'0,0'"
+
 
 				Name
 					'None'
@@ -3117,7 +7336,11 @@ Stmt
 
 
 						CallFunc
-							Name
+							Getattr
+								Name
+									'Dumper'
+
+
 								'insideClass'
 
 
@@ -3463,6 +7686,270 @@ Stmt
 
 
 
+			Function
+				'represent_list'
+
+				'self'
+
+				'data'
+
+				0
+
+				Stmt
+					Assign
+						AssName
+							'node'
+
+
+						CallFunc
+							Getattr
+								CallFunc
+									Name
+										'super'
+
+
+									Name
+										'Dumper'
+
+
+									Name
+										'self'
+
+
+									None
+
+									None
+
+
+								'represent_list'
+
+
+							Name
+								'data'
+
+
+							None
+
+							None
+
+
+
+					Assign
+						AssName
+							'length'
+
+
+						CallFunc
+							Name
+								'len'
+
+
+							Name
+								'data'
+
+
+							None
+
+							None
+
+
+
+					If
+						And
+							Compare
+								Getattr
+									Name
+										'self'
+
+
+									'default_flow_style'
+
+
+								'is'
+
+								Name
+									'None'
+
+
+
+							Compare
+								Name
+									'length'
+
+
+								'<'
+
+								Const
+									'4'
+
+
+
+
+						Stmt
+							Assign
+								AssAttr
+									Name
+										'node'
+
+
+									'flow_style'
+
+									'OP_ASSIGN'
+
+
+								Name
+									'True'
+
+
+
+
+						Compare
+							Getattr
+								Name
+									'self'
+
+
+								'default_flow_style'
+
+
+							'is'
+
+							Name
+								'None'
+
+
+
+						Stmt
+							Assign
+								AssAttr
+									Name
+										'node'
+
+
+									'flow_style'
+
+									'OP_ASSIGN'
+
+
+								Name
+									'False'
+
+
+
+
+						None
+
+
+					Return
+						Name
+							'node'
+
+
+
+
+
+			Function
+				'represent_bool'
+
+				'self'
+
+				'data'
+
+				0
+
+				Stmt
+					If
+						Name
+							'data'
+
+
+						Stmt
+							Assign
+								AssName
+									'value'
+
+
+								Const
+									"'yes'"
+
+
+
+
+						Stmt
+							Assign
+								AssName
+									'value'
+
+
+								Const
+									"'no'"
+
+
+
+
+
+					Return
+						CallFunc
+							Getattr
+								Name
+									'self'
+
+
+								'represent_scalar'
+
+
+							Const
+								"'tag:yaml.org,2002:bool'"
+
+
+							Name
+								'value'
+
+
+							None
+
+							None
+
+
+
+
+
+			Function
+				'represent_none'
+
+				'self'
+
+				'data'
+
+				0
+
+				Stmt
+					Return
+						CallFunc
+							Getattr
+								Name
+									'self'
+
+
+								'represent_scalar'
+
+
+							Const
+								"'tag:yaml.org,2002:null'"
+
+
+							Const
+								"''"
+
+
+							None
+
+							None
+
+
+
+
+
 
 
 	Discard
@@ -3475,11 +7962,7 @@ Stmt
 				'add_representer'
 
 
-			Getattr
-				Name
-					'confit'
-
-
+			Name
 				'OrderedDict'
 
 
@@ -3497,216 +7980,278 @@ Stmt
 
 
 
+	Discard
+		CallFunc
+			Getattr
+				Name
+					'Dumper'
+
+
+				'add_representer'
+
+
+			Name
+				'bool'
+
+
+			Getattr
+				Name
+					'Dumper'
+
+
+				'represent_bool'
+
+
+			None
+
+			None
+
+
+
+	Discard
+		CallFunc
+			Getattr
+				Name
+					'Dumper'
+
+
+				'add_representer'
+
+
+			CallFunc
+				Name
+					'type'
+
+
+				Name
+					'None'
+
+
+				None
+
+				None
+
+
+			Getattr
+				Name
+					'Dumper'
+
+
+				'represent_none'
+
+
+			None
+
+			None
+
+
+
+	Discard
+		CallFunc
+			Getattr
+				Name
+					'Dumper'
+
+
+				'add_representer'
+
+
+			Name
+				'list'
+
+
+			Getattr
+				Name
+					'Dumper'
+
+
+				'represent_list'
+
+
+			None
+
+			None
+
+
+
 	Function
-		'migrate_config'
+		'restore_yaml_comments'
 
-		'replace'
+		'data'
 
-		Name
-			'False'
-
+		'default_data'
 
 		0
 
 		Stmt
 			Assign
-				AssTuple
-					AssName
-						'config'
-
-
-					AssName
-						'configpath'
-
+				AssName
+					'comment_map'
 
 
 				CallFunc
 					Name
-						'get_config'
+						'dict'
 
 
 					None
 
 					None
 
-
-
-			If
-				Not
-					Name
-						'config'
-
-
-
-				Stmt
-					Discard
-						CallFunc
-							Getattr
-								Name
-									'log'
-
-
-								'debug'
-
-
-							CallFunc
-								Getattr
-									Const
-										"u'no config file found at {0}'"
-
-
-									'format'
-
-
-								CallFunc
-									Getattr
-										Name
-											'util'
-
-
-										'displayable_path'
-
-
-									Name
-										'configpath'
-
-
-									None
-
-									None
-
-
-								None
-
-								None
-
-
-							None
-
-							None
-
-
-
-					Return
-						Const
-							'None'
-
-
-
-
-				None
 
 
 			Assign
 				AssName
-					'destfn'
+					'default_lines'
 
 
 				CallFunc
-					Getattr
-						Getattr
-							Name
-								'os'
-
-
-							'path'
-
-
-						'join'
+					Name
+						'iter'
 
 
 					CallFunc
 						Getattr
-							Getattr
-								Name
-									'beets'
-
-
-								'config'
-
-
-							'config_dir'
-
-
-						None
-
-						None
-
-
-					Getattr
-						Name
-							'confit'
-
-
-						'CONFIG_FILENAME'
-
-
-					None
-
-					None
-
-
-
-			If
-				CallFunc
-					Getattr
-						Getattr
 							Name
-								'os'
+								'default_data'
 
 
-							'path'
+							'splitlines'
 
 
-						'exists'
+						None
 
-
-					Name
-						'destfn'
+						None
 
 
 					None
 
 					None
+
+
+
+			For
+				AssName
+					'line'
+
+
+				Name
+					'default_lines'
 
 
 				Stmt
 					If
-						Name
-							'replace'
+						Not
+							Name
+								'line'
+
 
 
 						Stmt
-							Discard
+							Assign
+								AssName
+									'comment'
+
+
+								Const
+									"'\\n'"
+
+
+
+
+						CallFunc
+							Getattr
+								Name
+									'line'
+
+
+								'startswith'
+
+
+							Const
+								"'#'"
+
+
+							None
+
+							None
+
+
+						Stmt
+							Assign
+								AssName
+									'comment'
+
+
 								CallFunc
 									Getattr
-										Name
-											'log'
+										Const
+											"'{0}\\n'"
 
 
-										'debug'
+										'format'
 
 
-									CallFunc
-										Getattr
-											Const
-												"u'moving old config aside: {0}'"
+									Name
+										'line'
 
 
-											'format'
+									None
+
+									None
 
 
+
+
+						Stmt
+							Continue
+
+
+
+					While
+						Name
+							'True'
+
+
+						Stmt
+							Assign
+								AssName
+									'line'
+
+
+								CallFunc
+									Name
+										'next'
+
+
+									Name
+										'default_lines'
+
+
+									None
+
+									None
+
+
+
+							If
+								And
+									Name
+										'line'
+
+
+									Not
 										CallFunc
 											Getattr
 												Name
-													'util'
+													'line'
 
 
-												'displayable_path'
+												'startswith'
 
 
-											Name
-												'destfn'
+											Const
+												"'#'"
 
 
 											None
@@ -3714,25 +8259,33 @@ Stmt
 											None
 
 
-										None
-
-										None
 
 
-									None
-
-									None
-
+								Stmt
+									Break
 
 
-							Discard
+								None
+
+
+							AugAssign
+								Name
+									'comment'
+
+
+								'+='
+
 								CallFunc
-									Name
-										'_displace'
+									Getattr
+										Const
+											"'{0}\\n'"
+
+
+										'format'
 
 
 									Name
-										'destfn'
+										'line'
 
 
 									None
@@ -3742,12 +8295,66 @@ Stmt
 
 
 
-						Stmt
-							Return
-								Const
-									'None'
+						None
 
 
+					Assign
+						AssName
+							'key'
+
+
+						CallFunc
+							Getattr
+								Subscript
+									CallFunc
+										Getattr
+											Name
+												'line'
+
+
+											'split'
+
+
+										Const
+											"':'"
+
+
+										None
+
+										None
+
+
+									'OP_APPLY'
+
+									Const
+										'0'
+
+
+
+								'strip'
+
+
+							None
+
+							None
+
+
+
+					Assign
+						Subscript
+							Name
+								'comment_map'
+
+
+							'OP_ASSIGN'
+
+							Name
+								'key'
+
+
+
+						Name
+							'comment'
 
 
 
@@ -3755,218 +8362,154 @@ Stmt
 				None
 
 
-			Discard
+			Assign
+				AssName
+					'out_lines'
+
+
 				CallFunc
-					Getattr
-						Name
-							'log'
-
-
-						'debug'
+					Name
+						'iter'
 
 
 					CallFunc
 						Getattr
-							Const
-								"u'migrating config file {0}'"
+							Name
+								'data'
 
 
-							'format'
+							'splitlines'
+
+
+						None
+
+						None
+
+
+					None
+
+					None
+
+
+
+			Assign
+				AssName
+					'out_data'
+
+
+				Const
+					"''"
+
+
+
+			For
+				AssName
+					'line'
+
+
+				Name
+					'out_lines'
+
+
+				Stmt
+					Assign
+						AssName
+							'key'
 
 
 						CallFunc
 							Getattr
-								Name
-									'util'
+								Subscript
+									CallFunc
+										Getattr
+											Name
+												'line'
 
 
-								'displayable_path'
+											'split'
 
+
+										Const
+											"':'"
+
+
+										None
+
+										None
+
+
+									'OP_APPLY'
+
+									Const
+										'0'
+
+
+
+								'strip'
+
+
+							None
+
+							None
+
+
+
+					If
+						Compare
+							Name
+								'key'
+
+
+							'in'
 
 							Name
-								'configpath'
-
-
-							None
-
-							None
-
-
-						None
-
-						None
-
-
-					None
-
-					None
+								'comment_map'
 
 
 
-			Assign
-				AssName
-					'data'
+						Stmt
+							AugAssign
+								Name
+									'out_data'
 
 
-				CallFunc
-					Name
-						'transform_data'
+								'+='
+
+								Subscript
+									Name
+										'comment_map'
 
 
-					CallFunc
-						Name
-							'flatten_config'
+									'OP_APPLY'
+
+									Name
+										'key'
 
 
-						Name
-							'config'
+
 
 
 						None
 
-						None
 
-
-					None
-
-					None
-
-
-
-			Assign
-				AssName
-					'yaml_out'
-
-
-				CallFunc
-					Getattr
+					AugAssign
 						Name
-							'yaml'
+							'out_data'
 
 
-						'dump'
-
-
-					Name
-						'data'
-
-
-					Keyword
-						'Dumper'
-
-						Name
-							'Dumper'
-
-
-
-					Keyword
-						'default_flow_style'
-
-						Name
-							'False'
-
-
-
-					Keyword
-						'indent'
-
-						Const
-							'4'
-
-
-
-					Keyword
-						'width'
-
-						Const
-							'1000'
-
-
-
-					None
-
-					None
-
-
-
-			Assign
-				AssName
-					'yaml_out'
-
-
-				CallFunc
-					Getattr
-						Name
-							're'
-
-
-						'sub'
-
-
-					Const
-						"'(\\\\n\\\\w+:\\\\n    [^-\\\\s])'"
-
-
-					Const
-						"'\\n\\\\1'"
-
-
-					Name
-						'yaml_out'
-
-
-					None
-
-					None
-
-
-
-			Assign
-				AssName
-					'yaml_out'
-
-
-				Add
-					Name
-						'YAML_COMMENT'
-
-
-					Name
-						'yaml_out'
-
-
-
-
-			Discard
-				CallFunc
-					Getattr
-						Name
-							'log'
-
-
-						'debug'
-
-
-					CallFunc
-						Getattr
-							Const
-								"u'writing migrated config to {0}'"
-
-
-							'format'
-
+						'+='
 
 						CallFunc
 							Getattr
-								Name
-									'util'
+								Const
+									"'{0}\\n'"
 
 
-								'displayable_path'
+								'format'
 
 
 							Name
-								'destfn'
+								'line'
 
 
 							None
@@ -3974,140 +8517,194 @@ Stmt
 							None
 
 
-						None
-
-						None
 
 
-					None
-
-					None
+				None
 
 
-
-			With
-				CallFunc
-					Name
-						'open'
+			Return
+				Name
+					'out_data'
 
 
-					Name
-						'destfn'
 
 
-					Const
-						"'w'"
+
+	Class
+		'Configuration'
+
+		Name
+			'RootView'
 
 
-					None
+		Stmt
+			Function
+				'__init__'
 
-					None
+				'self'
+
+				'appname'
+
+				'modname'
+
+				'read'
+
+				Name
+					'None'
 
 
-				AssName
-					'f'
+				Name
+					'True'
 
+
+				0
 
 				Stmt
 					Discard
 						CallFunc
 							Getattr
-								Name
-									'f'
+								CallFunc
+									Name
+										'super'
 
 
-								'write'
+									Name
+										'Configuration'
 
 
+									Name
+										'self'
+
+
+									None
+
+									None
+
+
+								'__init__'
+
+
+							List
+
+							None
+
+							None
+
+
+
+					Assign
+						AssAttr
 							Name
-								'yaml_out'
+								'self'
 
 
-							None
+							'appname'
 
-							None
-
-
+							'OP_ASSIGN'
 
 
-
-			Return
-				Name
-					'destfn'
+						Name
+							'appname'
 
 
 
+					Assign
+						AssAttr
+							Name
+								'self'
 
 
-	Function
-		'migrate_db'
+							'modname'
 
-		'replace'
-
-		Name
-			'False'
+							'OP_ASSIGN'
 
 
-		0
-
-		Stmt
-			Assign
-				AssTuple
-					AssName
-						'_'
-
-
-					AssName
-						'srcfn'
+						Name
+							'modname'
 
 
 
-				CallFunc
-					Name
-						'default_paths'
+					Assign
+						AssAttr
+							Name
+								'self'
 
 
-					None
+							'_env_var'
 
-					None
-
-
-
-			Assign
-				AssName
-					'destfn'
+							'OP_ASSIGN'
 
 
-				CallFunc
-					Getattr
-						Subscript
+						CallFunc
 							Getattr
-								Name
-									'beets'
+								Const
+									"'{0}DIR'"
 
 
-								'config'
+								'format'
 
 
-							'OP_APPLY'
-
-							Const
-								"'library'"
-
-
-
-						'as_filename'
+							CallFunc
+								Getattr
+									Getattr
+										Name
+											'self'
 
 
-					None
-
-					None
+										'appname'
 
 
+									'upper'
 
-			If
-				Or
-					Not
+
+								None
+
+								None
+
+
+							None
+
+							None
+
+
+
+					If
+						Name
+							'read'
+
+
+						Stmt
+							Discard
+								CallFunc
+									Getattr
+										Name
+											'self'
+
+
+										'read'
+
+
+									None
+
+									None
+
+
+
+
+						None
+
+
+
+
+			Function
+				'user_config_path'
+
+				'self'
+
+				0
+
+				Stmt
+					Return
 						CallFunc
 							Getattr
 								Getattr
@@ -4118,11 +8715,25 @@ Stmt
 									'path'
 
 
-								'exists'
+								'join'
+
+
+							CallFunc
+								Getattr
+									Name
+										'self'
+
+
+									'config_dir'
+
+
+								None
+
+								None
 
 
 							Name
-								'srcfn'
+								'CONFIG_FILENAME'
 
 
 							None
@@ -4131,57 +8742,57 @@ Stmt
 
 
 
-					Compare
-						Name
-							'srcfn'
 
 
-						'=='
+			Function
+				'_add_user_source'
 
-						Name
-							'destfn'
+				'self'
 
-
-
+				0
 
 				Stmt
-					Return
-						Const
-							'None'
+					Assign
+						AssName
+							'filename'
+
+
+						CallFunc
+							Getattr
+								Name
+									'self'
+
+
+								'user_config_path'
+
+
+							None
+
+							None
 
 
 
-
-				None
-
-
-			If
-				CallFunc
-					Getattr
-						Getattr
-							Name
-								'os'
-
-
-							'path'
-
-
-						'exists'
-
-
-					Name
-						'destfn'
-
-
-					None
-
-					None
-
-
-				Stmt
 					If
-						Name
-							'replace'
+						CallFunc
+							Getattr
+								Getattr
+									Name
+										'os'
+
+
+									'path'
+
+
+								'isfile'
+
+
+							Name
+								'filename'
+
+
+							None
+
+							None
 
 
 						Stmt
@@ -4189,32 +8800,986 @@ Stmt
 								CallFunc
 									Getattr
 										Name
-											'log'
+											'self'
 
 
-										'debug'
+										'add'
+
+
+									CallFunc
+										Name
+											'ConfigSource'
+
+
+										Or
+											CallFunc
+												Name
+													'load_yaml'
+
+
+												Name
+													'filename'
+
+
+												None
+
+												None
+
+
+											Dict
+
+
+										Name
+											'filename'
+
+
+										None
+
+										None
+
+
+									None
+
+									None
+
+
+
+
+						None
+
+
+
+
+			Function
+				'_add_default_source'
+
+				'self'
+
+				0
+
+				Stmt
+					If
+						Getattr
+							Name
+								'self'
+
+
+							'modname'
+
+
+						Stmt
+							Assign
+								AssName
+									'pkg_path'
+
+
+								CallFunc
+									Name
+										'_package_path'
+
+
+									Getattr
+										Name
+											'self'
+
+
+										'modname'
+
+
+									None
+
+									None
+
+
+
+							If
+								Name
+									'pkg_path'
+
+
+								Stmt
+									Assign
+										AssName
+											'filename'
+
+
+										CallFunc
+											Getattr
+												Getattr
+													Name
+														'os'
+
+
+													'path'
+
+
+												'join'
+
+
+											Name
+												'pkg_path'
+
+
+											Name
+												'DEFAULT_FILENAME'
+
+
+											None
+
+											None
+
+
+
+									If
+										CallFunc
+											Getattr
+												Getattr
+													Name
+														'os'
+
+
+													'path'
+
+
+												'isfile'
+
+
+											Name
+												'filename'
+
+
+											None
+
+											None
+
+
+										Stmt
+											Discard
+												CallFunc
+													Getattr
+														Name
+															'self'
+
+
+														'add'
+
+
+													CallFunc
+														Name
+															'ConfigSource'
+
+
+														CallFunc
+															Name
+																'load_yaml'
+
+
+															Name
+																'filename'
+
+
+															None
+
+															None
+
+
+														Name
+															'filename'
+
+
+														Name
+															'True'
+
+
+														None
+
+														None
+
+
+													None
+
+													None
+
+
+
+
+										None
+
+
+
+								None
+
+
+
+						None
+
+
+
+
+			Function
+				'read'
+
+				'self'
+
+				'user'
+
+				'defaults'
+
+				Name
+					'True'
+
+
+				Name
+					'True'
+
+
+				0
+
+				Stmt
+					If
+						Name
+							'user'
+
+
+						Stmt
+							Discard
+								CallFunc
+									Getattr
+										Name
+											'self'
+
+
+										'_add_user_source'
+
+
+									None
+
+									None
+
+
+
+
+						None
+
+
+					If
+						Name
+							'defaults'
+
+
+						Stmt
+							Discard
+								CallFunc
+									Getattr
+										Name
+											'self'
+
+
+										'_add_default_source'
+
+
+									None
+
+									None
+
+
+
+
+						None
+
+
+
+
+			Function
+				'config_dir'
+
+				'self'
+
+				0
+
+				Stmt
+					If
+						Compare
+							Getattr
+								Name
+									'self'
+
+
+								'_env_var'
+
+
+							'in'
+
+							Getattr
+								Name
+									'os'
+
+
+								'environ'
+
+
+
+						Stmt
+							Assign
+								AssName
+									'appdir'
+
+
+								Subscript
+									Getattr
+										Name
+											'os'
+
+
+										'environ'
+
+
+									'OP_APPLY'
+
+									Getattr
+										Name
+											'self'
+
+
+										'_env_var'
+
+
+
+
+							Assign
+								AssName
+									'appdir'
+
+
+								CallFunc
+									Getattr
+										Getattr
+											Name
+												'os'
+
+
+											'path'
+
+
+										'abspath'
 
 
 									CallFunc
 										Getattr
-											Const
-												"u'moving old database aside: {0}'"
+											Getattr
+												Name
+													'os'
 
 
-											'format'
+												'path'
+
+
+											'expanduser'
+
+
+										Name
+											'appdir'
+
+
+										None
+
+										None
+
+
+									None
+
+									None
+
+
+
+							If
+								CallFunc
+									Getattr
+										Getattr
+											Name
+												'os'
+
+
+											'path'
+
+
+										'isfile'
+
+
+									Name
+										'appdir'
+
+
+									None
+
+									None
+
+
+								Stmt
+									Raise
+										CallFunc
+											Name
+												'ConfigError'
+
+
+											CallFunc
+												Getattr
+													Const
+														"'{0} must be a directory'"
+
+
+													'format'
+
+
+												Getattr
+													Name
+														'self'
+
+
+													'_env_var'
+
+
+												None
+
+												None
+
+
+											None
+
+											None
+
+
+										None
+
+										None
+
+
+
+								None
+
+
+
+						Stmt
+							For
+								AssName
+									'confdir'
+
+
+								CallFunc
+									Name
+										'config_dirs'
+
+
+									None
+
+									None
+
+
+								Stmt
+									Assign
+										AssName
+											'appdir'
+
+
+										CallFunc
+											Getattr
+												Getattr
+													Name
+														'os'
+
+
+													'path'
+
+
+												'join'
+
+
+											Name
+												'confdir'
+
+
+											Getattr
+												Name
+													'self'
+
+
+												'appname'
+
+
+											None
+
+											None
+
+
+
+									If
+										CallFunc
+											Getattr
+												Getattr
+													Name
+														'os'
+
+
+													'path'
+
+
+												'isfile'
+
+
+											CallFunc
+												Getattr
+													Getattr
+														Name
+															'os'
+
+
+														'path'
+
+
+													'join'
+
+
+												Name
+													'appdir'
+
+
+												Name
+													'CONFIG_FILENAME'
+
+
+												None
+
+												None
+
+
+											None
+
+											None
+
+
+										Stmt
+											Break
+
+
+										None
+
+
+
+								None
+
+
+
+
+					If
+						Not
+							CallFunc
+								Getattr
+									Getattr
+										Name
+											'os'
+
+
+										'path'
+
+
+									'isdir'
+
+
+								Name
+									'appdir'
+
+
+								None
+
+								None
+
+
+
+						Stmt
+							Discard
+								CallFunc
+									Getattr
+										Name
+											'os'
+
+
+										'makedirs'
+
+
+									Name
+										'appdir'
+
+
+									None
+
+									None
+
+
+
+
+						None
+
+
+					Return
+						Name
+							'appdir'
+
+
+
+
+
+			Function
+				'set_file'
+
+				'self'
+
+				'filename'
+
+				0
+
+				Stmt
+					Assign
+						AssName
+							'filename'
+
+
+						CallFunc
+							Getattr
+								Getattr
+									Name
+										'os'
+
+
+									'path'
+
+
+								'abspath'
+
+
+							Name
+								'filename'
+
+
+							None
+
+							None
+
+
+
+					Discard
+						CallFunc
+							Getattr
+								Name
+									'self'
+
+
+								'set'
+
+
+							CallFunc
+								Name
+									'ConfigSource'
+
+
+								CallFunc
+									Name
+										'load_yaml'
+
+
+									Name
+										'filename'
+
+
+									None
+
+									None
+
+
+								Name
+									'filename'
+
+
+								None
+
+								None
+
+
+							None
+
+							None
+
+
+
+
+
+			Function
+				'dump'
+
+				'self'
+
+				'full'
+
+				Name
+					'True'
+
+
+				0
+
+				Stmt
+					If
+						Name
+							'full'
+
+
+						Stmt
+							Assign
+								AssName
+									'out_dict'
+
+
+								CallFunc
+									Getattr
+										Name
+											'self'
+
+
+										'flatten'
+
+
+									None
+
+									None
+
+
+
+
+						Stmt
+							Assign
+								AssName
+									'sources'
+
+
+								ListComp
+									Name
+										's'
+
+
+									ListCompFor
+										AssName
+											's'
+
+
+										Getattr
+											Name
+												'self'
+
+
+											'sources'
+
+
+										ListCompIf
+											Not
+												Getattr
+													Name
+														's'
+
+
+													'default'
+
+
+
+
+
+
+
+							Assign
+								AssName
+									'out_dict'
+
+
+								CallFunc
+									Getattr
+										CallFunc
+											Name
+												'RootView'
+
+
+											Name
+												'sources'
+
+
+											None
+
+											None
+
+
+										'flatten'
+
+
+									None
+
+									None
+
+
+
+
+
+					Assign
+						AssName
+							'yaml_out'
+
+
+						CallFunc
+							Getattr
+								Name
+									'yaml'
+
+
+								'dump'
+
+
+							Name
+								'out_dict'
+
+
+							Keyword
+								'Dumper'
+
+								Name
+									'Dumper'
+
+
+
+							Keyword
+								'default_flow_style'
+
+								Name
+									'None'
+
+
+
+							Keyword
+								'indent'
+
+								Const
+									'4'
+
+
+
+							Keyword
+								'width'
+
+								Const
+									'1000'
+
+
+
+							None
+
+							None
+
+
+
+					Assign
+						AssName
+							'default_source'
+
+
+						Name
+							'None'
+
+
+
+					For
+						AssName
+							'source'
+
+
+						Getattr
+							Name
+								'self'
+
+
+							'sources'
+
+
+						Stmt
+							If
+								Getattr
+									Name
+										'source'
+
+
+									'default'
+
+
+								Stmt
+									Assign
+										AssName
+											'default_source'
+
+
+										Name
+											'source'
+
+
+
+									Break
+
+
+								None
+
+
+
+						None
+
+
+					If
+						Name
+							'default_source'
+
+
+						Stmt
+							With
+								CallFunc
+									Name
+										'open'
+
+
+									Getattr
+										Name
+											'default_source'
+
+
+										'filename'
+
+
+									Const
+										"'r'"
+
+
+									None
+
+									None
+
+
+								AssName
+									'fp'
+
+
+								Stmt
+									Assign
+										AssName
+											'default_data'
 
 
 										CallFunc
 											Getattr
 												Name
-													'util'
+													'fp'
 
 
-												'displayable_path'
-
-
-											Name
-												'destfn'
+												'read'
 
 
 											None
@@ -4222,25 +9787,25 @@ Stmt
 											None
 
 
-										None
-
-										None
-
-
-									None
-
-									None
 
 
 
-							Discard
+							Assign
+								AssName
+									'yaml_out'
+
+
 								CallFunc
 									Name
-										'_displace'
+										'restore_yaml_comments'
 
 
 									Name
-										'destfn'
+										'yaml_out'
+
+
+									Name
+										'default_data'
 
 
 									None
@@ -4250,978 +9815,584 @@ Stmt
 
 
 
-						Stmt
-							Return
-								Const
-									'None'
-
-
-
-
-
-
-				None
-
-
-			Discard
-				CallFunc
-					Getattr
-						Name
-							'log'
-
-
-						'debug'
-
-
-					CallFunc
-						Getattr
-							Const
-								"u'copying database from {0} to {1}'"
-
-
-							'format'
-
-
-						CallFunc
-							Getattr
-								Name
-									'util'
-
-
-								'displayable_path'
-
-
-							Name
-								'srcfn'
-
-
-							None
-
-							None
-
-
-						CallFunc
-							Getattr
-								Name
-									'util'
-
-
-								'displayable_path'
-
-
-							Name
-								'destfn'
-
-
-							None
-
-							None
-
-
-						None
-
 						None
 
 
-					None
-
-					None
-
-
-
-			Discard
-				CallFunc
-					Getattr
-						Name
-							'util'
-
-
-						'copy'
-
-
-					Name
-						'srcfn'
-
-
-					Name
-						'destfn'
-
-
-					None
-
-					None
-
-
-
-			Return
-				Name
-					'destfn'
-
-
-
-
-
-	Function
-		'migrate_state'
-
-		'replace'
-
-		Name
-			'False'
-
-
-		0
-
-		Stmt
-			Assign
-				AssName
-					'srcfn'
-
-
-				CallFunc
-					Getattr
-						Getattr
-							Name
-								'os'
-
-
-							'path'
-
-
-						'expanduser'
-
-
-					CallFunc
-						Getattr
-							Getattr
-								Name
-									'os'
-
-
-								'path'
-
-
-							'join'
-
-
-						Const
-							"'~'"
-
-
-						Const
-							"'.beetsstate'"
-
-
-						None
-
-						None
-
-
-					None
-
-					None
-
-
-
-			If
-				Not
-					CallFunc
-						Getattr
-							Getattr
-								Name
-									'os'
-
-
-								'path'
-
-
-							'exists'
-
-
-						Name
-							'srcfn'
-
-
-						None
-
-						None
-
-
-
-				Stmt
 					Return
-						Const
-							'None'
-
-
-
-
-				None
-
-
-			Assign
-				AssName
-					'destfn'
-
-
-				CallFunc
-					Getattr
-						Subscript
-							Getattr
-								Name
-									'beets'
-
-
-								'config'
-
-
-							'OP_APPLY'
-
-							Const
-								"'statefile'"
-
-
-
-						'as_filename'
-
-
-					None
-
-					None
-
-
-
-			If
-				CallFunc
-					Getattr
-						Getattr
-							Name
-								'os'
-
-
-							'path'
-
-
-						'exists'
-
-
-					Name
-						'destfn'
-
-
-					None
-
-					None
-
-
-				Stmt
-					If
 						Name
-							'replace'
+							'yaml_out'
 
 
-						Stmt
-							Discard
-								CallFunc
-									Name
-										'_displace'
 
 
-									Name
-										'destfn'
 
 
-									None
 
-									None
-
-
-
-
-						Stmt
-							Return
-								Const
-									'None'
-
-
-
-
-
-
-				None
-
-
-			Discard
-				CallFunc
-					Getattr
-						Name
-							'log'
-
-
-						'debug'
-
-
-					CallFunc
-						Getattr
-							Const
-								"u'copying state file from {0} to {1}'"
-
-
-							'format'
-
-
-						CallFunc
-							Getattr
-								Name
-									'util'
-
-
-								'displayable_path'
-
-
-							Name
-								'srcfn'
-
-
-							None
-
-							None
-
-
-						CallFunc
-							Getattr
-								Name
-									'util'
-
-
-								'displayable_path'
-
-
-							Name
-								'destfn'
-
-
-							None
-
-							None
-
-
-						None
-
-						None
-
-
-					None
-
-					None
-
-
-
-			Discard
-				CallFunc
-					Getattr
-						Name
-							'util'
-
-
-						'copy'
-
-
-					Name
-						'srcfn'
-
-
-					Name
-						'destfn'
-
-
-					None
-
-					None
-
-
-
-			Return
-				Name
-					'destfn'
-
-
-
-
-
-	Function
-		'automigrate'
-
-		0
-
-		Stmt
-			Assign
-				AssName
-					'config_fn'
-
-
-				CallFunc
-					Name
-						'migrate_config'
-
-
-					None
-
-					None
-
-
-
-			Assign
-				AssName
-					'db_fn'
-
-
-				CallFunc
-					Name
-						'migrate_db'
-
-
-					None
-
-					None
-
-
-
-			Discard
-				CallFunc
-					Name
-						'migrate_state'
-
-
-					None
-
-					None
-
-
-
-			If
-				Name
-					'config_fn'
-
-
-				Stmt
-					Discard
-						CallFunc
-							Getattr
-								Name
-									'ui'
-
-
-								'print_'
-
-
-							CallFunc
-								Getattr
-									Name
-										'ui'
-
-
-									'colorize'
-
-
-								Const
-									"'fuchsia'"
-
-
-								Const
-									"u'MIGRATED CONFIGURATION'"
-
-
-								None
-
-								None
-
-
-							None
-
-							None
-
-
-
-					Discard
-						CallFunc
-							Getattr
-								Name
-									'ui'
-
-
-								'print_'
-
-
-							CallFunc
-								Getattr
-									Name
-										'CONFIG_MIGRATED_MESSAGE'
-
-
-									'format'
-
-
-								Keyword
-									'newconfig'
-
-									CallFunc
-										Getattr
-											Name
-												'util'
-
-
-											'displayable_path'
-
-
-										Name
-											'config_fn'
-
-
-										None
-
-										None
-
-
-
-								None
-
-								None
-
-
-							None
-
-							None
-
-
-
-					If
-						Name
-							'db_fn'
-
-
-						Stmt
-							Discard
-								CallFunc
-									Getattr
-										Name
-											'ui'
-
-
-										'print_'
-
-
-									CallFunc
-										Getattr
-											Name
-												'DB_MIGRATED_MESSAGE'
-
-
-											'format'
-
-
-										Keyword
-											'newdb'
-
-											CallFunc
-												Getattr
-													Name
-														'util'
-
-
-													'displayable_path'
-
-
-												Name
-													'db_fn'
-
-
-												None
-
-												None
-
-
-
-										None
-
-										None
-
-
-									None
-
-									None
-
-
-
-
-						None
-
-
-					Discard
-						CallFunc
-							Getattr
-								Name
-									'ui'
-
-
-								'input_'
-
-
-							CallFunc
-								Getattr
-									Name
-										'ui'
-
-
-									'colorize'
-
-
-								Const
-									"'fuchsia'"
-
-
-								Const
-									"u'Press ENTER to continue:'"
-
-
-								None
-
-								None
-
-
-							None
-
-							None
-
-
-
-					Discard
-						CallFunc
-							Getattr
-								Name
-									'ui'
-
-
-								'print_'
-
-
-							None
-
-							None
-
-
-
-
-				None
-
-
-
-
-	Assign
-		AssName
-			'migrate_cmd'
-
-
-		CallFunc
-			Getattr
-				Name
-					'ui'
-
-
-				'Subcommand'
-
-
-			Const
-				"'migrate'"
-
-
-			Keyword
-				'help'
-
-				Const
-					"'convert legacy config'"
-
-
-
-			None
-
-			None
-
-
-
-	Function
-		'migrate_func'
-
-		'lib'
-
-		'opts'
-
-		'args'
-
-		0
-
-		Stmt
-			Assign
-				AssName
-					'config_fn'
-
-
-				CallFunc
-					Name
-						'migrate_config'
-
-
-					Keyword
-						'replace'
-
-						Name
-							'True'
-
-
-
-					None
-
-					None
-
-
-
-			If
-				Name
-					'config_fn'
-
-
-				Stmt
-					Discard
-						CallFunc
-							Getattr
-								Name
-									'log'
-
-
-								'info'
-
-
-							CallFunc
-								Getattr
-									Const
-										"u'Migrated configuration to: {0}'"
-
-
-									'format'
-
-
-								CallFunc
-									Getattr
-										Name
-											'util'
-
-
-										'displayable_path'
-
-
-									Name
-										'config_fn'
-
-
-									None
-
-									None
-
-
-								None
-
-								None
-
-
-							None
-
-							None
-
-
-
-
-				None
-
-
-			Assign
-				AssName
-					'db_fn'
-
-
-				CallFunc
-					Name
-						'migrate_db'
-
-
-					Keyword
-						'replace'
-
-						Name
-							'True'
-
-
-
-					None
-
-					None
-
-
-
-			If
-				Name
-					'db_fn'
-
-
-				Stmt
-					Discard
-						CallFunc
-							Getattr
-								Name
-									'log'
-
-
-								'info'
-
-
-							CallFunc
-								Getattr
-									Const
-										"u'Migrated library database to: {0}'"
-
-
-									'format'
-
-
-								CallFunc
-									Getattr
-										Name
-											'util'
-
-
-										'displayable_path'
-
-
-									Name
-										'db_fn'
-
-
-									None
-
-									None
-
-
-								None
-
-								None
-
-
-							None
-
-							None
-
-
-
-
-				None
-
-
-			Assign
-				AssName
-					'state_fn'
-
-
-				CallFunc
-					Name
-						'migrate_state'
-
-
-					Keyword
-						'replace'
-
-						Name
-							'True'
-
-
-
-					None
-
-					None
-
-
-
-			If
-				Name
-					'state_fn'
-
-
-				Stmt
-					Discard
-						CallFunc
-							Getattr
-								Name
-									'log'
-
-
-								'info'
-
-
-							CallFunc
-								Getattr
-									Const
-										"u'Migrated state file to: {0}'"
-
-
-									'format'
-
-
-								CallFunc
-									Getattr
-										Name
-											'util'
-
-
-										'displayable_path'
-
-
-									Name
-										'state_fn'
-
-
-									None
-
-									None
-
-
-								None
-
-								None
-
-
-							None
-
-							None
-
-
-
-
-				None
-
-
-
-
-	Assign
-		AssAttr
-			Name
-				'migrate_cmd'
-
-
-			'func'
-
-			'OP_ASSIGN'
-
+	Class
+		'LazyConfig'
 
 		Name
-			'migrate_func'
+			'Configuration'
+
+
+		Stmt
+			Function
+				'__init__'
+
+				'self'
+
+				'appname'
+
+				'modname'
+
+				Name
+					'None'
+
+
+				0
+
+				Stmt
+					Discard
+						CallFunc
+							Getattr
+								CallFunc
+									Name
+										'super'
+
+
+									Name
+										'LazyConfig'
+
+
+									Name
+										'self'
+
+
+									None
+
+									None
+
+
+								'__init__'
+
+
+							Name
+								'appname'
+
+
+							Name
+								'modname'
+
+
+							Name
+								'False'
+
+
+							None
+
+							None
+
+
+
+					Assign
+						AssAttr
+							Name
+								'self'
+
+
+							'_materialized'
+
+							'OP_ASSIGN'
+
+
+						Name
+							'False'
+
+
+
+					Assign
+						AssAttr
+							Name
+								'self'
+
+
+							'_lazy_prefix'
+
+							'OP_ASSIGN'
+
+
+						List
+
+
+					Assign
+						AssAttr
+							Name
+								'self'
+
+
+							'_lazy_suffix'
+
+							'OP_ASSIGN'
+
+
+						List
+
+
+
+
+			Function
+				'read'
+
+				'self'
+
+				'user'
+
+				'defaults'
+
+				Name
+					'True'
+
+
+				Name
+					'True'
+
+
+				0
+
+				Stmt
+					Assign
+						AssAttr
+							Name
+								'self'
+
+
+							'_materialized'
+
+							'OP_ASSIGN'
+
+
+						Name
+							'True'
+
+
+
+					Discard
+						CallFunc
+							Getattr
+								CallFunc
+									Name
+										'super'
+
+
+									Name
+										'LazyConfig'
+
+
+									Name
+										'self'
+
+
+									None
+
+									None
+
+
+								'read'
+
+
+							Name
+								'user'
+
+
+							Name
+								'defaults'
+
+
+							None
+
+							None
+
+
+
+
+
+			Function
+				'resolve'
+
+				'self'
+
+				0
+
+				Stmt
+					If
+						Not
+							Getattr
+								Name
+									'self'
+
+
+								'_materialized'
+
+
+
+						Stmt
+							Discard
+								CallFunc
+									Getattr
+										Name
+											'self'
+
+
+										'read'
+
+
+									None
+
+									None
+
+
+
+							AugAssign
+								Getattr
+									Name
+										'self'
+
+
+									'sources'
+
+
+								'+='
+
+								Getattr
+									Name
+										'self'
+
+
+									'_lazy_suffix'
+
+
+
+							Assign
+								Slice
+									Getattr
+										Name
+											'self'
+
+
+										'sources'
+
+
+									'OP_ASSIGN'
+
+									None
+
+									Const
+										'0'
+
+
+
+								Getattr
+									Name
+										'self'
+
+
+									'_lazy_prefix'
+
+
+
+
+						None
+
+
+					Return
+						CallFunc
+							Getattr
+								CallFunc
+									Name
+										'super'
+
+
+									Name
+										'LazyConfig'
+
+
+									Name
+										'self'
+
+
+									None
+
+									None
+
+
+								'resolve'
+
+
+							None
+
+							None
+
+
+
+
+
+			Function
+				'add'
+
+				'self'
+
+				'value'
+
+				0
+
+				Stmt
+					Discard
+						CallFunc
+							Getattr
+								CallFunc
+									Name
+										'super'
+
+
+									Name
+										'LazyConfig'
+
+
+									Name
+										'self'
+
+
+									None
+
+									None
+
+
+								'add'
+
+
+							Name
+								'value'
+
+
+							None
+
+							None
+
+
+
+					If
+						Not
+							Getattr
+								Name
+									'self'
+
+
+								'_materialized'
+
+
+
+						Stmt
+							AugAssign
+								Getattr
+									Name
+										'self'
+
+
+									'_lazy_suffix'
+
+
+								'+='
+
+								Getattr
+									Name
+										'self'
+
+
+									'sources'
+
+
+
+							Slice
+								Getattr
+									Name
+										'self'
+
+
+									'sources'
+
+
+								'OP_DELETE'
+
+								None
+
+								None
+
+
+
+						None
+
+
+
+
+			Function
+				'set'
+
+				'self'
+
+				'value'
+
+				0
+
+				Stmt
+					Discard
+						CallFunc
+							Getattr
+								CallFunc
+									Name
+										'super'
+
+
+									Name
+										'LazyConfig'
+
+
+									Name
+										'self'
+
+
+									None
+
+									None
+
+
+								'set'
+
+
+							Name
+								'value'
+
+
+							None
+
+							None
+
+
+
+					If
+						Not
+							Getattr
+								Name
+									'self'
+
+
+								'_materialized'
+
+
+
+						Stmt
+							Assign
+								Slice
+									Getattr
+										Name
+											'self'
+
+
+										'_lazy_prefix'
+
+
+									'OP_ASSIGN'
+
+									None
+
+									Const
+										'0'
+
+
+
+								Getattr
+									Name
+										'self'
+
+
+									'sources'
+
+
+
+							Slice
+								Getattr
+									Name
+										'self'
+
+
+									'sources'
+
+
+								'OP_DELETE'
+
+								None
+
+								None
+
+
+
+						None
+
+
+
+
+			Function
+				'clear'
+
+				'self'
+
+				0
+
+				Stmt
+					Slice
+						Getattr
+							Name
+								'self'
+
+
+							'sources'
+
+
+						'OP_DELETE'
+
+						None
+
+						None
+
+
+					Assign
+						AssAttr
+							Name
+								'self'
+
+
+							'_lazy_suffix'
+
+							'OP_ASSIGN'
+
+
+						List
+
+
+					Assign
+						AssAttr
+							Name
+								'self'
+
+
+							'_lazy_prefix'
+
+							'OP_ASSIGN'
+
+
+						List
+
+
+
 
 
 

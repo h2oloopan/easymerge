@@ -228,7 +228,7 @@ class Dumper(yaml.SafeDumper):
     class insideClass:
         def __init__(self):
             print "inside"
-    def represent_mapping(self, tag, mapping, flow_style=None):
+    def represent_mapping(self, tag, mapping="0,0", flow_style=None):
         def insideFunc(inside):
             return "Inside"
         value = []
@@ -239,7 +239,7 @@ class Dumper(yaml.SafeDumper):
         testFunc = outsideFunc()
         testFunc = insideFunc()
         testFunc = outsideClass()
-        testFunc = insideClass()
+        testFunc = Dumper.insideClass()
         if hasattr(mapping, 'items'):
             mapping = list(mapping.items())
         for item_key, item_value in mapping:

@@ -1,13 +1,99 @@
-"Usage: unparse.py <path to source file>"
+'''
+Created on Mar 15, 2014
+
+@author: h7qin
+'''
 import sys
 import ast
 import cStringIO
 import os
-
-# Large float and imaginary literals get turned into infinities in the AST.
-# We unparse those infinities to INFSTR.
 INFSTR = "1e" + repr(sys.float_info.max_10_exp + 1)
 
+class Code:
+    s = ""
+    def __init__(self):
+        pass
+    def write(self, s):
+        self.s+=s
+    def flush(self):
+        pass
+    def split(self):
+        self.code_lines = self.s.splitlines()
+        #self.code_lines = filter(lambda a: a != "", self.code_lines)
+        while self.code_lines[0]=="":
+            self.code_lines = self.code_lines[1:]
+            
+    def add_parameter(self, unreachable):  
+        
+        def add_unreachable(unreachable):
+            s = "["
+            for i in unreachable:
+                s+=(i+", ")
+            s=s[:-2]+"]"
+            return s     
+         
+        if len(unreachable)==0:
+            self.unreachable = None
+            return
+        else:
+            self.unreachable = add_unreachable(unreachable)                   
+        
+        line = self.code_lines[0]
+        if not line.startswith("def"):
+            print "invalid code snippet"
+        ismember = False
+        if line[line.find("(")+1:].startswith("self"):
+            ismember = True
+        if ismember:
+            self.code_lines[0] = line.replace("(self,", "(self, unreachable_method,")
+        else:
+            self.code_lines[0] = line = line[:line.find("(")+1]+"unreachable_method, "+line[line.find("(")+1:]
+    
+
+    def get_caller(self, args):
+        line = self.code_lines[0]
+        if not line.startswith("def"):
+            print "invalid code snippet"
+                       
+        if self.unreachable:
+            s1 = "unreachable = "+self.unreachable
+        else:
+            s1 = ""
+            
+        def get_func_name():
+            line = self.code_lines[0]
+            if not line.startswith("def"):
+                print "invalid code snippet"
+            self.func_name = line[4:line.find("(")].strip()+"_helper"
+                    
+        get_func_name()
+        s2 = "return "
+        s2 += self.func_name
+        s2 += "("
+        if self.unreachable:
+            args = args[:args.index("self")+1]+["unreachable"]+args[args.index("self")+1:]
+            
+        for i in args:
+            s2 += (i+", ")
+        s2 = s2[:-2]+")"
+        self.caller = [s1,s2]
+    
+    def get_code(self):
+        s = ""
+        for i in self.code_lines:
+            s+=i+"\n"
+        return s
+        
+    def output(self,file = sys.stdout):
+        self.f = file
+        for i in self.caller:
+            self.f.write(i+"\n")
+        for i in self.code_lines:
+            self.f.write(i+"\n")
+        self.f.flush()
+        
+    
+    
 def interleave(inter, f, seq):
     """Call f on each item in seq, calling inter() in between.
     """
@@ -21,110 +107,6 @@ def interleave(inter, f, seq):
             inter()
             f(x)
 
-class UTree:
-    def __init__(self,name=None):
-        self._name = name
-        self._attr = {}
-    def addAttr(self, attr, value):
-        self._attr[attr] = value
-    def output(self,level,tree=None):
-        for i in range(level):
-            print "\t"
-        if tree==None:
-            print "Type:",self._name
-            for i in self._attr:
-                self.output(level+1,self._attr[i])
-        elif tree.__class__=="UTree":
-            print "Type:",tree._name
-            for i in tree._attr:
-                self.output(level+1,tree._attr[i])
-        else:
-            print "Other:",tree
-        
-class Unifier:
-    def __init__(self, tree1, tree2):
-        self._t1 = tree1
-        self._t2 = tree2
-        self._utree = UTree()
-        self._utree = self.compare_trees(self._t1, self._t2)
-            
-    def compare_trees(self,t1,t2):
-        if self.check_entire_tree(t1,t2):
-            print "t1=t2"
-            return t1
-        else:
-            if self.check_tree_name(t1, t2):
-                print "t1,t2 have same type:",t1.__class__.__name__
-                utree = UTree(t1.__class__.__name__)
-                meth = getattr(self, "_"+t1.__class__.__name__)
-                (vals,nodes) = meth(t1,t2)
-                print nodes
-                for attr in nodes:
-                    node = nodes[attr]
-                    utree.addAttr(attr, self.compare_trees(node[0], node[1]))
-                if not vals and not nodes:
-                    print "t1,t2 have different numbers of attributes"
-                    return ("???",t1,t2)
-                
-                return utree
-            else:
-                print "t1,t2 have different types:",t1.__class__.__name__,",",t2.__class__.__name__
-                return ("???",t1,t2)
-      
-    def _Module(self, t1,t2):
-        nodes = {}
-        if len(t1.body)!=len(t2.body):
-            return (None, None)
-        for i in range(len(t1.body)):
-            nodes["body["+str(i)+"]"]=[t1.body[i],t2.body[i]]
-        return ([],nodes)
-    
-    def _If(self, t1,t2):
-        node = {}
-        node["test"] = [t1.test, t2.test]
-        node["body"] = [t1.body, t2.body]
-        # collapse nested ifs into equivalent elifs.
-        elif_counter = -1
-        while True:
-            has_elif1 = t1.orelse and len(t1.orelse) == 1 and isinstance(t1.orelse[0], ast.If)
-            has_elif2 = t2.orelse and len(t2.orelse) == 1 and isinstance(t2.orelse[0], ast.If)
-            if has_elif1 and has_elif2:
-                elif_counter+=1
-                t1 = t1.orelse[0]
-                t2 = t2.orelse[0]
-                node["elif["+str(elif_counter)+"].test"] = [t1.test, t2.test]
-                node["elif["+str(elif_counter)+"].body"] = [t1.body, t2.body]
-            elif not has_elif1 and not has_elif2:
-                break
-            else:
-                return (None,None)
-        # final else
-        if t1.orelse and t2.orelse:
-            node["orelse"]=[t1.orelse,t2.orelse]
-        elif not t1.orelse and not t2.orelse:
-            pass
-        else:
-            return (None, None)
-        return ([],node)
-        
-    def check_entire_tree(self,t1,t2):
-        if t1==t2:
-            return True
-        else:
-            return False
-    
-    def check_tree_name(self,t1,t2):
-        if t1.__class__.__name__==t2.__class__.__name__:
-            return True
-        else:
-            return False
-    
-    def check_value(self,v1,v2):
-        if v1==v2:
-            return True
-        else:
-            return False
-            
 class Unparser:
     """Methods in this class recursively traverse an AST and
     output source code for the abstract syntax; original formatting
@@ -143,16 +125,14 @@ class Unparser:
         self.incall = False
         self.cur_str = ""
         self.ret_str = False
-        
-        self.toplevel = True
+        self.top_level = True
+        self.args = []
          
         self.f = file
         self.future_imports = []
         self._indent = 0
         self.dispatch(tree)
         self.f.write("\n")
-        
-        print self.mod_calls
         self.f.flush()
     
     def crop_calls(self, lines, src_ast):
@@ -162,13 +142,6 @@ class Unparser:
                 continue
             else:
                 calls.append(i)
-            print "======================="
-            print "Name:"+str(i.name)
-            print "line:"+str(i.line)
-            print "scope:"+str(i.scope)
-            print "source:"+str(i.source)
-            print "tree:"+str(i.tree)
-        print "======================="
         return calls
     
     def call_dealer(self,tree):
@@ -724,6 +697,9 @@ class Unparser:
         for a,d in zip(t.args, defaults):
             if first:first = False
             else: self.write(", ")
+            if self.top_level:
+                self.args.append(a.id)
+                
             self.dispatch(a),
             if d:
                 self.write("=")
@@ -733,6 +709,8 @@ class Unparser:
         if t.vararg:
             if first:first = False
             else: self.write(", ")
+            if self.top_level:
+                self.args.append("*"+str(t.vararg))
             self.write("*")
             self.write(t.vararg)
 
@@ -740,7 +718,11 @@ class Unparser:
         if t.kwarg:
             if first:first = False
             else: self.write(", ")
+            if self.top_level:
+                self.args.append("**"+str(t.kwarg))
             self.write("**"+t.kwarg)
+        
+        self.top_level = False
 
     def _keyword(self, t):
         self.write(t.arg)
@@ -759,56 +741,13 @@ class Unparser:
         self.write(t.name)
         if t.asname:
             self.write(" as "+t.asname)
-
-def roundtrip(filename1, filename2, output=sys.stdout):
-    with open(filename1, "r") as pyfile:
-        source = pyfile.read()
-        print source
-    tree1 = compile(source, filename1, "exec", ast.PyCF_ONLY_AST)
-    with open(filename2, "r") as pyfile:
-        source = pyfile.read()
-    tree2 = compile(source, filename2, "exec", ast.PyCF_ONLY_AST)
-    Unparser(tree1, output)
-    #mtree = Unifier(tree1, tree2)
-    #mtree._utree.output(0)
-
-def testdir(a):
-    try:
-        names = [n for n in os.listdir(a) if n.endswith('.py')]
-    except OSError:
-        sys.stderr.write("Directory not readable: %s" % a)
-    else:
-        for n in names:
-            fullname = os.path.join(a, n)
-            if os.path.isfile(fullname):
-                output = cStringIO.StringIO()
-                print 'Testing %s' % fullname
-                try:
-                    roundtrip(fullname, output)
-                except Exception as e:
-                    print '  Failed to compile, exception is %s' % repr(e)
-            elif os.path.isdir(fullname):
-                testdir(fullname)
-
-def main(args):
-    #if args[0] == '--testdir':
-    #    for a in args[1:]:
-    #        testdir(a)
-    #else:
-    #    for a in args:
-    roundtrip("./helper.py","./helper2.py")
-    
+            
 def generateNewCode(source, lines, src_ast, output=sys.stdout):
     tree = compile(source, "", "exec", ast.PyCF_ONLY_AST)
-    for i in src_ast.functions:
-        print "======================="
-        print "ID:"+str(i.id)
-        print "Name:"+i.name
-        print "lines:"+str(i.lines)
-        print "scope:"+str(i.env)
-        print "member:"+str(i.ismember)
-    print "======================="
-    Unparser(tree, lines, src_ast, output)
-
-if __name__=='__main__':
-    main(sys.argv[1:])
+    merged = Code()
+    up = Unparser(tree, lines, src_ast, merged)
+    merged.split()    
+    merged.add_parameter(up.mod_calls)
+    merged.get_caller(up.args)
+    #merged.output()
+    return merged

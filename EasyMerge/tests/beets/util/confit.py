@@ -631,20 +631,24 @@ class outsideClass:
 class Dumper(yaml.SafeDumper):
     """A PyYAML Dumper that represents OrderedDicts as ordinary mappings
     (in order, of course).
+    
     """
+    class insideClass:
+        def __init__(self):
+            print "inside"
     # From http://pyyaml.org/attachment/ticket/161/use_ordered_dict.py
-    def represent_mapping(self, tag, mapping, flow_style=None):
+    def represent_mapping(self, tag, mapping="0,0", flow_style=None):
         def insideFunc(inside):
             return "Inside"
         value = []
         node = yaml.MappingNode(tag, value, flow_style=flow_style)
         if self.alias_key is not None:
             self.represented_objects[self.alias_key] = node
-        best_style = False
+        best_style = True
         testFunc = outsideFunc()
         testFunc = insideFunc()
         testFunc = outsideClass()
-        testFunc = insideClass()
+        testFunc = Dumper.insideClass()
         if hasattr(mapping, 'items'):
             mapping = list(mapping.items())
         for item_key, item_value in mapping:

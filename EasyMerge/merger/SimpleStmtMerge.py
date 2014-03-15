@@ -7,9 +7,10 @@ from optparse import OptionParser
 import clonedigger.clonedigger as digger
 import clonedigger.anti_unification as anti_unification
 from clonedigger.abstract_syntax_tree import StatementSequence
+from clonedigger.debug import AST
 
 import test
-import unparse
+import type0_dealer
 
 def sortDuplicates(duplicates):
     def f(a,b):
@@ -107,45 +108,45 @@ The semantics of threshold options is discussed in the paper "Duplicate code det
     removeOverlappedSeqs(duplicate_set)
     return (src_ast_list,duplicate_set)
 
-
-def checkSeqType(seq):
-    threshold = 0
-    type = "Unknown"
-    type_set = []
-    for i in range(len(seq)):
-        id = i
-        i = seq[i]
-        if type=="Unknown":
-            #TODO:CLASS_TYPE
-            if i.getName()=="Function":
-                type = "Def"
-            else:
-                type = "Stmt"
-            type_set.append(([0],type,len(i.getSourceLines())))
-        else:
-            if i.getName()=="Function":
-                type = "Def"
-            else:
-                type = "Stmt"
-            if type!=type_set[-1][1]:
-                type_set.append(([id], type,len(i.getSourceLines())))
-            else:
-                li = list(type_set[-1][0])
-                li.append(id)
-                type_set[-1]=(li,type,type_set[-1][2]+len(i.getSourceLines()))
-    if len(type_set)==1:
-        return type_set[0][1]
-    else:
-        new_set = []
-        for i in type_set:
-            if i[2]>=threshold:
-                new_seq = []
-                for j in i[0]:
-                    new_seq.append(seq[j])
-                new_set.append(new_seq)
-        return ("Mix",new_set)
-
 def checkSetType(dSet):
+    
+    def checkSeqType(seq):
+        threshold = 0
+        type = "Unknown"
+        type_set = []
+        for i in range(len(seq)):
+            id = i
+            i = seq[i]
+            if type=="Unknown":
+                #TODO:CLASS_TYPE
+                if i.getName()=="Function":
+                    type = "Def"
+                else:
+                    type = "Stmt"
+                type_set.append(([0],type,len(i.getSourceLines())))
+            else:
+                if i.getName()=="Function":
+                    type = "Def"
+                else:
+                    type = "Stmt"
+                if type!=type_set[-1][1]:
+                    type_set.append(([id], type,len(i.getSourceLines())))
+                else:
+                    li = list(type_set[-1][0])
+                    li.append(id)
+                    type_set[-1]=(li,type,type_set[-1][2]+len(i.getSourceLines()))
+        if len(type_set)==1:
+            return type_set[0][1]
+        else:
+            new_set = []
+            for i in type_set:
+                if i[2]>=threshold:
+                    new_seq = []
+                    for j in i[0]:
+                        new_seq.append(seq[j])
+                    new_set.append(new_seq)
+            return ("Mix",new_set)
+        
     def same_type(t1,t2):
         if t1==t2 or (isinstance(t1,tuple) and isinstance(t2,tuple)):
             return True
@@ -171,35 +172,37 @@ def checkSetType(dSet):
                 seqs.append(cur_type[1])
                 type = (type[0],seqs) 
         type_list.append(type)
-    return type_list 
+    return type_list     
 
-def checkPairDiff(pair):
-    diff_rec = []
-    for i in range(len(pair[0])):
-        statements = [pair[j][i] for j in [0,1]]
-        u = anti_unification.Unifier(statements[0], statements[1])
-        #print u.getSize()
-        for s in u.getSubstitutions():
-            for fv in s.getMap():
-                a = s.getMap()[fv]
-                #print str(a)
-                for sa in a.getAncestors():
-                    if len(sa.getLineNumbers())>0:
-                        #print str(sa.getLineNumbers())
-                        break
-            #print ""
-        diff_rec.append(u.getSize())
-    #print sum(diff_rec)
-    return diff_rec  
-    
-def checkFileDiff(cluster):
-    filename = cluster[0].getSourceFile()
-    for i in cluster[1:]:
-        if i.getSourceFile()!=filename:
-            return False
-    return True
 
 def checkSetDiff(dSet):
+    
+    def checkPairDiff(pair):
+        diff_rec = []
+        for i in range(len(pair[0])):
+            statements = [pair[j][i] for j in [0,1]]
+            u = anti_unification.Unifier(statements[0], statements[1])
+            #print u.getSize()
+            for s in u.getSubstitutions():
+                for fv in s.getMap():
+                    a = s.getMap()[fv]
+                    #print str(a)
+                    for sa in a.getAncestors():
+                        if len(sa.getLineNumbers())>0:
+                            #print str(sa.getLineNumbers())
+                            break
+                #print ""
+            diff_rec.append(u.getSize())
+        #print sum(diff_rec)
+        return diff_rec 
+    
+    def checkFileDiff(cluster):
+        filename = cluster[0].getSourceFile()
+        for i in cluster[1:]:
+            if i.getSourceFile()!=filename:
+                return False
+        return True
+    
     diff_file_list = []
     diff_content_list = []
     for cluster in dSet:
@@ -245,9 +248,6 @@ def refineDuplicateSet(dSet):
     dSetInfoList = []           
     for i in range(len(dSet)):
         dSetInfoList.append([type_list[i],diff_content_list[i],diff_file_list[i]])     
-    
-    for i in dSetInfoList:
-        print i, tagging(dSet[dSetInfoList.index(i)][0])
         
     return (dSetInfoList, dSet)
     #test.generateCodeSnippet(dSet[0][0],"helper.py")
@@ -256,19 +256,62 @@ def tmpDistributor(dSet, dInfo, src_ast_list):
     for i in range(len(dSet)):
         cluster = dSet[i]
         info = dInfo[i]
-        if info[0]=="Def":# and info[1]<=0:
-            processIdenticalDef(src_ast_list, cluster)
-            break
+        print info, len(cluster)#, ":", tagging(cluster[0])
+        if info[0]=="Def" and info[1]<=0:
+            print "Type0"
+            (caller,code) = processIdenticalDef(src_ast_list, cluster)
+            print code
+            for s in cluster:
+                print tagging(s),":"
+                print caller[tagging(s)]
 
 def processIdenticalDef(src_ast_list, cluster):
+    caller = {}
+    merged_code = []
     for i in cluster:
         filename = i.getSourceFile().getFileName()
         src_ast_list[str(filename)].output("./sandbox/test.out")
         lines = tagging(i)[1:]
-        code_snippet = test.generateCodeSnippet(i)
-        unparse.generateNewCode(code_snippet, lines, src_ast_list[str(filename)])
-        print tagging(i)
-        break
+        code_snippet = generateCodeSnippet(i)
+        merged = type0_dealer.generateNewCode(code_snippet, lines, src_ast_list[str(filename)])
+        merged_code.append(merged.get_code())
+        caller[tagging(i)]=merged.caller
+    for i in merged_code[1:]:
+        if i!=merged_code[0]:
+            print "ERROR"
+            return (None,None)
+    return (caller,merged_code[0])
+        #print i
+        #print merged_code[0]
+            
+            
+def generateCodeSnippet(stmtSeq, filename=None):
+    
+    def getOriginalOffset(stmtSeq):
+        offset = 0
+        s = stmtSeq[0].getSourceLines()[0]
+        while s.find(" ")==0:
+            offset+=1
+            s = s[1:]
+        return offset
+    
+    if filename!=None:
+        file = open(filename, 'w')
+    else:
+        s = ""
+    offset = getOriginalOffset(stmtSeq)
+    for i in stmtSeq:
+        a = AST(i)
+        #a.output("helper.out")
+        for j in i.getSourceLines():
+            if filename!=None:
+                file.write(j[offset:]+"\n")
+            else:
+                s+=(j[offset:]+"\n")    
+    if filename!=None:          
+        file.close()
+    else:
+        return s
         
 
 if __name__ == '__main__':
