@@ -104,7 +104,7 @@ class AST:
             self.raw_call.remove(i)
     
     def process_call(self):
-        self.filter_call()
+        #self.filter_call()
         for i in self.raw_call:
             if i[1][1]==None:
                 continue
@@ -240,6 +240,8 @@ class Call:
         self.scope = self.env[-1][-1]
     def set_source(self, id):
         self.source = id
+        
+
         
         
         

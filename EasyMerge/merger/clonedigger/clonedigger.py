@@ -236,5 +236,7 @@ Don't forget to remove automatically generated sources, tests and third party li
 Notice:
 The semantics of threshold options is discussed in the paper "Duplicate code detection using anti-unification", which can be downloaded from the site http://clonedigger.sourceforge.net . All arguments are optional. Supported options are: 
 """)
-    main(cmdline)
+    (src_ast_list, duplicates) = main(cmdline)
+    for i in src_ast_list:
+        src_ast_list[i].output("../helper.out")
 

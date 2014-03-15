@@ -1,79 +1,113 @@
 =======================
-Name:['re', 'match']
-line:142
-scope:(0, 999998)
-source:('member', -1, 'followed')
-tree: ( CallFunc ( Getattr ( CallFunc ( Getattr ( Name ( 're' )  )   ( 'match' )  )   ( Const ( "'[\\\\+-]?[0-9\\\\.]*'" )  )   ( CallFunc ( Getattr ( Name ( 'val' )  )   ( 'strip' )  )   ( None )   ( None )  )   ( None )   ( None )  )   ( 'group' )  )   ( Const ( '0' )  )   ( None )   ( None )  ) 
+ID:0
+Name:represent_mapping
+lines:(221, 244)
+scope:[('Global', '', (0, 999998))]
+member:False
+=======================
+Name:['yaml', 'MappingNode']
+line:223
+scope:(221, 244)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'yaml' )  )   ( 'MappingNode' )  )   ( Name ( 'tag' )  )   ( Name ( 'value' )  )   ( Keyword ( 'flow_style' )   ( Name ( 'flow_style' )  )  )   ( None )   ( None )  ) 
+=======================
+Name:['hasattr']
+line:227
+scope:(221, 244)
+source:-1
+tree: ( CallFunc ( Name ( 'hasattr' )  )   ( Name ( 'mapping' )  )   ( Const ( "'items'" )  )   ( None )   ( None )  ) 
+=======================
+Name:['list']
+line:228
+scope:(221, 244)
+source:-1
+tree: ( CallFunc ( Name ( 'list' )  )   ( CallFunc ( Getattr ( Name ( 'mapping' )  )   ( 'items' )  )   ( None )   ( None )  )   ( None )   ( None )  ) 
+=======================
+Name:['self', 'represent_data']
+line:230
+scope:(221, 244)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'self' )  )   ( 'represent_data' )  )   ( Name ( 'item_key' )  )   ( None )   ( None )  ) 
+=======================
+Name:['self', 'represent_data']
+line:231
+scope:(221, 244)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'self' )  )   ( 'represent_data' )  )   ( Name ( 'item_value' )  )   ( None )   ( None )  ) 
+=======================
+Name:['isinstance']
+line:232
+scope:(221, 244)
+source:-1
+tree: ( CallFunc ( Name ( 'isinstance' )  )   ( Name ( 'node_key' )  )   ( Getattr ( Name ( 'yaml' )  )   ( 'ScalarNode' )  )   ( None )   ( None )  ) 
+=======================
+Name:['isinstance']
+line:235
+scope:(221, 244)
+source:-1
+tree: ( CallFunc ( Name ( 'isinstance' )  )   ( Name ( 'node_value' )  )   ( Getattr ( Name ( 'yaml' )  )   ( 'ScalarNode' )  )   ( None )   ( None )  ) 
+=======================
+Name:['value', 'append']
+line:238
+scope:(221, 244)
+source:('member', -1)
+tree: ( CallFunc ( Getattr ( Name ( 'value' )  )   ( 'append' )  )   ( Tuple ( Name ( 'node_key' )  )   ( Name ( 'node_value' )  )  )   ( None )   ( None )  ) 
 =======================
 
-If
-Compare
-	Name
-		'val'
+Function
+'represent_mapping'
+
+'self'
+
+'tag'
+
+'mapping'
+
+'flow_style'
+
+Name
+	'None'
 
 
-	'is'
-
-	Name
-		'None'
-
-
-
-Stmt
-	Return
-		Const
-			'0.0'
-
-
-
-
-Or
-	CallFunc
-		Name
-			'isinstance'
-
-
-		Name
-			'val'
-
-
-		Name
-			'int'
-
-
-		None
-
-		None
-
-
-	CallFunc
-		Name
-			'isinstance'
-
-
-		Name
-			'val'
-
-
-		Name
-			'float'
-
-
-		None
-
-		None
-
-
+0
 
 Stmt
-	Return
+	Assign
+		AssName
+			'value'
+
+
+		List
+
+
+	Assign
+		AssName
+			'node'
+
+
 		CallFunc
-			Name
-				'float'
+			Getattr
+				Name
+					'yaml'
+
+
+				'MappingNode'
 
 
 			Name
-				'val'
+				'tag'
+
+
+			Name
+				'value'
+
+
+			Keyword
+				'flow_style'
+
+				Name
+					'flow_style'
+
 
 
 			None
@@ -82,47 +116,47 @@ Stmt
 
 
 
-
-Stmt
 	If
-		Not
-			CallFunc
+		Compare
+			Getattr
 				Name
-					'isinstance'
+					'self'
 
 
-				Name
-					'val'
+				'alias_key'
 
 
-				Name
-					'basestring'
+			'is not'
 
-
-				None
-
-				None
+			Name
+				'None'
 
 
 
 		Stmt
 			Assign
-				AssName
-					'val'
+				Subscript
+					Getattr
+						Name
+							'self'
 
 
-				CallFunc
-					Name
-						'unicode'
+						'represented_objects'
 
 
-					Name
-						'val'
+					'OP_ASSIGN'
+
+					Getattr
+						Name
+							'self'
 
 
-					None
+						'alias_key'
 
-					None
+
+
+				Name
+					'node'
 
 
 
@@ -132,31 +166,51 @@ Stmt
 
 	Assign
 		AssName
-			'val'
+			'best_style'
 
 
+		Name
+			'True'
+
+
+
+	If
 		CallFunc
-			Getattr
+			Name
+				'hasattr'
+
+
+			Name
+				'mapping'
+
+
+			Const
+				"'items'"
+
+
+			None
+
+			None
+
+
+		Stmt
+			Assign
+				AssName
+					'mapping'
+
+
 				CallFunc
-					Getattr
-						Name
-							're'
-
-
-						'match'
-
-
-					Const
-						"'[\\\\+-]?[0-9\\\\.]*'"
+					Name
+						'list'
 
 
 					CallFunc
 						Getattr
 							Name
-								'val'
+								'mapping'
 
 
-							'strip'
+							'items'
 
 
 						None
@@ -169,50 +223,288 @@ Stmt
 					None
 
 
-				'group'
 
 
-			Const
-				'0'
+		None
 
 
-			None
+	For
+		AssTuple
+			AssName
+				'item_key'
 
-			None
 
+			AssName
+				'item_value'
+
+
+
+		Name
+			'mapping'
+
+
+		Stmt
+			Assign
+				AssName
+					'node_key'
+
+
+				CallFunc
+					Getattr
+						Name
+							'self'
+
+
+						'represent_data'
+
+
+					Name
+						'item_key'
+
+
+					None
+
+					None
+
+
+
+			Assign
+				AssName
+					'node_value'
+
+
+				CallFunc
+					Getattr
+						Name
+							'self'
+
+
+						'represent_data'
+
+
+					Name
+						'item_value'
+
+
+					None
+
+					None
+
+
+
+			If
+				Not
+					And
+						CallFunc
+							Name
+								'isinstance'
+
+
+							Name
+								'node_key'
+
+
+							Getattr
+								Name
+									'yaml'
+
+
+								'ScalarNode'
+
+
+							None
+
+							None
+
+
+						Not
+							Getattr
+								Name
+									'node_key'
+
+
+								'style'
+
+
+
+
+
+				Stmt
+					Assign
+						AssName
+							'best_style'
+
+
+						Name
+							'False'
+
+
+
+
+				None
+
+
+			If
+				Not
+					And
+						CallFunc
+							Name
+								'isinstance'
+
+
+							Name
+								'node_value'
+
+
+							Getattr
+								Name
+									'yaml'
+
+
+								'ScalarNode'
+
+
+							None
+
+							None
+
+
+						Not
+							Getattr
+								Name
+									'node_value'
+
+
+								'style'
+
+
+
+
+
+				Stmt
+					Assign
+						AssName
+							'best_style'
+
+
+						Name
+							'False'
+
+
+
+
+				None
+
+
+			Discard
+				CallFunc
+					Getattr
+						Name
+							'value'
+
+
+						'append'
+
+
+					Tuple
+						Name
+							'node_key'
+
+
+						Name
+							'node_value'
+
+
+
+					None
+
+					None
+
+
+
+
+		None
 
 
 	If
-		Not
+		Compare
 			Name
-				'val'
+				'flow_style'
+
+
+			'is'
+
+			Name
+				'None'
 
 
 
 		Stmt
-			Return
-				Const
-					'0.0'
+			If
+				Compare
+					Getattr
+						Name
+							'self'
 
 
+						'default_flow_style'
 
 
-		Stmt
-			Return
-				CallFunc
-					Name
-						'float'
-
+					'is not'
 
 					Name
-						'val'
+						'None'
 
 
-					None
 
-					None
+				Stmt
+					Assign
+						AssAttr
+							Name
+								'node'
 
 
+							'flow_style'
+
+							'OP_ASSIGN'
+
+
+						Getattr
+							Name
+								'self'
+
+
+							'default_flow_style'
+
+
+
+
+				Stmt
+					Assign
+						AssAttr
+							Name
+								'node'
+
+
+							'flow_style'
+
+							'OP_ASSIGN'
+
+
+						Name
+							'best_style'
+
+
+
+
+
+
+		None
+
+
+	Return
+		Name
+			'node'
 
 
 

@@ -9,6 +9,7 @@ import clonedigger.anti_unification as anti_unification
 from clonedigger.abstract_syntax_tree import StatementSequence
 
 import test
+import unparse
 
 def sortDuplicates(duplicates):
     def f(a,b):
@@ -108,13 +109,14 @@ The semantics of threshold options is discussed in the paper "Duplicate code det
 
 
 def checkSeqType(seq):
-    threshold = 4
+    threshold = 0
     type = "Unknown"
     type_set = []
     for i in range(len(seq)):
         id = i
         i = seq[i]
         if type=="Unknown":
+            #TODO:CLASS_TYPE
             if i.getName()=="Function":
                 type = "Def"
             else:
@@ -197,14 +199,18 @@ def checkFileDiff(cluster):
             return False
     return True
 
-def checkSetDiff(cluster):
-    diff_sum = []
-    for i in cluster[1:]:
-        diff = checkPairDiff([cluster[0],i])
-        diff_sum.append(sum(diff))
+def checkSetDiff(dSet):
+    diff_file_list = []
+    diff_content_list = []
+    for cluster in dSet:
+        diff_sum = []
+        for i in cluster[1:]:
+            diff = checkPairDiff([cluster[0],i])
+            diff_sum.append(sum(diff))
+        diff_content_list.append(sum(diff_sum)) 
+        diff_file_list.append(checkFileDiff(cluster)) 
+    return (diff_content_list, diff_file_list)
         
-    diff_file = checkFileDiff(cluster) 
-    return (diff_file, sum(diff_sum))
 
 def spreadMixSet(dSet, type_list):
     
@@ -219,10 +225,10 @@ def spreadMixSet(dSet, type_list):
                     new_set.append(StatementSequence(d[i]))
                 new_insert.append(new_set)
             dSet[dSet.index(cluster)] = new_insert
-    
+            
     i = 0
     while True:
-        cluster = dSet[i]        
+        cluster = dSet[i]     
         if isinstance(cluster[0],list):
             dSet = dSet[:i]+cluster+dSet[i+1:]
             type_list = type_list[:i]+checkSetType(cluster)+type_list[i+1:]
@@ -234,37 +240,41 @@ def spreadMixSet(dSet, type_list):
 def refineDuplicateSet(dSet):
     type_list = checkSetType(dSet)
     (dSet,type_list) = spreadMixSet(dSet,type_list)
-        
-    for i in dSet:        
-        type = 0
-        if type_list[dSet.index(i)]=="Stmt":
-            type+=2
-        elif type_list[dSet.index(i)]=="Def":
-            pass
-        else:
-            print type_list[dSet.index(i)],
-            
-        diff = checkSetDiff(i)
-        if diff[1]>0:
-            type+=1
-        else:
-            pass
-        print "type"+str(type),",",         
-        
-        print len(i),"Duplicates",
-        if diff[0]:
-            print "in Same File,",
-        else:
-            print "in Different Files,",
-        print tagging(i[0])
-        
-    return dSet
-    #test.generateCodeSnippet(dSet[0][0],"helper.py")
+    (diff_content_list, diff_file_list) = checkSetDiff(dSet)
+
+    dSetInfoList = []           
+    for i in range(len(dSet)):
+        dSetInfoList.append([type_list[i],diff_content_list[i],diff_file_list[i]])     
     
+    for i in dSetInfoList:
+        print i, tagging(dSet[dSetInfoList.index(i)][0])
+        
+    return (dSetInfoList, dSet)
+    #test.generateCodeSnippet(dSet[0][0],"helper.py")
+
+def tmpDistributor(dSet, dInfo, src_ast_list):
+    for i in range(len(dSet)):
+        cluster = dSet[i]
+        info = dInfo[i]
+        if info[0]=="Def":# and info[1]<=0:
+            processIdenticalDef(src_ast_list, cluster)
+            break
+
+def processIdenticalDef(src_ast_list, cluster):
+    for i in cluster:
+        filename = i.getSourceFile().getFileName()
+        src_ast_list[str(filename)].output("./sandbox/test.out")
+        lines = tagging(i)[1:]
+        code_snippet = test.generateCodeSnippet(i)
+        unparse.generateNewCode(code_snippet, lines, src_ast_list[str(filename)])
+        print tagging(i)
+        break
+        
+
 if __name__ == '__main__':
     (src_ast_list, duplicate_set) = getCloneStmt()
-    duplicate_set = refineDuplicateSet(duplicate_set)
-    
+    (dSetInfoList, duplicate_set) = refineDuplicateSet(duplicate_set)
+    tmpDistributor(duplicate_set, dSetInfoList, src_ast_list)
     
     
     

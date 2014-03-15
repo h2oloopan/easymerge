@@ -12,15 +12,24 @@ def getOriginalOffset(stmtSeq):
         s = s[1:]
     return offset
 
-def generateCodeSnippet(stmtSeq, filename):
-    file = open(filename, 'w')
+def generateCodeSnippet(stmtSeq, filename=None):
+    if filename!=None:
+        file = open(filename, 'w')
+    else:
+        s = ""
     offset = getOriginalOffset(stmtSeq)
     for i in stmtSeq:
         a = AST(i)
-        a.output("helper.out")
+        #a.output("helper.out")
         for j in i.getSourceLines():
-            file.write(j[offset:]+"\n")
-    file.close()
+            if filename!=None:
+                file.write(j[offset:]+"\n")
+            else:
+                s+=(j[offset:]+"\n")    
+    if filename!=None:          
+        file.close()
+    else:
+        return s
 
 if __name__ == '__main__':
     pass

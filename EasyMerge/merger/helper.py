@@ -1,3 +1,7 @@
+class T:
+    def __init__(self):
+        self.t = "t"
+t = T()
 if val is None:
     return 0.0
 elif isinstance(val, int) or isinstance(val, float):

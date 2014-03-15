@@ -41,8 +41,6 @@ class UTree:
         else:
             print "Other:",tree
         
-        
-        
 class Unifier:
     def __init__(self, tree1, tree2):
         self._t1 = tree1
@@ -131,16 +129,69 @@ class Unparser:
     """Methods in this class recursively traverse an AST and
     output source code for the abstract syntax; original formatting
     is disregarded. """
-
-    def __init__(self, tree, file = sys.stdout):
+    
+    def __init__(self, tree, lines, src_ast, file = sys.stdout):
         """Unparser(tree, file=sys.stdout) -> None.
          Print the source for tree to file."""
+         
+        self.calls = self.crop_calls(lines, src_ast)
+        self.functions = src_ast.functions
+        self.classes = src_ast.classes
+        self.lines = lines
+        self.cur_call = -1
+        self.incall = False
+         
         self.f = file
         self.future_imports = []
         self._indent = 0
         self.dispatch(tree)
-        self.f.write("")
+        self.f.write("\n")
         self.f.flush()
+    
+    def crop_calls(self, lines, src_ast):
+        calls = []
+        for i in src_ast.calls:
+            if i.line<lines[0] or i.line>lines[1]:
+                continue
+            else:
+                calls.append(i)
+            print "======================="
+            print "Name:"+str(i.name)
+            print "line:"+str(i.line)
+            print "scope:"+str(i.scope)
+            print "source:"+str(i.source)
+            print "tree:"+str(i.tree)
+        print "======================="
+        return calls
+    
+    def call_dealer(self,tree):
+        #self.write("CALL_HERE"+str(tree.lineno)+","+str(tree.col_offset))
+        self.cur_call+=1
+        call = self.calls[self.cur_call]
+        if isinstance(call.source, tuple):
+            source = call.source
+        else:
+            source = ("Unknown", call.source)
+            
+        if source==("Unknown",-1) or source==("member",-1):
+            return False
+        elif source[0]=="function":
+            id = source[1]
+            if self.functions[id].lines[0]>=self.lines[0] and self.functions[id].lines[1]<=self.lines[1]:
+                return False
+            else:
+                self.write("CALL:"+str(call.source))
+                return True
+        elif source[0]=="class":
+            id = source[1]
+            if self.classes[id].lines[0]>=self.lines[0] and self.classes[id].lines[1]<=self.lines[1]:
+                return False
+            else:
+                self.write("CALL:"+str(call.source))
+                return True
+        else:
+            self.write("CALL:"+str(call.source))
+            return True
 
     def fill(self, text = ""):
         "Indent a piece of text, according to the current indentation level"
@@ -167,8 +218,7 @@ class Unparser:
             return
         meth = getattr(self, "_"+tree.__class__.__name__)
         meth(tree)
-
-
+        
     ############### Unparsing methods ######################
     # There should be one method per concrete grammar type #
     # Constructors should be grouped by sum type. Ideally, #
@@ -581,8 +631,11 @@ class Unparser:
         self.write(t.attr)
 
     def _Call(self, t):
-        self.write("CALL_HERE")
-        '''self.dispatch(t.func)
+        if not self.incall:
+            if self.call_dealer(t):
+                return
+        self.incall = True
+        self.dispatch(t.func)
         self.write("(")
         comma = False
         for e in t.args:
@@ -603,7 +656,8 @@ class Unparser:
             else: comma = True
             self.write("**")
             self.dispatch(t.kwargs)
-        self.write(")")'''
+        self.write(")")
+        self.incall = False
 
     def _Subscript(self, t):
         self.dispatch(t.value)
@@ -678,13 +732,14 @@ class Unparser:
 def roundtrip(filename1, filename2, output=sys.stdout):
     with open(filename1, "r") as pyfile:
         source = pyfile.read()
+        print source
     tree1 = compile(source, filename1, "exec", ast.PyCF_ONLY_AST)
     with open(filename2, "r") as pyfile:
         source = pyfile.read()
     tree2 = compile(source, filename2, "exec", ast.PyCF_ONLY_AST)
     Unparser(tree1, output)
-    mtree = Unifier(tree1, tree2)
-    mtree._utree.output(0)
+    #mtree = Unifier(tree1, tree2)
+    #mtree._utree.output(0)
 
 def testdir(a):
     try:
@@ -711,6 +766,18 @@ def main(args):
     #else:
     #    for a in args:
     roundtrip("./helper.py","./helper2.py")
+    
+def generateNewCode(source, lines, src_ast, output=sys.stdout):
+    tree = compile(source, "", "exec", ast.PyCF_ONLY_AST)
+    for i in src_ast.functions:
+        print "======================="
+        print "ID:"+str(i.id)
+        print "Name:"+i.name
+        print "lines:"+str(i.lines)
+        print "scope:"+str(i.env)
+        print "member:"+str(i.ismember)
+    print "======================="
+    Unparser(tree, lines, src_ast, output)
 
 if __name__=='__main__':
     main(sys.argv[1:])
