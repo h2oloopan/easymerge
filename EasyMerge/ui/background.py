@@ -10,6 +10,8 @@ class Background(QtGui.QWidget):
         self._analyze = QtGui.QPushButton('Analyze', self)
         self._open = QtGui.QPushButton('Open Source', self)
         self._source = QtGui.QLineEdit(self)
+        self._source.setReadOnly(True)
+        self._path = ''
         self.initUI()
 
     def initUI(self):
@@ -26,4 +28,24 @@ class Background(QtGui.QWidget):
         grid.setColumnStretch(1, 3)
 
         self.setLayout(grid)
+
+        #binding events
+        self._open.clicked.connect(self.openClicked)
+        self._analyze.clicked.connect(self.analyzeClicked)
+
+    def openClicked(self):
+        sender = self.sender()
+        self._path = str(QtGui.QFileDialog.getExistingDirectory(sender, 'Select source code directory'))
+        self._source.setText(self._path)
+
+
+    def analyzeClicked(self):
+        if self._path == '':
+            msg = QtGui.QMessageBox(self)
+            msg.setText('Please select source code directory first by clicking [Open Source]')
+            msg.exec_()
+        else:
+            #analyze
+            print 'Analyzing...'
+
 
