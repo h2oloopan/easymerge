@@ -43,6 +43,8 @@ class Background(QtGui.QWidget):
         self._analyze.clicked.connect(self.analyzeClicked)
         self._merge.clicked.connect(self.mergeClicked)
         self._unmerge.clicked.connect(self.unmergeClicked)
+        self._list.itemClicked.connect(self.listClicked)
+
 
     def openClicked(self):
         sender = self.sender()
@@ -62,10 +64,16 @@ class Background(QtGui.QWidget):
 
     def updateUI(self, sets):
         self._sets = sets
+        self._list.clear()
         for set in sets:
             item = QtGui.QListWidgetItem(str(set))
             item.setForeground(QtGui.QColor('red'))
             self._list.addItem(item)
+
+    def listClicked(self, item):
+        index = item.listWidget().currentRow()
+        curSet = self._sets[index]
+
 
 
     def mergeClicked(self):
