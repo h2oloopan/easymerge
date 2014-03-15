@@ -73,7 +73,11 @@ class Background(QtGui.QWidget):
     def listClicked(self, item):
         index = item.listWidget().currentRow()
         curSet = self._sets[index]
-
+        self._tabs.clear()
+        for clone in curSet:
+            text = QtGui.QTextBrowser(self)
+            text.insertPlainText(str(clone))
+            self._tabs.addTab(text, str(clone))
 
 
     def mergeClicked(self):
