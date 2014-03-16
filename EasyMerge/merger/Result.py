@@ -15,9 +15,13 @@ class Result:
         self._tag.append(tag)
     def add_caller(self, tag, caller):
         self._caller[tag] = caller
+    def get_code(self):
+        return self._code
+    def get_caller(self):
+        return self._caller
     def output(self):
         print self._code
         for i in self._caller:
             print i,":"
             print self._caller[i]
-        
+

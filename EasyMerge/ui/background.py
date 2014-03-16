@@ -1,5 +1,8 @@
 from PyQt4 import QtGui
 from tmp.dummy import Dummy
+from merger.analyzer import Analyzer
+import os
+from merger.Result import Result
 
 class Background(QtGui.QWidget):
     def __init__(self):
@@ -18,6 +21,7 @@ class Background(QtGui.QWidget):
         self._sets = []
         self.initUI()
 
+
     def initUI(self):
         grid = QtGui.QGridLayout()
         grid.addWidget(self._open, 0, 0, 1, 1)
@@ -32,8 +36,6 @@ class Background(QtGui.QWidget):
         box.addWidget(self._merge)
         box.addWidget(self._unmerge)
         grid.addLayout(box, 3, 0, 1, 1)
-
-        #grid.addWidget(self._merge, 3, 0, 1, 1)
 
         grid.setColumnStretch(0, 1)
         grid.setColumnStretch(1, 3)
@@ -61,25 +63,66 @@ class Background(QtGui.QWidget):
             msg.exec_()
         else:
             #analyze
-            sets = Dummy().do()
-            self.updateUI(sets)
+            analyzer = Analyzer()
+            result = analyzer.analyze(self._path)
+            self.updateUI(result)
 
     def updateUI(self, sets):
         self._sets = sets
         self._list.clear()
+        counter = 1
         for set in sets:
-            item = QtGui.QListWidgetItem(str(set))
+            item = QtGui.QListWidgetItem('Merge ' + str(counter))
             item.setForeground(QtGui.QColor('red'))
             self._list.addItem(item)
+            counter += 1
+
+    def populateTabs(self, sets):
+        self._tabs.clear()
+        counter = 0
+        for key in sets:
+            title = key[0]
+            start = key[1]
+            end = key[2]
+            replacement = str(sets[key])
+            text = self.generateText(title, start, end, replacement)
+            self._tabs.addTab(text, os.path.split(title)[1])
+            self._tabs.setTabToolTip(counter, title)
+            counter += 1
+
+    def generateText(self, title, start, end, replacement):
+        browser = QtGui.QTextBrowser(self)
+        f = open(title)
+        lines = f.readlines()
+        counter = 0
+        for line in lines:
+            indent = ''
+            for i in range(0, 6 - len(str(counter))):
+                indent += ' '
+            indent += str(counter) + ':    '
+            browser.insertPlainText(indent + line)
+            counter += 1
+
+        block = browser.document().findBlockByLineNumber(start + 15)
+        cursor = browser.textCursor()
+        cursor.setPosition(block.position())
+        browser.setFocus()
+        browser.setTextCursor(cursor)
+        return browser
 
     def listClicked(self, item):
         index = item.listWidget().currentRow()
         curSet = self._sets[index]
-        self._tabs.clear()
-        for clone in curSet:
-            text = QtGui.QTextBrowser(self)
-            text.insertPlainText(str(clone))
-            self._tabs.addTab(text, str(clone))
+        #debug
+        curSet.output()
+
+        #_code
+        self._result.clear()
+        self._result.insertPlainText(curSet.get_code())
+
+        #_caller
+        self.populateTabs(curSet.get_caller())
+
 
 
     def mergeClicked(self):

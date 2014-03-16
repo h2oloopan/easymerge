@@ -11,6 +11,6 @@ from PyQt4 import QtGui
 if __name__ == '__main__':
     app = QtGui.QApplication(sys.argv)
     bg = Background()
-    bg.setWindowTitle('EasyMerge - Clone Merger')
+    bg.setWindowTitle('EasyMerge - Clone Refactor')
     bg.showMaximized()
     sys.exit(app.exec_())
