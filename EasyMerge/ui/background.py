@@ -67,6 +67,17 @@ class Background(QtGui.QWidget):
             result = analyzer.analyze(self._path)
             self.updateUI(result)
 
+
+    def resetInfo(self, text):
+        self._info.clear()
+        self._info.insertPlainText(text)
+
+    def appendInfo(self, text):
+        self._info.insertPlainText(text)
+
+    def clearInfo(self, text):
+        self._info.clear()
+
     def updateUI(self, sets):
         self._sets = sets
         self._list.clear()
