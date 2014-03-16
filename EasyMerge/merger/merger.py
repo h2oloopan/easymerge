@@ -8,11 +8,13 @@ import clonedigger.clonedigger as digger
 import clonedigger.anti_unification as anti_unification
 from clonedigger.abstract_syntax_tree import StatementSequence
 from clonedigger.debug import AST
-import clonedigger.debug as debug
+#import clonedigger.debug as debug
 
-import test
+from Merge import Merge 
 import type0_dealer
 import type1_dealer
+
+mergeResults = []
 
 def sortDuplicates(duplicates):
     def f(a,b):
@@ -308,59 +310,72 @@ def tmpDistributor(dSet, dInfo, src_ast_list):
         #print info, len(cluster)#, ":", tagging(cluster[0])
         if info[0]=="Def" and info[1]<=0:
             print "Type0"
-            (caller,code) = processIdenticalDef(src_ast_list, cluster)
-            #print code
-            #for s in cluster:
-                #print tagging(s),":"
-                #print caller[tagging(s)]
+            if processIdenticalDef(src_ast_list, cluster):
+                print "Success"
+            else:
+                print "Error"
+            #break   
         if info[0]=="Stmt" and info[1]<=0:
             print "Type1"
-            processIdenticalStmt(src_ast_list, cluster)
-            #break
-            '''print code
-            for s in cluster:
-                print tagging(s),":"
-                print caller[tagging(s)]'''
+            if processIdenticalStmt(src_ast_list, cluster, i):
+                print "Success"
+            else:
+                print "Error"#break
+
+        
 
 def processIdenticalDef(src_ast_list, cluster):
     caller = {}
     merged_code = []
     for i in cluster:
         filename = i.getSourceFile().getFileName()
-        src_ast_list[str(filename)].output("./sandbox/test.out")
+        #src_ast_list[str(filename)].output("./sandbox/test.out")
         lines = tagging(i)[1:]
         code_snippet = generateCodeSnippet(i)
         merged = type0_dealer.generateNewCode(code_snippet, lines, src_ast_list[str(filename)])
         merged_code.append(merged.get_code())
         caller[tagging(i)]=merged.caller
+        
     for i in merged_code[1:]:
         if i!=merged_code[0]:
-            print "ERROR"
-            return (None,None)
-    return (caller,merged_code[0])
-        #print i
-        #print merged_code[0]
+            return False
+        
+    code = merged_code[0]
+    m = Merge()
+    m.add_code(code)
+    for s in cluster:
+        tag = tagging(s)
+        m.add_tag(tag)
+        m.add_caller(tag, caller[tag])
+    mergeResults.append(m)
+    return True
 
-def processIdenticalStmt(src_ast_list, cluster):
+
+def processIdenticalStmt(src_ast_list, cluster, id):
     caller = {}
     merged_code = []
-    for i in cluster:
-        print tagging(i)     
-        #debug.output_stmt_seq(i)
-        
+    for i in cluster:     
         filename = i.getSourceFile().getFileName()
-        src_ast_list[str(filename)].output("./sandbox/test.out")
+        #src_ast_list[str(filename)].output("./sandbox/test.out")
         lines = tagging(i)[1:]
         code_snippet = generateCodeSnippet(i)
-        type1_dealer.generateNewCode(code_snippet, lines, src_ast_list[str(filename)])
-        #break
-        #merged_code.append(merged.get_code())
-        #caller[tagging(i)]=merged.caller
-    '''for i in merged_code[1:]:
+        merged = type1_dealer.generateNewCode(id, code_snippet, lines, src_ast_list[str(filename)])
+        merged_code.append(merged.get_code())
+        caller[tagging(i)]=merged.caller
+        
+    for i in merged_code[1:]:
         if i!=merged_code[0]:
-            print "ERROR"
-            return (None,None)
-    return (caller,merged_code[0])'''
+            return False
+        
+    code = merged_code[0]
+    m = Merge()
+    m.add_code(code)
+    for s in cluster:
+        tag = tagging(s)
+        m.add_tag(tag)
+        m.add_caller(tag, caller[tag])
+    mergeResults.append(m)
+    return True
             
             
 def generateCodeSnippet(stmtSeq, filename=None):
@@ -391,11 +406,15 @@ def generateCodeSnippet(stmtSeq, filename=None):
     else:
         return s
         
-
-if __name__ == '__main__':
+def main():
     (src_ast_list, duplicate_set) = getCloneStmt()
     (dSetInfoList, duplicate_set) = refineDuplicateSet(duplicate_set)
     tmpDistributor(duplicate_set, dSetInfoList, src_ast_list)
+    return mergeResults
+
+if __name__ == '__main__':
+    main()
+    
     
     
     

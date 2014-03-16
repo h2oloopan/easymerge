@@ -25,6 +25,154 @@ def interleave(inter, f, seq):
         for x in seq:
             inter()
             f(x)
+            
+class Code:
+    s = ""
+    def __init__(self, id):
+        self.id = id
+    def write(self, s):
+        self.s+=s
+    def flush(self):
+        pass
+    def split(self):
+        self.code_lines = self.s.splitlines()
+        #self.code_lines = filter(lambda a: a != "", self.code_lines)
+        while self.code_lines[0]=="":
+            self.code_lines = self.code_lines[1:]
+            
+    def add_parameter(self, unreachable, vars):
+        param = [] 
+        
+        def add_unreachable(unreachable):
+            s = "["
+            for i in unreachable:
+                s+=(i+", ")
+            s=s[:-2]+"]"
+            return s
+    
+        def merge_vars(vars):
+            var_dict = {}
+            for i in vars:
+                if i=="":
+                    continue
+                var_dict[i]=1
+            return var_dict                
+        
+        if len(unreachable)>0:
+            param.append("unreachable_method")
+            self.unreachable = add_unreachable(unreachable)
+        else:
+            self.unreachable = None
+
+        self.vars = merge_vars(vars)
+        for i in self.vars:
+            param.append(i)
+        
+        self.param = param
+
+    def write_head_line(self,unreachable, vars):
+        self.add_parameter(unreachable, vars)
+        func_name = "helper"+str(self.id)
+        if len(self.param)>0:
+            param = "("
+            for i in self.param:
+                param += i+", "
+            param = param[:-2]+")"
+        else:
+            param = "()"
+        headline = "def "+func_name+param+":"
+        for i in range(len(self.code_lines)):
+            self.code_lines[i] = "    "+self.code_lines[i]
+        self.code_lines = [headline]+self.code_lines
+        
+    def add_rets(self, return_vars):
+        def merge_vars(vars):
+            var_dict = {}
+            for i in vars:
+                var_dict[i[1]]=1
+            return var_dict
+        ret_vars = []
+        for i in merge_vars(return_vars):
+            ret_vars.append(i)
+        self.return_vars = ret_vars
+        
+        
+    def write_return_line(self,return_vars):
+        
+        self.add_rets(return_vars)
+        
+        ret_line = "    return ("
+        if len(self.return_vars)>1:
+            for i in self.return_vars:
+                ret_line+=(i+", ")
+            ret_line = ret_line[:-2]+")"
+            self.receiver = ret_line[ret_line.find("("):]
+        elif len(self.return_vars)==1:
+            ret_line = ret_line[:-1]+self.return_vars[0]
+            self.receiver = self.return_vars[0]
+        else:
+            ret_line = ret_line[:-2]
+            self.receiver = None
+        self.code_lines.append(ret_line)
+        
+        self.receiver = ret_line.strip()[6:].strip()
+
+        
+        
+        '''def add_unreachable(unreachable):
+            s = "["
+            for i in unreachable:
+                s+=(i+", ")
+            s=s[:-2]+"]"
+            return s     
+         
+        if len(unreachable)==0:
+            self.unreachable = None
+            return
+        else:
+            self.unreachable = add_unreachable(unreachable)                   
+        
+        line = self.code_lines[0]
+        if not line.startswith("def"):
+            print "invalid code snippet"
+        ismember = False
+        if line[line.find("(")+1:].startswith("self"):
+            ismember = True
+        if ismember:
+            self.code_lines[0] = line.replace("(self,", "(self, unreachable_method,")
+        else:
+            self.code_lines[0] = line = line[:line.find("(")+1]+"unreachable_method, "+line[line.find("(")+1:]
+    '''
+
+    def get_caller(self):
+
+        if self.unreachable:
+            s1 = "unreachable = "+self.unreachable
+        else:
+            s1 = ""
+            
+        func_name = "helper"+str(self.id)
+        
+        s2 = ""
+        if self.receiver:
+            s2 += self.receiver+" = "
+        s2 += self.code_lines[0][4:-1]
+
+        self.caller = [s1,s2]
+    
+    def get_code(self):
+        s = ""
+        for i in self.code_lines:
+            s+=i+"\n"
+        return s
+        
+    def output(self,file = sys.stdout):
+        self.f = file
+        for i in self.caller:
+            self.f.write(i+"\n")
+        for i in self.code_lines:
+            self.f.write(i+"\n")
+        self.f.flush()
 
 class Unparser:
     """Methods in this class recursively traverse an AST and
@@ -71,13 +219,21 @@ class Unparser:
         self.f.write("\n")
         self.f.flush()
         
-        print "mod_calls:",self.mod_calls
-        print "new_vars:",self.vars
-        print "old_vars:",self.variable
+        rm_ret_var = []
+        for i in self.return_vars:
+            if i[1] in self.mod_calls:
+                rm_ret_var.append(i)
+        for i in rm_ret_var:
+            self.return_vars.remove(i)
+                
+        
+        #print "mod_calls:",self.mod_calls
+        #print "new_vars:",self.vars
+        #print "old_vars:",self.variable
         if len(self.vars)!=len(self.variable):
             print "ERROR"
-        print "return_vars:",self.return_vars
-        print ""
+        #print "return_vars:",self.return_vars
+        #print ""
         
     def crop_calls(self, lines, src_ast):
         calls = []
@@ -133,8 +289,6 @@ class Unparser:
             self.write("unreachable_method["+str(len(self.mod_calls))+"]")
             #self.write("$CALL:"+str(call.source)+"$")
             self.mod_calls.append(call)
-            if self.mod_calls[-1].name=="dist_string":
-                print "HERE"
             
         self.cur_call+=1
         call = self.calls[self.cur_call]
@@ -448,7 +602,7 @@ class Unparser:
             if not self.is_func_name:                
                 if self.variable[len(self.vars)]!=():
                     self.vars.append(t.id)
-                    self.write(t.id+"@VAR")
+                    self.write(t.id)#+"@VAR")
                 else:
                     self.vars.append("")
                     self.write(t.id)
@@ -733,6 +887,13 @@ class Unparser:
         if t.asname:
             self.write(" as "+t.asname)
 
-def generateNewCode(source, lines, src_ast, output=sys.stdout):
+def generateNewCode(id, source, lines, src_ast, output=sys.stdout):
     tree = compile(source, "", "exec", ast.PyCF_ONLY_AST)
-    up = Unparser(tree, lines, src_ast, output)#open("./sandbox/tmp.py",'w'))
+    merged = Code(id)
+    up = Unparser(tree, lines, src_ast, merged)
+    merged.split()    
+    merged.write_head_line(up.mod_calls, up.vars)
+    merged.write_return_line(up.return_vars)
+    merged.get_caller()
+    #merged.output()
+    return merged
