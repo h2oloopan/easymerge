@@ -136,7 +136,7 @@ def removeOverlappedSeqs(duplicate_set):
     
     print len(duplicate_set),"sets left"
 
-def getCloneStmt():
+def getCloneStmt(dir):
     print "========================================"
     print "Using Clonedigger to detect duplicate codes"
     print "========================================"
@@ -152,7 +152,7 @@ Don't forget to remove automatically generated sources, tests and third party li
 Notice:
 The semantics of threshold options is discussed in the paper "Duplicate code detection using anti-unification", which can be downloaded from the site http://clonedigger.sourceforge.net . All arguments are optional. Supported options are: 
 """)
-    (src_ast_list, orig_duplicates) = digger.main(cmdline)
+    (src_ast_list, orig_duplicates) = digger.main(cmdline, dir)
     sortDuplicates(orig_duplicates)
     duplicate_set = mergeStmtSeqs(orig_duplicates)
     duplicate_set = dup_class_fliter(duplicate_set) 
@@ -406,14 +406,14 @@ def generateCodeSnippet(stmtSeq, filename=None):
     else:
         return s
         
-def main():
-    (src_ast_list, duplicate_set) = getCloneStmt()
+def main(dir):
+    (src_ast_list, duplicate_set) = getCloneStmt(dir)
     (dSetInfoList, duplicate_set) = refineDuplicateSet(duplicate_set)
     tmpDistributor(duplicate_set, dSetInfoList, src_ast_list)
     return mergeResults
 
 if __name__ == '__main__':
-    main()
+    main("../tests/beets")
     
     
     

@@ -33,7 +33,8 @@ import arguments
 import html_report
 import debug
 
-def main(cmdline):
+def main(cmdline, dir=None):
+    print dir
    
     cmdline.add_option('-l', '--language', dest='language',
                        type='choice', choices=['python', 'java', 'lua', 'javascript', 'js'],
@@ -95,6 +96,11 @@ def main(cmdline):
                          **arguments.__dict__)
 
     (options, source_file_names) = cmdline.parse_args()
+    
+    if dir:
+        source_file_names = [dir]
+    print source_file_names
+    
     if options.f_prefixes != None:
        func_prefixes = tuple([x.strip() for x in options.f_prefixes.split(',')])
     else:
