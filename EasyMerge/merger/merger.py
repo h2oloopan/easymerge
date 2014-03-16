@@ -10,7 +10,7 @@ from clonedigger.abstract_syntax_tree import StatementSequence
 from clonedigger.debug import AST
 #import clonedigger.debug as debug
 
-from Merge import Merge 
+from Result import Result 
 import type0_dealer
 import type1_dealer
 
@@ -341,7 +341,7 @@ def processIdenticalDef(src_ast_list, cluster):
             return False
         
     code = merged_code[0]
-    m = Merge()
+    m = Result()
     m.add_code(code)
     for s in cluster:
         tag = tagging(s)
@@ -368,7 +368,7 @@ def processIdenticalStmt(src_ast_list, cluster, id):
             return False
         
     code = merged_code[0]
-    m = Merge()
+    m = Result()
     m.add_code(code)
     for s in cluster:
         tag = tagging(s)
@@ -414,6 +414,9 @@ def main(dir):
 
 if __name__ == '__main__':
     main("../tests/beets")
+    for i in mergeResults:
+        i.output()
+        print ''
     
     
     

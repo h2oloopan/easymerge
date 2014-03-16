@@ -4,7 +4,7 @@ Created on Mar 16, 2014
 @author: h7qin
 '''
 
-class Merge:
+class Result:
     def __init__(self):
         self._tag = []
         self._code = ""
@@ -15,4 +15,9 @@ class Merge:
         self._tag.append(tag)
     def add_caller(self, tag, caller):
         self._caller[tag] = caller
+    def output(self):
+        print self._code
+        for i in self._caller:
+            print i,":"
+            print self._caller[i]
         
