@@ -1,0 +1,27 @@
+{% load i18n %}
+<section class="panel summary">
+    <h2>{% trans "Site summary" %}</h2>
+    <ul>
+        <li class="icon icon-doc-empty-inverse">
+            {% blocktrans count counter=total_pages %}
+                <span>{{ total_pages }}</span> Page
+            {% plural %}
+                <span>{{ total_pages }}</span> Pages
+            {% endblocktrans %}
+        </li>
+        <li class="icon icon-image">
+            {% blocktrans count counter=total_images %}
+                <span>{{ total_images }}</span> Image
+            {% plural %}
+                <span>{{ total_images }}</span> Images
+            {% endblocktrans %}
+        </li>
+        <li class="icon icon-doc-full-inverse">
+            {% blocktrans count counter=total_docs %}
+                <span>{{ total_docs }}</span> Document
+            {% plural %}
+                <span>{{ total_docs }}</span> Documents
+            {% endblocktrans %}
+        </li>
+    </ul>
+</section>

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  14 MAR 2014 12:24
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  15 MAR 2014 17:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -337,31 +337,28 @@ LaTeX Font Info:    Try loading font information for U+lasy on input line 117.
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-Overfull \hbox (1.08371pt too wide) in paragraph at lines 158--161
+Overfull \hbox (1.08371pt too wide) in paragraph at lines 159--162
 []\T1/aer/m/n/9 More specif-i-cally, we pick CloneDig-ger [4], an anti-unificat
 ion
  []
 
-
-Underfull \vbox (badness 6396) has occurred while \output is active []
-
- [1{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+[1{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-Overfull \hbox (5.79927pt too wide) in paragraph at lines 198--203
+Overfull \hbox (5.79927pt too wide) in paragraph at lines 199--204
 \T1/aer/m/n/9 lex-i-cal ap-proaches, syn-tac-tic ap-proaches, se-man-tic ap-pro
 aches
  []
 
 [2]
-Overfull \hbox (3.02179pt too wide) in paragraph at lines 283--284
+Overfull \hbox (3.02179pt too wide) in paragraph at lines 284--285
 \T1/aer/m/n/9 The method of find-ing du-pli-cate code con-sists of three phases
 : 
  []
 
 
-Overfull \hbox (7.21587pt too wide) in paragraph at lines 293--295
+Overfull \hbox (7.21587pt too wide) in paragraph at lines 294--296
 \T1/aer/m/n/9 can-di-dates are checked as a whole us-ing anti-unification
  []
 
@@ -388,7 +385,7 @@ xlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texl
 ive/2013/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/201
 3/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2013/texmf
 -dist/fonts/type1/urw/times/utmb8a.pfb>
-Output written on paper.pdf (4 pages, 143469 bytes).
+Output written on paper.pdf (4 pages, 143373 bytes).
 PDF statistics:
  62 PDF objects out of 1000 (max. 8388607)
  44 compressed objects within 1 object stream

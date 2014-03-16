@@ -119,25 +119,26 @@ email: {\texttt{jsmith@affiliation.org}}) and Julius P.~Kumquat
 Code clones are common in medium to large scale software projects. Oftentimes, unnecessary clones cause troubles to code base maintenance and code reusability. 
 Over past decades, many techniques and approaches have been proposed to detect code clones. However, how to refactor clones is still a very challenging topic to software
 engineers. Even text-wise identical code clones can be semantically different when they are referring variables and calling functions outside. And the problem is more 
-complex when scopes and dependencies are considered. Furthermore, not all clones can be refactored as they may be part of tests or needed to maintain dependencies across multiple
-libraries. As a result, we need adaptive clone refactoring tools that can locate unnecessary clones and alert possible implications in the procedure to help
+complex when scopes and dependencies are involved. Furthermore, not all clones shall be refactored as they may be part of independent
+libraries. And refactoring is not only about removing duplicate code but also fixing all reference errors caused by such deletion thereafter. 
+As a result, we need adaptive clone refactoring tools that can locate unnecessary clones and alert possible implications in the procedure to help
 software engineers be more efficient and make less mistakes in the refactoring process.
 
 In this paper, we introduce EasyMerge, a new tool to refactor code clones. EasyMerge is built on top of AST-based anti-unification clone detection algorithm and 
 refactors software projects written in Python. It adds intelligence to code clone refactoring by categorizing clones and generating refactoring recommendations
-based on evaluation of external variable references and function calls. It copes with features of Python language and can deal with clone fragments in functions,
-classes, and across different scopes. It ensures functionality-wise consistency before and after refactoring and provide warnings when potential refactoring could lead to
+based on evaluation of external variable references and function calls. It copes with features of Python language and can deal with clone fragments across different scopes. 
+It ensures functionality-wise consistency before and after refactoring and provide warnings when potential refactoring could lead to
 unwanted complexity or cause readability issues.
 \end{abstract}
 
 % A category with the (minimum) three required fields
 %\category{H.4}{Information Systems Applications}{Miscellaneous}
 %A category including the fourth, optional field follows...
-\category{D.2.8}{Software Engineering}{Metrics}[complexity measures, performance measures]
+\category{D.2.7}{Software Engineering}{Maintenance}[Restructuring, reverse engineering, and reengineering]
 
-\terms{Software Engineering, Recommendation System}
+\terms{Algorithms}
 
-\keywords{Software Engineering, Clone Detection, Code Refactoring, Recommendation System, Python} % NOT required for Proceedings
+\keywords{Software engineering, clone detection, code refactoring, recommendation system, Python} % NOT required for Proceedings
 
 \section{Introduction}
 In software development, it's very common seeing developers reuse code fragments by copying and pasting with or without minor adaptation.
