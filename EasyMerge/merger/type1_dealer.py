@@ -44,11 +44,18 @@ class Code:
         param = [] 
         
         def add_unreachable(unreachable):
-            s = "["
+            #refine code
+            for i in range(len(self.code_lines)):
+                while "unreachable_method" in self.code_lines[i]:
+                    orig_str = self.code_lines[i][self.code_lines[i].find("unreachable_method"):]
+                    orig_str = orig_str[:orig_str.find("]")+1]
+                    id = int(orig_str[orig_str.find("[")+1:-1])
+                    func_name = unreachable[id]
+                    self.code_lines[i] = self.code_lines[i].replace(orig_str,func_name) 
+            d = {}
             for i in unreachable:
-                s+=(i+", ")
-            s=s[:-2]+"]"
-            return s
+                d[i]=1
+            return d 
     
         def merge_vars(vars):
             var_dict = {}
@@ -59,10 +66,13 @@ class Code:
             return var_dict                
         
         if len(unreachable)>0:
-            param.append("unreachable_method")
             self.unreachable = add_unreachable(unreachable)
+            for i in self.unreachable:
+                param.append(i)
         else:
             self.unreachable = None
+        
+        print self.unreachable
 
         self.vars = merge_vars(vars)
         for i in self.vars:
@@ -146,10 +156,10 @@ class Code:
 
     def get_caller(self):
 
-        if self.unreachable:
+        '''if self.unreachable:
             s1 = "unreachable = "+self.unreachable
         else:
-            s1 = ""
+            s1 = ""'''
             
         func_name = "helper"+str(self.id)
         
@@ -158,7 +168,7 @@ class Code:
             s2 += self.receiver+" = "
         s2 += self.code_lines[0][4:-1]
 
-        self.caller = [s1,s2]
+        self.caller = s2
     
     def get_code(self):
         s = ""
@@ -285,7 +295,7 @@ class Unparser:
     def call_dealer(self,tree):
         #self.write("CALL_HERE"+str(tree.lineno)+","+str(tree.col_offset))
         
-        def process_mod_call(call):            
+        def process_mod_call(call):  
             self.write("unreachable_method["+str(len(self.mod_calls))+"]")
             #self.write("$CALL:"+str(call.source)+"$")
             self.mod_calls.append(call)
@@ -599,7 +609,11 @@ class Unparser:
         #if t.id=="ui":
             #print "ui=======",self.rec_var
         if self.rec_var:            
-            if not self.is_func_name:                
+            if not self.is_func_name: 
+                '''print self.variable 
+                print self.vars
+                print self.incall
+                print self.is_func_name  '''     
                 if self.variable[len(self.vars)]!=():
                     self.vars.append(t.id)
                     self.write(t.id)#+"@VAR")

@@ -307,7 +307,7 @@ def tmpDistributor(dSet, dInfo, src_ast_list):
     for i in range(len(dSet)):
         cluster = dSet[i]
         info = dInfo[i]
-        #print info, len(cluster)#, ":", tagging(cluster[0])
+        print info, len(cluster)#, ":", tagging(cluster[0])
         if info[0]=="Def" and info[1]<=0:
             print "Type0"
             if processIdenticalDef(src_ast_list, cluster):
@@ -341,6 +341,7 @@ def processIdenticalDef(src_ast_list, cluster):
             return False
         
     code = merged_code[0]
+    print code
     m = Result()
     m.add_code(code)
     for s in cluster:
@@ -353,6 +354,7 @@ def processIdenticalDef(src_ast_list, cluster):
 
 def processIdenticalStmt(src_ast_list, cluster, id):
     caller = {}
+    merged_list = []
     merged_code = []
     for i in cluster:     
         filename = i.getSourceFile().getFileName()
@@ -360,11 +362,26 @@ def processIdenticalStmt(src_ast_list, cluster, id):
         lines = tagging(i)[1:]
         code_snippet = generateCodeSnippet(i)
         merged = type1_dealer.generateNewCode(id, code_snippet, lines, src_ast_list[str(filename)])
+        merged_list.append(merged)
         merged_code.append(merged.get_code())
         caller[tagging(i)]=merged.caller
         
-    for i in merged_code[1:]:
-        if i!=merged_code[0]:
+    for i in range(1,len(merged_list)):
+        cur_merge = merged_list[i]
+        cur_code = merged_code[i]
+        if cur_code!=merged_code[0]:
+            print "DIFFERENT!"
+            if cur_merge.code_lines[1:-1]!=merged_list[0].code_lines[1:-1]:
+                print "STILL_DIFF"
+                for j in merged_code:
+                    print j
+                    print ""
+            else:
+                print cur_merge.param
+                print merged_list[0].param
+                print cur_merge.return_vars
+                print merged_list[0].return_vars
+                
             return False
         
     code = merged_code[0]

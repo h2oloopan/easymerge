@@ -26,17 +26,16 @@ class Code:
     def add_parameter(self, unreachable):  
         
         def add_unreachable(unreachable):
-            s = "["
+            d = {}
             for i in unreachable:
-                s+=(i+", ")
-            s=s[:-2]+"]"
-            return s     
+                d[i]=1
+            return d  
          
         if len(unreachable)==0:
             self.unreachable = None
             return
         else:
-            self.unreachable = add_unreachable(unreachable)                   
+            self.unreachable = add_unreachable(unreachable)                  
         
         line = self.code_lines[0]
         if not line.startswith("def"):
@@ -44,10 +43,15 @@ class Code:
         ismember = False
         if line[line.find("(")+1:].startswith("self"):
             ismember = True
+        
+        unreachable_param = ""
+        for i in self.unreachable:
+            unreachable_param+=(i+", ") 
+        
         if ismember:
-            self.code_lines[0] = line.replace("(self,", "(self, unreachable_method,")
+            self.code_lines[0] = line.replace("(self,", "(self, "+unreachable_param)
         else:
-            self.code_lines[0] = line = line[:line.find("(")+1]+"unreachable_method, "+line[line.find("(")+1:]
+            self.code_lines[0] = line = line[:line.find("(")+1]+unreachable_param+line[line.find("(")+1:]
     
 
     def get_caller(self, args):
@@ -55,28 +59,33 @@ class Code:
         if not line.startswith("def"):
             print "invalid code snippet"
                        
-        if self.unreachable:
+        '''if self.unreachable:
             s1 = "unreachable = "+self.unreachable
         else:
-            s1 = ""
+            s1 = ""'''
+        s1 = ""
             
         def get_func_name():
             line = self.code_lines[0]
             if not line.startswith("def"):
                 print "invalid code snippet"
+            orig_name = line[4:line.find("(")].strip()
             self.func_name = line[4:line.find("(")].strip()+"_helper"
+            self.code_lines[0] = line [:4]+self.func_name+line[line.find("("):]
                     
         get_func_name()
         s2 = "return "
         s2 += self.func_name
         s2 += "("
         if self.unreachable:
-            args = args[:args.index("self")+1]+["unreachable"]+args[args.index("self")+1:]
+            args = args[:args.index("self")+1]+self.unreachable.keys()+args[args.index("self")+1:]
             
         for i in args:
             s2 += (i+", ")
         s2 = s2[:-2]+")"
         self.caller = [s1,s2]
+        self.caller = (s1+"\n"+s2).strip()+"\n"
+        print s2
     
     def get_code(self):
         s = ""
@@ -151,8 +160,9 @@ class Unparser:
                 return True
             else:
                 return False        
-        def process_mod_call(call):            
-            self.write("unreachable_method["+str(len(self.mod_calls))+"]")
+        def process_mod_call(call):   
+            self.dispatch(tree.func)         
+            #self.write("unreachable_method["+str(len(self.mod_calls))+"]")
             #self.write("$CALL:"+str(call.source)+"$")
             self.mod_calls.append(call)
             
