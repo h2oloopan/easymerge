@@ -19,10 +19,13 @@ class AST:
         self.classes = []
         self.raw_call = []
         self.calls = []
+        self.var = []
         self.parse_tree(self.tree, [], self.raw_scope, self.raw_call, False)
+        self.parse_name(self.tree, self.var)
         self.process_imports()
         self.process_scope()
-        self.process_call()
+        self.process_call()  
+    
         
     def parse_tree(self, tree, scope, scope_result, call_result, in_call):
         if tree.getName() == "Import":
@@ -45,10 +48,38 @@ class AST:
         if tree.getName()=="CallFunc" and not in_call:
             in_call = True
             call_result.append((tree,(tree.getLineNumbers()[0], self.parse_call(tree.getChilds()[0]), scope)))
+            in_call = False
         for i in tree.getChilds():
             new_scope = list(scope)            
             self.parse_tree(i, scope, scope_result, call_result, in_call)
-            scope = new_scope    
+            scope = new_scope  
+            
+    def parse_name(self, tree, var, cur_line=None):
+        line_set = tree.getCoveredLineNumbers()
+        if len(line_set)>0:
+            cur_line = min(line_set)
+            cur_scope = self.findScope(cur_line)
+        if tree.getName() == "Name":
+            var.append((cur_line, tree.getChilds()[0].getName()[1:-1], cur_scope, 0))
+        if tree.getName() == "AssName":
+            if not tree.getParent().getName()=="For":
+                var.append((cur_line, tree.getChilds()[0].getName()[1:-1], cur_scope, 1))
+        for i in tree.getChilds():
+            self.parse_name(i, var)  
+    
+    def findScope(self,line):
+        scope = -1
+        inScope = False
+        for i in self.raw_scope:
+            (s,e) = i[-1][-1]
+            if s==e and s==-1:
+                continue
+            if line>=s and line<=e:
+                inScope = True
+                scope = self.raw_scope.index(i)
+            elif inScope:
+                return scope
+        return scope
             
     def parse_call(self,call):
         if call.getName()=="Name":
@@ -242,6 +273,10 @@ class Call:
         self.source = id
         
 
+def output_stmt_seq(seq):
+    for i in seq:
+        j = AST(i)
+        print j.visualizeTree(j.tree, 0)
         
         
         

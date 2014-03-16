@@ -232,7 +232,8 @@ def show_change(cur_artist, cur_album, match):
     # Data URL.
     if match.info.data_url:
         print_('URL:\n    %s' % match.info.data_url)
-
+    
+    
     # Info line.
     info = []
     # Similarity.

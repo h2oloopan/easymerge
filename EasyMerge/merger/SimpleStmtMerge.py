@@ -8,9 +8,11 @@ import clonedigger.clonedigger as digger
 import clonedigger.anti_unification as anti_unification
 from clonedigger.abstract_syntax_tree import StatementSequence
 from clonedigger.debug import AST
+import clonedigger.debug as debug
 
 import test
 import type0_dealer
+import type1_dealer
 
 def sortDuplicates(duplicates):
     def f(a,b):
@@ -47,6 +49,52 @@ def mergeStmtSeqs(duplicates):
             pass
     print "Merged into",len(duplicate_set),"Sets"
     return duplicate_set
+
+def dup_class_fliter(duplicate_set):
+    filter = ["Class", "Import", "From","Return"]
+    rm_cluster = []
+    info = {0:[]}
+    for cluster in duplicate_set:
+        for id in range(len(cluster)):
+            seq = cluster[id]
+            rm_stmt = []
+            for ast in seq:
+                if ast.getName() in filter:
+                    rm_stmt.append(ast)
+            if len(rm_stmt)>0:
+                stmtSeq = []
+                orig_len = len(seq._sequence)
+                for stmt in rm_stmt:
+                    seq._sequence.remove(stmt)
+                if len(seq._sequence)==0:
+                    info[0].append(duplicate_set.index(cluster))                    
+                    rm_cluster.append(cluster)
+                    break
+                else:                    
+                    for stmt in seq:
+                        stmtSeq.append(stmt)
+                    stmtSeq = StatementSequence(stmtSeq)
+                    seq = stmtSeq
+                    reduction = (orig_len,len(seq._sequence))
+                    if reduction in info:
+                        if not duplicate_set.index(cluster) in info[reduction]:
+                            info[reduction].append(duplicate_set.index(cluster))
+                    else:
+                        info[reduction] = [duplicate_set.index(cluster)]
+                    
+    
+    for cluster in rm_cluster:
+        duplicate_set.remove(cluster) 
+    
+    print "cluster", info[0], "is full of invalid stmt"
+    for i in info:
+        if i==0:
+            continue
+        print "cluster", info[i],": Reduce",i[0],"stmt to",i[1],"stmt"
+    
+    
+    print "Filtered into", len(duplicate_set),"Sets"
+    return duplicate_set              
 
 def removeOverlappedSeqs(duplicate_set):
     def check_overlap_conflict(start_line, end_line):
@@ -104,7 +152,8 @@ The semantics of threshold options is discussed in the paper "Duplicate code det
 """)
     (src_ast_list, orig_duplicates) = digger.main(cmdline)
     sortDuplicates(orig_duplicates)
-    duplicate_set = mergeStmtSeqs(orig_duplicates) 
+    duplicate_set = mergeStmtSeqs(orig_duplicates)
+    duplicate_set = dup_class_fliter(duplicate_set) 
     removeOverlappedSeqs(duplicate_set)
     return (src_ast_list,duplicate_set)
 
@@ -256,14 +305,22 @@ def tmpDistributor(dSet, dInfo, src_ast_list):
     for i in range(len(dSet)):
         cluster = dSet[i]
         info = dInfo[i]
-        print info, len(cluster)#, ":", tagging(cluster[0])
+        #print info, len(cluster)#, ":", tagging(cluster[0])
         if info[0]=="Def" and info[1]<=0:
             print "Type0"
             (caller,code) = processIdenticalDef(src_ast_list, cluster)
-            print code
+            #print code
+            #for s in cluster:
+                #print tagging(s),":"
+                #print caller[tagging(s)]
+        if info[0]=="Stmt" and info[1]<=0:
+            print "Type1"
+            processIdenticalStmt(src_ast_list, cluster)
+            #break
+            '''print code
             for s in cluster:
                 print tagging(s),":"
-                print caller[tagging(s)]
+                print caller[tagging(s)]'''
 
 def processIdenticalDef(src_ast_list, cluster):
     caller = {}
@@ -283,6 +340,27 @@ def processIdenticalDef(src_ast_list, cluster):
     return (caller,merged_code[0])
         #print i
         #print merged_code[0]
+
+def processIdenticalStmt(src_ast_list, cluster):
+    caller = {}
+    merged_code = []
+    for i in cluster:
+        print tagging(i)     
+        #debug.output_stmt_seq(i)
+        
+        filename = i.getSourceFile().getFileName()
+        src_ast_list[str(filename)].output("./sandbox/test.out")
+        lines = tagging(i)[1:]
+        code_snippet = generateCodeSnippet(i)
+        type1_dealer.generateNewCode(code_snippet, lines, src_ast_list[str(filename)])
+        #break
+        #merged_code.append(merged.get_code())
+        #caller[tagging(i)]=merged.caller
+    '''for i in merged_code[1:]:
+        if i!=merged_code[0]:
+            print "ERROR"
+            return (None,None)
+    return (caller,merged_code[0])'''
             
             
 def generateCodeSnippet(stmtSeq, filename=None):

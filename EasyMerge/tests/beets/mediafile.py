@@ -735,12 +735,15 @@ class VorbisImageStorageStyle(ListStorageStyle):
     def serialize(self, image):
         """Turn a Image into a base64 encoded FLAC picture block.
         """
+        a= 1+2+3
+        b=2+4+6
         pic = mutagen.flac.Picture()
         pic.data = image.data
         pic.type = image.type_index or 3  # Front cover
         pic.mime = image.mime_type
         pic.desc = image.desc or u''
-        return base64.b64encode(pic.write())
+        return pic
+        #base64.b64encode(pic.write())
 
 
 class FlacImageStorageStyle(ListStorageStyle):
