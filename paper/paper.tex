@@ -153,12 +153,12 @@ and removing code clones, we can produce easier to understand, cleaner, and more
 
 Clone detection has been an avid research topic in the field of software engineering for decades. Fortunately, several automated techniques for detecting code clones
 have already been proposed. However, how to deal with detected clones, e.g. how to distinguish necessary clones from unnecessary ones and how to refactor code to remove
-unnecessary clones still remain a big problem in not only commercial but also academic domain. As a result, in this paper, we try to classify code clones and build
+unnecessary clones still remain a big problem in not only commercial but also academic domain. In this paper, we try to classify code clones and build
 a recommendation system called EasyMerge to help developers merge unnecessary clones on top of current state-of-the-art clone detection approach.
 
-More specifically, we pick CloneDigger \cite{bulychev}, an anti-unification duplicate code detection tool as our underlying clone detection approach. CloneDigger is one of the best available 
-clone detection tools currently for its overall performance, coverage of multiple clone types, and availability. 
-EasyMerge integrates CloneDigger as the pre-processing tool, analyze its output clone pairs, and recommend possible merges which can remove unnecessary clones without changing functionality of code base, creating reference conflicts, nor causing troubles to future code understanding and development.
+More specifically, we pick CloneDigger \cite{bulychev}, an anti-unification duplicate code detection tool as our underlying clone detector. CloneDigger is one of the best available 
+clone detection tools for its overall performance, coverage of multiple clone types, and availability. 
+EasyMerge integrates CloneDigger as the pre-processing tool, analyze its output clone pairs, and recommend possible merges which can remove unnecessary clones without changing functionality of code base, creating reference conflicts, nor causing troubles to future code understanding and reusing.
 
 The rest of the paper is structured as follows: we first go through the basics, background, and current state of clone detection and code clone refactoring in general.
 Then we introduce and discuss the fundamentals of CloneDigger and the anti-unification algorithm it is using to detect clones. Afterwards, we explain EasyMerge's
@@ -203,11 +203,12 @@ at the moment. However, for the purpose of building EasyMerge, we want to pick a
 handle different editing scenarios decently. Thus we chose CloneDigger \cite{bulychev} after a comprehensive comparison.
 
 \subsection{Clone Refactoring}
-On the other hand, for clone refactoring, most proposed solutions use some pre-defined metrics as the refactoring guidance to help users determine whether the 
+On the other hand, for clone refactoring, most proposed solutions use pre-defined metrics as the refactoring guidance to help users determine whether the 
 code clones are suitable for refactoring. For example, Balazinska \cite{balazinska} proposed to use 21 metrics to measure the suitability for refactoring. Higo \cite{higo}
 developed ARIES tools, using the code detection tool CCFinder and environment analysis tool Gemini to find the clones can be refactored. And Schulze \cite{schulze}
-proposed a new metric DIST (distance of the code clones). Unlike them, instead of calculating distance between code fragments and only merging close clones, EasyMerge 
-try to fix the differences and merge as many clones as possible without introducing extra complexity.
+proposed a new metric DIST (distance of the code clones). 
+%Unlike them, instead of calculating distance between code fragments and only merging close clones, EasyMerge 
+%try to fix the differences and merge as many clones as possible without introducing extra complexity.
 
 For the actual merging process, currently existing research mainly focus on using refactoring patterns \cite{fowler}, especially ``Extract Method" and ``Pull Up Method".
 "Extract Method" means that a fragment of source code is extracted and redefined as a new method. ``Pull Up Method" means that the same methods defined in child
@@ -216,7 +217,7 @@ classes are pulled up to its parent class. In general, they are both merging sim
 
 Unfortunately, code clones may be coupled with surrounding code, its inheritance tree, or other independent classes/code blocks. For instance, code fragments inside clone pairs
 may contain function calls or variable references which are not defined inside the fragments. Furthermore, functions and variables of the same names may be in fact different
-at different locations of the code base. For example, if we have a code clone fragment as following:
+at different locations of the code base. For example, if we have a code clone fragment of following:
 
 \IncMargin{1em}
 \begin{algorithm}
@@ -253,14 +254,22 @@ For instance:
 
 However, this creates two new problems. Firstly, in this example, the scope of b was changed. It is now inside the helper function and no longer available to code after the clone fragment
 which could potentially cause reference errors. Secondly, when the length of the clone fragment is too long, we could possibly end up with a helper function of tons of parameters
-which in turn make the code after refactoring harder to understand and is against our goal to improve readability. And the most intuitive approach to solve the first problem
+which in turn make the code after refactoring harder to understand and is against our goal to improve readability. 
+For most clone refactoring approaches, this gives bad scores to the evaluation metrics and prevent merging. And a possible alternative approach
 is to return b and such variables from the ``Extracted Method" which introduces even more complexity.
 
-As a result, for recently proposed refactoring approach \cite{li} and the tools mentioned at the beginning of this subsection, they count the number of such external references
+For recently proposed refactoring approach \cite{li} and the tools mentioned at the beginning of this subsection, they count the number of such external references
 in a code clone fragment as the key factor of their refactoring guideline metrics. 
 And clone fragments of too many such occurrences will not be recommended for refactoring.
-Furthermore, in Li's work \cite{li}, after standardization, it can also be used to refactor semantical
+Furthermore, in Li's work \cite{li}, after standardization, it can also be used to refactor some semantical
 similar but syntax-wise different clones by moving different function references to extracted method's parameters.
+
+Additionally, results from clone detectors are usually clone pairs but it's very common 
+more than two fragments are clones of each other. Moreover, overlapping clone fragments often
+exist in large scale code bases, too. For example, it's not difficult to find a code block of ABCDEF where BC is a clone fragment of one other block and CDE is a clone fragment of another. For both cases, merging one set of clones will in turn break clones in another set. 
+And we need to take care of all reference errors caused by code deletion. 
+Thus, our clone refactoring tool must handle all these potential issues without
+introducing too much computational overhead.
 
 Unlike most of current clone refactoring approaches that use token-based CCFinder \cite{kamiya} for clone detection, EasyMerge uses a newer detection tool called CloneDigger.
 Compared to CCFinder, CloneDigger is cross-platform and freely available as an open source project. Moreover, based on evaluation from Roy \cite{roy2},
@@ -270,6 +279,8 @@ in commenting in the second (S1(b)), and changes in formatting in the third (S1(
 algorithm.
 
 \section{CloneDigger}
+CloneDigger \cite{bulychev} was an anti-unification code clone detector introduced by Bulychev and Minea in 2008. It's one of the latest open source clone detection tool.
+
 \subsection{Overview}
 Techniques for detecting duplicate code can be classified according to several criteria. Code can be viewed as similar based on syntactic criteria or at a semantic level. CloneDigger considers only syntactic similarity. The algorithm is approached based on abstract syntax trees. The algorithm of finding duplicates consists of several phases. In the beginning all statements are partitioned into clusters using anti-unification distance and the code is abstractly viewed as sequence of cluster identifiers. All pairs of identical sequences of cluster IDs, which have similar statements in corresponding positions, are globally checked for similarity using anti-unification distance.
 
@@ -299,6 +310,9 @@ Now we can move on to introduce EasyMerge and how it works behind the scene.
 
 
 \section{EasyMerge}
+\subsection{User Interface}
+
+\subsection{Preprocessing}
 
 \section{Experimental Results}
 
