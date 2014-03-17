@@ -284,7 +284,7 @@ def main(dir,distance_threshold, size_threshold):
     return mergeResults
 
 if __name__ == '__main__':
-    main("../tests/beets", 10, 4)
+    main("../tests/", 10, 4)
     
     for i in mergeResults:
         i.output()
