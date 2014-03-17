@@ -106,12 +106,16 @@ class AbstractSyntaxTree:
             r.append(self.getSourceFile().getSourceLine(source_line_number) ) 
         
         i=1
-        bug = [")","]","}"]
+        bug = [")","]","}",","]
         while len(self.getSourceFile()._source_lines)>max(source_line_numbers)+i:
-            last_line = max(source_line_numbers)+i
-            #print "LAST LINE = ",self.getSourceFile().getSourceLine(last_line) 
-            if self.getSourceFile().getSourceLine(last_line).strip() in bug:                
-                r.append(self.getSourceFile().getSourceLine(last_line) )
+            last_lineno = max(source_line_numbers)+i
+            last_line = self.getSourceFile().getSourceLine(last_lineno).strip().replace(" ","")
+            buggy = True
+            for s in last_line:
+                if s not in bug:
+                    buggy = False
+            if buggy:
+                r.append(self.getSourceFile().getSourceLine(last_lineno) )
             else:
                 break
             i+=1

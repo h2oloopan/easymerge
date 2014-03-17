@@ -445,9 +445,9 @@ def processNonIdenticalStmt(src_ast_list, cluster, id):
     for i in range(1,len(merged_list)):
         cur_code = merged_code[i]
         if cur_code!=merged_code[0]:
-            print "DIFFERENT!"
-            for m in merged_list:
-                m.output()
+            print "UNMERGABLELY DIFFERENT!"
+            #for m in merged_list:
+            #    m.output()
             return False
            
     code = merged_code[0]
@@ -501,7 +501,7 @@ def main(dir,distance_threshold):
     return mergeResults
 
 if __name__ == '__main__':
-    main("../tests/beets", 10)
+    main("../tests/wagtail", 10)
     for i in mergeResults:
         i.output()
         print ''

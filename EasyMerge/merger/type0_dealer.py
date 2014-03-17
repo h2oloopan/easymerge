@@ -78,7 +78,10 @@ class Code:
         s2 += self.func_name
         s2 += "("
         if self.unreachable:
-            args = args[:args.index("self")+1]+self.unreachable.keys()+args[args.index("self")+1:]
+            if "self" in args:
+                args = args[:args.index("self")+1]+self.unreachable.keys()+args[args.index("self")+1:]
+            else:
+                args = self.unreachable.keys()+args
             
         for i in args:
             s2 += (i+", ")
