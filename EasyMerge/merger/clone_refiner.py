@@ -53,6 +53,7 @@ def getInfoFromSet(dSet, pair = False):
         indepLine = {}
         for i in dSet:
             for dup in i: 
+                #print dup
                 srcName = dup.getSourceFile().getFileName()
                 for n in dup.getCoveredLineNumbers():
                     tag = srcName+"@"+str(n)
@@ -317,6 +318,14 @@ def spreadMixSet(dSet, type_list):
     
     for cluster in dSet:
         type = type_list[dSet.index(cluster)]
+        if type=="Def" and len(cluster[0])>1:
+            new_insert = []
+            for i in range(len(cluster[0])):
+                new_set = []
+                for d in cluster:
+                    new_set.append(StatementSequence([d[i]]))
+                new_insert.append(new_set)
+            dSet[dSet.index(cluster)] = new_insert
         if isinstance(type,tuple):
             new_clusters = type[1]
             new_insert = []
@@ -337,6 +346,8 @@ def spreadMixSet(dSet, type_list):
         elif len(cluster)==0:
             dSet = dSet[:i]+dSet[i+1:]
             type_list = type_list[:i]+type_list[i+1:]
+            i-=1
+
         i+=1
         if i>=len(dSet):
             break 

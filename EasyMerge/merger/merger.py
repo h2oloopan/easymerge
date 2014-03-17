@@ -25,6 +25,7 @@ stat ={"Merged":0,
        "ErrorDef":0,
        "DiffStmt":0,
        "ErrorStmt":0,
+       "UnknownType":0,
        "DiffPak":0,
        "Reduction":[]}
 
@@ -64,6 +65,36 @@ def tmpDistributor(dSet, dInfo, src_ast_list):
             else:
                 print "Error"
                 #break   
+        elif info[0]=="Def" and info[1]>0:
+            print "Type2"
+            too_short = False
+            for i in range(len(cluster)):
+                seq = cluster[i][0]
+                new_seq = seq.getChilds()[-1]
+                is_ret = new_seq.getChilds()[-1]
+                if is_ret.getName()=="Return":
+                    new_seq = StatementSequence(new_seq.getChilds()[:-1])
+                else:
+                    new_seq = StatementSequence(new_seq.getChilds())
+                
+                if not new_seq or tagging(new_seq)[2] - tagging(new_seq)[1] < 3:
+                    print "TOO SHORT DEF"
+                    too_short = True
+                    stat["DiffDef"]+=1
+                    break                
+                else:
+                    cluster[i] = new_seq
+            if too_short:
+                continue
+                    
+            if processNonIdenticalStmt(src_ast_list, cluster, i):
+                print "Success"
+                stat["Merged"]+=1
+                stat["MergedDiff"]+=1
+                stat["MergedDist"]+=info[1]
+            else:
+                print "Error"
+
         elif info[0]=="Stmt" and info[1]>0:
             print "Type3"
             if processNonIdenticalStmt(src_ast_list, cluster, i):
@@ -74,7 +105,7 @@ def tmpDistributor(dSet, dInfo, src_ast_list):
             else:
                 print "Error"
         else:
-            stat["DiffDef"]+=1
+            stat["UnknownType"]+=1
     
     for m in mergeResults:
         
@@ -89,13 +120,13 @@ def tmpDistributor(dSet, dInfo, src_ast_list):
             oldLines+=lines
         newLines = m.lines+len(m._caller)
         
-        if newLines>oldLines:
+        '''if newLines>oldLines:
             print "New Code:", m.lines
             print "Caller:", len(m._caller)
             old = []
             for i in m._caller:
                 old.append(i[2]-i[1]+1)
-            print "Old Code:", old
+            print "Old Code:", old'''
         
         stat["Reduction"].append(oldLines-newLines)
                  
@@ -286,9 +317,9 @@ def main(dir,distance_threshold, size_threshold):
 if __name__ == '__main__':
     main("../tests/", 10, 4)
     
-    for i in mergeResults:
-        i.output()
-        print ''       
+    #for i in mergeResults:
+    #    i.output()
+    #    print ''       
      
     print stat
     print float(sum(stat["Reduction"]))/float(stat["Merged"])

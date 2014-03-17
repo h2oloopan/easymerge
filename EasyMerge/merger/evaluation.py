@@ -38,7 +38,7 @@ def getOtherStats(dir, distance_threshold, size_threshold):
         print i
     
 if __name__ == '__main__':
-    dir_name = "../tests/fig"
+    dir_name = "../tests/"
     total_num, total_file = getTotalSourceLineNumbers(dir_name)
     getOtherStats(dir_name, 10, 4)
     print total_num,"lines in total"
