@@ -673,3 +673,311 @@ Extra parameters: 2
 Clone length: 30 lines
 Merge is somewhat recommended
 
+[Mon 17 Mar 17:13:44 2014] - 
+    EasyMerge started
+[Mon 17 Mar 17:13:44 2014] - 
+    UI initialization completed
+[Mon 17 Mar 17:13:44 2014] - 
+    Please pick source tree to analyze
+[Mon 17 Mar 17:13:50 2014] - 
+    Start running CloneDigger...
+[Mon 17 Mar 17:14:25 2014] - 
+    18 mergeable clone sets found
+[Mon 17 Mar 17:14:31 2014] - 
+    Mergeable 1 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/confit.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/migrate.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Clone length: 30 lines
+Merge is somewhat recommended
+
+[Mon 17 Mar 17:16:09 2014] - 
+    EasyMerge started
+[Mon 17 Mar 17:16:09 2014] - 
+    UI initialization completed
+[Mon 17 Mar 17:16:09 2014] - 
+    Please pick source tree to analyze
+[Mon 17 Mar 17:16:40 2014] - 
+    Start running CloneDigger...
+[Mon 17 Mar 17:17:12 2014] - 
+    18 mergeable clone sets found
+[Mon 17 Mar 17:17:14 2014] - 
+    Mergeable 1 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/confit.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/migrate.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Clone length: 30 lines
+Merge is somewhat recommended
+
+[Mon 17 Mar 17:28:50 2014] - 
+    EasyMerge started
+[Mon 17 Mar 17:28:50 2014] - 
+    UI initialization completed
+[Mon 17 Mar 17:28:50 2014] - 
+    Please pick source tree to analyze
+[Mon 17 Mar 17:28:56 2014] - 
+    Start running CloneDigger...
+[Mon 17 Mar 17:29:33 2014] - 
+    21 mergeable clone sets found
+[Mon 17 Mar 17:29:35 2014] - 
+    Mergeable 1 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/confit.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/migrate.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Clone length: 30 lines
+Merge is somewhat recommended
+
+[Mon 17 Mar 17:30:16 2014] - 
+    EasyMerge started
+[Mon 17 Mar 17:30:16 2014] - 
+    UI initialization completed
+[Mon 17 Mar 17:30:16 2014] - 
+    Please pick source tree to analyze
+[Mon 17 Mar 17:30:27 2014] - 
+    Start running CloneDigger...
+[Mon 17 Mar 17:31:04 2014] - 
+    21 mergeable clone sets found
+[Mon 17 Mar 17:31:49 2014] - 
+    Mergeable 1 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/confit.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/migrate.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Clone length: 30 lines
+Merge is somewhat recommended
+
+[Mon 17 Mar 17:31:51 2014] - 
+    Files:
+/Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/confit.py
+/Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/migrate.py
+merged.
+
+[Mon 17 Mar 17:31:53 2014] - 
+    Mergeable 2 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/commands.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/commands.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Clone length: 30 lines
+Merge is somewhat recommended
+
+[Mon 17 Mar 17:31:54 2014] - 
+    Mergeable 1 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/confit.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/migrate.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Clone length: 30 lines
+Merge is somewhat recommended
+
+[Mon 17 Mar 17:31:54 2014] - 
+    Mergeable 6 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/mediafile.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/mediafile.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Clone length: 30 lines
+Merge is somewhat recommended
+
+[Mon 17 Mar 17:31:56 2014] - 
+    Files:
+/Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/mediafile.py
+/Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/mediafile.py
+merged.
+
+[Mon 17 Mar 17:31:57 2014] - 
+    Mergeable 4 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/pipeline.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/pipeline.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Clone length: 30 lines
+Merge is somewhat recommended
+
+[Mon 17 Mar 17:31:58 2014] - 
+    Mergeable 1 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/confit.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/migrate.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Clone length: 30 lines
+Merge is somewhat recommended
+
+[Mon 17 Mar 17:32:01 2014] - 
+    Files:
+/Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/confit.py
+/Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/migrate.py
+
+[Mon 17 Mar 17:32:02 2014] - 
+    Mergeable 7 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/commands.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/commands.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Clone length: 30 lines
+Merge is somewhat recommended
+
+[Mon 17 Mar 17:32:03 2014] - 
+    Mergeable 6 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/mediafile.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/mediafile.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Clone length: 30 lines
+Merge is somewhat recommended
+
+[Mon 17 Mar 17:32:04 2014] - 
+    Files:
+/Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/mediafile.py
+/Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/mediafile.py
+
+[Mon 17 Mar 17:32:05 2014] - 
+    Mergeable 4 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/pipeline.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/pipeline.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Clone length: 30 lines
+Merge is somewhat recommended
+
+[Mon 17 Mar 17:32:08 2014] - 
+    Mergeable 1 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/confit.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/migrate.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Clone length: 30 lines
+Merge is somewhat recommended
+
+[Mon 17 Mar 17:32:09 2014] - 
+    Files:
+/Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/confit.py
+/Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/migrate.py
+merged.
+
+[Mon 17 Mar 17:32:10 2014] - 
+    Mergeable 9 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/commands.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/commands.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Clone length: 30 lines
+Merge is somewhat recommended
+
+[Mon 17 Mar 17:32:12 2014] - 
+    Mergeable 1 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/confit.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/migrate.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Clone length: 30 lines
+Merge is somewhat recommended
+
+[Mon 17 Mar 17:32:13 2014] - 
+    Files:
+/Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/confit.py
+/Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/migrate.py
+
+[Mon 17 Mar 17:32:13 2014] - 
+    Mergeable 4 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/pipeline.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/pipeline.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Clone length: 30 lines
+Merge is somewhat recommended
+
+[Mon 17 Mar 17:32:16 2014] - 
+    Files:
+/Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/pipeline.py
+/Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/pipeline.py
+merged.
+
+[Mon 17 Mar 17:32:26 2014] - 
+    Mergeable 5 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/mediafile.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/mediafile.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Clone length: 30 lines
+Merge is somewhat recommended
+
+[Mon 17 Mar 17:32:27 2014] - 
+    Mergeable 4 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/pipeline.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/pipeline.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Clone length: 30 lines
+Merge is somewhat recommended
+
+[Mon 17 Mar 17:32:29 2014] - 
+    Files:
+/Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/pipeline.py
+/Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/pipeline.py
+
+[Mon 17 Mar 17:32:45 2014] - 
+    EasyMerge started
+[Mon 17 Mar 17:32:45 2014] - 
+    UI initialization completed
+[Mon 17 Mar 17:32:45 2014] - 
+    Please pick source tree to analyze
+[Mon 17 Mar 17:32:57 2014] - 
+    Start running CloneDigger...

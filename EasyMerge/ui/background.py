@@ -92,6 +92,11 @@ class Background(QtGui.QWidget):
         self._eval.insertPlainText(dummy)
         return dummy
 
+    def warn(self, msg):
+        box = QtGui.QMessageBox(self)
+        box.setText(msg)
+        box.exec_()
+
     def openClicked(self):
         sender = self.sender()
         self._path = str(QtGui.QFileDialog.getExistingDirectory(sender, 'Select source code directory'))
@@ -100,9 +105,7 @@ class Background(QtGui.QWidget):
 
     def analyzeClicked(self):
         if self._path == '':
-            msg = QtGui.QMessageBox(self)
-            msg.setText('Please select source code directory first by clicking [Open Source]')
-            msg.exec_()
+            self.warn('Please select source code directory first by clicking [Open Source]')
         else:
             #analyze
             self.log('Start running CloneDigger...')
@@ -189,8 +192,41 @@ class Background(QtGui.QWidget):
 
 
     def mergeClicked(self):
+        item = self._list.currentItem()
+        index = self._list.currentRow()
+        sets = self._sets[index].get_caller()
+        redness = item.foreground().color().red()
+        if redness == 0:
+            #green
+            item.setForeground(QtGui.QColor('red'))
+            info = 'Files:\n'
+            for key in sets:
+                info += key[0] + '\n'
+            info += 'merged.\n'
+            self.log(info)
+        else:
+            #red
+            self.warn('Item has already been merged!')
+
+        color = str(item.foreground().color().red())
+        print color
         print 'mergining...'
 
     def unmergeClicked(self):
+        item = self._list.currentItem()
+        index = self._list.currentRow()
+        sets = self._sets[index].get_caller()
+        redness = item.foreground().color().red()
+        if redness == 0:
+            #green
+            self.warn('Item has not been merged yet!')
+        else:
+            #red
+            item.setForeground(QtGui.QColor('green'))
+            info = 'Files:\n'
+            for key in sets:
+                info += key[0] + '\n'
+            info == 'unmerged.\n'
+            self.log(info)
         print 'unmerging...'
 
