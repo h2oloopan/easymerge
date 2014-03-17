@@ -1053,35 +1053,6 @@ def generateNewCode(id, source, lines, src_ast, tag, output=sys.stdout):
     #print up.vars
     return merged
 
-
-'''def mergeDiffResults(merged_list):
-    def mergeSet(setList):
-        d = {}
-        for i in setList:
-            for j in i:
-                if j in d:
-                    d[j] += 1
-                else:
-                    d[j] = 1
-        return d
-    
-    paramList = []
-    returnList = []
-    
-    for i in merged_list:
-        paramList.append(i.param)
-        returnList.append(i.return_vars)
-    
-    paramList = mergeSet(paramList).keys()
-    returnList = mergeSet(returnList).keys()
-    
-    for i in merged_list:
-        i.rewrite_head_line(paramList)
-        i.rewrite_return_line(returnList)
-        i.reget_caller(paramList, returnList)
-    
-    return merged_list'''
-
 def checkMergable(merged_list):
     mergable = True
     for merge in merged_list[1:]:
@@ -1188,6 +1159,10 @@ def generateCommonCode(merged_list):
         merge.rewrite_head_line(common_param)
         merge.rewrite_return_line(common_ret)
         merge.reget_caller(new_caller[i], new_receiver[i])
+        
+        merge.param = common_param
+        merge.return_vars = common_ret
+        
         #merge.output()
         merged_list[i] = merge
     

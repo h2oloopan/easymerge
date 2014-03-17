@@ -33,7 +33,7 @@ import arguments
 import html_report
 import debug
 
-def main(cmdline, dir=None, custom_distance_threshold=None):
+def main(cmdline, dir=None, custom_distance_threshold=None, custom_size_threshold=None):
    
     cmdline.add_option('-l', '--language', dest='language',
                        type='choice', choices=['python', 'java', 'lua', 'javascript', 'js'],
@@ -135,6 +135,9 @@ def main(cmdline, dir=None, custom_distance_threshold=None):
         
     if custom_distance_threshold:
         arguments.distance_threshold = custom_distance_threshold
+        
+    if custom_size_threshold:
+        arguments.size_threshold = custom_size_threshold
     
     report.startTimer('Construction of AST')
     

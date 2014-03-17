@@ -996,6 +996,7 @@ def generateNewCode(id, source, lines, src_ast, tag, output=sys.stdout):
     merged.write_head_line(up.vars)
     merged.write_return_line(up.return_vars)
     merged.get_caller()
+    
     return merged
 
 
@@ -1024,6 +1025,8 @@ def mergeDiffResults(merged_list):
         i.rewrite_head_line(paramList)
         i.rewrite_return_line(returnList)
         i.reget_caller(paramList, returnList)
+        i.param = paramList
+        i.return_vars = returnList
     
     return merged_list
     

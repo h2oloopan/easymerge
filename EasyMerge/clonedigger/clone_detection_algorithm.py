@@ -199,21 +199,26 @@ def findDuplicateCode(source_files, report):
             pair_sequences = pairs_sequences.pop()
             def all_pairsubsequences_size_n_threshold(n):
                 lr = []
+                sizing = []
                 for first in range(0, pair_sequences.getLength()-n+1):
                     new_pair_sequences = pair_sequences.subSequence(first, n)
                     size = new_pair_sequences.getMaxCoveredLineNumbersCount()
                     if size >= arguments.size_threshold:
                         lr.append((new_pair_sequences, first))
-                return lr
+                        sizing.append(size)
+                return lr,sizing
             n = pair_sequences.getLength() + 1
             while 1:
                 n-=1
                 if n == 0:
                     break
-                new_pairs_sequences = all_pairsubsequences_size_n_threshold(n)
+                new_pairs_sequences, sizing = all_pairsubsequences_size_n_threshold(n)
                 for (candidate_sequence, first) in new_pairs_sequences:             
                     distance = candidate_sequence.calcDistance()
-                    if (distance < arguments.distance_threshold):
+                    cur_size = sizing[new_pairs_sequences.index((candidate_sequence, first))]
+                    #if (distance < arguments.distance_threshold) and distance>cur_size:
+                    #    print "Filtered : D="+str(distance)+", S="+str(cur_size)
+                    if (distance < arguments.distance_threshold) and (distance<=cur_size):
                         r.append(candidate_sequence)
                         if first > 0:
                             pairs_sequences.append(pair_sequences.subSequence(0, first-1))
