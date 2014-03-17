@@ -40,25 +40,8 @@ class Code:
         #self.code_lines = filter(lambda a: a != "", self.code_lines)
         while self.code_lines[0]=="":
             self.code_lines = self.code_lines[1:]
-    
-    def generate_var_set(self, vars):
-        self.orig_vars = vars
-        self.var_set = []
-        for i in range(len(vars)):
-            self.var_set.append(i)
-            var = vars[i]
-            for j in range(0,i):
-                cur_var = vars[j]
-                if cur_var==var:
-                    self.var_set[-1] = j
-                    break
-        #print self.var_set
-    
-    def add_parameter(self, vars, bins):
-        
-        self.generate_var_set(vars)
-        self.orig_bins = bins
-        
+            
+    def add_parameter(self, vars):
         param = [] 
     
         def merge_vars(vars):
@@ -74,12 +57,12 @@ class Code:
             if i=="self":
                 continue
             if not i.startswith("new@"):
-                param.append(i)
+                param.append(i)   
                  
         self.param = param
 
-    def write_head_line(self,vars, bins):
-        self.add_parameter(vars, bins)
+    def write_head_line(self,vars):
+        self.add_parameter(vars)
         func_name = "helper"+str(self.id)
         if len(self.param)>0:
             param = "("
@@ -159,25 +142,39 @@ class Code:
 
         self.caller = s2
     
-    def reget_caller(self, new_caller, new_receiver):
+    def reget_caller(self, new_param, new_ret):
             
         func_name = "helper"+str(self.id)
         
-        if len(new_caller)>0:
+        param = []
+        for i in new_param:
+            if not i in self.param:
+                param.append("None")
+            else:
+                param.append(i)
+                
+        ret = []        
+        for i in new_ret:
+            if not i in self.return_vars:
+                ret.append("None")
+            else:
+                ret.append(i)
+
+        if len(param)>0:
             paramline = "("
-            for i in new_caller:
+            for i in param:
                 paramline += i+", "
             paramline = paramline[:-2]+")"
         else:
             paramline = "()"
         
         ret_line = "("
-        if len(new_receiver)>1:
-            for i in new_receiver:
+        if len(ret)>1:
+            for i in ret:
                 ret_line+=(i+", ")
             ret_line = ret_line[:-2]+")"
-        elif len(new_receiver)==1:
-            ret_line = ret_line[:-1]+new_receiver[0]
+        elif len(ret)==1:
+            ret_line = ret_line[:-1]+ret[0]
         else:
             ret_line = ""
         
@@ -188,33 +185,6 @@ class Code:
 
         self.caller = s2
     
-    def rewrite_code(self, new_vars, diff_bins):
-        for j in range(len(new_vars)):
-            for i in range(1,len(self.code_lines)-1):
-                line = self.code_lines[i]
-                tag = self.orig_vars[j]
-                if tag.startswith("new@"):
-                    tag = tag[4:]
-                tag+=("@"+str(j))
-                if line.find(tag)>=0:
-                    line = line.replace(tag,new_vars[j])
-                    break
-            self.code_lines[i] = line
-        for j in range(len(self.orig_bins)):
-            for i in range(1,len(self.code_lines)-1):
-                line = self.code_lines[i]
-                tag = self.orig_bins[j]
-                tag+=("@bin"+str(j))
-                new_tag = self.orig_bins[j]
-                if j in diff_bins:
-                    id = diff_bins.index(j)
-                    new_tag = "diff_params["+str(id)+"]"
-                if line.find(tag)>=0:
-                    line = line.replace(tag,new_tag)
-                    break
-            self.code_lines[i] = line
-                    
-    
     def get_code(self):
         s = ""
         for i in self.code_lines:
@@ -223,7 +193,6 @@ class Code:
         
     def output(self,file = sys.stdout):
         self.f = file
-        self.f.write("======================\n")
         self.f.write(self.caller+"\n")
         for i in self.code_lines:
             self.f.write(i+"\n")
@@ -251,7 +220,7 @@ class Unparser:
         self.args = []
         
         self.all_name = []
-        self.bins = []
+        
         self.vars = []
         self.is_func_name = False 
         
@@ -307,12 +276,6 @@ class Unparser:
         
         #for i in src_ast.functions:
         #    print i.name, i.env
-
-        new_imports = []
-        for i in src_ast.raw_imports:
-            new_imports.append(i[0])
-            if i[1]:
-                new_imports.append(i[1])
         
         vars = []
         return_vars = []
@@ -320,17 +283,12 @@ class Unparser:
             if i[0]<lines[0] or i[0]>lines[1]:
                 continue
             else:
-                
                 if i[1] in build_in_name:
                     continue
-                
+            
                 if i[1]=="self":
                     vars.append(i[1])
                     return_vars.append(i[1])
-                    continue
-                
-                if i[1] in new_imports:
-                    vars.append(i[1])
                     continue
                 
                 is_class = False
@@ -702,14 +660,11 @@ class Unparser:
         # then we want to output string literals using a 'b' prefix
         # and unicode literals with no prefix.
         if "unicode_literals" not in self.future_imports:
-            self.write(repr(tree.s)+"@bin"+str(len(self.bins)))
-            self.bins.append(repr(tree.s))
+            self.write(repr(tree.s))
         elif isinstance(tree.s, str):
-            self.write("b" + repr(tree.s)+"@bin"+str(len(self.bins)))
-            self.bins.append("b" + repr(tree.s))
+            self.write("b" + repr(tree.s))
         elif isinstance(tree.s, unicode):
-            self.write(repr(tree.s).lstrip("u")+"@bin"+str(len(self.bins)))
-            self.bins.append(repr(tree.s).lstrip("u"))
+            self.write(repr(tree.s).lstrip("u"))
         else:
             assert False, "shouldn't get here"
 
@@ -719,24 +674,22 @@ class Unparser:
         #if t.id=="ui":
             #print "ui=======",self.rec_var
         if t.id in build_in_name:
-            self.write(t.id+"@bin"+str(len(self.bins)))
-            self.bins.append(t.id)   
+            self.write(t.id)   
         else:
-            idx = len(self.vars)
-            should_var = self.variable[idx]
+            should_var = self.variable[len(self.vars)]
             if should_var.startswith("new@"):
                 should_id = should_var[4:]
                 if should_id!=t.id:
                     self.write(t.id)
                 else:
                     self.vars.append("new@"+t.id)
-                    self.write(t.id+"@"+str(idx))
+                    self.write(t.id)
             else:
                 if t.id!=should_var:
                     self.write(t.id)
                 else:
                     self.vars.append(t.id)
-                    self.write(t.id+"@"+str(idx))
+                    self.write(t.id)
                     
            
         '''if not self.is_func_name: 
@@ -766,20 +719,14 @@ class Unparser:
         self.write("`")
 
     def _Num(self, t):
-        tmp_s = ""
         repr_n = repr(t.n)
         # Parenthesize negative numbers, to avoid turning (-1)**2 into -1**2.
         if repr_n.startswith("-"):
             self.write("(")
-            tmp_s += "("
         # Substitute overflowing decimal literal for AST infinities.
         self.write(repr_n.replace("inf", INFSTR))
-        tmp_s += (repr_n.replace("inf", INFSTR))
         if repr_n.startswith("-"):
             self.write(")")
-            tmp_s += ")"
-        self.write("@bin"+str(len(self.bins)))
-        self.bins.append(tmp_s)
 
     def _List(self, t):
         self.write("[")
@@ -1046,15 +993,13 @@ def generateNewCode(id, source, lines, src_ast, output=sys.stdout):
     merged = Code(id)
     up = Unparser(tree, lines, src_ast, merged)
     merged.split()    
-    merged.write_head_line(up.vars, up.bins)
+    merged.write_head_line(up.vars)
     merged.write_return_line(up.return_vars)
     merged.get_caller()
-    #merged.output()
-    #print up.vars
     return merged
 
 
-'''def mergeDiffResults(merged_list):
+def mergeDiffResults(merged_list):
     def mergeSet(setList):
         d = {}
         for i in setList:
@@ -1080,121 +1025,5 @@ def generateNewCode(id, source, lines, src_ast, output=sys.stdout):
         i.rewrite_return_line(returnList)
         i.reget_caller(paramList, returnList)
     
-    return merged_list'''
-
-def checkMergable(merged_list):
-    mergable = True
-    for merge in merged_list[1:]:
-        if merge.var_set!=merged_list[0].var_set:
-            mergable = False
-        if len(merge.orig_bins) != len(merged_list[0].orig_bins):
-            mergable = False
-            
-    if mergable:
-        #print "YES MERGABLE"
-        return True
-    else:
-        #print "NOT MERGABLE"
-        return False
-    
-
-def generateCommonCode(merged_list):
-    common_vars = []
-    common_param = []
-    common_ret = []
-    new_caller = []
-    new_receiver = []
-    for i in merged_list:
-        new_caller.append([])
-        new_receiver.append([])
-    
-    def mergeNames(names):
-        new_name = []
-        for i in names:
-            if i.startswith("new@"):
-                i = i[4:]
-            if not i in new_name:
-                new_name.append(i)
-        if len(new_name)==1:
-            return new_name[0]
-        else:
-            name = ""
-            for i in new_name:
-                name+=(i+"_")
-            name=name[:-1]
-            return name
-    
-    def setTrue(li):
-        for i in li:
-            if i:
-                return True
-        return False       
-    
-    for i in range(len(merged_list[0].var_set)):
-        names = []
-        is_param = []
-        is_ret = []
-        for merge in merged_list:
-            names.append(merge.orig_vars[i])
-            if merge.orig_vars[i] in merge.param:
-                is_param.append(True)
-            else:
-                is_param.append(False)
-            if merge.orig_vars[i] in merge.return_vars:
-                is_ret.append(True)
-            else:
-                is_ret.append(False)
-        name = mergeNames(names)
-        common_vars.append(name)
-        if setTrue(is_param) and not name in common_param:
-            common_param.append(name)
-            for i2 in range(len(is_param)):
-                if is_param[i2]:
-                    new_caller[i2].append(names[i2])
-                else:
-                    new_caller[i2].append("None")
-        if setTrue(is_ret) and not name in common_ret:
-            common_ret.append(name)
-            for i2 in range(len(is_ret)):
-                if is_ret[i2]:
-                    new_receiver[i2].append(names[i2])
-                else:
-                    new_receiver[i2].append("None")
-    
-    diff_bins = []          
-    for i in range(len(merged_list[0].orig_bins)):
-        for merge in merged_list[1:]:
-            if merge.orig_bins[i]!=merged_list[0].orig_bins[i]:
-                diff_bins.append(i)
-                break
-    #print "DIFF_BIN :", diff_bins
-    
-    if len(diff_bins)>0:
-        common_param.append("*diff_params")
-        param_bins = []
-        for i in merged_list:
-            param_bins.append([])
-            for j in diff_bins:
-                param_bins[-1].append(i.orig_bins[j])
-            for j in param_bins[-1]:
-                new_caller[merged_list.index(i)].append(j)
-            #print "PARAM :", param_bins[-1]
-            
-    
-    for i in range(len(merged_list)):
-        merge = merged_list[i]
-        #merge.output()
-        merge.rewrite_code(common_vars, diff_bins)
-        merge.rewrite_head_line(common_param)
-        merge.rewrite_return_line(common_ret)
-        merge.reget_caller(new_caller[i], new_receiver[i])
-        #merge.output()
-        merged_list[i] = merge
-    
     return merged_list
-            
-            
-        
-         
-
     

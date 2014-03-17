@@ -13,6 +13,7 @@ class AST:
         self.set_scope()
         
     def set_scope(self):
+        self.raw_imports = []
         self.imports = []
         self.raw_scope = []
         self.functions = []
@@ -29,7 +30,7 @@ class AST:
         
     def parse_tree(self, tree, scope, scope_result, call_result, in_call):
         if tree.getName() == "Import":
-            self.imports+=eval(tree.getChilds()[0].getName())
+            self.raw_imports+=eval(tree.getChilds()[0].getName())
         if tree.getName() == "From":
             for i in eval(tree.getChilds()[1].getName()):
                 temp_scope = list(scope)+[("Class", i[0], (-1,-1))]
@@ -64,6 +65,10 @@ class AST:
         if tree.getName() == "AssName":
             if not tree.getParent().getName()=="For":
                 var.append((cur_line, tree.getChilds()[0].getName()[1:-1], cur_scope, 1))
+        if tree.getName()=="Function":
+            for i in tree.getChilds():
+                if i.getName()[0]=="\'":
+                    var.append((cur_line, i.getName()[1:-1], cur_scope, 2))
         for i in tree.getChilds():
             self.parse_name(i, var)  
     
@@ -100,15 +105,15 @@ class AST:
     
     def process_imports(self):
         new_imports = []
-        for i in self.imports:
+        for i in self.raw_imports:
             if i[0].find(".")<0:
-                new_i = [self.imports.index(i), i[0]]
+                new_i = [self.raw_imports.index(i), i[0]]
             else:
-                new_i = [self.imports.index(i), i[0].split('.')]
+                new_i = [self.raw_imports.index(i), i[0].split('.')]
             new_imports.append(new_i)
             if i[1]!=None:
                 if i[1].find(".")<0:
-                    new_i = [-1*self.imports.index(i),i[1]]
+                    new_i = [-1*self.raw_imports.index(i),i[1]]
                 else:
                     new_i = [new_i[0]]+i[1].split('.')
                 new_imports.append(new_i)
