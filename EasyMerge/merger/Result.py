@@ -16,7 +16,9 @@ class Result:
     def add_caller(self, tag, caller):
         self._caller[tag] = caller
     def output(self):
-        print self._code
+        print "Code:"
+        print self._code.strip()
+        print "Caller:"
         for i in self._caller:
             print i,":"
             print self._caller[i]

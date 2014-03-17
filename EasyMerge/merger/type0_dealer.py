@@ -85,8 +85,7 @@ class Code:
         s2 = s2[:-2]+")"
         self.caller = [s1,s2]
         self.caller = (s1+"\n"+s2).strip()+"\n"
-        print s2
-    
+
     def get_code(self):
         s = ""
         for i in self.code_lines:

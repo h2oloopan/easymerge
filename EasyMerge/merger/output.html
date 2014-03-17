@@ -58,15 +58,15 @@ clusterize_using_hash = False<BR>
 clusterize_using_dcup = False<BR>
 </P> 
         
-    <B>Time elapsed</B><BR>Construction of AST : 2.90 seconds<BR>
+    <B>Time elapsed</B><BR>Construction of AST : 2.98 seconds<BR>
 Building statement hash : 0.03 seconds<BR>
-Building patterns : 6.17 seconds<BR>
-Marking similar statements : 9.32 seconds<BR>
-Finding similar sequences of statements : 1.62 seconds<BR>
-Refining candidates : 4.33 seconds<BR>
- Total time: 24.37<BR>
- Started at: Sun Mar 16 16:57:23 2014<BR>
- Finished at: Sun Mar 16 16:57:43 2014
+Building patterns : 6.10 seconds<BR>
+Marking similar statements : 9.57 seconds<BR>
+Finding similar sequences of statements : 1.63 seconds<BR>
+Refining candidates : 4.42 seconds<BR>
+ Total time: 24.72<BR>
+ Started at: Sun Mar 16 23:00:37 2014<BR>
+ Finished at: Sun Mar 16 23:00:59 2014
     <P><B>Clone # 1</B><BR>Distance between two fragments = 0 <BR>Clone size = 32<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/migrate.py"<BR>The first line is 228</TD><TD></TD><TD>Source file "../tests/beets/util/confit.py"<BR>The first line is 636</TD></TR><TR>
 <TD>
 <span style="font-family: monospace;">class&nbsp; insideClass:<BR>
@@ -229,7 +229,7 @@ else:<BR>
 &nbsp; &nbsp; return&nbsp; int(val)</span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 4</B><BR>Distance between two fragments = 0 <BR>Clone size = 9<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/pipeline.py"<BR>The first line is 274</TD><TD></TD><TD>Source file "../tests/beets/util/pipeline.py"<BR>The first line is 229</TD></TR><TR>
+<P><B>Clone # 4</B><BR>Distance between two fragments = 0 <BR>Clone size = 9<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/pipeline.py"<BR>The first line is 229</TD><TD></TD><TD>Source file "../tests/beets/util/pipeline.py"<BR>The first line is 274</TD></TR><TR>
 <TD>
 <span style="font-family: monospace;">with&nbsp; self.abort_lock:<BR>
 &nbsp; if&nbsp; self.abort_flag:<BR>
@@ -339,43 +339,27 @@ else:<BR>
 &nbsp; return&nbsp; out<span style="color:rgb(255,0,0);"></span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 8</B><BR>Distance between two fragments = 1 <BR>Clone size = 7<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/importer.py"<BR>The first line is 978</TD><TD></TD><TD>Source file "../tests/beets/importer.py"<BR>The first line is 669</TD></TR><TR>
+<P><B>Clone # 8</B><BR>Distance between two fragments = 3 <BR>Clone size = 7<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/importer.py"<BR>The first line is 1001</TD><TD></TD><TD>Source file "../tests/beets/importer.py"<BR>The first line is 726</TD></TR><TR>
 <TD>
-<span style="font-family: monospace;">task&nbsp; =&nbsp; yield&nbsp; task<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-<span style="font-family: monospace;">task&nbsp; =&nbsp; yield&nbsp; task<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">if&nbsp; task.should_skip():<BR>
-&nbsp; continue<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-<span style="font-family: monospace;">if&nbsp; task.should_skip():<BR>
-&nbsp; continue<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">choice&nbsp; =&nbsp; session.choose_<span style="color:rgb(255,0,0);">i</span>t<span style="color:rgb(255,0,0);">em</span>(task)<span style="color:rgb(255,0,0);"></span></span></TD>
+<span style="font-family: monospace;">&nbsp; while&nbsp; True:<BR>
+&nbsp; &nbsp; task&nbsp; =&nbsp; yield&nbsp; task<BR>
+&nbsp; &nbsp; if&nbsp; task.should_skip():<BR>
+&nbsp; &nbsp; &nbsp; continue<BR>
+<BR>
+&nbsp; &nbsp; log.info(displayable_path(task.<span style="color:rgb(255,0,0);">item.path))<BR>
+&nbsp; &nbsp; task.set_null_candidates()<BR>
+&nbsp; &nbsp; task.set_choice(action.</span>ASIS<span style="color:rgb(255,0,0);">)</span></span></TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">choice&nbsp; =&nbsp; session.choose_<span style="color:rgb(255,0,0);">ma</span>t<span style="color:rgb(255,0,0);">ch</span>(task)<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">task.set_choice(choice)<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-<span style="font-family: monospace;">task.set_choice(choice)<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">session.log_choice(task)<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-<span style="font-family: monospace;">session.log_choice(task)<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">plugins.send('import_task_choice',&nbsp; session=session,&nbsp; task=task)<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-<span style="font-family: monospace;">plugins.send('import_task_choice',&nbsp; session=session,&nbsp; task=task)<span style="color:rgb(255,0,0);"></span></span></TD>
+<span style="font-family: monospace;">&nbsp; while&nbsp; True:<BR>
+&nbsp; &nbsp; task&nbsp; =&nbsp; yield&nbsp; task<BR>
+&nbsp; &nbsp; if&nbsp; task.should_skip():<BR>
+&nbsp; &nbsp; &nbsp; continue<BR>
+<BR>
+&nbsp; &nbsp; log.info(displayable_path(task.<span style="color:rgb(255,0,0);">paths))<BR>
+<BR>
+&nbsp; &nbsp; #&nbsp; Behave&nbsp; as&nbsp; if&nbsp; </span>ASIS<span style="color:rgb(255,0,0);">&nbsp; were&nbsp; selected.<BR>
+&nbsp; &nbsp; task.set_null_candidates()<BR>
+&nbsp; &nbsp; task.set_choice(action.ASIS)</span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
 <P><B>Clone # 9</B><BR>Distance between two fragments = 2 <BR>Clone size = 7<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/autotag/mb.py"<BR>The first line is 317</TD><TD></TD><TD>Source file "../tests/beets/autotag/mb.py"<BR>The first line is 341</TD></TR><TR>
@@ -429,77 +413,83 @@ except&nbsp; musicbrainzngs.MusicBrainzError&nbsp; as&nbsp; exc:<BR>
 &nbsp; return&nbsp; helper<span style="color:rgb(255,0,0);"></span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 11</B><BR>Distance between two fragments = 3 <BR>Clone size = 7<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/importer.py"<BR>The first line is 1001</TD><TD></TD><TD>Source file "../tests/beets/importer.py"<BR>The first line is 726</TD></TR><TR>
+<P><B>Clone # 11</B><BR>Distance between two fragments = 1 <BR>Clone size = 7<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/importer.py"<BR>The first line is 669</TD><TD></TD><TD>Source file "../tests/beets/importer.py"<BR>The first line is 978</TD></TR><TR>
 <TD>
-<span style="font-family: monospace;">&nbsp; while&nbsp; True:<BR>
-&nbsp; &nbsp; task&nbsp; =&nbsp; yield&nbsp; task<BR>
-&nbsp; &nbsp; if&nbsp; task.should_skip():<BR>
-&nbsp; &nbsp; &nbsp; continue<BR>
-<BR>
-&nbsp; &nbsp; log.info(displayable_path(task.<span style="color:rgb(255,0,0);">item.path))<BR>
-&nbsp; &nbsp; task.set_null_candidates()<BR>
-&nbsp; &nbsp; task.set_choice(action.</span>ASIS<span style="color:rgb(255,0,0);">)</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">&nbsp; while&nbsp; True:<BR>
-&nbsp; &nbsp; task&nbsp; =&nbsp; yield&nbsp; task<BR>
-&nbsp; &nbsp; if&nbsp; task.should_skip():<BR>
-&nbsp; &nbsp; &nbsp; continue<BR>
-<BR>
-&nbsp; &nbsp; log.info(displayable_path(task.<span style="color:rgb(255,0,0);">paths))<BR>
-<BR>
-&nbsp; &nbsp; #&nbsp; Behave&nbsp; as&nbsp; if&nbsp; </span>ASIS<span style="color:rgb(255,0,0);">&nbsp; were&nbsp; selected.<BR>
-&nbsp; &nbsp; task.set_null_candidates()<BR>
-&nbsp; &nbsp; task.set_choice(action.ASIS)</span></span></TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 12</B><BR>Distance between two fragments = 4 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/importer.py"<BR>The first line is 298</TD><TD></TD><TD>Source file "../tests/beets/importer.py"<BR>The first line is 301</TD></TR><TR>
-<TD>
-<span style="font-family: monospace;">def&nbsp; <span style="color:rgb(255,0,0);">s</span>ho<span style="color:rgb(255,0,0);">uld</span>_<span style="color:rgb(255,0,0);">resu</span>m<span style="color:rgb(255,0,0);">e</span>(self,&nbsp; <span style="color:rgb(255,0,0);">p</span>a<span style="color:rgb(255,0,0);">th</span>):<BR>
-&nbsp; raise&nbsp; NotImplementedError<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">def&nbsp; <span style="color:rgb(255,0,0);">c</span>ho<span style="color:rgb(255,0,0);">ose</span>_<span style="color:rgb(255,0,0);"></span>m<span style="color:rgb(255,0,0);">atch</span>(self,&nbsp; <span style="color:rgb(255,0,0);">t</span>a<span style="color:rgb(255,0,0);">sk</span>):<BR>
-&nbsp; raise&nbsp; NotImplementedError<span style="color:rgb(255,0,0);"></span></span></TD>
+<span style="font-family: monospace;">task&nbsp; =&nbsp; yield&nbsp; task<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+<span style="font-family: monospace;">task&nbsp; =&nbsp; yield&nbsp; task<span style="color:rgb(255,0,0);"></span></span></TD>
 </TR>
 <TR>
 <TD>
-<span style="font-family: monospace;">def&nbsp; <span style="color:rgb(255,0,0);">ch</span>o<span style="color:rgb(255,0,0);">os</span>e_<span style="color:rgb(255,0,0);">m</span>at<span style="color:rgb(255,0,0);">ch</span>(self,&nbsp; task):<BR>
-&nbsp; raise&nbsp; NotImplementedError<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">def&nbsp; <span style="color:rgb(255,0,0);">res</span>o<span style="color:rgb(255,0,0);">lv</span>e_<span style="color:rgb(255,0,0);">duplic</span>at<span style="color:rgb(255,0,0);">e</span>(self,&nbsp; task):<BR>
-&nbsp; raise&nbsp; NotImplementedError<span style="color:rgb(255,0,0);"></span></span></TD>
+<span style="font-family: monospace;">if&nbsp; task.should_skip():<BR>
+&nbsp; continue<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+<span style="font-family: monospace;">if&nbsp; task.should_skip():<BR>
+&nbsp; continue<span style="color:rgb(255,0,0);"></span></span></TD>
 </TR>
 <TR>
 <TD>
-<span style="font-family: monospace;">def&nbsp; <span style="color:rgb(255,0,0);">re</span>s<span style="color:rgb(255,0,0);">olv</span>e_<span style="color:rgb(255,0,0);">dupl</span>i<span style="color:rgb(255,0,0);">ca</span>te<span style="color:rgb(255,0,0);"></span>(self,&nbsp; task):<BR>
-&nbsp; raise&nbsp; NotImplementedError<span style="color:rgb(255,0,0);"></span></span></TD>
+<span style="font-family: monospace;">choice&nbsp; =&nbsp; session.choose_<span style="color:rgb(255,0,0);"></span>m<span style="color:rgb(255,0,0);">atch</span>(task)<span style="color:rgb(255,0,0);"></span></span></TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">def&nbsp; <span style="color:rgb(255,0,0);">choo</span>s<span style="color:rgb(255,0,0);"></span>e_<span style="color:rgb(255,0,0);"></span>i<span style="color:rgb(255,0,0);"></span>te<span style="color:rgb(255,0,0);">m</span>(self,&nbsp; task):<BR>
-&nbsp; raise&nbsp; NotImplementedError<span style="color:rgb(255,0,0);"></span></span></TD>
+<span style="font-family: monospace;">choice&nbsp; =&nbsp; session.choose_<span style="color:rgb(255,0,0);">ite</span>m<span style="color:rgb(255,0,0);"></span>(task)<span style="color:rgb(255,0,0);"></span></span></TD>
 </TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 13</B><BR>Distance between two fragments = 2 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/plugins.py"<BR>The first line is 339</TD><TD></TD><TD>Source file "../tests/beets/plugins.py"<BR>The first line is 329</TD></TR><TR>
+<TR>
 <TD>
-<span style="font-family: monospace;">def&nbsp; <span style="color:rgb(255,0,0);">albu</span>m_field_getters():<BR>
-&nbsp; """<span style="color:rgb(255,0,0);">As&nbsp; abo</span>v<span style="color:rgb(255,0,0);">e,&nbsp; for&nbsp; album&nbsp; fields</span>.<BR>
-&nbsp; """<BR>
-&nbsp; funcs&nbsp; =&nbsp; {}<BR>
-&nbsp; for&nbsp; plugin&nbsp; in&nbsp; find_plugins():<BR>
-&nbsp; &nbsp; if&nbsp; plugin.<span style="color:rgb(255,0,0);">album_</span>template_fields:<BR>
-&nbsp; &nbsp; &nbsp; funcs.update(plugin.<span style="color:rgb(255,0,0);">album_</span>template_fields)<BR>
-&nbsp; return&nbsp; funcs<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">def&nbsp; <span style="color:rgb(255,0,0);">ite</span>m_field_getters():<BR>
-&nbsp; """<span style="color:rgb(255,0,0);">Get&nbsp; a&nbsp; dictionary&nbsp; mapping&nbsp; field&nbsp; names&nbsp; to&nbsp; unary&nbsp; functions&nbsp; that<BR>
-&nbsp; compute&nbsp; the&nbsp; field's&nbsp; </span>v<span style="color:rgb(255,0,0);">alue</span>.<BR>
-&nbsp; """<BR>
-&nbsp; funcs&nbsp; =&nbsp; {}<BR>
-&nbsp; for&nbsp; plugin&nbsp; in&nbsp; find_plugins():<BR>
-&nbsp; &nbsp; if&nbsp; plugin.<span style="color:rgb(255,0,0);"></span>template_fields:<BR>
-&nbsp; &nbsp; &nbsp; funcs.update(plugin.<span style="color:rgb(255,0,0);"></span>template_fields)<BR>
-&nbsp; return&nbsp; funcs<span style="color:rgb(255,0,0);"></span></span></TD>
+<span style="font-family: monospace;">task.set_choice(choice)<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+<span style="font-family: monospace;">task.set_choice(choice)<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">session.log_choice(task)<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+<span style="font-family: monospace;">session.log_choice(task)<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">plugins.send('import_task_choice',&nbsp; session=session,&nbsp; task=task)<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+<span style="font-family: monospace;">plugins.send('import_task_choice',&nbsp; session=session,&nbsp; task=task)<span style="color:rgb(255,0,0);"></span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 14</B><BR>Distance between two fragments = 2 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/plugins.py"<BR>The first line is 339</TD><TD></TD><TD>Source file "../tests/beets/plugins.py"<BR>The first line is 301</TD></TR><TR>
+<P><B>Clone # 12</B><BR>Distance between two fragments = 0 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/mediafile.py"<BR>The first line is 775</TD><TD></TD><TD>Source file "../tests/beets/mediafile.py"<BR>The first line is 740</TD></TR><TR>
+<TD>
+<span style="font-family: monospace;">pic&nbsp; =&nbsp; mutagen.flac.Picture()<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+<span style="font-family: monospace;">pic&nbsp; =&nbsp; mutagen.flac.Picture()<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">pic.data&nbsp; =&nbsp; image.data<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+<span style="font-family: monospace;">pic.data&nbsp; =&nbsp; image.data<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">pic.type&nbsp; =&nbsp; image.type_index&nbsp; or&nbsp; 3&nbsp; &nbsp; #&nbsp; Front&nbsp; cover<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+<span style="font-family: monospace;">pic.type&nbsp; =&nbsp; image.type_index&nbsp; or&nbsp; 3&nbsp; &nbsp; #&nbsp; Front&nbsp; cover<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">pic.mime&nbsp; =&nbsp; image.mime_type<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+<span style="font-family: monospace;">pic.mime&nbsp; =&nbsp; image.mime_type<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">pic.desc&nbsp; =&nbsp; image.desc&nbsp; or&nbsp; u''<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+<span style="font-family: monospace;">pic.desc&nbsp; =&nbsp; image.desc&nbsp; or&nbsp; u''<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">return&nbsp; pic<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+<span style="font-family: monospace;">return&nbsp; pic<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 13</B><BR>Distance between two fragments = 2 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/plugins.py"<BR>The first line is 339</TD><TD></TD><TD>Source file "../tests/beets/plugins.py"<BR>The first line is 301</TD></TR><TR>
 <TD>
 <span style="font-family: monospace;">def&nbsp; <span style="color:rgb(255,0,0);">album_field_getter</span>s():<BR>
 &nbsp; """<span style="color:rgb(255,0,0);">As&nbsp; a</span>b<span style="color:rgb(255,0,0);"></span>o<span style="color:rgb(255,0,0);">ve,&nbsp; for&nbsp; album&nbsp; fields</span>.<BR>
@@ -521,10 +511,42 @@ except&nbsp; musicbrainzngs.MusicBrainzError&nbsp; as&nbsp; exc:<BR>
 &nbsp; return&nbsp; funcs<span style="color:rgb(255,0,0);"></span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 15</B><BR>Distance between two fragments = 2 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/plugins.py"<BR>The first line is 329</TD><TD></TD><TD>Source file "../tests/beets/plugins.py"<BR>The first line is 301</TD></TR><TR>
+<P><B>Clone # 14</B><BR>Distance between two fragments = 2 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/plugins.py"<BR>The first line is 339</TD><TD></TD><TD>Source file "../tests/beets/plugins.py"<BR>The first line is 329</TD></TR><TR>
 <TD>
+<span style="font-family: monospace;">def&nbsp; <span style="color:rgb(255,0,0);">albu</span>m_field_getters():<BR>
+&nbsp; """<span style="color:rgb(255,0,0);">As&nbsp; abo</span>v<span style="color:rgb(255,0,0);">e,&nbsp; for&nbsp; album&nbsp; fields</span>.<BR>
+&nbsp; """<BR>
+&nbsp; funcs&nbsp; =&nbsp; {}<BR>
+&nbsp; for&nbsp; plugin&nbsp; in&nbsp; find_plugins():<BR>
+&nbsp; &nbsp; if&nbsp; plugin.<span style="color:rgb(255,0,0);">album_</span>template_fields:<BR>
+&nbsp; &nbsp; &nbsp; funcs.update(plugin.<span style="color:rgb(255,0,0);">album_</span>template_fields)<BR>
+&nbsp; return&nbsp; funcs<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">def&nbsp; <span style="color:rgb(255,0,0);">ite</span>m_field_getters():<BR>
+&nbsp; """<span style="color:rgb(255,0,0);">Get&nbsp; a&nbsp; dictionary&nbsp; mapping&nbsp; field&nbsp; names&nbsp; to&nbsp; unary&nbsp; functions&nbsp; that<BR>
+&nbsp; compute&nbsp; the&nbsp; field's&nbsp; </span>v<span style="color:rgb(255,0,0);">alue</span>.<BR>
+&nbsp; """<BR>
+&nbsp; funcs&nbsp; =&nbsp; {}<BR>
+&nbsp; for&nbsp; plugin&nbsp; in&nbsp; find_plugins():<BR>
+&nbsp; &nbsp; if&nbsp; plugin.<span style="color:rgb(255,0,0);"></span>template_fields:<BR>
+&nbsp; &nbsp; &nbsp; funcs.update(plugin.<span style="color:rgb(255,0,0);"></span>template_fields)<BR>
+&nbsp; return&nbsp; funcs<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 15</B><BR>Distance between two fragments = 2 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/plugins.py"<BR>The first line is 301</TD><TD></TD><TD>Source file "../tests/beets/plugins.py"<BR>The first line is 329</TD></TR><TR>
+<TD>
+<span style="font-family: monospace;">def&nbsp; <span style="color:rgb(255,0,0);">template_func</span>s():<BR>
+&nbsp; """Get&nbsp; a<span style="color:rgb(255,0,0);">ll</span>&nbsp; th<span style="color:rgb(255,0,0);">e&nbsp; template&nbsp; functions&nbsp; declared&nbsp; by&nbsp; plugins&nbsp; as&nbsp; a<BR>
+&nbsp; dictionary</span>.<BR>
+&nbsp; """<BR>
+&nbsp; funcs&nbsp; =&nbsp; {}<BR>
+&nbsp; for&nbsp; plugin&nbsp; in&nbsp; find_plugins():<BR>
+&nbsp; &nbsp; if&nbsp; plugin.template_f<span style="color:rgb(255,0,0);">unc</span>s:<BR>
+&nbsp; &nbsp; &nbsp; funcs.update(plugin.template_f<span style="color:rgb(255,0,0);">unc</span>s)<BR>
+&nbsp; return&nbsp; funcs<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
 <span style="font-family: monospace;">def&nbsp; <span style="color:rgb(255,0,0);">item_field_getter</span>s():<BR>
-&nbsp; """Get&nbsp; a<span style="color:rgb(255,0,0);">&nbsp; di</span>ction<span style="color:rgb(255,0,0);">ar</span>y&nbsp; <span style="color:rgb(255,0,0);">mapping&nbsp; field&nbsp; names&nbsp; t</span>o<span style="color:rgb(255,0,0);">&nbsp; u</span>nary<span style="color:rgb(255,0,0);">&nbsp; functions&nbsp; that<BR>
+&nbsp; """Get&nbsp; a<span style="color:rgb(255,0,0);">&nbsp; dictionary&nbsp; mapping&nbsp; field&nbsp; names&nbsp; to&nbsp; unary&nbsp; functions</span>&nbsp; th<span style="color:rgb(255,0,0);">at<BR>
 &nbsp; compute&nbsp; the&nbsp; field's&nbsp; value</span>.<BR>
 &nbsp; """<BR>
 &nbsp; funcs&nbsp; =&nbsp; {}<BR>
@@ -532,132 +554,9 @@ except&nbsp; musicbrainzngs.MusicBrainzError&nbsp; as&nbsp; exc:<BR>
 &nbsp; &nbsp; if&nbsp; plugin.template_f<span style="color:rgb(255,0,0);">ield</span>s:<BR>
 &nbsp; &nbsp; &nbsp; funcs.update(plugin.template_f<span style="color:rgb(255,0,0);">ield</span>s)<BR>
 &nbsp; return&nbsp; funcs<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">def&nbsp; <span style="color:rgb(255,0,0);">template_func</span>s():<BR>
-&nbsp; """Get&nbsp; a<span style="color:rgb(255,0,0);">ll&nbsp; the&nbsp; template&nbsp; fun</span>ction<span style="color:rgb(255,0,0);">s&nbsp; declared&nbsp; b</span>y&nbsp; <span style="color:rgb(255,0,0);">plugins&nbsp; as&nbsp; a<BR>
-&nbsp; dicti</span>o<span style="color:rgb(255,0,0);"></span>nary<span style="color:rgb(255,0,0);"></span>.<BR>
-&nbsp; """<BR>
-&nbsp; funcs&nbsp; =&nbsp; {}<BR>
-&nbsp; for&nbsp; plugin&nbsp; in&nbsp; find_plugins():<BR>
-&nbsp; &nbsp; if&nbsp; plugin.template_f<span style="color:rgb(255,0,0);">unc</span>s:<BR>
-&nbsp; &nbsp; &nbsp; funcs.update(plugin.template_f<span style="color:rgb(255,0,0);">unc</span>s)<BR>
-&nbsp; return&nbsp; funcs<span style="color:rgb(255,0,0);"></span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 16</B><BR>Distance between two fragments = 0 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/mediafile.py"<BR>The first line is 775</TD><TD></TD><TD>Source file "../tests/beets/mediafile.py"<BR>The first line is 740</TD></TR><TR>
-<TD>
-<span style="font-family: monospace;">pic&nbsp; =&nbsp; mutagen.flac.Picture()<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-<span style="font-family: monospace;">pic&nbsp; =&nbsp; mutagen.flac.Picture()<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">pic.data&nbsp; =&nbsp; image.data<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-<span style="font-family: monospace;">pic.data&nbsp; =&nbsp; image.data<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">pic.type&nbsp; =&nbsp; image.type_index&nbsp; or&nbsp; 3&nbsp; &nbsp; #&nbsp; Front&nbsp; cover<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-<span style="font-family: monospace;">pic.type&nbsp; =&nbsp; image.type_index&nbsp; or&nbsp; 3&nbsp; &nbsp; #&nbsp; Front&nbsp; cover<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">pic.mime&nbsp; =&nbsp; image.mime_type<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-<span style="font-family: monospace;">pic.mime&nbsp; =&nbsp; image.mime_type<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">pic.desc&nbsp; =&nbsp; image.desc&nbsp; or&nbsp; u''<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-<span style="font-family: monospace;">pic.desc&nbsp; =&nbsp; image.desc&nbsp; or&nbsp; u''<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">return&nbsp; pic<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-<span style="font-family: monospace;">return&nbsp; pic<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 17</B><BR>Distance between two fragments = 4 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 1236</TD><TD></TD><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 910</TD></TR><TR>
-<TD>
-<span style="font-family: monospace;">try:<BR>
-&nbsp; item.<span style="color:rgb(255,0,0);">w</span>r<span style="color:rgb(255,0,0);">it</span>e<span style="color:rgb(255,0,0);"></span>()<BR>
-except&nbsp; Exception&nbsp; as&nbsp; exc:<BR>
-&nbsp; log.error(u'<span style="color:rgb(255,0,0);">c</span>o<span style="color:rgb(255,0,0);">ul</span>d<span style="color:rgb(255,0,0);">&nbsp; </span>n<span style="color:rgb(255,0,0);">ot&nbsp; write</span>&nbsp; {0}:&nbsp; {1}'.format(<BR>
-&nbsp; &nbsp; <span style="color:rgb(255,0,0);">util.</span>displayable_path(item.path),&nbsp; exc<span style="color:rgb(255,0,0);"><BR>
-&nbsp; </span>))<BR>
-&nbsp; continue<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">try:<BR>
-&nbsp; item.<span style="color:rgb(255,0,0);"></span>r<span style="color:rgb(255,0,0);"></span>e<span style="color:rgb(255,0,0);">ad</span>()<BR>
-except&nbsp; Exception&nbsp; as&nbsp; exc:<BR>
-&nbsp; log.error(u'<span style="color:rgb(255,0,0);">err</span>o<span style="color:rgb(255,0,0);">r&nbsp; rea</span>d<span style="color:rgb(255,0,0);">i</span>n<span style="color:rgb(255,0,0);">g</span>&nbsp; {0}:&nbsp; {1}'.format(<BR>
-&nbsp; &nbsp; <span style="color:rgb(255,0,0);"></span>displayable_path(item.path),&nbsp; exc<span style="color:rgb(255,0,0);"></span>))<BR>
-&nbsp; continue<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 18</B><BR>Distance between two fragments = 1 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 514</TD><TD></TD><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 391</TD></TR><TR>
-<TD>
-<span style="font-family: monospace;">if&nbsp; penalties:<BR>
-&nbsp; <span style="color:rgb(255,0,0);">l</span>in<span style="color:rgb(255,0,0);">e</span>.append(penalties)<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">if&nbsp; penalties:<BR>
-&nbsp; <span style="color:rgb(255,0,0);"></span>in<span style="color:rgb(255,0,0);">fo</span>.append(penalties)<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">disambig&nbsp; =&nbsp; disambig_string(match.info)<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-<span style="font-family: monospace;">disambig&nbsp; =&nbsp; disambig_string(match.info)<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">if&nbsp; disambig:<BR>
-&nbsp; <span style="color:rgb(255,0,0);">l</span>in<span style="color:rgb(255,0,0);">e</span>.append(ui.colorize('lightgray',&nbsp; '(%s)'&nbsp; %&nbsp; disambig))<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">if&nbsp; disambig:<BR>
-&nbsp; <span style="color:rgb(255,0,0);"></span>in<span style="color:rgb(255,0,0);">fo</span>.append(ui.colorize('lightgray',&nbsp; '(%s)'&nbsp; %&nbsp; disambig))<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">print_('&nbsp; '.join(<span style="color:rgb(255,0,0);">l</span>in<span style="color:rgb(255,0,0);">e</span>))<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">print_('&nbsp; '.join(<span style="color:rgb(255,0,0);"></span>in<span style="color:rgb(255,0,0);">fo</span>))<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 19</B><BR>Distance between two fragments = 1 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 514</TD><TD></TD><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 243</TD></TR><TR>
-<TD>
-<span style="font-family: monospace;">if&nbsp; penalties:<BR>
-&nbsp; <span style="color:rgb(255,0,0);">l</span>in<span style="color:rgb(255,0,0);">e</span>.append(penalties)<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">if&nbsp; penalties:<BR>
-&nbsp; <span style="color:rgb(255,0,0);"></span>in<span style="color:rgb(255,0,0);">fo</span>.append(penalties)<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">disambig&nbsp; =&nbsp; disambig_string(match.info)<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-<span style="font-family: monospace;">disambig&nbsp; =&nbsp; disambig_string(match.info)<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">if&nbsp; disambig:<BR>
-&nbsp; <span style="color:rgb(255,0,0);">l</span>in<span style="color:rgb(255,0,0);">e</span>.append(ui.colorize('lightgray',&nbsp; '(%s)'&nbsp; %&nbsp; disambig))<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">if&nbsp; disambig:<BR>
-&nbsp; <span style="color:rgb(255,0,0);"></span>in<span style="color:rgb(255,0,0);">fo</span>.append(ui.colorize('lightgray',&nbsp; '(%s)'&nbsp; %&nbsp; disambig))<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">print_('&nbsp; '.join(<span style="color:rgb(255,0,0);">l</span>in<span style="color:rgb(255,0,0);">e</span>))<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">print_('&nbsp; '.join(<span style="color:rgb(255,0,0);"></span>in<span style="color:rgb(255,0,0);">fo</span>))<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 20</B><BR>Distance between two fragments = 4 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/bluelet.py"<BR>The first line is 75</TD><TD></TD><TD>Source file "../tests/beets/util/bluelet.py"<BR>The first line is 70</TD></TR><TR>
+<P><B>Clone # 16</B><BR>Distance between two fragments = 4 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/bluelet.py"<BR>The first line is 75</TD><TD></TD><TD>Source file "../tests/beets/util/bluelet.py"<BR>The first line is 70</TD></TR><TR>
 <TD>
 <span style="font-family: monospace;">class&nbsp; <span style="color:rgb(255,0,0);">Joi</span>nEvent(Event):<BR>
 &nbsp; """<span style="color:rgb(255,0,0);">Suspen</span>d&nbsp; <span style="color:rgb(255,0,0);"></span>t<span style="color:rgb(255,0,0);">h</span>e&nbsp; thread&nbsp; <span style="color:rgb(255,0,0);">un</span>t<span style="color:rgb(255,0,0);">il</span>&nbsp; the&nbsp; s<span style="color:rgb(255,0,0);">pe</span>c<span style="color:rgb(255,0,0);">ifi</span>ed<span style="color:rgb(255,0,0);">&nbsp; child&nbsp; thread&nbsp; has<BR>
@@ -686,7 +585,7 @@ except&nbsp; Exception&nbsp; as&nbsp; exc:<BR>
 &nbsp; &nbsp; self.child&nbsp; =&nbsp; child<span style="color:rgb(255,0,0);"></span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 21</B><BR>Distance between two fragments = 4 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/bluelet.py"<BR>The first line is 75</TD><TD></TD><TD>Source file "../tests/beets/util/bluelet.py"<BR>The first line is 60</TD></TR><TR>
+<P><B>Clone # 17</B><BR>Distance between two fragments = 4 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/bluelet.py"<BR>The first line is 75</TD><TD></TD><TD>Source file "../tests/beets/util/bluelet.py"<BR>The first line is 60</TD></TR><TR>
 <TD>
 <span style="font-family: monospace;">class&nbsp; <span style="color:rgb(255,0,0);">Join</span>Event(Event):<BR>
 &nbsp; """<span style="color:rgb(255,0,0);">Susp</span>en<span style="color:rgb(255,0,0);">d</span>&nbsp; th<span style="color:rgb(255,0,0);"></span>e<span style="color:rgb(255,0,0);"></span>&nbsp; <span style="color:rgb(255,0,0);"></span>th<span style="color:rgb(255,0,0);"></span>re<span style="color:rgb(255,0,0);"></span>a<span style="color:rgb(255,0,0);">d</span>&nbsp; <span style="color:rgb(255,0,0);">until&nbsp; the&nbsp; speci</span>fi<span style="color:rgb(255,0,0);"></span>ed&nbsp; <span style="color:rgb(255,0,0);">chi</span>l<span style="color:rgb(255,0,0);">d&nbsp; thr</span>e<span style="color:rgb(255,0,0);">ad&nbsp; has<BR>
@@ -713,7 +612,7 @@ except&nbsp; Exception&nbsp; as&nbsp; exc:<BR>
 &nbsp; &nbsp; self.<span style="color:rgb(255,0,0);">ex</span>c<span style="color:rgb(255,0,0);">_</span>i<span style="color:rgb(255,0,0);">nfo</span>&nbsp; =&nbsp; <span style="color:rgb(255,0,0);">ex</span>c<span style="color:rgb(255,0,0);">_</span>i<span style="color:rgb(255,0,0);">nfo</span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 22</B><BR>Distance between two fragments = 3 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/bluelet.py"<BR>The first line is 87</TD><TD></TD><TD>Source file "../tests/beets/util/bluelet.py"<BR>The first line is 70</TD></TR><TR>
+<P><B>Clone # 18</B><BR>Distance between two fragments = 3 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/bluelet.py"<BR>The first line is 87</TD><TD></TD><TD>Source file "../tests/beets/util/bluelet.py"<BR>The first line is 70</TD></TR><TR>
 <TD>
 <span style="font-family: monospace;">class&nbsp; <span style="color:rgb(255,0,0);">Deleg</span>a<span style="color:rgb(255,0,0);">tio</span>nEvent(Event):<BR>
 &nbsp; """<span style="color:rgb(255,0,0);">Suspen</span>d<span style="color:rgb(255,0,0);">&nbsp; execution&nbsp; of&nbsp; the&nbsp; current&nbsp; threa</span>d<span style="color:rgb(255,0,0);">,&nbsp; start</span>&nbsp; a&nbsp; new<span style="color:rgb(255,0,0);"></span>&nbsp; thread&nbsp; <span style="color:rgb(255,0,0);">and,<BR>
@@ -745,37 +644,109 @@ except&nbsp; Exception&nbsp; as&nbsp; exc:<BR>
 &nbsp; &nbsp; self.<span style="color:rgb(255,0,0);">chi</span>l<span style="color:rgb(255,0,0);">d</span>&nbsp; =&nbsp; <span style="color:rgb(255,0,0);">chi</span>l<span style="color:rgb(255,0,0);">d</span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 23</B><BR>Distance between two fragments = 1 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/importer.py"<BR>The first line is 988</TD><TD></TD><TD>Source file "../tests/beets/importer.py"<BR>The first line is 710</TD></TR><TR>
+<P><B>Clone # 19</B><BR>Distance between two fragments = 1 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 514</TD><TD></TD><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 391</TD></TR><TR>
 <TD>
-<span style="font-family: monospace;">if&nbsp; task.choice_flag&nbsp; in&nbsp; (action.ASIS,&nbsp; action.APPLY):<BR>
-&nbsp; ident&nbsp; =&nbsp; task.chosen_ident()<BR>
-&nbsp; <span style="color:rgb(255,0,0);">if&nbsp; ident&nbsp; in&nbsp; recent&nbsp; or&nbsp; _ite</span>m<span style="color:rgb(255,0,0);"></span>_duplicate_check(session.lib,&nbsp; task):<BR>
-&nbsp; &nbsp; session.resolve_duplicate(task)<BR>
-&nbsp; &nbsp; session.log_choice(task,&nbsp; True)<BR>
-&nbsp; recent.add(ident)<span style="color:rgb(255,0,0);"></span></span></TD>
+<span style="font-family: monospace;">if&nbsp; penalties:<BR>
+&nbsp; <span style="color:rgb(255,0,0);">l</span>in<span style="color:rgb(255,0,0);">e</span>.append(penalties)<span style="color:rgb(255,0,0);"></span></span></TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">if&nbsp; task.choice_flag&nbsp; in&nbsp; (action.ASIS,&nbsp; action.APPLY):<BR>
-&nbsp; ident&nbsp; =&nbsp; task.chosen_ident()<BR>
-&nbsp; <span style="color:rgb(255,0,0);">#&nbsp; The&nbsp; "recent"&nbsp; set&nbsp; keeps&nbsp; track&nbsp; of&nbsp; identifiers&nbsp; for&nbsp; recently<BR>
-&nbsp; #&nbsp; i</span>m<span style="color:rgb(255,0,0);">ported&nbsp; albums&nbsp; --&nbsp; those&nbsp; that&nbsp; haven't&nbsp; reached&nbsp; the&nbsp; database<BR>
-&nbsp; #&nbsp; yet.<BR>
-&nbsp; if&nbsp; ident&nbsp; in&nbsp; recent&nbsp; or&nbsp; </span>_duplicate_check(session.lib,&nbsp; task):<BR>
-&nbsp; &nbsp; session.resolve_duplicate(task)<BR>
-&nbsp; &nbsp; session.log_choice(task,&nbsp; True)<BR>
-&nbsp; recent.add(ident)<span style="color:rgb(255,0,0);"></span></span></TD>
+<span style="font-family: monospace;">if&nbsp; penalties:<BR>
+&nbsp; <span style="color:rgb(255,0,0);"></span>in<span style="color:rgb(255,0,0);">fo</span>.append(penalties)<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">disambig&nbsp; =&nbsp; disambig_string(match.info)<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+<span style="font-family: monospace;">disambig&nbsp; =&nbsp; disambig_string(match.info)<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">if&nbsp; disambig:<BR>
+&nbsp; <span style="color:rgb(255,0,0);">l</span>in<span style="color:rgb(255,0,0);">e</span>.append(ui.colorize('lightgray',&nbsp; '(%s)'&nbsp; %&nbsp; disambig))<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">if&nbsp; disambig:<BR>
+&nbsp; <span style="color:rgb(255,0,0);"></span>in<span style="color:rgb(255,0,0);">fo</span>.append(ui.colorize('lightgray',&nbsp; '(%s)'&nbsp; %&nbsp; disambig))<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">print_('&nbsp; '.join(<span style="color:rgb(255,0,0);">l</span>in<span style="color:rgb(255,0,0);">e</span>))<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">print_('&nbsp; '.join(<span style="color:rgb(255,0,0);"></span>in<span style="color:rgb(255,0,0);">fo</span>))<span style="color:rgb(255,0,0);"></span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 24</B><BR>Distance between two fragments = 1 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/migrate.py"<BR>The first line is 332</TD><TD></TD><TD>Source file "../tests/beets/ui/migrate.py"<BR>The first line is 281</TD></TR><TR>
+<P><B>Clone # 20</B><BR>Distance between two fragments = 1 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 514</TD><TD></TD><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 243</TD></TR><TR>
 <TD>
-<span style="font-family: monospace;">if&nbsp; os.path.exists(destfn):<BR>
-&nbsp; if&nbsp; replace:<BR>
-&nbsp; &nbsp; log.debug(u'moving&nbsp; old&nbsp; <span style="color:rgb(255,0,0);">database</span>&nbsp; aside:&nbsp; {0}'.format(<BR>
-&nbsp; &nbsp; &nbsp; util.displayable_path(destfn)<BR>
-&nbsp; &nbsp; ))<BR>
-&nbsp; &nbsp; _displace(destfn)<BR>
-&nbsp; else:<BR>
-&nbsp; &nbsp; <span style="color:rgb(255,0,0);">return</span></span></TD>
+<span style="font-family: monospace;">if&nbsp; penalties:<BR>
+&nbsp; <span style="color:rgb(255,0,0);">l</span>in<span style="color:rgb(255,0,0);">e</span>.append(penalties)<span style="color:rgb(255,0,0);"></span></span></TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">if&nbsp; penalties:<BR>
+&nbsp; <span style="color:rgb(255,0,0);"></span>in<span style="color:rgb(255,0,0);">fo</span>.append(penalties)<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">disambig&nbsp; =&nbsp; disambig_string(match.info)<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+<span style="font-family: monospace;">disambig&nbsp; =&nbsp; disambig_string(match.info)<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">if&nbsp; disambig:<BR>
+&nbsp; <span style="color:rgb(255,0,0);">l</span>in<span style="color:rgb(255,0,0);">e</span>.append(ui.colorize('lightgray',&nbsp; '(%s)'&nbsp; %&nbsp; disambig))<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">if&nbsp; disambig:<BR>
+&nbsp; <span style="color:rgb(255,0,0);"></span>in<span style="color:rgb(255,0,0);">fo</span>.append(ui.colorize('lightgray',&nbsp; '(%s)'&nbsp; %&nbsp; disambig))<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">print_('&nbsp; '.join(<span style="color:rgb(255,0,0);">l</span>in<span style="color:rgb(255,0,0);">e</span>))<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">print_('&nbsp; '.join(<span style="color:rgb(255,0,0);"></span>in<span style="color:rgb(255,0,0);">fo</span>))<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 21</B><BR>Distance between two fragments = 4 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 1236</TD><TD></TD><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 910</TD></TR><TR>
+<TD>
+<span style="font-family: monospace;">try:<BR>
+&nbsp; item.<span style="color:rgb(255,0,0);">w</span>r<span style="color:rgb(255,0,0);">it</span>e<span style="color:rgb(255,0,0);"></span>()<BR>
+except&nbsp; Exception&nbsp; as&nbsp; exc:<BR>
+&nbsp; log.error(u'<span style="color:rgb(255,0,0);">c</span>o<span style="color:rgb(255,0,0);">ul</span>d<span style="color:rgb(255,0,0);">&nbsp; </span>n<span style="color:rgb(255,0,0);">ot&nbsp; write</span>&nbsp; {0}:&nbsp; {1}'.format(<BR>
+&nbsp; &nbsp; <span style="color:rgb(255,0,0);">util.</span>displayable_path(item.path),&nbsp; exc<span style="color:rgb(255,0,0);"><BR>
+&nbsp; </span>))<BR>
+&nbsp; continue<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">try:<BR>
+&nbsp; item.<span style="color:rgb(255,0,0);"></span>r<span style="color:rgb(255,0,0);"></span>e<span style="color:rgb(255,0,0);">ad</span>()<BR>
+except&nbsp; Exception&nbsp; as&nbsp; exc:<BR>
+&nbsp; log.error(u'<span style="color:rgb(255,0,0);">err</span>o<span style="color:rgb(255,0,0);">r&nbsp; rea</span>d<span style="color:rgb(255,0,0);">i</span>n<span style="color:rgb(255,0,0);">g</span>&nbsp; {0}:&nbsp; {1}'.format(<BR>
+&nbsp; &nbsp; <span style="color:rgb(255,0,0);"></span>displayable_path(item.path),&nbsp; exc<span style="color:rgb(255,0,0);"></span>))<BR>
+&nbsp; continue<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 22</B><BR>Distance between two fragments = 4 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/importer.py"<BR>The first line is 301</TD><TD></TD><TD>Source file "../tests/beets/importer.py"<BR>The first line is 298</TD></TR><TR>
+<TD>
+<span style="font-family: monospace;">def&nbsp; <span style="color:rgb(255,0,0);">c</span>ho<span style="color:rgb(255,0,0);">o</span>s<span style="color:rgb(255,0,0);"></span>e<span style="color:rgb(255,0,0);">_match</span>(self,&nbsp; <span style="color:rgb(255,0,0);"></span>t<span style="color:rgb(255,0,0);">ask</span>):<BR>
+&nbsp; raise&nbsp; NotImplementedError<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">def&nbsp; <span style="color:rgb(255,0,0);">s</span>ho<span style="color:rgb(255,0,0);">uld_re</span>s<span style="color:rgb(255,0,0);">um</span>e<span style="color:rgb(255,0,0);"></span>(self,&nbsp; <span style="color:rgb(255,0,0);">pa</span>t<span style="color:rgb(255,0,0);">h</span>):<BR>
+&nbsp; raise&nbsp; NotImplementedError<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">def&nbsp; <span style="color:rgb(255,0,0);">re</span>s<span style="color:rgb(255,0,0);">olv</span>e_<span style="color:rgb(255,0,0);">duplic</span>at<span style="color:rgb(255,0,0);">e</span>(self,&nbsp; task):<BR>
+&nbsp; raise&nbsp; NotImplementedError<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">def&nbsp; <span style="color:rgb(255,0,0);">choo</span>s<span style="color:rgb(255,0,0);"></span>e_<span style="color:rgb(255,0,0);">m</span>at<span style="color:rgb(255,0,0);">ch</span>(self,&nbsp; task):<BR>
+&nbsp; raise&nbsp; NotImplementedError<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">def&nbsp; <span style="color:rgb(255,0,0);">ch</span>o<span style="color:rgb(255,0,0);">os</span>e_<span style="color:rgb(255,0,0);"></span>i<span style="color:rgb(255,0,0);"></span>te<span style="color:rgb(255,0,0);">m</span>(self,&nbsp; task):<BR>
+&nbsp; raise&nbsp; NotImplementedError<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">def&nbsp; <span style="color:rgb(255,0,0);">res</span>o<span style="color:rgb(255,0,0);">lv</span>e_<span style="color:rgb(255,0,0);">dupl</span>i<span style="color:rgb(255,0,0);">ca</span>te<span style="color:rgb(255,0,0);"></span>(self,&nbsp; task):<BR>
+&nbsp; raise&nbsp; NotImplementedError<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 23</B><BR>Distance between two fragments = 1 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/migrate.py"<BR>The first line is 281</TD><TD></TD><TD>Source file "../tests/beets/ui/migrate.py"<BR>The first line is 332</TD></TR><TR>
+<TD>
 <span style="font-family: monospace;">if&nbsp; os.path.exists(destfn):<BR>
 &nbsp; if&nbsp; replace:<BR>
 &nbsp; &nbsp; log.debug(u'moving&nbsp; old&nbsp; <span style="color:rgb(255,0,0);">config</span>&nbsp; aside:&nbsp; {0}'.format(<BR>
@@ -784,10 +755,19 @@ except&nbsp; Exception&nbsp; as&nbsp; exc:<BR>
 &nbsp; &nbsp; _displace(destfn)<BR>
 &nbsp; else:<BR>
 &nbsp; &nbsp; <span style="color:rgb(255,0,0);">#&nbsp; File&nbsp; exists&nbsp; and&nbsp; we&nbsp; won't&nbsp; replace&nbsp; it.&nbsp; We're&nbsp; done.<BR>
-&nbsp; &nbsp; return</span></span></TD>
+&nbsp; &nbsp; </span>return<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">if&nbsp; os.path.exists(destfn):<BR>
+&nbsp; if&nbsp; replace:<BR>
+&nbsp; &nbsp; log.debug(u'moving&nbsp; old&nbsp; <span style="color:rgb(255,0,0);">database</span>&nbsp; aside:&nbsp; {0}'.format(<BR>
+&nbsp; &nbsp; &nbsp; util.displayable_path(destfn)<BR>
+&nbsp; &nbsp; ))<BR>
+&nbsp; &nbsp; _displace(destfn)<BR>
+&nbsp; else:<BR>
+&nbsp; &nbsp; <span style="color:rgb(255,0,0);"></span>return<span style="color:rgb(255,0,0);"></span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 25</B><BR>Distance between two fragments = 4 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/library.py"<BR>The first line is 19</TD><TD></TD><TD>Source file "../tests/beets/util/bluelet.py"<BR>The first line is 9</TD></TR><TR>
+<P><B>Clone # 24</B><BR>Distance between two fragments = 4 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/library.py"<BR>The first line is 19</TD><TD></TD><TD>Source file "../tests/beets/util/bluelet.py"<BR>The first line is 9</TD></TR><TR>
 <TD>
 <span style="font-family: monospace;">import&nbsp; s<span style="color:rgb(255,0,0);">ys</span></span></TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
@@ -824,7 +804,7 @@ except&nbsp; Exception&nbsp; as&nbsp; exc:<BR>
 <span style="font-family: monospace;">import&nbsp; time<span style="color:rgb(255,0,0);"></span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 26</B><BR>Distance between two fragments = 4 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/migrate.py"<BR>The first line is 21</TD><TD></TD><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 20</TD></TR><TR>
+<P><B>Clone # 25</B><BR>Distance between two fragments = 4 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/migrate.py"<BR>The first line is 21</TD><TD></TD><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 20</TD></TR><TR>
 <TD>
 <span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">yam</span>l<span style="color:rgb(255,0,0);"></span></span></TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
@@ -861,7 +841,42 @@ except&nbsp; Exception&nbsp; as&nbsp; exc:<BR>
 <span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">pla</span>t<span style="color:rgb(255,0,0);">form</span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 27</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/library.py"<BR>The first line is 378</TD><TD></TD><TD>Source file "../tests/beets/library.py"<BR>The first line is 350</TD></TR><TR>
+<P><B>Clone # 26</B><BR>Distance between two fragments = 1 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/importer.py"<BR>The first line is 988</TD><TD></TD><TD>Source file "../tests/beets/importer.py"<BR>The first line is 710</TD></TR><TR>
+<TD>
+<span style="font-family: monospace;">if&nbsp; task.choice_flag&nbsp; in&nbsp; (action.ASIS,&nbsp; action.APPLY):<BR>
+&nbsp; ident&nbsp; =&nbsp; task.chosen_ident()<BR>
+&nbsp; <span style="color:rgb(255,0,0);">if&nbsp; ident&nbsp; in&nbsp; recent&nbsp; or&nbsp; _ite</span>m<span style="color:rgb(255,0,0);"></span>_duplicate_check(session.lib,&nbsp; task):<BR>
+&nbsp; &nbsp; session.resolve_duplicate(task)<BR>
+&nbsp; &nbsp; session.log_choice(task,&nbsp; True)<BR>
+&nbsp; recent.add(ident)<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">if&nbsp; task.choice_flag&nbsp; in&nbsp; (action.ASIS,&nbsp; action.APPLY):<BR>
+&nbsp; ident&nbsp; =&nbsp; task.chosen_ident()<BR>
+&nbsp; <span style="color:rgb(255,0,0);">#&nbsp; The&nbsp; "recent"&nbsp; set&nbsp; keeps&nbsp; track&nbsp; of&nbsp; identifiers&nbsp; for&nbsp; recently<BR>
+&nbsp; #&nbsp; i</span>m<span style="color:rgb(255,0,0);">ported&nbsp; albums&nbsp; --&nbsp; those&nbsp; that&nbsp; haven't&nbsp; reached&nbsp; the&nbsp; database<BR>
+&nbsp; #&nbsp; yet.<BR>
+&nbsp; if&nbsp; ident&nbsp; in&nbsp; recent&nbsp; or&nbsp; </span>_duplicate_check(session.lib,&nbsp; task):<BR>
+&nbsp; &nbsp; session.resolve_duplicate(task)<BR>
+&nbsp; &nbsp; session.log_choice(task,&nbsp; True)<BR>
+&nbsp; recent.add(ident)<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 27</B><BR>Distance between two fragments = 2 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/pipeline.py"<BR>The first line is 406</TD><TD></TD><TD>Source file "../tests/beets/util/pipeline.py"<BR>The first line is 435</TD></TR><TR>
+<TD>
+<span style="font-family: monospace;">def&nbsp; <span style="color:rgb(255,0,0);"></span>produce():<BR>
+&nbsp; for&nbsp; i&nbsp; in&nbsp; range(<span style="color:rgb(255,0,0);">5</span>):<BR>
+&nbsp; &nbsp; print('generating&nbsp; %i'&nbsp; %&nbsp; i)<BR>
+&nbsp; &nbsp; time.sleep(1)<BR>
+&nbsp; &nbsp; yield&nbsp; i<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">def&nbsp; <span style="color:rgb(255,0,0);">exc_</span>produce():<BR>
+&nbsp; for&nbsp; i&nbsp; in&nbsp; range(<span style="color:rgb(255,0,0);">10</span>):<BR>
+&nbsp; &nbsp; print('generating&nbsp; %i'&nbsp; %&nbsp; i)<BR>
+&nbsp; &nbsp; time.sleep(1)<BR>
+&nbsp; &nbsp; yield&nbsp; i<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 28</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/library.py"<BR>The first line is 378</TD><TD></TD><TD>Source file "../tests/beets/library.py"<BR>The first line is 350</TD></TR><TR>
 <TD>
 <span style="font-family: monospace;">try:<BR>
 &nbsp; f&nbsp; =&nbsp; MediaFile(syspath(<span style="color:rgb(255,0,0);">s</span>e<span style="color:rgb(255,0,0);">lf.</span>path))<BR>
@@ -876,52 +891,7 @@ except&nbsp; (OSError,&nbsp; IOError)&nbsp; as&nbsp; exc:<BR>
 &nbsp; &nbsp; traceback.format_exc())<span style="color:rgb(255,0,0);"></span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 28</B><BR>Distance between two fragments = 1 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/pipeline.py"<BR>The first line is 246</TD><TD></TD><TD>Source file "../tests/beets/util/pipeline.py"<BR>The first line is 199</TD></TR><TR>
-<TD>
-<span style="font-family: monospace;">for&nbsp; msg&nbsp; in&nbsp; _allmsgs(<span style="color:rgb(255,0,0);">out</span>):<BR>
-&nbsp; with&nbsp; self.abort_lock:<BR>
-&nbsp; &nbsp; if&nbsp; self.abort_flag:<BR>
-&nbsp; &nbsp; &nbsp; return<BR>
-&nbsp; self.out_queue.put(msg)<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">for&nbsp; msg&nbsp; in&nbsp; _allmsgs(<span style="color:rgb(255,0,0);">msg</span>):<BR>
-&nbsp; with&nbsp; self.abort_lock:<BR>
-&nbsp; &nbsp; if&nbsp; self.abort_flag:<BR>
-&nbsp; &nbsp; &nbsp; return<BR>
-&nbsp; self.out_queue.put(msg)<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 29</B><BR>Distance between two fragments = 2 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/mediafile.py"<BR>The first line is 538</TD><TD></TD><TD>Source file "../tests/beets/mediafile.py"<BR>The first line is 555</TD></TR><TR>
-<TD>
-<span style="font-family: monospace;">def&nbsp; fetch(self,&nbsp; mutagen_file):<BR>
-&nbsp; try:<BR>
-&nbsp; &nbsp; return&nbsp; mutagen_file[self.key].<span style="color:rgb(255,0,0);"></span>t<span style="color:rgb(255,0,0);">ext</span><BR>
-&nbsp; except&nbsp; KeyError:<BR>
-&nbsp; &nbsp; return&nbsp; <span style="color:rgb(255,0,0);">[]</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">def&nbsp; fetch(self,&nbsp; mutagen_file):<BR>
-&nbsp; try:<BR>
-&nbsp; &nbsp; return&nbsp; mutagen_file[self.key].<span style="color:rgb(255,0,0);">da</span>t<span style="color:rgb(255,0,0);">a</span><BR>
-&nbsp; except&nbsp; KeyError:<BR>
-&nbsp; &nbsp; return&nbsp; <span style="color:rgb(255,0,0);">None</span></span></TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 30</B><BR>Distance between two fragments = 2 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/mediafile.py"<BR>The first line is 391</TD><TD></TD><TD>Source file "../tests/beets/mediafile.py"<BR>The first line is 483</TD></TR><TR>
-<TD>
-<span style="font-family: monospace;">def&nbsp; <span style="color:rgb(255,0,0);">f</span>et<span style="color:rgb(255,0,0);">ch</span>(self,&nbsp; mutagen_file):<BR>
-&nbsp; try:<BR>
-&nbsp; &nbsp; return&nbsp; mutagen_file[self.key]<BR>
-&nbsp; except&nbsp; KeyError:<BR>
-&nbsp; &nbsp; return&nbsp; <span style="color:rgb(255,0,0);">[]</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">def&nbsp; <span style="color:rgb(255,0,0);">g</span>et<span style="color:rgb(255,0,0);"></span>(self,&nbsp; mutagen_file):<BR>
-&nbsp; try:<BR>
-&nbsp; &nbsp; return&nbsp; mutagen_file[self.key]<BR>
-&nbsp; except&nbsp; KeyError:<BR>
-&nbsp; &nbsp; return&nbsp; <span style="color:rgb(255,0,0);">None</span></span></TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 31</B><BR>Distance between two fragments = 2 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/library.py"<BR>The first line is 311</TD><TD></TD><TD>Source file "../tests/beets/library.py"<BR>The first line is 608</TD></TR><TR>
+<P><B>Clone # 29</B><BR>Distance between two fragments = 2 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/library.py"<BR>The first line is 311</TD><TD></TD><TD>Source file "../tests/beets/library.py"<BR>The first line is 608</TD></TR><TR>
 <TD>
 <span style="font-family: monospace;">if&nbsp; key&nbsp; ==&nbsp; '<span style="color:rgb(255,0,0);"></span>path':<BR>
 &nbsp; if&nbsp; isinstance(value,&nbsp; unicode):<BR>
@@ -936,146 +906,26 @@ except&nbsp; (OSError,&nbsp; IOError)&nbsp; as&nbsp; exc:<BR>
 &nbsp; &nbsp; value&nbsp; =&nbsp; <span style="color:rgb(255,0,0);">byte</span>s<span style="color:rgb(255,0,0);"></span>(value)<span style="color:rgb(255,0,0);"></span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 32</B><BR>Distance between two fragments = 3 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/dbcore/query.py"<BR>The first line is 328</TD><TD></TD><TD>Source file "../tests/beets/dbcore/query.py"<BR>The first line is 319</TD></TR><TR>
+<P><B>Clone # 30</B><BR>Distance between two fragments = 3 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/autotag/hooks.py"<BR>The first line is 295</TD><TD></TD><TD>Source file "../tests/beets/autotag/hooks.py"<BR>The first line is 286</TD></TR><TR>
 <TD>
-<span style="font-family: monospace;">class&nbsp; <span style="color:rgb(255,0,0);">Fals</span>eQuery(Query):<BR>
-&nbsp; &nbsp; """A&nbsp; query&nbsp; that&nbsp; <span style="color:rgb(255,0,0);">never</span>&nbsp; matches."""<BR>
-&nbsp; &nbsp; def&nbsp; clause(self):<BR>
-&nbsp; &nbsp; &nbsp; return&nbsp; '<span style="color:rgb(255,0,0);">0</span>',&nbsp; ()<BR>
-&nbsp; <BR>
-&nbsp; &nbsp; def&nbsp; match(self,&nbsp; item):<BR>
-&nbsp; &nbsp; &nbsp; return&nbsp; <span style="color:rgb(255,0,0);">Fals</span>e<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">class&nbsp; <span style="color:rgb(255,0,0);">Tru</span>eQuery(Query):<BR>
-&nbsp; &nbsp; """A&nbsp; query&nbsp; that&nbsp; <span style="color:rgb(255,0,0);">always</span>&nbsp; matches."""<BR>
-&nbsp; &nbsp; def&nbsp; clause(self):<BR>
-&nbsp; &nbsp; &nbsp; return&nbsp; '<span style="color:rgb(255,0,0);">1</span>',&nbsp; ()<BR>
-&nbsp; <BR>
-&nbsp; &nbsp; def&nbsp; match(self,&nbsp; item):<BR>
-&nbsp; &nbsp; &nbsp; return&nbsp; <span style="color:rgb(255,0,0);">Tru</span>e<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 33</B><BR>Distance between two fragments = 2 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/pipeline.py"<BR>The first line is 435</TD><TD></TD><TD>Source file "../tests/beets/util/pipeline.py"<BR>The first line is 406</TD></TR><TR>
-<TD>
-<span style="font-family: monospace;">def&nbsp; <span style="color:rgb(255,0,0);">exc_</span>produce():<BR>
-&nbsp; for&nbsp; i&nbsp; in&nbsp; range(<span style="color:rgb(255,0,0);">10</span>):<BR>
-&nbsp; &nbsp; print('generating&nbsp; %i'&nbsp; %&nbsp; i)<BR>
-&nbsp; &nbsp; time.sleep(1)<BR>
-&nbsp; &nbsp; yield&nbsp; i<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">def&nbsp; <span style="color:rgb(255,0,0);"></span>produce():<BR>
-&nbsp; for&nbsp; i&nbsp; in&nbsp; range(<span style="color:rgb(255,0,0);">5</span>):<BR>
-&nbsp; &nbsp; print('generating&nbsp; %i'&nbsp; %&nbsp; i)<BR>
-&nbsp; &nbsp; time.sleep(1)<BR>
-&nbsp; &nbsp; yield&nbsp; i<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 34</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/dbcore/query.py"<BR>The first line is 445</TD><TD></TD><TD>Source file "../tests/beets/dbcore/query.py"<BR>The first line is 210</TD></TR><TR>
-<TD>
-<span style="font-family: monospace;">if&nbsp; self.<span style="color:rgb(255,0,0);">st</span>a<span style="color:rgb(255,0,0);">rt</span>&nbsp; is&nbsp; not&nbsp; None&nbsp; and&nbsp; <span style="color:rgb(255,0,0);">d</span>a<span style="color:rgb(255,0,0);">t</span>e&nbsp; &lt;&nbsp; self.<span style="color:rgb(255,0,0);">st</span>a<span style="color:rgb(255,0,0);">rt</span>:<BR>
-&nbsp; return&nbsp; False<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">if&nbsp; self.<span style="color:rgb(255,0,0);">r</span>a<span style="color:rgb(255,0,0);">ngemin</span>&nbsp; is&nbsp; not&nbsp; None&nbsp; and&nbsp; <span style="color:rgb(255,0,0);">v</span>a<span style="color:rgb(255,0,0);">lu</span>e&nbsp; &lt;&nbsp; self.<span style="color:rgb(255,0,0);">r</span>a<span style="color:rgb(255,0,0);">ngemin</span>:<BR>
-&nbsp; return&nbsp; False<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">if&nbsp; self.<span style="color:rgb(255,0,0);"></span>e<span style="color:rgb(255,0,0);">nd</span>&nbsp; is&nbsp; not&nbsp; None&nbsp; and&nbsp; <span style="color:rgb(255,0,0);">d</span>a<span style="color:rgb(255,0,0);">t</span>e&nbsp; &gt;<span style="color:rgb(255,0,0);">=</span>&nbsp; self.<span style="color:rgb(255,0,0);"></span>e<span style="color:rgb(255,0,0);">nd</span>:<BR>
-&nbsp; return&nbsp; False<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">if&nbsp; self.<span style="color:rgb(255,0,0);">rang</span>e<span style="color:rgb(255,0,0);">max</span>&nbsp; is&nbsp; not&nbsp; None&nbsp; and&nbsp; <span style="color:rgb(255,0,0);">v</span>a<span style="color:rgb(255,0,0);">lu</span>e&nbsp; &gt;<span style="color:rgb(255,0,0);"></span>&nbsp; self.<span style="color:rgb(255,0,0);">rang</span>e<span style="color:rgb(255,0,0);">max</span>:<BR>
-&nbsp; return&nbsp; False<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">return&nbsp; True<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-<span style="font-family: monospace;">return&nbsp; True<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 35</B><BR>Distance between two fragments = 1 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/mediafile.py"<BR>The first line is 167</TD><TD></TD><TD>Source file "../tests/beets/mediafile.py"<BR>The first line is 172</TD></TR><TR>
-<TD>
-<span style="font-family: monospace;"><span style="color:rgb(255,0,0);">m</span>i<span style="color:rgb(255,0,0);">me</span>&nbsp; =&nbsp; ""<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;"><span style="color:rgb(255,0,0);">descr</span>i<span style="color:rgb(255,0,0);">ption</span>&nbsp; =&nbsp; ""<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">while&nbsp; data[pos:pos&nbsp; +&nbsp; 2]&nbsp; !=&nbsp; "\x00\x00":<BR>
-&nbsp; <span style="color:rgb(255,0,0);">m</span>i<span style="color:rgb(255,0,0);">me</span>&nbsp; +=&nbsp; data[pos:pos&nbsp; +&nbsp; 2]<BR>
-&nbsp; pos&nbsp; +=&nbsp; 2<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">while&nbsp; data[pos:pos&nbsp; +&nbsp; 2]&nbsp; !=&nbsp; "\x00\x00":<BR>
-&nbsp; <span style="color:rgb(255,0,0);">descr</span>i<span style="color:rgb(255,0,0);">ption</span>&nbsp; +=&nbsp; data[pos:pos&nbsp; +&nbsp; 2]<BR>
-&nbsp; pos&nbsp; +=&nbsp; 2<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">pos&nbsp; +=&nbsp; 2<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-<span style="font-family: monospace;">pos&nbsp; +=&nbsp; 2<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 36</B><BR>Distance between two fragments = 3 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/autotag/hooks.py"<BR>The first line is 286</TD><TD></TD><TD>Source file "../tests/beets/autotag/hooks.py"<BR>The first line is 295</TD></TR><TR>
-<TD>
-<span style="font-family: monospace;">def&nbsp; <span style="color:rgb(255,0,0);"></span>ma<span style="color:rgb(255,0,0);">x_</span>distance<span style="color:rgb(255,0,0);">(self</span>):<BR>
-&nbsp; <span style="color:rgb(255,0,0);">"""Return&nbsp; the&nbsp; maxim</span>um<span style="color:rgb(255,0,0);">&nbsp; distance&nbsp; penalty&nbsp; (normalization&nbsp; factor).<BR>
+<span style="font-family: monospace;">def&nbsp; <span style="color:rgb(255,0,0);">raw</span>_distance(self):<BR>
+&nbsp; """Return&nbsp; the&nbsp; <span style="color:rgb(255,0,0);">raw&nbsp; (de</span>normaliz<span style="color:rgb(255,0,0);">ed)&nbsp; distan</span>c<span style="color:rgb(255,0,0);">e.<BR>
 &nbsp; """<BR>
-&nbsp; dist_max&nbsp; =&nbsp; 0.0<BR>
+&nbsp; dist_raw</span>&nbsp; =&nbsp; 0.0<BR>
 &nbsp; for&nbsp; key,&nbsp; penalty&nbsp; in&nbsp; self._penalties.iteritems():<BR>
-&nbsp; &nbsp; dist_max&nbsp; +=&nbsp; len</span>(penalty)&nbsp; *&nbsp; self._weights[key]<BR>
-&nbsp; return&nbsp; dist_<span style="color:rgb(255,0,0);">max</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">def&nbsp; <span style="color:rgb(255,0,0);">raw_distance(self):<BR>
-&nbsp; """Return&nbsp; the&nbsp; raw&nbsp; (denor</span>ma<span style="color:rgb(255,0,0);">lized)&nbsp; </span>distance<span style="color:rgb(255,0,0);">.<BR>
-&nbsp; """<BR>
-&nbsp; dist_raw&nbsp; =&nbsp; 0.0<BR>
-&nbsp; for&nbsp; key,&nbsp; penalty&nbsp; in&nbsp; self._penalties.iteritems(</span>):<BR>
-&nbsp; <span style="color:rgb(255,0,0);">&nbsp; dist_raw&nbsp; +=&nbsp; s</span>um<span style="color:rgb(255,0,0);"></span>(penalty)&nbsp; *&nbsp; self._weights[key]<BR>
+&nbsp; &nbsp; dist_<span style="color:rgb(255,0,0);">raw</span>&nbsp; +=&nbsp; <span style="color:rgb(255,0,0);">sum</span>(penalty)&nbsp; *&nbsp; self._weights[key]<BR>
 &nbsp; return&nbsp; dist_<span style="color:rgb(255,0,0);">raw</span></span></TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 37</B><BR>Distance between two fragments = 0 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/confit.py"<BR>The first line is 625</TD><TD></TD><TD>Source file "../tests/beets/ui/migrate.py"<BR>The first line is 217</TD></TR><TR>
-<TD>
-<span style="font-family: monospace;">def&nbsp; outsideFunc(self):<BR>
-&nbsp; return&nbsp; "outside"<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-<span style="font-family: monospace;">def&nbsp; outsideFunc(self):<BR>
-&nbsp; return&nbsp; "outside"<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">class&nbsp; outsideClass:<BR>
-&nbsp; def&nbsp; __init__(self):<BR>
-&nbsp; &nbsp; print&nbsp; "outside"<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-<span style="font-family: monospace;">class&nbsp; outsideClass:<BR>
-&nbsp; def&nbsp; __init__(self):<BR>
-&nbsp; &nbsp; print&nbsp; "outside"<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 38</B><BR>Distance between two fragments = 3 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/autotag/hooks.py"<BR>The first line is 470</TD><TD></TD><TD>Source file "../tests/beets/autotag/hooks.py"<BR>The first line is 479</TD></TR><TR>
-<TD>
-<span style="font-family: monospace;">def&nbsp; <span style="color:rgb(255,0,0);">albu</span>m<span style="color:rgb(255,0,0);">_for_m</span>bid(re<span style="color:rgb(255,0,0);">lease</span>_id):<BR>
-&nbsp; """Get&nbsp; a<span style="color:rgb(255,0,0);">n&nbsp; Album</span>Info&nbsp; object&nbsp; for&nbsp; a&nbsp; MusicBrainz&nbsp; re<span style="color:rgb(255,0,0);">lease</span>&nbsp; ID.&nbsp; Return&nbsp; None<BR>
-&nbsp; if&nbsp; the&nbsp; ID&nbsp; is&nbsp; not&nbsp; found.<BR>
-&nbsp; """<BR>
-&nbsp; try:<BR>
-&nbsp; &nbsp; return&nbsp; mb.<span style="color:rgb(255,0,0);">album</span>_for_id(re<span style="color:rgb(255,0,0);">lease</span>_id)<BR>
-&nbsp; except&nbsp; mb.MusicBrainzAPIError&nbsp; as&nbsp; exc:<BR>
-&nbsp; &nbsp; exc.log(log)<span style="color:rgb(255,0,0);"></span></span></TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">def&nbsp; <span style="color:rgb(255,0,0);">track_for_</span>m<span style="color:rgb(255,0,0);"></span>bid(re<span style="color:rgb(255,0,0);">cording</span>_id):<BR>
-&nbsp; """Get&nbsp; a<span style="color:rgb(255,0,0);">&nbsp; Track</span>Info&nbsp; object&nbsp; for&nbsp; a&nbsp; MusicBrainz&nbsp; re<span style="color:rgb(255,0,0);">cording</span>&nbsp; ID.&nbsp; Return&nbsp; None<BR>
-&nbsp; if&nbsp; the&nbsp; ID&nbsp; is&nbsp; not&nbsp; found.<BR>
+<span style="font-family: monospace;">def&nbsp; <span style="color:rgb(255,0,0);">max</span>_distance(self):<BR>
+&nbsp; """Return&nbsp; the&nbsp; <span style="color:rgb(255,0,0);">maximum&nbsp; distance&nbsp; penalty&nbsp; (</span>normaliz<span style="color:rgb(255,0,0);">ation&nbsp; fa</span>c<span style="color:rgb(255,0,0);">tor).<BR>
 &nbsp; """<BR>
-&nbsp; try:<BR>
-&nbsp; &nbsp; return&nbsp; mb.<span style="color:rgb(255,0,0);">track</span>_for_id(re<span style="color:rgb(255,0,0);">cording</span>_id)<BR>
-&nbsp; except&nbsp; mb.MusicBrainzAPIError&nbsp; as&nbsp; exc:<BR>
-&nbsp; &nbsp; exc.log(log)<span style="color:rgb(255,0,0);"></span></span></TD>
+&nbsp; dist_max</span>&nbsp; =&nbsp; 0.0<BR>
+&nbsp; for&nbsp; key,&nbsp; penalty&nbsp; in&nbsp; self._penalties.iteritems():<BR>
+&nbsp; &nbsp; dist_<span style="color:rgb(255,0,0);">max</span>&nbsp; +=&nbsp; <span style="color:rgb(255,0,0);">len</span>(penalty)&nbsp; *&nbsp; self._weights[key]<BR>
+&nbsp; return&nbsp; dist_<span style="color:rgb(255,0,0);">max</span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 39</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/importer.py"<BR>The first line is 27</TD><TD></TD><TD>Source file "../tests/beets/ui/__init__.py"<BR>The first line is 33</TD></TR><TR>
+<P><B>Clone # 31</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/importer.py"<BR>The first line is 27</TD><TD></TD><TD>Source file "../tests/beets/ui/__init__.py"<BR>The first line is 33</TD></TR><TR>
 <TD>
 <span style="font-family: monospace;">from&nbsp; beets&nbsp; import&nbsp; library<span style="color:rgb(255,0,0);"></span></span></TD>
 <TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
@@ -1106,7 +956,7 @@ except&nbsp; (OSError,&nbsp; IOError)&nbsp; as&nbsp; exc:<BR>
 <span style="font-family: monospace;">from&nbsp; beets&nbsp; import&nbsp; config<span style="color:rgb(255,0,0);"></span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 40</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/importer.py"<BR>The first line is 18</TD><TD></TD><TD>Source file "../tests/beets/ui/__init__.py"<BR>The first line is 19</TD></TR><TR>
+<P><B>Clone # 32</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/importer.py"<BR>The first line is 18</TD><TD></TD><TD>Source file "../tests/beets/ui/__init__.py"<BR>The first line is 19</TD></TR><TR>
 <TD>
 <span style="font-family: monospace;">from&nbsp; __future__&nbsp; import&nbsp; print_function<span style="color:rgb(255,0,0);"></span></span></TD>
 <TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
@@ -1137,7 +987,38 @@ except&nbsp; (OSError,&nbsp; IOError)&nbsp; as&nbsp; exc:<BR>
 <span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>s<span style="color:rgb(255,0,0);">ys</span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 41</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/__init__.py"<BR>The first line is 26</TD><TD></TD><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 20</TD></TR><TR>
+<P><B>Clone # 33</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/confit.py"<BR>The first line is 17</TD><TD></TD><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 18</TD></TR><TR>
+<TD>
+<span style="font-family: monospace;">from&nbsp; __future__&nbsp; import&nbsp; <span style="color:rgb(255,0,0);"></span>un<span style="color:rgb(255,0,0);"></span>i<span style="color:rgb(255,0,0);">c</span>o<span style="color:rgb(255,0,0);">de_literals</span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">from&nbsp; __future__&nbsp; import&nbsp; <span style="color:rgb(255,0,0);">print_f</span>un<span style="color:rgb(255,0,0);">ct</span>i<span style="color:rgb(255,0,0);"></span>o<span style="color:rgb(255,0,0);">n</span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">p</span>l<span style="color:rgb(255,0,0);">atf</span>o<span style="color:rgb(255,0,0);">rm</span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>l<span style="color:rgb(255,0,0);"></span>o<span style="color:rgb(255,0,0);">gging</span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; os<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; os<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">pkgu</span>ti<span style="color:rgb(255,0,0);">l</span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>ti<span style="color:rgb(255,0,0);">me</span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>s<span style="color:rgb(255,0,0);">ys</span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">itertool</span>s<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 34</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/__init__.py"<BR>The first line is 26</TD><TD></TD><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 20</TD></TR><TR>
 <TD>
 <span style="font-family: monospace;">import&nbsp; logging<span style="color:rgb(255,0,0);"></span></span></TD>
 <TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
@@ -1168,162 +1049,7 @@ except&nbsp; (OSError,&nbsp; IOError)&nbsp; as&nbsp; exc:<BR>
 <span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">codec</span>s<span style="color:rgb(255,0,0);"></span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 42</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 18</TD><TD></TD><TD>Source file "../tests/beets/util/confit.py"<BR>The first line is 17</TD></TR><TR>
-<TD>
-<span style="font-family: monospace;">from&nbsp; __future__&nbsp; import&nbsp; <span style="color:rgb(255,0,0);">print_f</span>un<span style="color:rgb(255,0,0);"></span>c<span style="color:rgb(255,0,0);"></span>t<span style="color:rgb(255,0,0);">ion</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">from&nbsp; __future__&nbsp; import&nbsp; <span style="color:rgb(255,0,0);"></span>un<span style="color:rgb(255,0,0);">i</span>c<span style="color:rgb(255,0,0);">ode_li</span>t<span style="color:rgb(255,0,0);">erals</span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>l<span style="color:rgb(255,0,0);"></span>o<span style="color:rgb(255,0,0);">gging</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">p</span>l<span style="color:rgb(255,0,0);">atf</span>o<span style="color:rgb(255,0,0);">rm</span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; os<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; os<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>ti<span style="color:rgb(255,0,0);">me</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">pkgu</span>ti<span style="color:rgb(255,0,0);">l</span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">itertool</span>s<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>s<span style="color:rgb(255,0,0);">ys</span></span></TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 43</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/__init__.py"<BR>The first line is 19</TD><TD></TD><TD>Source file "../tests/beets/util/confit.py"<BR>The first line is 17</TD></TR><TR>
-<TD>
-<span style="font-family: monospace;">from&nbsp; __future__&nbsp; import&nbsp; <span style="color:rgb(255,0,0);">print_f</span>un<span style="color:rgb(255,0,0);"></span>c<span style="color:rgb(255,0,0);"></span>t<span style="color:rgb(255,0,0);">ion</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">from&nbsp; __future__&nbsp; import&nbsp; <span style="color:rgb(255,0,0);"></span>un<span style="color:rgb(255,0,0);">i</span>c<span style="color:rgb(255,0,0);">ode_li</span>t<span style="color:rgb(255,0,0);">erals</span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>l<span style="color:rgb(255,0,0);"></span>o<span style="color:rgb(255,0,0);">cale</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">p</span>l<span style="color:rgb(255,0,0);">atf</span>o<span style="color:rgb(255,0,0);">rm</span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; o<span style="color:rgb(255,0,0);">ptpar</span>s<span style="color:rgb(255,0,0);">e</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; o<span style="color:rgb(255,0,0);"></span>s<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>t<span style="color:rgb(255,0,0);">extwrap</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">pkgu</span>t<span style="color:rgb(255,0,0);">il</span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; sys<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; sys<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 44</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/__init__.py"<BR>The first line is 19</TD><TD></TD><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 18</TD></TR><TR>
-<TD>
-<span style="font-family: monospace;">from&nbsp; __future__&nbsp; import&nbsp; print_function<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-<span style="font-family: monospace;">from&nbsp; __future__&nbsp; import&nbsp; print_function<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; lo<span style="color:rgb(255,0,0);">cale</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; lo<span style="color:rgb(255,0,0);">gging</span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; o<span style="color:rgb(255,0,0);">ptpar</span>s<span style="color:rgb(255,0,0);">e</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; o<span style="color:rgb(255,0,0);"></span>s<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; t<span style="color:rgb(255,0,0);"></span>e<span style="color:rgb(255,0,0);">xtwrap</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; t<span style="color:rgb(255,0,0);">im</span>e<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>s<span style="color:rgb(255,0,0);">ys</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">itertool</span>s<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 45</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/importer.py"<BR>The first line is 18</TD><TD></TD><TD>Source file "../tests/beets/util/__init__.py"<BR>The first line is 16</TD></TR><TR>
-<TD>
-<span style="font-family: monospace;">from&nbsp; __future__&nbsp; import&nbsp; <span style="color:rgb(255,0,0);">pr</span>i<span style="color:rgb(255,0,0);">nt_funct</span>ion<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">from&nbsp; __future__&nbsp; import&nbsp; <span style="color:rgb(255,0,0);">d</span>i<span style="color:rgb(255,0,0);">vis</span>ion<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; os<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; os<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">logging</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">sys</span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">pickl</span>e<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">r</span>e<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>i<span style="color:rgb(255,0,0);">tertoo</span>l<span style="color:rgb(255,0,0);">s</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">shut</span>i<span style="color:rgb(255,0,0);"></span>l<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 46</B><BR>Distance between two fragments = 3 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/importer.py"<BR>The first line is 18</TD><TD></TD><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 18</TD></TR><TR>
-<TD>
-<span style="font-family: monospace;">from&nbsp; __future__&nbsp; import&nbsp; print_function<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-<span style="font-family: monospace;">from&nbsp; __future__&nbsp; import&nbsp; print_function<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>o<span style="color:rgb(255,0,0);">s</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">l</span>o<span style="color:rgb(255,0,0);">gging</span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">l</span>o<span style="color:rgb(255,0,0);">gging</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>o<span style="color:rgb(255,0,0);">s</span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">p</span>i<span style="color:rgb(255,0,0);">ckl</span>e<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">t</span>i<span style="color:rgb(255,0,0);">m</span>e<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; itertools<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; itertools<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 47</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/__init__.py"<BR>The first line is 19</TD><TD></TD><TD>Source file "../tests/beets/util/functemplate.py"<BR>The first line is 28</TD></TR><TR>
+<P><B>Clone # 35</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/__init__.py"<BR>The first line is 19</TD><TD></TD><TD>Source file "../tests/beets/util/functemplate.py"<BR>The first line is 28</TD></TR><TR>
 <TD>
 <span style="font-family: monospace;">from&nbsp; __future__&nbsp; import&nbsp; print_function<span style="color:rgb(255,0,0);"></span></span></TD>
 <TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
@@ -1354,7 +1080,7 @@ except&nbsp; (OSError,&nbsp; IOError)&nbsp; as&nbsp; exc:<BR>
 <span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">type</span>s<span style="color:rgb(255,0,0);"></span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 48</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/importer.py"<BR>The first line is 18</TD><TD></TD><TD>Source file "../tests/beets/util/functemplate.py"<BR>The first line is 28</TD></TR><TR>
+<P><B>Clone # 36</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/importer.py"<BR>The first line is 18</TD><TD></TD><TD>Source file "../tests/beets/util/functemplate.py"<BR>The first line is 28</TD></TR><TR>
 <TD>
 <span style="font-family: monospace;">from&nbsp; __future__&nbsp; import&nbsp; print_function<span style="color:rgb(255,0,0);"></span></span></TD>
 <TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
@@ -1385,7 +1111,38 @@ except&nbsp; (OSError,&nbsp; IOError)&nbsp; as&nbsp; exc:<BR>
 <span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>t<span style="color:rgb(255,0,0);">yp</span>e<span style="color:rgb(255,0,0);"></span>s<span style="color:rgb(255,0,0);"></span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 49</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 18</TD><TD></TD><TD>Source file "../tests/beets/util/functemplate.py"<BR>The first line is 28</TD></TR><TR>
+<P><B>Clone # 37</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/__init__.py"<BR>The first line is 19</TD><TD></TD><TD>Source file "../tests/beets/util/confit.py"<BR>The first line is 17</TD></TR><TR>
+<TD>
+<span style="font-family: monospace;">from&nbsp; __future__&nbsp; import&nbsp; <span style="color:rgb(255,0,0);">print_f</span>un<span style="color:rgb(255,0,0);"></span>c<span style="color:rgb(255,0,0);"></span>t<span style="color:rgb(255,0,0);">ion</span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">from&nbsp; __future__&nbsp; import&nbsp; <span style="color:rgb(255,0,0);"></span>un<span style="color:rgb(255,0,0);">i</span>c<span style="color:rgb(255,0,0);">ode_li</span>t<span style="color:rgb(255,0,0);">erals</span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>l<span style="color:rgb(255,0,0);"></span>o<span style="color:rgb(255,0,0);">cale</span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">p</span>l<span style="color:rgb(255,0,0);">atf</span>o<span style="color:rgb(255,0,0);">rm</span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; o<span style="color:rgb(255,0,0);">ptpar</span>s<span style="color:rgb(255,0,0);">e</span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; o<span style="color:rgb(255,0,0);"></span>s<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>t<span style="color:rgb(255,0,0);">extwrap</span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">pkgu</span>t<span style="color:rgb(255,0,0);">il</span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; sys<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; sys<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 38</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/__init__.py"<BR>The first line is 19</TD><TD></TD><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 18</TD></TR><TR>
 <TD>
 <span style="font-family: monospace;">from&nbsp; __future__&nbsp; import&nbsp; print_function<span style="color:rgb(255,0,0);"></span></span></TD>
 <TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
@@ -1393,30 +1150,189 @@ except&nbsp; (OSError,&nbsp; IOError)&nbsp; as&nbsp; exc:<BR>
 </TR>
 <TR>
 <TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">logging</span></span></TD>
+<span style="font-family: monospace;">import&nbsp; lo<span style="color:rgb(255,0,0);">cale</span></span></TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">re</span></span></TD>
+<span style="font-family: monospace;">import&nbsp; lo<span style="color:rgb(255,0,0);">gging</span></span></TD>
 </TR>
 <TR>
 <TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">o</span>s<span style="color:rgb(255,0,0);"></span></span></TD>
+<span style="font-family: monospace;">import&nbsp; o<span style="color:rgb(255,0,0);">ptpar</span>s<span style="color:rgb(255,0,0);">e</span></span></TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">a</span>s<span style="color:rgb(255,0,0);">t</span></span></TD>
+<span style="font-family: monospace;">import&nbsp; o<span style="color:rgb(255,0,0);"></span>s<span style="color:rgb(255,0,0);"></span></span></TD>
 </TR>
 <TR>
 <TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">t</span>i<span style="color:rgb(255,0,0);">me</span></span></TD>
+<span style="font-family: monospace;">import&nbsp; t<span style="color:rgb(255,0,0);"></span>e<span style="color:rgb(255,0,0);">xtwrap</span></span></TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">d</span>i<span style="color:rgb(255,0,0);">s</span></span></TD>
+<span style="font-family: monospace;">import&nbsp; t<span style="color:rgb(255,0,0);">im</span>e<span style="color:rgb(255,0,0);"></span></span></TD>
 </TR>
 <TR>
 <TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">i</span>t<span style="color:rgb(255,0,0);"></span>e<span style="color:rgb(255,0,0);">rtool</span>s<span style="color:rgb(255,0,0);"></span></span></TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>s<span style="color:rgb(255,0,0);">ys</span></span></TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>t<span style="color:rgb(255,0,0);">yp</span>e<span style="color:rgb(255,0,0);"></span>s<span style="color:rgb(255,0,0);"></span></span></TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">itertool</span>s<span style="color:rgb(255,0,0);"></span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 50</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/bluelet.py"<BR>The first line is 489</TD><TD></TD><TD>Source file "../tests/beets/util/bluelet.py"<BR>The first line is 113</TD></TR><TR>
+<P><B>Clone # 39</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/importer.py"<BR>The first line is 18</TD><TD></TD><TD>Source file "../tests/beets/util/__init__.py"<BR>The first line is 16</TD></TR><TR>
+<TD>
+<span style="font-family: monospace;">from&nbsp; __future__&nbsp; import&nbsp; <span style="color:rgb(255,0,0);">pr</span>i<span style="color:rgb(255,0,0);">nt_funct</span>ion<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">from&nbsp; __future__&nbsp; import&nbsp; <span style="color:rgb(255,0,0);">d</span>i<span style="color:rgb(255,0,0);">vis</span>ion<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; os<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; os<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">logging</span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">sys</span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">pickl</span>e<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">r</span>e<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>i<span style="color:rgb(255,0,0);">tertoo</span>l<span style="color:rgb(255,0,0);">s</span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">shut</span>i<span style="color:rgb(255,0,0);"></span>l<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 40</B><BR>Distance between two fragments = 3 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/importer.py"<BR>The first line is 18</TD><TD></TD><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 18</TD></TR><TR>
+<TD>
+<span style="font-family: monospace;">from&nbsp; __future__&nbsp; import&nbsp; print_function<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+<span style="font-family: monospace;">from&nbsp; __future__&nbsp; import&nbsp; print_function<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>o<span style="color:rgb(255,0,0);">s</span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">l</span>o<span style="color:rgb(255,0,0);">gging</span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">l</span>o<span style="color:rgb(255,0,0);">gging</span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>o<span style="color:rgb(255,0,0);">s</span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">p</span>i<span style="color:rgb(255,0,0);">ckl</span>e<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">t</span>i<span style="color:rgb(255,0,0);">m</span>e<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; itertools<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; itertools<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 41</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/functemplate.py"<BR>The first line is 28</TD><TD></TD><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 18</TD></TR><TR>
+<TD>
+<span style="font-family: monospace;">from&nbsp; __future__&nbsp; import&nbsp; print_function<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+<span style="font-family: monospace;">from&nbsp; __future__&nbsp; import&nbsp; print_function<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">re</span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">logging</span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">a</span>s<span style="color:rgb(255,0,0);">t</span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">o</span>s<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">d</span>i<span style="color:rgb(255,0,0);">s</span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">t</span>i<span style="color:rgb(255,0,0);">me</span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>t<span style="color:rgb(255,0,0);">yp</span>e<span style="color:rgb(255,0,0);"></span>s<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">i</span>t<span style="color:rgb(255,0,0);"></span>e<span style="color:rgb(255,0,0);">rtool</span>s<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 42</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/dbcore/query.py"<BR>The first line is 445</TD><TD></TD><TD>Source file "../tests/beets/dbcore/query.py"<BR>The first line is 210</TD></TR><TR>
+<TD>
+<span style="font-family: monospace;">if&nbsp; self.<span style="color:rgb(255,0,0);">st</span>a<span style="color:rgb(255,0,0);">rt</span>&nbsp; is&nbsp; not&nbsp; None&nbsp; and&nbsp; <span style="color:rgb(255,0,0);">d</span>a<span style="color:rgb(255,0,0);">t</span>e&nbsp; &lt;&nbsp; self.<span style="color:rgb(255,0,0);">st</span>a<span style="color:rgb(255,0,0);">rt</span>:<BR>
+&nbsp; return&nbsp; False<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">if&nbsp; self.<span style="color:rgb(255,0,0);">r</span>a<span style="color:rgb(255,0,0);">ngemin</span>&nbsp; is&nbsp; not&nbsp; None&nbsp; and&nbsp; <span style="color:rgb(255,0,0);">v</span>a<span style="color:rgb(255,0,0);">lu</span>e&nbsp; &lt;&nbsp; self.<span style="color:rgb(255,0,0);">r</span>a<span style="color:rgb(255,0,0);">ngemin</span>:<BR>
+&nbsp; return&nbsp; False<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">if&nbsp; self.<span style="color:rgb(255,0,0);"></span>e<span style="color:rgb(255,0,0);">nd</span>&nbsp; is&nbsp; not&nbsp; None&nbsp; and&nbsp; <span style="color:rgb(255,0,0);">d</span>a<span style="color:rgb(255,0,0);">t</span>e&nbsp; &gt;<span style="color:rgb(255,0,0);">=</span>&nbsp; self.<span style="color:rgb(255,0,0);"></span>e<span style="color:rgb(255,0,0);">nd</span>:<BR>
+&nbsp; return&nbsp; False<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">if&nbsp; self.<span style="color:rgb(255,0,0);">rang</span>e<span style="color:rgb(255,0,0);">max</span>&nbsp; is&nbsp; not&nbsp; None&nbsp; and&nbsp; <span style="color:rgb(255,0,0);">v</span>a<span style="color:rgb(255,0,0);">lu</span>e&nbsp; &gt;<span style="color:rgb(255,0,0);"></span>&nbsp; self.<span style="color:rgb(255,0,0);">rang</span>e<span style="color:rgb(255,0,0);">max</span>:<BR>
+&nbsp; return&nbsp; False<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">return&nbsp; True<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+<span style="font-family: monospace;">return&nbsp; True<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 43</B><BR>Distance between two fragments = 1 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/mediafile.py"<BR>The first line is 167</TD><TD></TD><TD>Source file "../tests/beets/mediafile.py"<BR>The first line is 172</TD></TR><TR>
+<TD>
+<span style="font-family: monospace;"><span style="color:rgb(255,0,0);">m</span>i<span style="color:rgb(255,0,0);">me</span>&nbsp; =&nbsp; ""<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;"><span style="color:rgb(255,0,0);">descr</span>i<span style="color:rgb(255,0,0);">ption</span>&nbsp; =&nbsp; ""<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">while&nbsp; data[pos:pos&nbsp; +&nbsp; 2]&nbsp; !=&nbsp; "\x00\x00":<BR>
+&nbsp; <span style="color:rgb(255,0,0);">m</span>i<span style="color:rgb(255,0,0);">me</span>&nbsp; +=&nbsp; data[pos:pos&nbsp; +&nbsp; 2]<BR>
+&nbsp; pos&nbsp; +=&nbsp; 2<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">while&nbsp; data[pos:pos&nbsp; +&nbsp; 2]&nbsp; !=&nbsp; "\x00\x00":<BR>
+&nbsp; <span style="color:rgb(255,0,0);">descr</span>i<span style="color:rgb(255,0,0);">ption</span>&nbsp; +=&nbsp; data[pos:pos&nbsp; +&nbsp; 2]<BR>
+&nbsp; pos&nbsp; +=&nbsp; 2<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">pos&nbsp; +=&nbsp; 2<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+<span style="font-family: monospace;">pos&nbsp; +=&nbsp; 2<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 44</B><BR>Distance between two fragments = 4 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/autotag/match.py"<BR>The first line is 209</TD><TD></TD><TD>Source file "../tests/beets/autotag/match.py"<BR>The first line is 205</TD></TR><TR>
+<TD>
+<span style="font-family: monospace;">if&nbsp; likelies['<span style="color:rgb(255,0,0);">c</span>a<span style="color:rgb(255,0,0);">ta</span>l<span style="color:rgb(255,0,0);">ognum</span>']&nbsp; and&nbsp; album_info.<span style="color:rgb(255,0,0);">c</span>a<span style="color:rgb(255,0,0);">ta</span>l<span style="color:rgb(255,0,0);">ognum</span>:<BR>
+&nbsp; dist.add_string('<span style="color:rgb(255,0,0);">c</span>a<span style="color:rgb(255,0,0);">ta</span>l<span style="color:rgb(255,0,0);">ognum</span>',&nbsp; likelies['<span style="color:rgb(255,0,0);">c</span>a<span style="color:rgb(255,0,0);">ta</span>l<span style="color:rgb(255,0,0);">ognum</span>'],<span style="color:rgb(255,0,0);"><BR>
+&nbsp; </span>&nbsp; album_info.<span style="color:rgb(255,0,0);">c</span>a<span style="color:rgb(255,0,0);">ta</span>l<span style="color:rgb(255,0,0);">ognum</span>)<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">if&nbsp; likelies['<span style="color:rgb(255,0,0);">l</span>a<span style="color:rgb(255,0,0);">be</span>l<span style="color:rgb(255,0,0);"></span>']&nbsp; and&nbsp; album_info.<span style="color:rgb(255,0,0);">l</span>a<span style="color:rgb(255,0,0);">be</span>l<span style="color:rgb(255,0,0);"></span>:<BR>
+&nbsp; dist.add_string('<span style="color:rgb(255,0,0);">l</span>a<span style="color:rgb(255,0,0);">be</span>l<span style="color:rgb(255,0,0);"></span>',&nbsp; likelies['<span style="color:rgb(255,0,0);">l</span>a<span style="color:rgb(255,0,0);">be</span>l<span style="color:rgb(255,0,0);"></span>'],<span style="color:rgb(255,0,0);"></span>&nbsp; album_info.<span style="color:rgb(255,0,0);">l</span>a<span style="color:rgb(255,0,0);">be</span>l<span style="color:rgb(255,0,0);"></span>)<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">if&nbsp; likelies['<span style="color:rgb(255,0,0);"></span>al<span style="color:rgb(255,0,0);">b</span>um<span style="color:rgb(255,0,0);">disambig</span>']&nbsp; and&nbsp; album_info.<span style="color:rgb(255,0,0);"></span>al<span style="color:rgb(255,0,0);">b</span>um<span style="color:rgb(255,0,0);">disambig</span>:<BR>
+&nbsp; dist.add_string('<span style="color:rgb(255,0,0);"></span>al<span style="color:rgb(255,0,0);">b</span>um<span style="color:rgb(255,0,0);">disambig</span>',&nbsp; likelies['<span style="color:rgb(255,0,0);"></span>al<span style="color:rgb(255,0,0);">b</span>um<span style="color:rgb(255,0,0);">disambig</span>'],<BR>
+&nbsp; &nbsp; album_info.<span style="color:rgb(255,0,0);"></span>al<span style="color:rgb(255,0,0);">b</span>um<span style="color:rgb(255,0,0);">disambig</span>)<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">if&nbsp; likelies['<span style="color:rgb(255,0,0);">cat</span>al<span style="color:rgb(255,0,0);">ogn</span>um<span style="color:rgb(255,0,0);"></span>']&nbsp; and&nbsp; album_info.<span style="color:rgb(255,0,0);">cat</span>al<span style="color:rgb(255,0,0);">ogn</span>um<span style="color:rgb(255,0,0);"></span>:<BR>
+&nbsp; dist.add_string('<span style="color:rgb(255,0,0);">cat</span>al<span style="color:rgb(255,0,0);">ogn</span>um<span style="color:rgb(255,0,0);"></span>',&nbsp; likelies['<span style="color:rgb(255,0,0);">cat</span>al<span style="color:rgb(255,0,0);">ogn</span>um<span style="color:rgb(255,0,0);"></span>'],<BR>
+&nbsp; &nbsp; album_info.<span style="color:rgb(255,0,0);">cat</span>al<span style="color:rgb(255,0,0);">ogn</span>um<span style="color:rgb(255,0,0);"></span>)<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 45</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/bluelet.py"<BR>The first line is 489</TD><TD></TD><TD>Source file "../tests/beets/util/bluelet.py"<BR>The first line is 113</TD></TR><TR>
 <TD>
 <span style="font-family: monospace;">def&nbsp; __init__(self,&nbsp; <span style="color:rgb(255,0,0);">conn</span>,&nbsp; bufsize):<BR>
 &nbsp; self.<span style="color:rgb(255,0,0);">conn</span>&nbsp; =&nbsp; <span style="color:rgb(255,0,0);">conn</span><BR>
@@ -1435,7 +1351,126 @@ except&nbsp; (OSError,&nbsp; IOError)&nbsp; as&nbsp; exc:<BR>
 &nbsp; return&nbsp; (self.<span style="color:rgb(255,0,0);">fd</span>,),&nbsp; (),&nbsp; ()<span style="color:rgb(255,0,0);"></span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 51</B><BR>Distance between two fragments = 3 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/dbcore/query.py"<BR>The first line is 310</TD><TD></TD><TD>Source file "../tests/beets/dbcore/query.py"<BR>The first line is 301</TD></TR><TR>
+<P><B>Clone # 46</B><BR>Distance between two fragments = 0 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/migrate.py"<BR>The first line is 217</TD><TD></TD><TD>Source file "../tests/beets/util/confit.py"<BR>The first line is 625</TD></TR><TR>
+<TD>
+<span style="font-family: monospace;">def&nbsp; outsideFunc(self):<BR>
+&nbsp; return&nbsp; "outside"<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+<span style="font-family: monospace;">def&nbsp; outsideFunc(self):<BR>
+&nbsp; return&nbsp; "outside"<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">class&nbsp; outsideClass:<BR>
+&nbsp; def&nbsp; __init__(self):<BR>
+&nbsp; &nbsp; print&nbsp; "outside"<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+<span style="font-family: monospace;">class&nbsp; outsideClass:<BR>
+&nbsp; def&nbsp; __init__(self):<BR>
+&nbsp; &nbsp; print&nbsp; "outside"<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 47</B><BR>Distance between two fragments = 3 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/autotag/hooks.py"<BR>The first line is 479</TD><TD></TD><TD>Source file "../tests/beets/autotag/hooks.py"<BR>The first line is 470</TD></TR><TR>
+<TD>
+<span style="font-family: monospace;">def&nbsp; <span style="color:rgb(255,0,0);">track</span>_for_mbid(re<span style="color:rgb(255,0,0);">cording</span>_id):<BR>
+&nbsp; """Get&nbsp; a<span style="color:rgb(255,0,0);">&nbsp; Track</span>Info&nbsp; object&nbsp; for&nbsp; a&nbsp; MusicBrainz&nbsp; re<span style="color:rgb(255,0,0);">cording</span>&nbsp; ID.&nbsp; Return&nbsp; None<BR>
+&nbsp; if&nbsp; the&nbsp; ID&nbsp; is&nbsp; not&nbsp; found.<BR>
+&nbsp; """<BR>
+&nbsp; try:<BR>
+&nbsp; &nbsp; return&nbsp; mb.<span style="color:rgb(255,0,0);">track</span>_for_id(re<span style="color:rgb(255,0,0);">cording</span>_id)<BR>
+&nbsp; except&nbsp; mb.MusicBrainzAPIError&nbsp; as&nbsp; exc:<BR>
+&nbsp; &nbsp; exc.log(log)<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">def&nbsp; <span style="color:rgb(255,0,0);">album</span>_for_mbid(re<span style="color:rgb(255,0,0);">lease</span>_id):<BR>
+&nbsp; """Get&nbsp; a<span style="color:rgb(255,0,0);">n&nbsp; Album</span>Info&nbsp; object&nbsp; for&nbsp; a&nbsp; MusicBrainz&nbsp; re<span style="color:rgb(255,0,0);">lease</span>&nbsp; ID.&nbsp; Return&nbsp; None<BR>
+&nbsp; if&nbsp; the&nbsp; ID&nbsp; is&nbsp; not&nbsp; found.<BR>
+&nbsp; """<BR>
+&nbsp; try:<BR>
+&nbsp; &nbsp; return&nbsp; mb.<span style="color:rgb(255,0,0);">album</span>_for_id(re<span style="color:rgb(255,0,0);">lease</span>_id)<BR>
+&nbsp; except&nbsp; mb.MusicBrainzAPIError&nbsp; as&nbsp; exc:<BR>
+&nbsp; &nbsp; exc.log(log)<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 48</B><BR>Distance between two fragments = 3 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/dbcore/query.py"<BR>The first line is 319</TD><TD></TD><TD>Source file "../tests/beets/dbcore/query.py"<BR>The first line is 328</TD></TR><TR>
+<TD>
+<span style="font-family: monospace;">class&nbsp; <span style="color:rgb(255,0,0);">Tru</span>eQuery(Query):<BR>
+&nbsp; &nbsp; """A&nbsp; query&nbsp; that&nbsp; <span style="color:rgb(255,0,0);">always</span>&nbsp; matches."""<BR>
+&nbsp; &nbsp; def&nbsp; clause(self):<BR>
+&nbsp; &nbsp; &nbsp; return&nbsp; '<span style="color:rgb(255,0,0);">1</span>',&nbsp; ()<BR>
+&nbsp; <BR>
+&nbsp; &nbsp; def&nbsp; match(self,&nbsp; item):<BR>
+&nbsp; &nbsp; &nbsp; return&nbsp; <span style="color:rgb(255,0,0);">Tru</span>e<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">class&nbsp; <span style="color:rgb(255,0,0);">Fals</span>eQuery(Query):<BR>
+&nbsp; &nbsp; """A&nbsp; query&nbsp; that&nbsp; <span style="color:rgb(255,0,0);">never</span>&nbsp; matches."""<BR>
+&nbsp; &nbsp; def&nbsp; clause(self):<BR>
+&nbsp; &nbsp; &nbsp; return&nbsp; '<span style="color:rgb(255,0,0);">0</span>',&nbsp; ()<BR>
+&nbsp; <BR>
+&nbsp; &nbsp; def&nbsp; match(self,&nbsp; item):<BR>
+&nbsp; &nbsp; &nbsp; return&nbsp; <span style="color:rgb(255,0,0);">Fals</span>e<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 49</B><BR>Distance between two fragments = 1 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/pipeline.py"<BR>The first line is 246</TD><TD></TD><TD>Source file "../tests/beets/util/pipeline.py"<BR>The first line is 199</TD></TR><TR>
+<TD>
+<span style="font-family: monospace;">for&nbsp; msg&nbsp; in&nbsp; _allmsgs(<span style="color:rgb(255,0,0);">out</span>):<BR>
+&nbsp; with&nbsp; self.abort_lock:<BR>
+&nbsp; &nbsp; if&nbsp; self.abort_flag:<BR>
+&nbsp; &nbsp; &nbsp; return<BR>
+&nbsp; self.out_queue.put(msg)<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">for&nbsp; msg&nbsp; in&nbsp; _allmsgs(<span style="color:rgb(255,0,0);">msg</span>):<BR>
+&nbsp; with&nbsp; self.abort_lock:<BR>
+&nbsp; &nbsp; if&nbsp; self.abort_flag:<BR>
+&nbsp; &nbsp; &nbsp; return<BR>
+&nbsp; self.out_queue.put(msg)<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 50</B><BR>Distance between two fragments = 2 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/autotag/hooks.py"<BR>The first line is 517</TD><TD></TD><TD>Source file "../tests/beets/autotag/hooks.py"<BR>The first line is 510</TD></TR><TR>
+<TD>
+<span style="font-family: monospace;">if&nbsp; <span style="color:rgb(255,0,0);">v</span>a<span style="color:rgb(255,0,0);">_l</span>i<span style="color:rgb(255,0,0);">kely</span>&nbsp; and&nbsp; album:<BR>
+&nbsp; try:<BR>
+&nbsp; &nbsp; out.extend(mb.match_album(<span style="color:rgb(255,0,0);">None</span>,&nbsp; album,&nbsp; len(items)))<BR>
+&nbsp; except&nbsp; mb.MusicBrainzAPIError&nbsp; as&nbsp; exc:<BR>
+&nbsp; &nbsp; exc.log(log)<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">if&nbsp; <span style="color:rgb(255,0,0);"></span>a<span style="color:rgb(255,0,0);">rt</span>i<span style="color:rgb(255,0,0);">st</span>&nbsp; and&nbsp; album:<BR>
+&nbsp; try:<BR>
+&nbsp; &nbsp; out.extend(mb.match_album(<span style="color:rgb(255,0,0);">artist</span>,&nbsp; album,&nbsp; len(items)))<BR>
+&nbsp; except&nbsp; mb.MusicBrainzAPIError&nbsp; as&nbsp; exc:<BR>
+&nbsp; &nbsp; exc.log(log)<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 51</B><BR>Distance between two fragments = 2 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/mediafile.py"<BR>The first line is 538</TD><TD></TD><TD>Source file "../tests/beets/mediafile.py"<BR>The first line is 555</TD></TR><TR>
+<TD>
+<span style="font-family: monospace;">def&nbsp; fetch(self,&nbsp; mutagen_file):<BR>
+&nbsp; try:<BR>
+&nbsp; &nbsp; return&nbsp; mutagen_file[self.key].<span style="color:rgb(255,0,0);"></span>t<span style="color:rgb(255,0,0);">ext</span><BR>
+&nbsp; except&nbsp; KeyError:<BR>
+&nbsp; &nbsp; return&nbsp; <span style="color:rgb(255,0,0);">[]</span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">def&nbsp; fetch(self,&nbsp; mutagen_file):<BR>
+&nbsp; try:<BR>
+&nbsp; &nbsp; return&nbsp; mutagen_file[self.key].<span style="color:rgb(255,0,0);">da</span>t<span style="color:rgb(255,0,0);">a</span><BR>
+&nbsp; except&nbsp; KeyError:<BR>
+&nbsp; &nbsp; return&nbsp; <span style="color:rgb(255,0,0);">None</span></span></TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 52</B><BR>Distance between two fragments = 2 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/mediafile.py"<BR>The first line is 391</TD><TD></TD><TD>Source file "../tests/beets/mediafile.py"<BR>The first line is 483</TD></TR><TR>
+<TD>
+<span style="font-family: monospace;">def&nbsp; <span style="color:rgb(255,0,0);">f</span>et<span style="color:rgb(255,0,0);">ch</span>(self,&nbsp; mutagen_file):<BR>
+&nbsp; try:<BR>
+&nbsp; &nbsp; return&nbsp; mutagen_file[self.key]<BR>
+&nbsp; except&nbsp; KeyError:<BR>
+&nbsp; &nbsp; return&nbsp; <span style="color:rgb(255,0,0);">[]</span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">def&nbsp; <span style="color:rgb(255,0,0);">g</span>et<span style="color:rgb(255,0,0);"></span>(self,&nbsp; mutagen_file):<BR>
+&nbsp; try:<BR>
+&nbsp; &nbsp; return&nbsp; mutagen_file[self.key]<BR>
+&nbsp; except&nbsp; KeyError:<BR>
+&nbsp; &nbsp; return&nbsp; <span style="color:rgb(255,0,0);">None</span></span></TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 53</B><BR>Distance between two fragments = 3 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/dbcore/query.py"<BR>The first line is 310</TD><TD></TD><TD>Source file "../tests/beets/dbcore/query.py"<BR>The first line is 301</TD></TR><TR>
 <TD>
 <span style="font-family: monospace;">class&nbsp; <span style="color:rgb(255,0,0);">Or</span>Query(MutableCollectionQuery):<BR>
 &nbsp; &nbsp; """A&nbsp; conjunction&nbsp; of&nbsp; a&nbsp; list&nbsp; of&nbsp; other&nbsp; queries."""<BR>
@@ -1454,17 +1489,17 @@ except&nbsp; (OSError,&nbsp; IOError)&nbsp; as&nbsp; exc:<BR>
 &nbsp; &nbsp; &nbsp; return&nbsp; a<span style="color:rgb(255,0,0);">ll</span>([q.match(item)&nbsp; for&nbsp; q&nbsp; in&nbsp; self.subqueries])<span style="color:rgb(255,0,0);"></span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 52</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/dbcore/db.py"<BR>The first line is 17</TD><TD></TD><TD>Source file "../tests/beets/util/__init__.py"<BR>The first line is 21</TD></TR><TR>
+<P><B>Clone # 54</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/__init__.py"<BR>The first line is 21</TD><TD></TD><TD>Source file "../tests/beets/dbcore/db.py"<BR>The first line is 17</TD></TR><TR>
 <TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>ti<span style="color:rgb(255,0,0);">me</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
 <span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">shu</span>ti<span style="color:rgb(255,0,0);">l</span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>ti<span style="color:rgb(255,0,0);">me</span></span></TD>
 </TR>
 <TR>
 <TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">os</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
 <span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">fnmatch</span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">os</span></span></TD>
 </TR>
 <TR>
 <TD>
@@ -1474,18 +1509,18 @@ except&nbsp; (OSError,&nbsp; IOError)&nbsp; as&nbsp; exc:<BR>
 </TR>
 <TR>
 <TD>
-<span style="font-family: monospace;">import&nbsp; t<span style="color:rgb(255,0,0);">h</span>r<span style="color:rgb(255,0,0);"></span>e<span style="color:rgb(255,0,0);"></span>a<span style="color:rgb(255,0,0);">ding</span></span></TD>
+<span style="font-family: monospace;">import&nbsp; t<span style="color:rgb(255,0,0);"></span>r<span style="color:rgb(255,0,0);"></span>a<span style="color:rgb(255,0,0);">ceback</span></span></TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; t<span style="color:rgb(255,0,0);"></span>r<span style="color:rgb(255,0,0);">ac</span>e<span style="color:rgb(255,0,0);">b</span>a<span style="color:rgb(255,0,0);">ck</span></span></TD>
+<span style="font-family: monospace;">import&nbsp; t<span style="color:rgb(255,0,0);">h</span>r<span style="color:rgb(255,0,0);">e</span>a<span style="color:rgb(255,0,0);">ding</span></span></TD>
 </TR>
 <TR>
 <TD>
-<span style="font-family: monospace;">import&nbsp; s<span style="color:rgb(255,0,0);">qlit</span>e<span style="color:rgb(255,0,0);">3</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
 <span style="font-family: monospace;">import&nbsp; s<span style="color:rgb(255,0,0);">ubproc</span>e<span style="color:rgb(255,0,0);">ss</span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; s<span style="color:rgb(255,0,0);">qlit</span>e<span style="color:rgb(255,0,0);">3</span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 53</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/importer.py"<BR>The first line is 20</TD><TD></TD><TD>Source file "../tests/beets/util/__init__.py"<BR>The first line is 19</TD></TR><TR>
+<P><B>Clone # 55</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/importer.py"<BR>The first line is 20</TD><TD></TD><TD>Source file "../tests/beets/util/__init__.py"<BR>The first line is 19</TD></TR><TR>
 <TD>
 <span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">o</span>s<span style="color:rgb(255,0,0);"></span></span></TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
@@ -1516,7 +1551,7 @@ except&nbsp; (OSError,&nbsp; IOError)&nbsp; as&nbsp; exc:<BR>
 <span style="font-family: monospace;">from&nbsp; collections&nbsp; import&nbsp; defaultdict<span style="color:rgb(255,0,0);"></span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 54</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/__init__.py"<BR>The first line is 27</TD><TD></TD><TD>Source file "../tests/beets/util/__init__.py"<BR>The first line is 18</TD></TR><TR>
+<P><B>Clone # 56</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/__init__.py"<BR>The first line is 27</TD><TD></TD><TD>Source file "../tests/beets/util/__init__.py"<BR>The first line is 18</TD></TR><TR>
 <TD>
 <span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>s<span style="color:rgb(255,0,0);">qlite3</span></span></TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
@@ -1547,7 +1582,7 @@ except&nbsp; (OSError,&nbsp; IOError)&nbsp; as&nbsp; exc:<BR>
 <span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">fnma</span>t<span style="color:rgb(255,0,0);"></span>c<span style="color:rgb(255,0,0);">h</span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 55</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/library.py"<BR>The first line is 17</TD><TD></TD><TD>Source file "../tests/beets/ui/migrate.py"<BR>The first line is 19</TD></TR><TR>
+<P><B>Clone # 57</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/library.py"<BR>The first line is 17</TD><TD></TD><TD>Source file "../tests/beets/ui/migrate.py"<BR>The first line is 19</TD></TR><TR>
 <TD>
 <span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>o<span style="color:rgb(255,0,0);"></span>s<span style="color:rgb(255,0,0);"></span></span></TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
@@ -1578,38 +1613,7 @@ except&nbsp; (OSError,&nbsp; IOError)&nbsp; as&nbsp; exc:<BR>
 <span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">tim</span>e<span style="color:rgb(255,0,0);"></span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 56</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/library.py"<BR>The first line is 17</TD><TD></TD><TD>Source file "../tests/beets/util/bluelet.py"<BR>The first line is 8</TD></TR><TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>o<span style="color:rgb(255,0,0);">s</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">s</span>o<span style="color:rgb(255,0,0);">cket</span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">r</span>e<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">s</span>e<span style="color:rgb(255,0,0);">lect</span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; sys<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; sys<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">logging</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">types</span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">shl</span>e<span style="color:rgb(255,0,0);">x</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>e<span style="color:rgb(255,0,0);">rrno</span></span></TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 57</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/library.py"<BR>The first line is 17</TD><TD></TD><TD>Source file "../tests/beets/ui/migrate.py"<BR>The first line is 18</TD></TR><TR>
+<P><B>Clone # 58</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/library.py"<BR>The first line is 17</TD><TD></TD><TD>Source file "../tests/beets/ui/migrate.py"<BR>The first line is 18</TD></TR><TR>
 <TD>
 <span style="font-family: monospace;">import&nbsp; os<span style="color:rgb(255,0,0);"></span></span></TD>
 <TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
@@ -1640,29 +1644,60 @@ except&nbsp; (OSError,&nbsp; IOError)&nbsp; as&nbsp; exc:<BR>
 <span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>l<span style="color:rgb(255,0,0);">ogging</span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 58</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/bluelet.py"<BR>The first line is 10</TD><TD></TD><TD>Source file "../tests/beets/ui/migrate.py"<BR>The first line is 19</TD></TR><TR>
+<P><B>Clone # 59</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/library.py"<BR>The first line is 17</TD><TD></TD><TD>Source file "../tests/beets/util/bluelet.py"<BR>The first line is 8</TD></TR><TR>
 <TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>s<span style="color:rgb(255,0,0);">ys</span></span></TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>o<span style="color:rgb(255,0,0);">s</span></span></TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">ConfigPar</span>s<span style="color:rgb(255,0,0);">er</span></span></TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">s</span>o<span style="color:rgb(255,0,0);">cket</span></span></TD>
 </TR>
 <TR>
 <TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">typ</span>e<span style="color:rgb(255,0,0);"></span>s<span style="color:rgb(255,0,0);"></span></span></TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">r</span>e<span style="color:rgb(255,0,0);"></span></span></TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">cod</span>e<span style="color:rgb(255,0,0);">c</span>s<span style="color:rgb(255,0,0);"></span></span></TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">s</span>e<span style="color:rgb(255,0,0);">lect</span></span></TD>
 </TR>
 <TR>
 <TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">errno</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">yaml</span></span></TD>
+<span style="font-family: monospace;">import&nbsp; sys<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; sys<span style="color:rgb(255,0,0);"></span></span></TD>
 </TR>
 <TR>
 <TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">traceback</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
 <span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">logging</span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">types</span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">shl</span>e<span style="color:rgb(255,0,0);">x</span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>e<span style="color:rgb(255,0,0);">rrno</span></span></TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 60</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/migrate.py"<BR>The first line is 19</TD><TD></TD><TD>Source file "../tests/beets/util/bluelet.py"<BR>The first line is 10</TD></TR><TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">ConfigPar</span>s<span style="color:rgb(255,0,0);">er</span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>s<span style="color:rgb(255,0,0);">ys</span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">cod</span>e<span style="color:rgb(255,0,0);">c</span>s<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">typ</span>e<span style="color:rgb(255,0,0);"></span>s<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">yaml</span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">errno</span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">logging</span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">traceback</span></span></TD>
 </TR>
 <TR>
 <TD>
@@ -1671,7 +1706,7 @@ except&nbsp; (OSError,&nbsp; IOError)&nbsp; as&nbsp; exc:<BR>
 <span style="font-family: monospace;">import&nbsp; time<span style="color:rgb(255,0,0);"></span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 59</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 22</TD><TD></TD><TD>Source file "../tests/beets/ui/migrate.py"<BR>The first line is 22</TD></TR><TR>
+<P><B>Clone # 61</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 22</TD><TD></TD><TD>Source file "../tests/beets/ui/migrate.py"<BR>The first line is 22</TD></TR><TR>
 <TD>
 <span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">t</span>i<span style="color:rgb(255,0,0);">me</span></span></TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
@@ -1702,38 +1737,7 @@ except&nbsp; (OSError,&nbsp; IOError)&nbsp; as&nbsp; exc:<BR>
 <span style="font-family: monospace;">import&nbsp; beets<span style="color:rgb(255,0,0);"></span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 60</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/__init__.py"<BR>The first line is 26</TD><TD></TD><TD>Source file "../tests/beets/util/bluelet.py"<BR>The first line is 10</TD></TR><TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">logging</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">sys</span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>s<span style="color:rgb(255,0,0);">qlite3</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">type</span>s<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; errno<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; errno<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>r<span style="color:rgb(255,0,0);"></span>e<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">t</span>r<span style="color:rgb(255,0,0);">ac</span>e<span style="color:rgb(255,0,0);">back</span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">s</span>t<span style="color:rgb(255,0,0);">ruct</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>t<span style="color:rgb(255,0,0);">ime</span></span></TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 61</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/__init__.py"<BR>The first line is 27</TD><TD></TD><TD>Source file "../tests/beets/util/bluelet.py"<BR>The first line is 9</TD></TR><TR>
+<P><B>Clone # 62</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/__init__.py"<BR>The first line is 27</TD><TD></TD><TD>Source file "../tests/beets/util/bluelet.py"<BR>The first line is 9</TD></TR><TR>
 <TD>
 <span style="font-family: monospace;">import&nbsp; s<span style="color:rgb(255,0,0);">q</span>l<span style="color:rgb(255,0,0);">i</span>t<span style="color:rgb(255,0,0);">e3</span></span></TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
@@ -1764,7 +1768,7 @@ except&nbsp; (OSError,&nbsp; IOError)&nbsp; as&nbsp; exc:<BR>
 <span style="font-family: monospace;">import&nbsp; traceback<span style="color:rgb(255,0,0);"></span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 62</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/__init__.py"<BR>The first line is 27</TD><TD></TD><TD>Source file "../tests/beets/library.py"<BR>The first line is 19</TD></TR><TR>
+<P><B>Clone # 63</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/__init__.py"<BR>The first line is 27</TD><TD></TD><TD>Source file "../tests/beets/library.py"<BR>The first line is 19</TD></TR><TR>
 <TD>
 <span style="font-family: monospace;">import&nbsp; s<span style="color:rgb(255,0,0);">qlite3</span></span></TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
@@ -1795,7 +1799,7 @@ except&nbsp; (OSError,&nbsp; IOError)&nbsp; as&nbsp; exc:<BR>
 <span style="font-family: monospace;">import&nbsp; traceback<span style="color:rgb(255,0,0);"></span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 63</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/library.py"<BR>The first line is 20</TD><TD></TD><TD>Source file "../tests/beets/ui/migrate.py"<BR>The first line is 19</TD></TR><TR>
+<P><B>Clone # 64</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/library.py"<BR>The first line is 20</TD><TD></TD><TD>Source file "../tests/beets/ui/migrate.py"<BR>The first line is 19</TD></TR><TR>
 <TD>
 <span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">l</span>o<span style="color:rgb(255,0,0);"></span>g<span style="color:rgb(255,0,0);">ging</span></span></TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
@@ -1826,7 +1830,38 @@ except&nbsp; (OSError,&nbsp; IOError)&nbsp; as&nbsp; exc:<BR>
 <span style="font-family: monospace;">import&nbsp; time<span style="color:rgb(255,0,0);"></span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 64</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 21</TD><TD></TD><TD>Source file "../tests/beets/ui/migrate.py"<BR>The first line is 18</TD></TR><TR>
+<P><B>Clone # 65</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/__init__.py"<BR>The first line is 26</TD><TD></TD><TD>Source file "../tests/beets/util/bluelet.py"<BR>The first line is 10</TD></TR><TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">logging</span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">sys</span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>s<span style="color:rgb(255,0,0);">qlite3</span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">type</span>s<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; errno<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; errno<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>r<span style="color:rgb(255,0,0);"></span>e<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">t</span>r<span style="color:rgb(255,0,0);">ac</span>e<span style="color:rgb(255,0,0);">back</span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">s</span>t<span style="color:rgb(255,0,0);">ruct</span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>t<span style="color:rgb(255,0,0);">ime</span></span></TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 66</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 21</TD><TD></TD><TD>Source file "../tests/beets/ui/migrate.py"<BR>The first line is 18</TD></TR><TR>
 <TD>
 <span style="font-family: monospace;">import&nbsp; os<span style="color:rgb(255,0,0);"></span></span></TD>
 <TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
@@ -1857,7 +1892,7 @@ except&nbsp; (OSError,&nbsp; IOError)&nbsp; as&nbsp; exc:<BR>
 <span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>l<span style="color:rgb(255,0,0);"></span>o<span style="color:rgb(255,0,0);">gging</span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 65</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 21</TD><TD></TD><TD>Source file "../tests/beets/library.py"<BR>The first line is 17</TD></TR><TR>
+<P><B>Clone # 67</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 21</TD><TD></TD><TD>Source file "../tests/beets/library.py"<BR>The first line is 17</TD></TR><TR>
 <TD>
 <span style="font-family: monospace;">import&nbsp; os<span style="color:rgb(255,0,0);"></span></span></TD>
 <TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
@@ -1888,7 +1923,131 @@ except&nbsp; (OSError,&nbsp; IOError)&nbsp; as&nbsp; exc:<BR>
 <span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">sh</span>l<span style="color:rgb(255,0,0);">ex</span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 66</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/__init__.py"<BR>The first line is 18</TD><TD></TD><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 21</TD></TR><TR>
+<P><B>Clone # 68</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/confit.py"<BR>The first line is 19</TD><TD></TD><TD>Source file "../tests/beets/util/__init__.py"<BR>The first line is 18</TD></TR><TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; os<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; os<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">pkgutil</span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">sys</span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">sys</span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">re</span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">yam</span>l<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">shuti</span>l<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>t<span style="color:rgb(255,0,0);">ypes</span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">fnma</span>t<span style="color:rgb(255,0,0);">ch</span></span></TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 69</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/confit.py"<BR>The first line is 19</TD><TD></TD><TD>Source file "../tests/beets/util/bluelet.py"<BR>The first line is 8</TD></TR><TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>o<span style="color:rgb(255,0,0);">s</span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">s</span>o<span style="color:rgb(255,0,0);">cket</span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">pkgu</span>t<span style="color:rgb(255,0,0);">il</span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">selec</span>t<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; sys<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; sys<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>y<span style="color:rgb(255,0,0);">aml</span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">t</span>y<span style="color:rgb(255,0,0);">pes</span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">typ</span>e<span style="color:rgb(255,0,0);">s</span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>e<span style="color:rgb(255,0,0);">rrno</span></span></TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 70</B><BR>Distance between two fragments = 3 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/confit.py"<BR>The first line is 19</TD><TD></TD><TD>Source file "../tests/beets/ui/migrate.py"<BR>The first line is 18</TD></TR><TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; os<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; os<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">pk</span>g<span style="color:rgb(255,0,0);">util</span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">Confi</span>g<span style="color:rgb(255,0,0);">Parser</span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>s<span style="color:rgb(255,0,0);">ys</span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">codec</span>s<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; yaml<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; yaml<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">types</span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">logging</span></span></TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 71</B><BR>Distance between two fragments = 3 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/confit.py"<BR>The first line is 19</TD><TD></TD><TD>Source file "../tests/beets/library.py"<BR>The first line is 17</TD></TR><TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; os<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; os<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">pkgutil</span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">re</span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; sys<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; sys<span style="color:rgb(255,0,0);"></span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">yam</span>l<span style="color:rgb(255,0,0);"></span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>l<span style="color:rgb(255,0,0);">ogging</span></span></TD>
+</TR>
+<TR>
+<TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">typ</span>e<span style="color:rgb(255,0,0);">s</span></span></TD>
+<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
+<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">shl</span>e<span style="color:rgb(255,0,0);">x</span></span></TD>
+</TR>
+</TABLE> </P> <HR><BR>
+<P><B>Clone # 72</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/__init__.py"<BR>The first line is 18</TD><TD></TD><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 21</TD></TR><TR>
 <TD>
 <span style="font-family: monospace;">import&nbsp; os<span style="color:rgb(255,0,0);"></span></span></TD>
 <TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
@@ -1919,7 +2078,7 @@ except&nbsp; (OSError,&nbsp; IOError)&nbsp; as&nbsp; exc:<BR>
 <span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">pl</span>at<span style="color:rgb(255,0,0);">form</span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 67</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/__init__.py"<BR>The first line is 18</TD><TD></TD><TD>Source file "../tests/beets/util/bluelet.py"<BR>The first line is 9</TD></TR><TR>
+<P><B>Clone # 73</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/__init__.py"<BR>The first line is 18</TD><TD></TD><TD>Source file "../tests/beets/util/bluelet.py"<BR>The first line is 9</TD></TR><TR>
 <TD>
 <span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">o</span>s<span style="color:rgb(255,0,0);"></span></span></TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
@@ -1950,7 +2109,7 @@ except&nbsp; (OSError,&nbsp; IOError)&nbsp; as&nbsp; exc:<BR>
 <span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">tr</span>a<span style="color:rgb(255,0,0);"></span>c<span style="color:rgb(255,0,0);">eback</span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 68</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/__init__.py"<BR>The first line is 18</TD><TD></TD><TD>Source file "../tests/beets/ui/migrate.py"<BR>The first line is 18</TD></TR><TR>
+<P><B>Clone # 74</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/__init__.py"<BR>The first line is 18</TD><TD></TD><TD>Source file "../tests/beets/ui/migrate.py"<BR>The first line is 18</TD></TR><TR>
 <TD>
 <span style="font-family: monospace;">import&nbsp; os<span style="color:rgb(255,0,0);"></span></span></TD>
 <TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
@@ -1981,7 +2140,7 @@ except&nbsp; (OSError,&nbsp; IOError)&nbsp; as&nbsp; exc:<BR>
 <span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">loggi</span>n<span style="color:rgb(255,0,0);">g</span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 69</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/__init__.py"<BR>The first line is 18</TD><TD></TD><TD>Source file "../tests/beets/library.py"<BR>The first line is 18</TD></TR><TR>
+<P><B>Clone # 75</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/__init__.py"<BR>The first line is 18</TD><TD></TD><TD>Source file "../tests/beets/library.py"<BR>The first line is 18</TD></TR><TR>
 <TD>
 <span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">os</span></span></TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
@@ -2012,7 +2171,7 @@ except&nbsp; (OSError,&nbsp; IOError)&nbsp; as&nbsp; exc:<BR>
 <span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">u</span>n<span style="color:rgb(255,0,0);">icoded</span>at<span style="color:rgb(255,0,0);">a</span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 70</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/__init__.py"<BR>The first line is 18</TD><TD></TD><TD>Source file "../tests/beets/library.py"<BR>The first line is 17</TD></TR><TR>
+<P><B>Clone # 76</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/__init__.py"<BR>The first line is 18</TD><TD></TD><TD>Source file "../tests/beets/library.py"<BR>The first line is 17</TD></TR><TR>
 <TD>
 <span style="font-family: monospace;">import&nbsp; os<span style="color:rgb(255,0,0);"></span></span></TD>
 <TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
@@ -2043,7 +2202,7 @@ except&nbsp; (OSError,&nbsp; IOError)&nbsp; as&nbsp; exc:<BR>
 <span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">s</span>h<span style="color:rgb(255,0,0);">lex</span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 71</B><BR>Distance between two fragments = 3 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/migrate.py"<BR>The first line is 22</TD><TD></TD><TD>Source file "../tests/beets/ui/__init__.py"<BR>The first line is 26</TD></TR><TR>
+<P><B>Clone # 77</B><BR>Distance between two fragments = 3 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/migrate.py"<BR>The first line is 22</TD><TD></TD><TD>Source file "../tests/beets/ui/__init__.py"<BR>The first line is 26</TD></TR><TR>
 <TD>
 <span style="font-family: monospace;">import&nbsp; logging<span style="color:rgb(255,0,0);"></span></span></TD>
 <TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
@@ -2074,7 +2233,7 @@ except&nbsp; (OSError,&nbsp; IOError)&nbsp; as&nbsp; exc:<BR>
 <span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">s</span>t<span style="color:rgb(255,0,0);">ruct</span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 72</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/migrate.py"<BR>The first line is 22</TD><TD></TD><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 20</TD></TR><TR>
+<P><B>Clone # 78</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/migrate.py"<BR>The first line is 22</TD><TD></TD><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 20</TD></TR><TR>
 <TD>
 <span style="font-family: monospace;">import&nbsp; logging<span style="color:rgb(255,0,0);"></span></span></TD>
 <TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
@@ -2105,7 +2264,7 @@ except&nbsp; (OSError,&nbsp; IOError)&nbsp; as&nbsp; exc:<BR>
 <span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">cod</span>e<span style="color:rgb(255,0,0);">c</span>s<span style="color:rgb(255,0,0);"></span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 73</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/library.py"<BR>The first line is 20</TD><TD></TD><TD>Source file "../tests/beets/ui/__init__.py"<BR>The first line is 26</TD></TR><TR>
+<P><B>Clone # 79</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/library.py"<BR>The first line is 20</TD><TD></TD><TD>Source file "../tests/beets/ui/__init__.py"<BR>The first line is 26</TD></TR><TR>
 <TD>
 <span style="font-family: monospace;">import&nbsp; logging<span style="color:rgb(255,0,0);"></span></span></TD>
 <TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
@@ -2136,7 +2295,7 @@ except&nbsp; (OSError,&nbsp; IOError)&nbsp; as&nbsp; exc:<BR>
 <span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">s</span>t<span style="color:rgb(255,0,0);">ruct</span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 74</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/library.py"<BR>The first line is 20</TD><TD></TD><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 20</TD></TR><TR>
+<P><B>Clone # 80</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/library.py"<BR>The first line is 20</TD><TD></TD><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 20</TD></TR><TR>
 <TD>
 <span style="font-family: monospace;">import&nbsp; logging<span style="color:rgb(255,0,0);"></span></span></TD>
 <TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
@@ -2167,131 +2326,7 @@ except&nbsp; (OSError,&nbsp; IOError)&nbsp; as&nbsp; exc:<BR>
 <span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">cod</span>e<span style="color:rgb(255,0,0);">cs</span></span></TD>
 </TR>
 </TABLE> </P> <HR><BR>
-<P><B>Clone # 75</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/__init__.py"<BR>The first line is 18</TD><TD></TD><TD>Source file "../tests/beets/util/confit.py"<BR>The first line is 19</TD></TR><TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; os<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; os<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">sys</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">pkgutil</span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">re</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">sys</span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">shuti</span>l<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">yam</span>l<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">fnma</span>t<span style="color:rgb(255,0,0);">ch</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>t<span style="color:rgb(255,0,0);">ypes</span></span></TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 76</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/util/bluelet.py"<BR>The first line is 8</TD><TD></TD><TD>Source file "../tests/beets/util/confit.py"<BR>The first line is 19</TD></TR><TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>s<span style="color:rgb(255,0,0);">ocket</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">o</span>s<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">se</span>l<span style="color:rgb(255,0,0);">ect</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">pkguti</span>l<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; sys<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; sys<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">t</span>y<span style="color:rgb(255,0,0);">pes</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>y<span style="color:rgb(255,0,0);">aml</span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>e<span style="color:rgb(255,0,0);">rrno</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">typ</span>e<span style="color:rgb(255,0,0);">s</span></span></TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 77</B><BR>Distance between two fragments = 3 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/migrate.py"<BR>The first line is 18</TD><TD></TD><TD>Source file "../tests/beets/util/confit.py"<BR>The first line is 19</TD></TR><TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; os<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; os<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">Conf</span>i<span style="color:rgb(255,0,0);">gParser</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">pkgut</span>i<span style="color:rgb(255,0,0);">l</span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">codec</span>s<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>s<span style="color:rgb(255,0,0);">ys</span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; yaml<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; yaml<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">logging</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">types</span></span></TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 78</B><BR>Distance between two fragments = 3 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/library.py"<BR>The first line is 17</TD><TD></TD><TD>Source file "../tests/beets/util/confit.py"<BR>The first line is 19</TD></TR><TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; os<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; os<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">re</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">pkgutil</span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; sys<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=AQUA> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; sys<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>l<span style="color:rgb(255,0,0);">ogging</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">yam</span>l<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);"></span>s<span style="color:rgb(255,0,0);">hlex</span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">type</span>s<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 79</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 22</TD><TD></TD><TD>Source file "../tests/beets/ui/migrate.py"<BR>The first line is 18</TD></TR><TR>
+<P><B>Clone # 81</B><BR>Distance between two fragments = 4 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/ui/commands.py"<BR>The first line is 22</TD><TD></TD><TD>Source file "../tests/beets/ui/migrate.py"<BR>The first line is 18</TD></TR><TR>
 <TD>
 <span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">time</span></span></TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
@@ -2320,41 +2355,6 @@ except&nbsp; (OSError,&nbsp; IOError)&nbsp; as&nbsp; exc:<BR>
 <span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">beets</span></span></TD>
 <TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
 <span style="font-family: monospace;">import&nbsp; <span style="color:rgb(255,0,0);">logging</span></span></TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 80</B><BR>Distance between two fragments = 2 <BR>Clone size = 5<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/autotag/hooks.py"<BR>The first line is 517</TD><TD></TD><TD>Source file "../tests/beets/autotag/hooks.py"<BR>The first line is 510</TD></TR><TR>
-<TD>
-<span style="font-family: monospace;">if&nbsp; <span style="color:rgb(255,0,0);">v</span>a<span style="color:rgb(255,0,0);">_l</span>i<span style="color:rgb(255,0,0);">kely</span>&nbsp; and&nbsp; album:<BR>
-&nbsp; try:<BR>
-&nbsp; &nbsp; out.extend(mb.match_album(<span style="color:rgb(255,0,0);">None</span>,&nbsp; album,&nbsp; len(items)))<BR>
-&nbsp; except&nbsp; mb.MusicBrainzAPIError&nbsp; as&nbsp; exc:<BR>
-&nbsp; &nbsp; exc.log(log)<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">if&nbsp; <span style="color:rgb(255,0,0);"></span>a<span style="color:rgb(255,0,0);">rt</span>i<span style="color:rgb(255,0,0);">st</span>&nbsp; and&nbsp; album:<BR>
-&nbsp; try:<BR>
-&nbsp; &nbsp; out.extend(mb.match_album(<span style="color:rgb(255,0,0);">artist</span>,&nbsp; album,&nbsp; len(items)))<BR>
-&nbsp; except&nbsp; mb.MusicBrainzAPIError&nbsp; as&nbsp; exc:<BR>
-&nbsp; &nbsp; exc.log(log)<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-</TABLE> </P> <HR><BR>
-<P><B>Clone # 81</B><BR>Distance between two fragments = 4 <BR>Clone size = 6<TABLE NOWRAP WIDTH=100% BORDER=1><TD>Source file "../tests/beets/autotag/match.py"<BR>The first line is 205</TD><TD></TD><TD>Source file "../tests/beets/autotag/match.py"<BR>The first line is 209</TD></TR><TR>
-<TD>
-<span style="font-family: monospace;">if&nbsp; likelies['<span style="color:rgb(255,0,0);"></span>l<span style="color:rgb(255,0,0);">abel</span>']&nbsp; and&nbsp; album_info.<span style="color:rgb(255,0,0);"></span>l<span style="color:rgb(255,0,0);">abel</span>:<BR>
-&nbsp; dist.add_string('<span style="color:rgb(255,0,0);"></span>l<span style="color:rgb(255,0,0);">abel</span>',&nbsp; likelies['<span style="color:rgb(255,0,0);"></span>l<span style="color:rgb(255,0,0);">abel</span>'],<span style="color:rgb(255,0,0);"></span>&nbsp; album_info.<span style="color:rgb(255,0,0);"></span>l<span style="color:rgb(255,0,0);">abel</span>)<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">if&nbsp; likelies['<span style="color:rgb(255,0,0);">cata</span>l<span style="color:rgb(255,0,0);">ognum</span>']&nbsp; and&nbsp; album_info.<span style="color:rgb(255,0,0);">cata</span>l<span style="color:rgb(255,0,0);">ognum</span>:<BR>
-&nbsp; dist.add_string('<span style="color:rgb(255,0,0);">cata</span>l<span style="color:rgb(255,0,0);">ognum</span>',&nbsp; likelies['<span style="color:rgb(255,0,0);">cata</span>l<span style="color:rgb(255,0,0);">ognum</span>'],<span style="color:rgb(255,0,0);"><BR>
-&nbsp; </span>&nbsp; album_info.<span style="color:rgb(255,0,0);">cata</span>l<span style="color:rgb(255,0,0);">ognum</span>)<span style="color:rgb(255,0,0);"></span></span></TD>
-</TR>
-<TR>
-<TD>
-<span style="font-family: monospace;">if&nbsp; likelies['<span style="color:rgb(255,0,0);">cat</span>al<span style="color:rgb(255,0,0);">ogn</span>um<span style="color:rgb(255,0,0);"></span>']&nbsp; and&nbsp; album_info.<span style="color:rgb(255,0,0);">cat</span>al<span style="color:rgb(255,0,0);">ogn</span>um<span style="color:rgb(255,0,0);"></span>:<BR>
-&nbsp; dist.add_string('<span style="color:rgb(255,0,0);">cat</span>al<span style="color:rgb(255,0,0);">ogn</span>um<span style="color:rgb(255,0,0);"></span>',&nbsp; likelies['<span style="color:rgb(255,0,0);">cat</span>al<span style="color:rgb(255,0,0);">ogn</span>um<span style="color:rgb(255,0,0);"></span>'],<BR>
-&nbsp; &nbsp; album_info.<span style="color:rgb(255,0,0);">cat</span>al<span style="color:rgb(255,0,0);">ogn</span>um<span style="color:rgb(255,0,0);"></span>)<span style="color:rgb(255,0,0);"></span></span></TD>
-<TD style="width: 10px;" BGCOLOR=RED> </TD><TD>
-<span style="font-family: monospace;">if&nbsp; likelies['<span style="color:rgb(255,0,0);"></span>al<span style="color:rgb(255,0,0);">b</span>um<span style="color:rgb(255,0,0);">disambig</span>']&nbsp; and&nbsp; album_info.<span style="color:rgb(255,0,0);"></span>al<span style="color:rgb(255,0,0);">b</span>um<span style="color:rgb(255,0,0);">disambig</span>:<BR>
-&nbsp; dist.add_string('<span style="color:rgb(255,0,0);"></span>al<span style="color:rgb(255,0,0);">b</span>um<span style="color:rgb(255,0,0);">disambig</span>',&nbsp; likelies['<span style="color:rgb(255,0,0);"></span>al<span style="color:rgb(255,0,0);">b</span>um<span style="color:rgb(255,0,0);">disambig</span>'],<BR>
-&nbsp; &nbsp; album_info.<span style="color:rgb(255,0,0);"></span>al<span style="color:rgb(255,0,0);">b</span>um<span style="color:rgb(255,0,0);">disambig</span>)<span style="color:rgb(255,0,0);"></span></span></TD>
 </TR>
 </TABLE> </P> <HR>
     

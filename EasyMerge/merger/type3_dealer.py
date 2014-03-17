@@ -12,6 +12,7 @@ import os
 # Large float and imaginary literals get turned into infinities in the AST.
 # We unparse those infinities to INFSTR.
 INFSTR = "1e" + repr(sys.float_info.max_10_exp + 1)
+build_in_name = ["abs", "divmod", "input", "open", "staticmethod", "all", "enumerate", "int", "ord", "str", "any", "eval", "isinstance", "pow", "sum", "basestring", "execfile", "issubclass", "print", "super", "bin", "file", "iter", "property", "tuple", "bool", "filter", "len", "range", "type", "bytearray", "float", "list", "raw_input", "unichr", "callable", "format", "locals", "reduce", "unicode", "chr", "frozenset", "long", "reload", "vars", "classmethod", "getattr", "map", "repr", "xrange", "cmp", "globals", "max", "reversed", "zip", "compile", "hasattr", "memoryview", "round", "__import__", "complex", "hash", "min", "set", "apply", "delattr", "help", "next", "setattr", "buffer", "dict", "hex", "object", "slice", "coerce", "dir", "id", "oct", "sorted", "intern", "None", "False", "True"]
 
 def interleave(inter, f, seq):
     """Call f on each item in seq, calling inter() in between.
@@ -44,6 +45,7 @@ class Code:
         param = [] 
         
         def add_unreachable(unreachable):
+            print unreachable
             #refine code
             for i in range(len(self.code_lines)):
                 while "unreachable_method" in self.code_lines[i]:
@@ -210,8 +212,7 @@ class Code:
         
     def output(self,file = sys.stdout):
         self.f = file
-        for i in self.caller:
-            self.f.write(i+"\n")
+        self.f.write(self.caller+"\n")
         for i in self.code_lines:
             self.f.write(i+"\n")
         self.f.flush()
@@ -238,7 +239,6 @@ class Unparser:
         self.args = []
         
         self.vars = []
-        self.rec_var = True 
         self.is_func_name = False 
         
         self.f = file
@@ -252,7 +252,7 @@ class Unparser:
             self.f.write("line:"+str(i.line)+"\n")
             self.f.write("scope:"+str(i.scope)+"\n")
             self.f.write("source:"+str(i.source)+"\n")
-            self.f.write("tree:"+str(i.tree)+"\n")   '''
+            self.f.write("tree:"+str(i.tree)+"\n") '''
          
         self.f = file
         self.future_imports = []
@@ -263,18 +263,18 @@ class Unparser:
         
         rm_ret_var = []
         for i in self.return_vars:
-            if i[1] in self.mod_calls:
+            if i in self.mod_calls:
                 rm_ret_var.append(i)
         for i in rm_ret_var:
             self.return_vars.remove(i)
                 
         
         #print "mod_calls:",self.mod_calls
-        #print "new_vars:",self.vars
-        #print "old_vars:",self.variable
+        print "new_vars:",self.vars
+        print "old_vars:",self.variable
         if len(self.vars)!=len(self.variable):
             print "ERROR"
-        #print "return_vars:",self.return_vars
+        print "return_vars:",self.return_vars
         #print ""
         
     def crop_calls(self, lines, src_ast):
@@ -287,50 +287,80 @@ class Unparser:
         return calls
     
     def crop_vars(self, lines, src_ast):
+        
+        #for i in src_ast.functions:
+        #    print i.name, i.env
+        
         vars = []
         return_vars = []
         for i in src_ast.var:
             if i[0]<lines[0] or i[0]>lines[1]:
                 continue
             else:
-                vars.append(())
+                if i[1] in build_in_name:
+                    continue
+                
+                for j in src_ast.classes:
+                    if i[1]==j.name:
+                        vars.append(i[1])
+                        continue
+                    
+                env = ["Global", "Function"]
+                for j in src_ast.functions:
+                    if i[1]==j.name:                        
+                        if j.env[-1][0] in env:
+                            vars.append(i[1])
+                            continue
+                        
+                vars.append("new")
                 for j in src_ast.var:
                     if j[1]==i[1] and j[0]<lines[0]:
                         #-1?
                         if j[2]==-1:
                             #print "global",j
-                            vars[-1]=i
+                            vars[-1]=i[1]
                             break
                         scope_i = src_ast.raw_scope[i[2]]
                         scope_j = src_ast.raw_scope[j[2]]
                         if len(scope_j)<=len(scope_i) and scope_j==scope_i[:len(scope_j)]:
                             #print i,j
-                            vars[-1]=i
+                            vars[-1]=i[1]
                             break
                 for j in src_ast.var:
                     if j[1]==i[1] and j[0]>lines[1]:
                         #-1?
                         if i[2]==-1:
                             #print "return global",i
-                            return_vars.append(i)
+                            return_vars.append(i[1])
                             break
                         scope_i = src_ast.raw_scope[i[2]]
                         scope_j = src_ast.raw_scope[j[2]]
                         if len(scope_j)>=len(scope_i) and scope_i==scope_j[:len(scope_i)]:
                             #print "return:", i,j
-                            return_vars.append(i)
+                            return_vars.append(i[1])
                             break
                 #print src_ast.raw_scope[i[2]]
                 #print i
+        print vars
         return vars,return_vars
     
     def call_dealer(self,tree):
         #self.write("CALL_HERE"+str(tree.lineno)+","+str(tree.col_offset))
         
-        def process_mod_call(call):  
-            self.write("unreachable_method["+str(len(self.mod_calls))+"]")
+        def process_mod_call(call):
+            self.is_func_name = True
+            self.ret_str = True   
+            self.dispatch(tree.func)
+            self.f.write(self.cur_str)            
+            self.ret_str = False
+            self.is_func_name = False
+  
+            #print "@"+self.cur_str, 
+            #self.write("unreachable_method["+str(len(self.mod_calls))+"]")
             #self.write("$CALL:"+str(call.source)+"$")
-            self.mod_calls.append(call)
+            self.mod_calls.append(self.cur_str)
+            self.cur_str = ""
+            
             
         self.cur_call+=1
         call = self.calls[self.cur_call]
@@ -347,10 +377,8 @@ class Unparser:
 
     def fill(self, text = ""):
         "Indent a piece of text, according to the current indentation level"
-        if not self.ret_str:
-            self.f.write("\n"+"    "*self._indent + text)
-        else:
-            self.cur_str+=("\n"+"    "*self._indent + text)
+        self.f.write("\n"+"    "*self._indent + text)
+
 
     def write(self, text):
         "Append a piece of text to the current line."
@@ -640,23 +668,26 @@ class Unparser:
     def _Name(self, t):
         #if t.id=="ui":
             #print "ui=======",self.rec_var
-        if self.rec_var:            
-            if not self.is_func_name: 
-                '''print self.variable 
-                print self.vars
-                print self.incall
-                print self.is_func_name  '''     
-                if self.variable[len(self.vars)]!=():
+           
+        if not self.is_func_name: 
+            '''print self.variable 
+            print self.vars
+            print self.incall
+            print self.is_func_name
+            print t.id'''
+            if t.id in build_in_name:
+                self.write(t.id)
+            elif self.variable[len(self.vars)]!="new" :
+                if t.id==self.variable[len(self.vars)]:
                     self.vars.append(t.id)
-                    self.write(t.id)#+"@VAR")
-                else:
-                    self.vars.append("")
-                    self.write(t.id)
+                self.write(t.id)#+"@VAR")
             else:
-                del self.variable[len(self.vars)]
+                self.vars.append("")
                 self.write(t.id)
         else:
+            #del self.variable[len(self.vars)]
             self.write(t.id)
+
             
 
     def _Repr(self, t):
@@ -806,32 +837,33 @@ class Unparser:
         if isinstance(t.value, ast.Num) and isinstance(t.value.n, int):
             self.write(" ")
         self.write(".")
-        self.rec_var = False
         self.write(t.attr)
-        self.rec_var = True
-
+  
     def _Call(self, t):
         mod = False
         #print "F:=========",t.func._fields
-        if not self.incall:
-            if self.call_dealer(t):
-                mod = True
-        self.incall = True
         
+        cur_incall = self.incall
+
+        if not self.incall:
+            self.incall = True
+            if self.call_dealer(t):
+                mod = True       
         
         if not mod:                        
             self.dispatch(t.func)            
-        else:
+        '''else:
             self.is_func_name = True
             self.ret_str = True
             self.dispatch(t.func)
             self.ret_str = False
             self.mod_calls[-1] = self.cur_str
             self.cur_str = ""
-            self.is_func_name = False
+            self.is_func_name = False'''
         
         self.write("(")
-        self.incall = False
+        if not cur_incall:
+            self.incall = False
         comma = False
         for e in t.args:
             if comma: self.write(", ")
@@ -935,14 +967,15 @@ class Unparser:
 
 def generateNewCode(id, source, lines, src_ast, output=sys.stdout):
     tree = compile(source, "", "exec", ast.PyCF_ONLY_AST)
-    merged = Code(id)
+    Unparser(tree, lines, src_ast, output)
+    '''merged = Code(id)
     up = Unparser(tree, lines, src_ast, merged)
     merged.split()    
     merged.write_head_line(up.mod_calls, up.vars)
     merged.write_return_line(up.return_vars)
     merged.get_caller()
-    #merged.output()
-    return merged
+    merged.output()
+    return merged'''
 
 
 def mergeDiffResults(merged_list):
