@@ -2,7 +2,9 @@ from PyQt4 import QtGui
 from tmp.dummy import Dummy
 from merger.analyzer import Analyzer
 import os
+import time
 from merger.Result import Result
+
 
 class Background(QtGui.QWidget):
     def __init__(self):
@@ -61,7 +63,34 @@ class Background(QtGui.QWidget):
         self._list.itemClicked.connect(self.listClicked)
 
     def log(self, text):
+        now = time.strftime('%c')
+        text = '[' + now + '] - \n    ' + text
         self._log.insertPlainText(text + '\n')
+        f = open('log.txt', 'a+')
+        f.write(text + '\n')
+        f.close()
+
+
+    def populateEval(self, sets, number):
+        #Populate evaluation information for one clone set
+        #Now only generate as a dummy
+        dummy  = 'Mergeable ' + str(number) + ' evaluation:\n'
+        counter = 1
+        for key in sets:
+            dummy += 'File ' + str(counter) + ': ' + key[0] + '\n'
+            counter += 1
+
+        dummy += 'File 1 package: beets > util > confit\n'
+        dummy += 'File 2 package: beets > ui > migrate\n'
+        dummy += 'External class reference: 2\n'
+        dummy += 'External function reference: 2\n'
+        dummy += 'Extra parameters: 2\n'
+        dummy += 'Clone length: 30 lines\n'
+        dummy += 'Merge is somewhat recommended\n'
+
+        self._eval.clear()
+        self._eval.insertPlainText(dummy)
+        return dummy
 
     def openClicked(self):
         sender = self.sender()
@@ -88,7 +117,7 @@ class Background(QtGui.QWidget):
         counter = 1
         for set in sets:
             item = QtGui.QListWidgetItem('Merge ' + str(counter))
-            item.setForeground(QtGui.QColor('red'))
+            item.setForeground(QtGui.QColor('green'))
             self._list.addItem(item)
             counter += 1
 
@@ -111,16 +140,31 @@ class Background(QtGui.QWidget):
         browser = QtGui.QTextBrowser(self)
         f = open(title)
         lines = f.readlines()
-        counter = 0
+        f.close()
+        counter = 1
         for line in lines:
             indent = ''
             for i in range(0, 6 - len(str(counter))):
                 indent += ' '
             indent += str(counter) + ':    '
+
+            if counter == start + 1:
+                browser.insertHtml('###REMOVE CODE BELOW###')
+                browser.insertPlainText('\n')
+            elif counter == end + 2:
+                browser.insertHtml('###REMOVE CODE ABOVE###')
+                browser.insertPlainText('\n')
+                browser.insertPlainText('###REPLACE WITH###')
+                browser.insertPlainText('\n')    
+                browser.insertPlainText(replacement)
+                browser.insertPlainText('###REPLACE END###')
+                browser.insertPlainText('\n')
+            #this actually print the line
             browser.insertPlainText(indent + line)
+            
             counter += 1
 
-        block = browser.document().findBlockByLineNumber(start + 15)
+        block = browser.document().findBlockByLineNumber(start + 10)
         cursor = browser.textCursor()
         cursor.setPosition(block.position())
         browser.setFocus()
@@ -135,9 +179,13 @@ class Background(QtGui.QWidget):
         self._result.clear()
         self._result.insertPlainText(curSet.get_code())
 
+        sets = curSet.get_caller()
         #_caller
-        self.populateTabs(curSet.get_caller())
+        self.populateTabs(sets)
 
+        #evaluation
+        log = self.populateEval(sets, index + 1)
+        self.log(log)
 
 
     def mergeClicked(self):
