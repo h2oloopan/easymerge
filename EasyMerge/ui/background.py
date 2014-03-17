@@ -10,7 +10,8 @@ class Background(QtGui.QWidget):
         self._list = QtGui.QListWidget(self)
         self._tabs = QtGui.QTabWidget(self)
         self._result = QtGui.QTextBrowser(self)
-        self._info = QtGui.QTextBrowser(self)
+        self._log = QtGui.QTextBrowser(self)
+        self._eval = QtGui.QTextBrowser(self)
         self._merge = QtGui.QPushButton('Merge', self)
         self._unmerge = QtGui.QPushButton('Unmerge', self)
         self._analyze = QtGui.QPushButton('Analyze', self)
@@ -20,6 +21,9 @@ class Background(QtGui.QWidget):
         self._path = ''
         self._sets = []
         self.initUI()
+        self.log('EasyMerge started')
+        self.log('UI initialization completed')
+        self.log('Please pick source tree to analyze')
 
 
     def initUI(self):
@@ -30,12 +34,19 @@ class Background(QtGui.QWidget):
         grid.addWidget(self._list, 1, 0, 1, 1)
         grid.addWidget(self._tabs, 1, 1, 1, 2)
         grid.addWidget(self._result, 2, 1, 2, 2)
-        grid.addWidget(self._info, 2, 0, 1, 1)
+        #grid.addWidget(self._info, 2, 0, 1, 1)
 
+        #merge and unmerge buttons
         box = QtGui.QBoxLayout(QtGui.QBoxLayout.LeftToRight)
         box.addWidget(self._merge)
         box.addWidget(self._unmerge)
         grid.addLayout(box, 3, 0, 1, 1)
+
+        #log and eval
+        box2 = QtGui.QBoxLayout(QtGui.QBoxLayout.TopToBottom)
+        box2.addWidget(self._log)
+        box2.addWidget(self._eval)
+        grid.addLayout(box2, 2, 0, 1, 1)
 
         grid.setColumnStretch(0, 1)
         grid.setColumnStretch(1, 3)
@@ -49,6 +60,8 @@ class Background(QtGui.QWidget):
         self._unmerge.clicked.connect(self.unmergeClicked)
         self._list.itemClicked.connect(self.listClicked)
 
+    def log(self, text):
+        self._log.insertPlainText(text + '\n')
 
     def openClicked(self):
         sender = self.sender()
@@ -63,20 +76,11 @@ class Background(QtGui.QWidget):
             msg.exec_()
         else:
             #analyze
+            self.log('Start running CloneDigger...')
             analyzer = Analyzer()
             result = analyzer.analyze(self._path)
             self.updateUI(result)
 
-
-    def resetInfo(self, text):
-        self._info.clear()
-        self._info.insertPlainText(text)
-
-    def appendInfo(self, text):
-        self._info.insertPlainText(text)
-
-    def clearInfo(self, text):
-        self._info.clear()
 
     def updateUI(self, sets):
         self._sets = sets
@@ -87,6 +91,8 @@ class Background(QtGui.QWidget):
             item.setForeground(QtGui.QColor('red'))
             self._list.addItem(item)
             counter += 1
+
+        self.log(str(counter - 1) + ' mergeable clone sets found')
 
     def populateTabs(self, sets):
         self._tabs.clear()
@@ -124,8 +130,6 @@ class Background(QtGui.QWidget):
     def listClicked(self, item):
         index = item.listWidget().currentRow()
         curSet = self._sets[index]
-        #debug
-        curSet.output()
 
         #_code
         self._result.clear()

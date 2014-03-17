@@ -310,7 +310,11 @@ Now we can move on to introduce EasyMerge and how it works behind the scene.
 
 
 \section{EasyMerge}
+The entire EasyMerge program is written with Python 2.7.5 and the user interface is powered by PyQt 4.10.4.
+It takes a folder of Python written source tree as input, look for all refactorable clones and recommend potential merges.  
+
 \subsection{User Interface}
+EasyMerge has a simple and straightforward user interface, as shown in figure.
 
 \subsection{Preprocessing}
 The first step of EasyMerge is to run CloneDigger at target source tree, take its output and format and standardize it for our own usage.
