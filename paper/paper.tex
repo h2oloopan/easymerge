@@ -290,6 +290,11 @@ Anti-unification is a general expression of two given terms. Let $E_{1}$ and $E_
 
 The anti-unification distance is defined as follows: let U be the anti-unifier of two trees $T_{1}$ and $T_{2}$ with substitutions $\sigma_{1}$ and $\sigma_{2}$. $\sigma_{1}$ and $\sigma_{2}$ are mappings from the set \{$?_{1}$, $?_{2}$, ..., $?_{n}$\} to substituting trees. Anti-unification distance between $T_{1}$ and $T_{2}$ as a sum of sizes of substituting trees in $\sigma_{1}$ and $\sigma_{2}$. The distance doesn't allow the permutation of siblings or changing the number of child nodes.
 
+\begin{figure*}
+\centering
+\epsfig{file=screen.pdf}
+\caption{EasyMerge User Interface}
+\end{figure*}
 
 \subsection{Duplicate Code Detection Algorithm}
 The method of finding duplicate code consists of three phases:
@@ -314,13 +319,47 @@ The entire EasyMerge program is written with Python 2.7.5 and the user interface
 It takes a folder of Python written source tree as input, look for all refactorable clones and recommend potential merges.  
 
 \subsection{User Interface}
-EasyMerge has a simple and straightforward user interface, as shown in figure.
+EasyMerge has a simple and straightforward user interface, as shown in {\bf Figure 1}.
+Once the program is launched, user can click ``Open Source" at top left and then choose the folder 
+where the software project's source tree resides in the popup open directory dialog.
+Then by clicking ``Analyze" button on the right side, EasyMerge starts analyzing the selected source tree.
+
+There are five text boxes displayed on the main interface.
+Once the scanning phase is completed, a list of refactorable clone sets are displayed in the ``Possible Merges" box at top left.
+All items in the list are initially coloured green, once a merge is done, the colour will be changed to red for the record.
+
+User can click each item in the ``Possible Merges" list. When one item is selected, a corresponding clone set will be loaded. All files
+associated with the set are displayed in ``Source Code Browser" tabs on the right side of the UI, where we can navigate to the
+corresponding source file by clicking each tab.
+Inside the source code browser, code that will be removed after merging is between ``\#\#\#REMOVE\_CODE\_BELOW\#\#\#"
+and ``\#\#\#REMOVE\_CODE\_ABOVE\#\#\#". And the replacement code is between ``\#\#\#REPLACE\_WITH\#\#\#"
+and ``\#\#\#REPLACE\_END\#\#\#".
+
+On the bottom part of the screen, the ``Log" and ``Evaluation" windows are placed on the left. The ``Log" window keeps track of
+program running and debugging information. Moreover, its content will also be dumped to ``log.txt" file in EasyMerge's main folder for
+book keeping purpose and developers may use it to help with writing change log. The ``Evaluation" window displays evaluation metrics
+for each code clone set, and will tell user whether we recommend a code merge for the set or not.
+
+Last but not least, the ``Extracted Method" box display the extracted method we generated as a helper function all code replacement 
+in original source code files are calling. After reviewing all information and recommendation we provide, a user can perform the code refactoring for
+a certain set by clicking ``Merge" button on bottom left. 
+EasyMerge in turn will rewrite the source files and move the generated helper to our specific accessible file in back-end.
+And all merging done in current session can be redone by clicking ``Unmerge" button if
+the user performed an unwanted merge.
 
 \subsection{Preprocessing}
 The first step of EasyMerge is to run CloneDigger at target source tree, take its output and format and standardize it for our own usage.
-The core of this step is to classify code clones and get the ones that we not only can but also want to merge.
+The core of this step is to classify code clones and get the ones that we not only can but also want to merge. 
+
 
 \section{Experimental Results}
+All experiments are done on a desktop computer. The testing machine has an AMD FX 3.5GHz 6 cores CPU, 16 GB of memory,
+128 KB L1 cache, 6 MB L2 cache (1 MB per core), and 8 MB shared L3 cache. The machine runs Ubuntu Desktop 12.04, Python
+2.7.5 and has all related packages installed. For test cases, we have three popular Python powered open source projects found on GitHub of different sizes and covers
+different usage domains.
+They are ``Beets - the media library management system for obsessive-compulsive music geeks", ``Fig - fast, isolated development environments using Docker",
+and ``Wagtail - a new Django content management system".
+
 
 %ACKNOWLEDGMENTS are optional
 %\section{Acknowledgements}

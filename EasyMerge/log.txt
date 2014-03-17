@@ -1,0 +1,675 @@
+[Mon 17 Mar 11:09:54 2014] - 
+    Please pick source tree to analyze
+[Mon 17 Mar 11:11:05 2014] - 
+    EasyMerge started
+[Mon 17 Mar 11:11:05 2014] - 
+    UI initialization completed
+[Mon 17 Mar 11:11:05 2014] - 
+    Please pick source tree to analyze
+[Mon 17 Mar 11:11:13 2014] - 
+    Start running CloneDigger...
+[Mon 17 Mar 11:11:40 2014] - 
+    10 mergeable clone sets found
+[Mon 17 Mar 13:15:08 2014] - 
+    EasyMerge started
+[Mon 17 Mar 13:15:08 2014] - 
+    UI initialization completed
+[Mon 17 Mar 13:15:08 2014] - 
+    Please pick source tree to analyze
+[Mon 17 Mar 13:15:19 2014] - 
+    Start running CloneDigger...
+[Mon 17 Mar 13:15:45 2014] - 
+    10 mergeable clone sets found
+[Mon 17 Mar 13:18:53 2014] - 
+    EasyMerge started
+[Mon 17 Mar 13:18:53 2014] - 
+    UI initialization completed
+[Mon 17 Mar 13:18:53 2014] - 
+    Please pick source tree to analyze
+[Mon 17 Mar 13:19:16 2014] - 
+    Start running CloneDigger...
+[Mon 17 Mar 13:19:43 2014] - 
+    10 mergeable clone sets found
+[Mon 17 Mar 13:20:24 2014] - 
+    EasyMerge started
+[Mon 17 Mar 13:20:24 2014] - 
+    UI initialization completed
+[Mon 17 Mar 13:20:24 2014] - 
+    Please pick source tree to analyze
+[Mon 17 Mar 13:20:42 2014] - 
+    Start running CloneDigger...
+[Mon 17 Mar 13:21:08 2014] - 
+    10 mergeable clone sets found
+[Mon 17 Mar 13:21:10 2014] - 
+    Mergeable 1 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/confit.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/migrate.py
+
+[Mon 17 Mar 13:22:14 2014] - 
+    EasyMerge started
+[Mon 17 Mar 13:22:14 2014] - 
+    UI initialization completed
+[Mon 17 Mar 13:22:14 2014] - 
+    Please pick source tree to analyze
+[Mon 17 Mar 13:22:20 2014] - 
+    Start running CloneDigger...
+[Mon 17 Mar 13:22:51 2014] - 
+    18 mergeable clone sets found
+[Mon 17 Mar 13:23:10 2014] - 
+    Mergeable 1 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/confit.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/migrate.py
+
+[Mon 17 Mar 13:23:11 2014] - 
+    Mergeable 2 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/commands.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/commands.py
+
+[Mon 17 Mar 13:23:12 2014] - 
+    Mergeable 3 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/mediafile.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/mediafile.py
+
+[Mon 17 Mar 13:23:14 2014] - 
+    Mergeable 1 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/confit.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/migrate.py
+
+[Mon 17 Mar 13:24:04 2014] - 
+    Mergeable 3 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/mediafile.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/mediafile.py
+
+[Mon 17 Mar 13:24:14 2014] - 
+    Mergeable 1 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/confit.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/migrate.py
+
+[Mon 17 Mar 13:24:17 2014] - 
+    Mergeable 2 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/commands.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/commands.py
+
+[Mon 17 Mar 13:24:18 2014] - 
+    Mergeable 1 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/confit.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/migrate.py
+
+[Mon 17 Mar 13:29:38 2014] - 
+    EasyMerge started
+[Mon 17 Mar 13:29:38 2014] - 
+    UI initialization completed
+[Mon 17 Mar 13:29:38 2014] - 
+    Please pick source tree to analyze
+[Mon 17 Mar 13:29:46 2014] - 
+    Start running CloneDigger...
+[Mon 17 Mar 13:30:17 2014] - 
+    22 mergeable clone sets found
+[Mon 17 Mar 13:30:20 2014] - 
+    Mergeable 1 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/confit.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/migrate.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Merge is not recommended
+
+[Mon 17 Mar 13:36:21 2014] - 
+    EasyMerge started
+[Mon 17 Mar 13:36:21 2014] - 
+    UI initialization completed
+[Mon 17 Mar 13:36:21 2014] - 
+    Please pick source tree to analyze
+[Mon 17 Mar 13:36:30 2014] - 
+    Start running CloneDigger...
+[Mon 17 Mar 13:37:01 2014] - 
+    22 mergeable clone sets found
+[Mon 17 Mar 13:37:12 2014] - 
+    Mergeable 2 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/commands.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/commands.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Merge is not recommended
+
+[Mon 17 Mar 13:37:14 2014] - 
+    Mergeable 1 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/confit.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/migrate.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Merge is not recommended
+
+[Mon 17 Mar 13:41:01 2014] - 
+    EasyMerge started
+[Mon 17 Mar 13:41:01 2014] - 
+    UI initialization completed
+[Mon 17 Mar 13:41:01 2014] - 
+    Please pick source tree to analyze
+[Mon 17 Mar 13:41:08 2014] - 
+    Start running CloneDigger...
+[Mon 17 Mar 13:41:42 2014] - 
+    21 mergeable clone sets found
+[Mon 17 Mar 13:41:45 2014] - 
+    Mergeable 1 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/confit.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/migrate.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Merge is not recommended
+
+[Mon 17 Mar 13:43:58 2014] - 
+    EasyMerge started
+[Mon 17 Mar 13:43:58 2014] - 
+    UI initialization completed
+[Mon 17 Mar 13:43:58 2014] - 
+    Please pick source tree to analyze
+[Mon 17 Mar 13:44:11 2014] - 
+    Start running CloneDigger...
+[Mon 17 Mar 13:44:42 2014] - 
+    21 mergeable clone sets found
+[Mon 17 Mar 13:44:46 2014] - 
+    Mergeable 1 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/confit.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/migrate.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Merge is not recommended
+
+[Mon 17 Mar 13:45:45 2014] - 
+    Mergeable 1 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/confit.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/migrate.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Merge is not recommended
+
+[Mon 17 Mar 13:45:52 2014] - 
+    Mergeable 2 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/commands.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/commands.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Merge is not recommended
+
+[Mon 17 Mar 13:45:53 2014] - 
+    Mergeable 1 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/confit.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/migrate.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Merge is not recommended
+
+[Mon 17 Mar 13:46:44 2014] - 
+    EasyMerge started
+[Mon 17 Mar 13:46:44 2014] - 
+    UI initialization completed
+[Mon 17 Mar 13:46:44 2014] - 
+    Please pick source tree to analyze
+[Mon 17 Mar 13:46:51 2014] - 
+    Start running CloneDigger...
+[Mon 17 Mar 13:48:27 2014] - 
+    40 mergeable clone sets found
+[Mon 17 Mar 13:48:30 2014] - 
+    Mergeable 3 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/wagtail/wagtail/wagtaildocs/migrations/0001_initial.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/wagtail/wagtail/wagtaildocs/migrations/0002_initial_data.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Merge is not recommended
+
+[Mon 17 Mar 13:48:33 2014] - 
+    Mergeable 1 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/wagtail/wagtail/wagtailcore/migrations/0002_initial_data.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/wagtail/wagtail/wagtailcore/migrations/0001_initial.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Merge is not recommended
+
+[Mon 17 Mar 13:48:56 2014] - 
+    Mergeable 4 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/wagtail/wagtail/vendor/django-treebeard/treebeard/ns_tree.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/wagtail/wagtail/vendor/django-treebeard/treebeard/ns_tree.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Merge is not recommended
+
+[Mon 17 Mar 13:48:57 2014] - 
+    Mergeable 3 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/wagtail/wagtail/wagtaildocs/migrations/0001_initial.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/wagtail/wagtail/wagtaildocs/migrations/0002_initial_data.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Merge is not recommended
+
+[Mon 17 Mar 13:48:58 2014] - 
+    Mergeable 2 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/wagtail/wagtail/wagtailimages/migrations/0002_initial_data.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/wagtail/wagtail/wagtailimages/migrations/0001_initial.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Merge is not recommended
+
+[Mon 17 Mar 13:48:59 2014] - 
+    Mergeable 1 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/wagtail/wagtail/wagtailcore/migrations/0002_initial_data.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/wagtail/wagtail/wagtailcore/migrations/0001_initial.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Merge is not recommended
+
+[Mon 17 Mar 13:49:03 2014] - 
+    Mergeable 3 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/wagtail/wagtail/wagtaildocs/migrations/0001_initial.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/wagtail/wagtail/wagtaildocs/migrations/0002_initial_data.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Merge is not recommended
+
+[Mon 17 Mar 13:49:04 2014] - 
+    Mergeable 6 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/wagtail/wagtail/wagtailadmin/views/pages.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/wagtail/wagtail/wagtailadmin/views/pages.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Merge is not recommended
+
+[Mon 17 Mar 13:49:05 2014] - 
+    Mergeable 10 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/wagtail/wagtail/vendor/django-treebeard/treebeard/tests/test_treebeard.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/wagtail/wagtail/vendor/django-treebeard/treebeard/tests/test_treebeard.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Merge is not recommended
+
+[Mon 17 Mar 13:49:05 2014] - 
+    Mergeable 14 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/wagtail/wagtail/wagtailembeds/embeds.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/wagtail/wagtail/wagtailembeds/embeds.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Merge is not recommended
+
+[Mon 17 Mar 13:49:06 2014] - 
+    Mergeable 9 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/wagtail/wagtail/wagtailimages/models.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/wagtail/wagtail/wagtaildocs/models.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Merge is not recommended
+
+[Mon 17 Mar 13:49:07 2014] - 
+    Mergeable 5 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/wagtail/wagtail/wagtailsearch/backends/__init__.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/wagtail/wagtail/wagtailembeds/embeds.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Merge is not recommended
+
+[Mon 17 Mar 13:49:08 2014] - 
+    Mergeable 4 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/wagtail/wagtail/vendor/django-treebeard/treebeard/ns_tree.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/wagtail/wagtail/vendor/django-treebeard/treebeard/ns_tree.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Merge is not recommended
+
+[Mon 17 Mar 13:49:09 2014] - 
+    Mergeable 3 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/wagtail/wagtail/wagtaildocs/migrations/0001_initial.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/wagtail/wagtail/wagtaildocs/migrations/0002_initial_data.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Merge is not recommended
+
+[Mon 17 Mar 13:49:10 2014] - 
+    Mergeable 2 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/wagtail/wagtail/wagtailimages/migrations/0002_initial_data.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/wagtail/wagtail/wagtailimages/migrations/0001_initial.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Merge is not recommended
+
+[Mon 17 Mar 13:49:13 2014] - 
+    Mergeable 1 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/wagtail/wagtail/wagtailcore/migrations/0002_initial_data.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/wagtail/wagtail/wagtailcore/migrations/0001_initial.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Merge is not recommended
+
+[Mon 17 Mar 13:50:21 2014] - 
+    EasyMerge started
+[Mon 17 Mar 13:50:21 2014] - 
+    UI initialization completed
+[Mon 17 Mar 13:50:21 2014] - 
+    Please pick source tree to analyze
+[Mon 17 Mar 13:50:39 2014] - 
+    Start running CloneDigger...
+[Mon 17 Mar 13:51:13 2014] - 
+    22 mergeable clone sets found
+[Mon 17 Mar 13:51:13 2014] - 
+    Mergeable 1 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/confit.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/migrate.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Merge is not recommended
+
+[Mon 17 Mar 13:52:46 2014] - 
+    EasyMerge started
+[Mon 17 Mar 13:52:46 2014] - 
+    UI initialization completed
+[Mon 17 Mar 13:52:46 2014] - 
+    Please pick source tree to analyze
+[Mon 17 Mar 13:53:09 2014] - 
+    Start running CloneDigger...
+[Mon 17 Mar 13:53:43 2014] - 
+    21 mergeable clone sets found
+[Mon 17 Mar 13:54:04 2014] - 
+    Mergeable 1 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/confit.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/migrate.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Merge is not recommended
+
+[Mon 17 Mar 13:57:29 2014] - 
+    EasyMerge started
+[Mon 17 Mar 13:57:29 2014] - 
+    UI initialization completed
+[Mon 17 Mar 13:57:29 2014] - 
+    Please pick source tree to analyze
+[Mon 17 Mar 13:57:34 2014] - 
+    Start running CloneDigger...
+[Mon 17 Mar 13:58:06 2014] - 
+    22 mergeable clone sets found
+[Mon 17 Mar 13:58:24 2014] - 
+    Mergeable 1 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/confit.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/migrate.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Merge is not recommended
+
+[Mon 17 Mar 13:59:31 2014] - 
+    EasyMerge started
+[Mon 17 Mar 13:59:31 2014] - 
+    UI initialization completed
+[Mon 17 Mar 13:59:31 2014] - 
+    Please pick source tree to analyze
+[Mon 17 Mar 13:59:38 2014] - 
+    Start running CloneDigger...
+[Mon 17 Mar 14:00:13 2014] - 
+    21 mergeable clone sets found
+[Mon 17 Mar 14:00:17 2014] - 
+    Mergeable 1 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/confit.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/migrate.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Merge is not recommended
+
+[Mon 17 Mar 14:00:25 2014] - 
+    Mergeable 8 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/mediafile.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/mediafile.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Merge is not recommended
+
+[Mon 17 Mar 14:01:23 2014] - 
+    EasyMerge started
+[Mon 17 Mar 14:01:23 2014] - 
+    UI initialization completed
+[Mon 17 Mar 14:01:23 2014] - 
+    Please pick source tree to analyze
+[Mon 17 Mar 14:01:35 2014] - 
+    Start running CloneDigger...
+[Mon 17 Mar 14:02:06 2014] - 
+    21 mergeable clone sets found
+[Mon 17 Mar 14:02:19 2014] - 
+    Mergeable 1 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/confit.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/migrate.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Merge is not recommended
+
+[Mon 17 Mar 14:03:02 2014] - 
+    EasyMerge started
+[Mon 17 Mar 14:03:02 2014] - 
+    UI initialization completed
+[Mon 17 Mar 14:03:02 2014] - 
+    Please pick source tree to analyze
+[Mon 17 Mar 14:03:08 2014] - 
+    Start running CloneDigger...
+[Mon 17 Mar 14:03:40 2014] - 
+    21 mergeable clone sets found
+[Mon 17 Mar 14:03:43 2014] - 
+    Mergeable 1 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/confit.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/migrate.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Merge is not recommended
+
+[Mon 17 Mar 14:04:35 2014] - 
+    EasyMerge started
+[Mon 17 Mar 14:04:35 2014] - 
+    UI initialization completed
+[Mon 17 Mar 14:04:35 2014] - 
+    Please pick source tree to analyze
+[Mon 17 Mar 14:04:42 2014] - 
+    Start running CloneDigger...
+[Mon 17 Mar 14:05:14 2014] - 
+    22 mergeable clone sets found
+[Mon 17 Mar 14:05:23 2014] - 
+    Mergeable 1 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/confit.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/migrate.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Merge is not recommended
+
+[Mon 17 Mar 14:06:20 2014] - 
+    EasyMerge started
+[Mon 17 Mar 14:06:20 2014] - 
+    UI initialization completed
+[Mon 17 Mar 14:06:20 2014] - 
+    Please pick source tree to analyze
+[Mon 17 Mar 14:06:28 2014] - 
+    Start running CloneDigger...
+[Mon 17 Mar 14:07:04 2014] - 
+    21 mergeable clone sets found
+[Mon 17 Mar 14:07:48 2014] - 
+    Mergeable 1 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/confit.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/migrate.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Merge is not recommended
+
+[Mon 17 Mar 14:08:38 2014] - 
+    EasyMerge started
+[Mon 17 Mar 14:08:39 2014] - 
+    UI initialization completed
+[Mon 17 Mar 14:08:39 2014] - 
+    Please pick source tree to analyze
+[Mon 17 Mar 14:08:51 2014] - 
+    Start running CloneDigger...
+[Mon 17 Mar 14:09:22 2014] - 
+    21 mergeable clone sets found
+[Mon 17 Mar 14:09:51 2014] - 
+    Mergeable 1 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/confit.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/migrate.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Merge is not recommended
+
+[Mon 17 Mar 14:10:21 2014] - 
+    EasyMerge started
+[Mon 17 Mar 14:10:21 2014] - 
+    UI initialization completed
+[Mon 17 Mar 14:10:21 2014] - 
+    Please pick source tree to analyze
+[Mon 17 Mar 14:10:28 2014] - 
+    Start running CloneDigger...
+[Mon 17 Mar 14:11:02 2014] - 
+    21 mergeable clone sets found
+[Mon 17 Mar 14:11:03 2014] - 
+    Mergeable 1 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/confit.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/migrate.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Merge is not recommended
+
+[Mon 17 Mar 14:11:49 2014] - 
+    EasyMerge started
+[Mon 17 Mar 14:11:49 2014] - 
+    UI initialization completed
+[Mon 17 Mar 14:11:49 2014] - 
+    Please pick source tree to analyze
+[Mon 17 Mar 14:11:55 2014] - 
+    Start running CloneDigger...
+[Mon 17 Mar 14:12:29 2014] - 
+    21 mergeable clone sets found
+[Mon 17 Mar 14:12:38 2014] - 
+    Mergeable 1 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/confit.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/migrate.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Merge is not recommended
+
+[Mon 17 Mar 14:16:07 2014] - 
+    EasyMerge started
+[Mon 17 Mar 14:16:07 2014] - 
+    UI initialization completed
+[Mon 17 Mar 14:16:07 2014] - 
+    Please pick source tree to analyze
+[Mon 17 Mar 14:16:18 2014] - 
+    Start running CloneDigger...
+[Mon 17 Mar 14:16:48 2014] - 
+    18 mergeable clone sets found
+[Mon 17 Mar 14:17:00 2014] - 
+    Mergeable 1 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/confit.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/migrate.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Clone length: 30 lines
+Merge is somewhat recommended
+
