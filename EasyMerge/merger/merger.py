@@ -478,8 +478,13 @@ def generateCodeSnippet(stmtSeq, filename=None):
     offset = getOriginalOffset(stmtSeq)
     for i in stmtSeq:
         a = AST(i)
-        #a.output("helper.out")
+        '''print "ORIG CODE:"
         for j in i.getSourceLines():
+            print j'''
+        #a.output("helper.out")
+        #print "\nNEW CODE"
+        for j in i.getSourceLines():
+            #print j[offset:]
             if filename!=None:
                 file.write(j[offset:]+"\n")
             else:

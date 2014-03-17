@@ -101,8 +101,21 @@ class AbstractSyntaxTree:
         source_line_numbers = self.getCoveredLineNumbers()
         source_line_numbers_list = list(range(min(source_line_numbers), max(source_line_numbers)+1))
         source_line_numbers_list.sort()
+        
         for source_line_number in source_line_numbers_list:
             r.append(self.getSourceFile().getSourceLine(source_line_number) ) 
+        
+        i=1
+        bug = [")","]","}"]
+        while len(self.getSourceFile()._source_lines)>max(source_line_numbers)+i:
+            last_line = max(source_line_numbers)+i
+            #print "LAST LINE = ",self.getSourceFile().getSourceLine(last_line) 
+            if self.getSourceFile().getSourceLine(last_line).strip() in bug:                
+                r.append(self.getSourceFile().getSourceLine(last_line) )
+            else:
+                break
+            i+=1
+
         return r
     def getName(self):
         return self._name
