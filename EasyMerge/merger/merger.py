@@ -351,7 +351,7 @@ def processIdenticalDef(src_ast_list, cluster):
         #src_ast_list[str(filename)].output("./sandbox/test.out")
         lines = tagging(i)[1:]
         code_snippet = generateCodeSnippet(i)
-        merged = type0_dealer.generateNewCode(code_snippet, lines, src_ast_list[str(filename)])
+        merged = type0_dealer.generateNewCode(code_snippet, lines, src_ast_list[str(filename)], tagging(i))
         merged_code.append(merged.get_code())
         caller[tagging(i)]=merged.caller
         
@@ -380,7 +380,7 @@ def processIdenticalStmt(src_ast_list, cluster, id):
         #src_ast_list[str(filename)].output("./sandbox/test.out")
         lines = tagging(i)[1:]
         code_snippet = generateCodeSnippet(i)
-        merged = type1_dealer.generateNewCode(id, code_snippet, lines, src_ast_list[str(filename)])
+        merged = type1_dealer.generateNewCode(id, code_snippet, lines, src_ast_list[str(filename)], tagging(i))
         merged_list.append(merged)
         merged_code.append(merged.get_code())
         caller[tagging(i)]=merged.caller
@@ -429,7 +429,7 @@ def processNonIdenticalStmt(src_ast_list, cluster, id):
         #src_ast_list[str(filename)].output("./sandbox/test.out")
         lines = tagging(i)[1:]
         code_snippet = generateCodeSnippet(i)
-        merged = type3_dealer.generateNewCode(id, code_snippet, lines, src_ast_list[str(filename)])
+        merged = type3_dealer.generateNewCode(id, code_snippet, lines, src_ast_list[str(filename)], tagging(i))
         merged_list.append(merged)
         
     if type3_dealer.checkMergable(merged_list):

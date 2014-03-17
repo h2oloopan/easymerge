@@ -154,6 +154,7 @@ def main(cmdline, dir=None, custom_distance_threshold=None):
             source_file.getTree().propagateHeight()
             source_files.append(source_file)
             src_ast_list[file_name] = debug.AST(source_file.getTree())
+            
             report.addFileName(file_name)                
             print 'done'
         except:

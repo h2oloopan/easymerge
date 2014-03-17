@@ -1192,7 +1192,7 @@ class MediaFile(object):
         StorageStyle('TRACK'),
         StorageStyle('TRACKNUMBER'),
         ASFStorageStyle('WM/TrackNumber'),
-        out_type=int,
+        out_type=int
     )
     tracktotal = MediaField(
         MP3SlashPackStorageStyle('TRCK', pack_pos=1),
@@ -1201,7 +1201,7 @@ class MediaFile(object):
         StorageStyle('TRACKC'),
         StorageStyle('TOTALTRACKS'),
         ASFStorageStyle('TotalTracks'),
-        out_type=int,
+        out_type=int
     )
     disc = MediaField(
         MP3SlashPackStorageStyle('TPOS', pack_pos=0),
@@ -1209,7 +1209,7 @@ class MediaFile(object):
         StorageStyle('DISC'),
         StorageStyle('DISCNUMBER'),
         ASFStorageStyle('WM/PartOfSet'),
-        out_type=int,
+        out_type=int
     )
     disctotal = MediaField(
         MP3SlashPackStorageStyle('TPOS', pack_pos=1),
@@ -1218,7 +1218,7 @@ class MediaFile(object):
         StorageStyle('DISCC'),
         StorageStyle('TOTALDISCS'),
         ASFStorageStyle('TotalDiscs'),
-        out_type=int,
+        out_type=int
     )
     lyrics = MediaField(
         MP3DescStorageStyle(key='USLT'),
@@ -1238,14 +1238,14 @@ class MediaFile(object):
         MP4StorageStyle('tmpo', as_type=int),
         StorageStyle('BPM'),
         ASFStorageStyle('WM/BeatsPerMinute'),
-        out_type=int,
+        out_type=int
     )
     comp = MediaField(
         MP3StorageStyle('TCMP'),
         MP4BoolStorageStyle('cpil'),
         StorageStyle('COMPILATION'),
         ASFStorageStyle('WM/IsCompilation', as_type=bool),
-        out_type=bool,
+        out_type=bool
     )
     albumartist = MediaField(
         MP3StorageStyle('TPE2'),

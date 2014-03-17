@@ -988,8 +988,8 @@ class Unparser:
         if t.asname:
             self.write(" as "+t.asname)
 
-def generateNewCode(id, source, lines, src_ast, output=sys.stdout):
-    tree = compile(source, "", "exec", ast.PyCF_ONLY_AST)
+def generateNewCode(id, source, lines, src_ast, tag, output=sys.stdout):
+    tree = compile(source, tag[0], "exec", ast.PyCF_ONLY_AST)
     merged = Code(id)
     up = Unparser(tree, lines, src_ast, merged)
     merged.split()    
