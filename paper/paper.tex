@@ -377,7 +377,13 @@ However, there are many different types of clones and many subtle implications w
 inheritance is involved. Our proposed solution, EasyMerge, is a clone refactoring tool based on anti-unification clone detector 
 CloneDigger, that can handle most Type-1 clones and many Type-2 clones. It fixes external variable and function reference
 and provide merge recommendation based on evaluation of externality and package information analysis.
+Moreover, EasyMerge guarantees the consistency of functionality before and after code merging.
 
+However, EasyMerge still has limitations. First of all, not all code clones can be detected by CloneDigger or any existing
+code clone detection approach in general. For future work, we may upgrade EasyMerge's clone detection engine to locate
+more clones in code base.
+
+Secondly,
 
 
 
