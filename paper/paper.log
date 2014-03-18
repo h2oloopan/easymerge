@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  18 MAR 2014 14:31
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  18 MAR 2014 15:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -389,6 +389,17 @@ Overfull \hbox (19.9338pt too wide) in paragraph at lines 383--384
 
  []
 
+
+Overfull \hbox (1.00476pt too wide) in paragraph at lines 404--408
+[]\T1/aer/m/n/9 Furthermore, the cur-rent ver-sion of EasyMerge can-not merge
+ []
+
+
+Overfull \hbox (1.62524pt too wide) in paragraph at lines 404--408
+\T1/aer/m/n/9 Ad-di-tion-ally, cur-rent merge-able clones are within code block
+s
+ []
+
 (./paper.bbl [5]) [6
 
 ] (./paper.aux) ) 
@@ -412,7 +423,7 @@ xlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texl
 ive/2013/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/201
 3/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2013/texmf
 -dist/fonts/type1/urw/times/utmb8a.pfb>
-Output written on paper.pdf (6 pages, 2386088 bytes).
+Output written on paper.pdf (6 pages, 2386325 bytes).
 PDF statistics:
  90 PDF objects out of 1000 (max. 8388607)
  55 compressed objects within 1 object stream

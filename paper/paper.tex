@@ -385,10 +385,7 @@ The second set has 6 randomly selected projects from GitHub:
 \item Wagtail - A new Django content management system
 \end{enumerate}
 
-three popular Python powered open source projects found on GitHub of different sizes and covers
-different usage domains.
-They are ``Beets - the media library management system for obsessive-compulsive music geeks", ``Fig - fast, isolated development environments using Docker",
-and ``Wagtail - a new Django content management system".
+We predict the most famous ones should be better written and contain less code clones in average and we will see if the results stick to our prediction.
 
 \section{Conclusion and Future Work}
 Code clones are very common in medium to large scale software applications.
@@ -404,7 +401,10 @@ code clone detection approach in general. For future work, we may upgrade EasyMe
 more clones in code base. Secondly, we can add support to merge more Type-2 and Type-3 clones (there is no reliable detection of Type-4 clones at the moment yet).
 It's very challenging to merge Type-3 clones as we may need to add context-based analysis to sort out extra statements and different layouts of similar code.
 
-Furthermore, 
+Furthermore, the current version of EasyMerge cannot merge similar classes and all duplicated classes are filtered out in preprocessing.
+In the future, we can add mechanism to merge similar classes, automatically generate parent classes and extract similar members and methods to the parents.
+Additionally, current mergeable clones are within code blocks (at the same indentation level for Python). We are also interested in merging code clones that cross
+multiple levels and scopes. We may break big clone fragments into smaller pieces and merge accordingly.
 
 
 
