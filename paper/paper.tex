@@ -365,7 +365,27 @@ package path analyzer and weighted evaluation formula to make our recommendation
 \section{Experimental Results}
 All experiments are done on a desktop computer. The testing machine has an AMD FX 3.5GHz 6 cores CPU, 16 GB of memory,
 128 KB L1 cache, 6 MB L2 cache (1 MB per core), and 8 MB shared L3 cache. The machine runs Ubuntu Desktop 12.04, Python
-2.7.5 and has all related packages installed. For test cases, we have three popular Python powered open source projects found on GitHub of different sizes and covers
+2.7.5 and has all related packages installed.
+For test cases, we have two sets of open source projects written in Python. The first set contains 5 most famous projects on GitHub:
+\begin{enumerate}
+\item Tornado - A Python web framework and asynchronous networking library
+\item Redis Python Client - Client for the most famous in-memory database that persists on disk
+\item Reddit - The code that powers reddit.com
+\item Scrapy - A fast high-level screen scraping and web crawling framework for Python.
+\item PyMongo - The Python driver for MongoDB
+\end{enumerate} 
+
+The second set has 6 randomly selected projects from GitHub:
+\begin{enumerate}
+\item PyStruct - Simple structured learning framework for Python
+\item YouTube-dl - Small command-line program to download videos from YouTube.com and other video sites
+\item Tweepy - An easy-to-use Python library for accessing the Twitter API
+\item Beets - The media library management system for obsessive-compulsive music geeks
+\item Fig - Fast, isolated development environments using Docker
+\item Wagtail - A new Django content management system
+\end{enumerate}
+
+three popular Python powered open source projects found on GitHub of different sizes and covers
 different usage domains.
 They are ``Beets - the media library management system for obsessive-compulsive music geeks", ``Fig - fast, isolated development environments using Docker",
 and ``Wagtail - a new Django content management system".
@@ -381,10 +401,10 @@ Moreover, EasyMerge guarantees the consistency of functionality before and after
 
 However, EasyMerge still has limitations. First of all, not all code clones can be detected by CloneDigger or any existing
 code clone detection approach in general. For future work, we may upgrade EasyMerge's clone detection engine to locate
-more clones in code base.
+more clones in code base. Secondly, we can add support to merge more Type-2 and Type-3 clones (there is no reliable detection of Type-4 clones at the moment yet).
+It's very challenging to merge Type-3 clones as we may need to add context-based analysis to sort out extra statements and different layouts of similar code.
 
-Secondly,
-
+Furthermore, 
 
 
 

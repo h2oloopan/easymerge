@@ -981,3 +981,13 @@ Merge is somewhat recommended
     Please pick source tree to analyze
 [Mon 17 Mar 17:32:57 2014] - 
     Start running CloneDigger...
+[Tue 18 Mar 13:37:39 2014] - 
+    EasyMerge started
+[Tue 18 Mar 13:37:39 2014] - 
+    UI initialization completed
+[Tue 18 Mar 13:37:39 2014] - 
+    Please pick source tree to analyze
+[Tue 18 Mar 13:37:46 2014] - 
+    Start running CloneDigger...
+[Tue 18 Mar 13:38:22 2014] - 
+    28 mergeable clone sets found
