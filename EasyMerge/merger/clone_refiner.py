@@ -9,8 +9,33 @@ import clonedigger.clonedigger as digger
 import clonedigger.anti_unification as anti_unification
 from clonedigger.abstract_syntax_tree import StatementSequence
 from clonedigger.debug import AST
+import os
 
 stat = []
+
+def getTotalSourceLineNumbers(dir):
+    def walk(dirname):
+        for dirpath, dirs, files in os.walk(dir):
+            dirs[:] = [d for d in dirs]
+            files[:] = [f for f in files]
+            yield (dirpath, dirs, files)
+    def getLineNumber(filename):
+        f = open(filename, "r")
+        lines = f.readlines()
+        return len(lines)
+    
+    total_num = 0
+    total_file = 0
+    for dirpath, dirnames, filenames in walk(dir):
+        #print dirpath, dirnames, filenames
+        for f in filenames:
+            if f[-3:]!=".py":
+                continue
+            filename = os.path.join(dirpath, f)
+            total_file+=1
+            linenum = getLineNumber(filename)
+            total_num += linenum
+    return (total_num, total_file)
 
 def sortDuplicates(duplicates):
     def f(a,b):
@@ -53,6 +78,7 @@ def getInfoFromSet(dSet, pair = False):
         indepLine = {}
         for i in dSet:
             for dup in i: 
+                #print dup
                 srcName = dup.getSourceFile().getFileName()
                 for n in dup.getCoveredLineNumbers():
                     tag = srcName+"@"+str(n)
@@ -246,6 +272,7 @@ def checkSetType(dSet):
             return ("Mix",new_set)
         
     def same_type(t1,t2):
+        print t1,t2
         if t1==t2 or (isinstance(t1,tuple) and isinstance(t2,tuple)):
             return True
         else:
@@ -317,6 +344,14 @@ def spreadMixSet(dSet, type_list):
     
     for cluster in dSet:
         type = type_list[dSet.index(cluster)]
+        if type=="Def" and len(cluster[0])>1:
+            new_insert = []
+            for i in range(len(cluster[0])):
+                new_set = []
+                for d in cluster:
+                    new_set.append(StatementSequence([d[i]]))
+                new_insert.append(new_set)
+            dSet[dSet.index(cluster)] = new_insert
         if isinstance(type,tuple):
             new_clusters = type[1]
             new_insert = []
@@ -337,6 +372,8 @@ def spreadMixSet(dSet, type_list):
         elif len(cluster)==0:
             dSet = dSet[:i]+dSet[i+1:]
             type_list = type_list[:i]+type_list[i+1:]
+            i-=1
+
         i+=1
         if i>=len(dSet):
             break 
@@ -382,14 +419,12 @@ def refineDuplicateSet(dSet):
     return (dSetInfoList, dSet)
     #test.generateCodeSnippet(dSet[0][0],"helper.py")
     
-def main(dir,distance_threshold, size_threshold, get_stat=False):
+def main(dir,distance_threshold, size_threshold):
+    stat.append(getTotalSourceLineNumbers(dir))
     (src_ast_list, duplicate_set) = getCloneStmt(dir,distance_threshold, size_threshold)
     (dSetInfoList, duplicate_set) = refineDuplicateSet(duplicate_set)
     
-    if not get_stat:
-        return src_ast_list, dSetInfoList, duplicate_set
-    else:
-        return stat
+    return (src_ast_list, dSetInfoList, duplicate_set,stat)
     
 if __name__ == '__main__':
     main("../tests/beets", 10, 4)

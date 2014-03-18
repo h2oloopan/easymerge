@@ -25,6 +25,7 @@ stat ={"Merged":0,
        "ErrorDef":0,
        "DiffStmt":0,
        "ErrorStmt":0,
+       "UnknownType":0,
        "DiffPak":0,
        "Reduction":[]}
 
@@ -52,8 +53,6 @@ def tmpDistributor(dSet, dInfo, src_ast_list):
                 print "Success"
                 stat["Merged"]+=1
                 stat["MergedIdentical"]+=1
-            else:
-                print "Error"
             #break   
         elif info[0]=="Stmt" and info[1]<=0:
             print "Type1"
@@ -61,9 +60,35 @@ def tmpDistributor(dSet, dInfo, src_ast_list):
                 print "Success"
                 stat["Merged"]+=1
                 stat["MergedIdentical"]+=1
-            else:
-                print "Error"
                 #break   
+        elif info[0]=="Def" and info[1]>0:
+            print "Type2"
+            too_short = False
+            for i in range(len(cluster)):
+                seq = cluster[i][0]
+                new_seq = seq.getChilds()[-1]
+                is_ret = new_seq.getChilds()[-1]
+                if is_ret.getName()=="Return":
+                    new_seq = StatementSequence(new_seq.getChilds()[:-1])
+                else:
+                    new_seq = StatementSequence(new_seq.getChilds())
+                
+                if not new_seq or tagging(new_seq)[2] - tagging(new_seq)[1] < 3:
+                    print "TOO SHORT DEF"
+                    too_short = True
+                    stat["DiffDef"]+=1
+                    break                
+                else:
+                    cluster[i] = new_seq
+            if too_short:
+                continue
+                    
+            if processNonIdenticalStmt(src_ast_list, cluster, i):
+                print "Success"
+                stat["Merged"]+=1
+                stat["MergedDiff"]+=1
+                stat["MergedDist"]+=info[1]
+
         elif info[0]=="Stmt" and info[1]>0:
             print "Type3"
             if processNonIdenticalStmt(src_ast_list, cluster, i):
@@ -71,10 +96,8 @@ def tmpDistributor(dSet, dInfo, src_ast_list):
                 stat["Merged"]+=1
                 stat["MergedDiff"]+=1
                 stat["MergedDist"]+=info[1]
-            else:
-                print "Error"
         else:
-            stat["DiffDef"]+=1
+            stat["UnknownType"]+=1
     
     for m in mergeResults:
         
@@ -89,13 +112,13 @@ def tmpDistributor(dSet, dInfo, src_ast_list):
             oldLines+=lines
         newLines = m.lines+len(m._caller)
         
-        if newLines>oldLines:
+        '''if newLines>oldLines:
             print "New Code:", m.lines
             print "Caller:", len(m._caller)
             old = []
             for i in m._caller:
                 old.append(i[2]-i[1]+1)
-            print "Old Code:", old
+            print "Old Code:", old'''
         
         stat["Reduction"].append(oldLines-newLines)
                  
@@ -278,22 +301,41 @@ def generateCodeSnippet(stmtSeq, filename=None):
         
 def main(dir,distance_threshold, size_threshold):
     import clone_refiner
-    src_ast_list, dSetInfoList, duplicate_set = clone_refiner.main(dir, distance_threshold, size_threshold)
+    src_ast_list, dSetInfoList, duplicate_set, stat["Preprocessing"] = clone_refiner.main(dir, distance_threshold, size_threshold)
     tmpDistributor(duplicate_set, dSetInfoList, src_ast_list)
-    print "MERGED COUNT =",len(mergeResults)
+    print "\nMERGED% =",len(mergeResults),"/",len(duplicate_set)
     return mergeResults
 
 if __name__ == '__main__':
-    main("../tests/beets", 10, 4)
+    main("../tests/scrapy", 10, 4)
     
-    for i in mergeResults:
-        i.output()
-        print ''       
-     
-    print stat
-    print float(sum(stat["Reduction"]))/float(stat["Merged"])
-    print float(stat["External"][0])/float(stat["Merged"]),
-    print float(stat["External"][1])/float(stat["Merged"])
+    #for i in mergeResults:
+    #    i.output()
+    #    print ''
+    print ""       
+    print "Original Code Info:"
+    print "Total Code Lines:", stat["Preprocessing"][0][0]
+    print "Total Files:", stat["Preprocessing"][0][1]
+    print ""
+    print "PreProcessing: (NumOfSets, DuplicatesPerSet, CoveredLines, RepeatPerLine)"
+    print "From CloneDigger:", stat["Preprocessing"][1]
+    print "Removed Class/Import/Return:", stat["Preprocessing"][2]
+    print "Merged Pairs to Sets:", stat["Preprocessing"][3]
+    print "Removed Overlapped Lines:", stat["Preprocessing"][4]
+    print "Spread Content-Mixed Sets:", stat["Preprocessing"][5]
+    print ""
+    print "Type Info:"
+    print "Stmt vs. Def:", stat["Preprocessing"][6][0]
+    print "Identical vs. Different:", stat["Preprocessing"][6][1]
+    print "SameFile vs. DiffFiles", stat["Preprocessing"][6][2]
+    print ""
+    print "Merging Info:"
+    print "Merged (Identical vs. Different):", stat["MergedIdentical"], ",", stat["MergedDiff"]
+    print "Not Merged (DiffStmt, DiffDef, Error, Unknown):", stat["DiffStmt"], ",", stat["DiffDef"], ",", stat["ErrorStmt"]+stat["ErrorDef"], ",", stat["UnknownType"]    
+    print "LOC Redunction:", sum(stat["Reduction"]), "/", stat["Merged"], "=", float(sum(stat["Reduction"]))/float(stat["Merged"])
+    print "Avg Distance In MergedDiff:", float(stat["MergedDist"])/float(stat["MergedDiff"])
+    print "Avg External Parameters, Return Values:", (stat["External"][0])/float(stat["Merged"]), ",", float(stat["External"][1])/float(stat["Merged"])
+    print "Merged for Different Packages:", stat["DiffPak"]
     
     
     

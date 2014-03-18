@@ -12,7 +12,6 @@ def getTotalSourceLineNumbers(dir):
             files[:] = [f for f in files]
             yield (dirpath, dirs, files)
     def getLineNumber(filename):
-        total_file+=1
         f = open(filename, "r")
         lines = f.readlines()
         return len(lines)
@@ -25,10 +24,9 @@ def getTotalSourceLineNumbers(dir):
             if f[-3:]!=".py":
                 continue
             filename = os.path.join(dirpath, f)
+            total_file+=1
             linenum = getLineNumber(filename)
             total_num += linenum
-    print total_num,"lines in total"
-    print total_file,"files in total"
     return total_num, total_file
 
 
@@ -40,6 +38,8 @@ def getOtherStats(dir, distance_threshold, size_threshold):
         print i
     
 if __name__ == '__main__':
-    dir_name = "../tests/beets"
+    dir_name = "../tests/"
     total_num, total_file = getTotalSourceLineNumbers(dir_name)
     getOtherStats(dir_name, 10, 4)
+    print total_num,"lines in total"
+    print total_file,"files in total"
