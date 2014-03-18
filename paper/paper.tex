@@ -349,7 +349,17 @@ the user performed an unwanted merge for a certain set.
 
 \subsection{Preprocessing}
 The first step of EasyMerge is to run CloneDigger at target source tree, take its output and format and standardize it for our own usage.
-The core of this step is to classify code clones and get the ones that we not only can but also want to merge. 
+The core of this step is to classify code clones and get the ones that we not only can but also want to merge. Although CloneDigger takes
+a dozen configuration parameters, we use most of them as defaults. For our preprocessing, we only override {\bf distance-threshold} and {\bf size-threshold}
+to {\bf 10} and {\bf 4} for we are only interested in clone segments of no more than 10 anti-unification distance from each other and no less than 4 lines in length.
+
+Additionally, we put identical clone pairs into sets. For example, if we have three pairs of [A, B], [B, C], [C, A] from CloneDigger's output, we generate a clone set
+of [A, B, C] instead for our following merging stage. As not all clone sets can be handled by our algorithm, we also implement a filter to remove all unrefactorable
+clones before entering next step.
+
+\subsection{Recommendation Evaluation}
+Although EasyMerge can handle multiple types of code clones, not all of them shall be recommended. As a matter of fact, we use a combination of 
+package path analyzer and weighted evaluation formula to make our recommendation decisions.
 
 
 \section{Experimental Results}
@@ -359,6 +369,17 @@ All experiments are done on a desktop computer. The testing machine has an AMD F
 different usage domains.
 They are ``Beets - the media library management system for obsessive-compulsive music geeks", ``Fig - fast, isolated development environments using Docker",
 and ``Wagtail - a new Django content management system".
+
+\section{Conclusion and Future Work}
+Code clones are very common in medium to large scale software applications.
+Detecting and refactoring unnecessary clones can help us provide cleaner, easier to understand, and readily reusable code.
+However, there are many different types of clones and many subtle implications while dealing with them when coupling and
+inheritance is involved. Our proposed solution, EasyMerge, is a clone refactoring tool based on anti-unification clone detector 
+CloneDigger, that can handle most Type-1 clones and many Type-2 clones. It fixes external variable and function reference
+and provide merge recommendation based on evaluation of externality and package information analysis.
+
+
+
 
 
 %ACKNOWLEDGMENTS are optional
