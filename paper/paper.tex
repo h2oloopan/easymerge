@@ -326,7 +326,8 @@ Then by clicking ``Analyze" button on the right side, EasyMerge starts analyzing
 
 There are five window boxes displayed on the main interface.
 Once the scanning phase is completed, a list of refactorable clone sets are displayed in the ``Possible Merges" box at top left.
-All items in the list are initially coloured green, once a merge is done, the colour will be changed to red for the record.
+All items in the list are initially coloured green, once a merge is done, the colour will be changed to red for the record. Moreover,
+the items in the list are ranked based on our recommendation evaluation from high to low.
 
 User can click each item in the ``Possible Merges" list. When one item is selected, a corresponding clone set will be loaded. All files
 associated with the set are displayed in ``Source Code Browser" tabs on the right side of the UI, where we can navigate to the
@@ -352,14 +353,83 @@ The first step of EasyMerge is to run CloneDigger at target source tree, take it
 The core of this step is to classify code clones and get the ones that we not only can but also want to merge. Although CloneDigger takes
 a dozen configuration parameters, we use most of them as defaults. For our preprocessing, we only override {\bf distance-threshold} and {\bf size-threshold}
 to {\bf 10} and {\bf 4} for we are only interested in clone segments of no more than 10 anti-unification distance from each other and no less than 4 lines in length.
+On top of that, distance must be no more than code length as we don't want more than one difference at a line of code.
 
-Additionally, we put identical clone pairs into sets. For example, if we have three pairs of [A, B], [B, C], [C, A] from CloneDigger's output, we generate a clone set
-of [A, B, C] instead for our following merging stage. As not all clone sets can be handled by our algorithm, we also implement a filter to remove all unrefactorable
-clones before entering next step.
+Secondly, we strip off non logical but required lines such as imports and definitions. For a code block of statements, if the last line is only a returning clause, we
+modify the clone fragment by removing the returning line and keeping the rest. After text-based manipulation, we cluster all clone pairs and put them into sets
+based on similarity. For example, if we have three pairs of [A, B], [B, C], [C, A] from CloneDigger's output, we generate a clone set
+of [A, B, C] instead for our following merging stage.
+
+Next, we look for overlapping code fragments in clones, to make our lives easier, for each set of overlapping clones, we only keep the longer part of the overlapping fragments
+and ignore the shorter ones. For a code fragment of ABCDEFG where each letter is of the same code length, if BCD and CDEF are both duplicate code in different sets,
+as they are overlapping each other,
+we remove the set containing BCD and only try to merge the set with CDEF.
+
+Additionally, if we have a set containing clone fragments which consist of both statements and function definitions, we separate and break them into multiple individual sets and guarantee that for any clone set, it either only have duplicated statements or function definition, as it's very difficult to merge multi-purpose code blocks.
+For example, if we have a set of clone fragments of AFB where block A and B are statements only and F is a function definition, we will break it into three sets which
+contain only A, F, and B accordingly.
+
+Note: if you have files in the source tree that you do not want to perform analysis or merge of any kind, you need to manually exclude them from the selected folder.
+
+\subsection{Clone Classification}
+After preprocessing, we classify clone sets into multiple types as we are handling each type independently in the merging process. Firstly,
+we call the anti-unifier in CloneDigger to obtain the anti-unification distance between code fragments in each clone set to determine if they
+are Type-1 or Type-2 clones. Then, we check if the clone fragments in one set are in the same Python file or scattered across multiple files (this is the most common case).
+Moreover, we separate duplicated functions and statements in this step as they are handled differently when extracting methods in the merging phase.
+
+\subsection{Merging}
+We first prepare merging by examine the Abstract Syntax Tree(AST) for each code clone fragment to extract some deeper information: (1) all ``import" information
+(2) all class definitions and their associated scopes (3) all function calls and the scopes these calls reside. 
+
+Then we deal with statement clones and function clones separately. For functions, we create a helper function with all code extracted from the function body.
+Then we scan the code base and locate all reference calls to the original functions in the clone set and replace them with calls to the newly generated helper function.
+For blocks containing only statements, similarly, we extract the code and create a helper function to host the code. And the original code blocks are replaced by
+function calls to the newly generated helper function. If the clones in a set are all from the same file, we place the helper function to the same file. If they are 
+from different files, we parse package dependency and find the last shared package and put the helper function there to make sure scopes are maintained properly.
+Moreover, we ensure unique function name will be provided for helper functions and user can also override it in EasyMerge.
+
+For the actual merging phase and the generation of the helper functions, 
+we start with creating a potential helper function copy for each fragment in a clone set. 
+We first scan for all variables, function calls and objects. Then we try to match them in 
+deeper information collected before. For lines containing items that can be used without external reference, we move them directly to the copy. For everything else,
+we put them into a function signature line as input parameters so we are able to use them in the future function body. 
+We then look for variables and objects references to items in the 
+source files happen after the clone fragment in the same scope. For any occurrence of such items, we add them to a returning line so they can still be referred to 
+later in the original source files. Then we append the signature line and returning line to the helper function copy.
+
+Last but not least, we compare each newly generated helper function copy from each fragment, if they are all identical, we use one copy as the actual extracted helper function
+and write the changes to files. If not, we check if they are Type-1 clones. For Type-1 clones, we merge their individual signature line and returning line and
+replace the corresponding line in the helper function copy before creating the real helper function. For non Type-1 clones, if the differences are only about constants,
+we merge by replacing all constants with variables and pass them as input parameters in helper function's signature and update calls to the helper function in code base accordingly.
+For other non Type-1 clones, we perform an AST pattern matching and analyzing their
+symbol table and try to merge clones have same pattern of variable/function call/object referencing sequence. For a clone set of two fragments, if they both access variables
+with similar patterns of a, b, a, c and e, f, e, g, then we can group [a, e], [b, f], [c, g] and treat them as three special variables in the generated helper and update
+the function signature and returning line accordingly. In contrast, patterns of a, b, a, c and a, b, b, d cannot be merged. And we ignore all other clones not covered above
+as they cannot be handled by EasyMerge yet.
+
+
 
 \subsection{Recommendation Evaluation}
 Although EasyMerge can handle multiple types of code clones, not all of them shall be recommended. As a matter of fact, we use a combination of 
-package path analyzer and weighted evaluation formula to make our recommendation decisions.
+package path analyzer and weighted evaluation formula to make our recommendation decisions. Generally speaking, we may not want to merge code
+in separate libraries/packages so that we do not introduce extra coupling and each library may be used independently. 
+Moreover, too many external references that pass parameters around may also be misleading and against our will to simplify code bases.
+As a result, the recommendation evaluation formula is defined as following:
+\begin{displaymath}
+f(RE) = w_{1} * l - w_{2} * e - w_{3} * r - w_{4} * d
+\end{displaymath}
+where $w_{1}$, $w_{2}$, $w_{3}$, $w_{4}$ are weights,  $l$ is the number of duplicate lines, $e$ is number of external reference (including variables, functions, and objects),
+$r$ is number of packed extra return values. Additionally, $d$ is the package difference defined as the the minimum package difference length in a clone set.
+For example, if we have a set of two files a.b.c and a.b.d.e, the package difference length is 1 and 2 respectively as they differ after package b. And thus the $d$ value is
+$min(1, 2) = 1$.
+
+For now, we did some testing and are setting the weights at 
+$w_{1} = 0.5$, $w_{2} = 1$, $w_{3} = 2$, $w_{4} = 2$ as we don't want too much externality with too few lines of code. And extra return values are more confusing than
+extra input parameters. To help user make the decision, we recommend a merge if $f(RE) > 8$, somewhat recommend a merge if $ 0 \le f(RE) \le 8$, and let user merge
+with cautions when $f(RE) < 0$.
+It give us modest reasonable behaviour we want after some manual analysis of each clone set.
+In the future, we are interested to perform a actual survey with real software developers to reconfigure these weights to better fit our purpose.
+
 
 
 \section{Experimental Results}
@@ -367,25 +437,114 @@ All experiments are done on a desktop computer. The testing machine has an AMD F
 128 KB L1 cache, 6 MB L2 cache (1 MB per core), and 8 MB shared L3 cache. The machine runs Ubuntu Desktop 12.04, Python
 2.7.5 and has all related packages installed.
 For test cases, we have two sets of open source projects written in Python. The first set contains 5 most famous projects on GitHub:
-\begin{enumerate}
+\begin{itemize}
 \item Tornado - A Python web framework and asynchronous networking library
 \item Redis Python Client - Client for the most famous in-memory database that persists on disk
 \item Reddit - The code that powers reddit.com
 \item Scrapy - A fast high-level screen scraping and web crawling framework for Python.
 \item PyMongo - The Python driver for MongoDB
-\end{enumerate} 
+\end{itemize} 
 
 The second set has 6 randomly selected projects from GitHub:
-\begin{enumerate}
+\begin{itemize}
 \item PyStruct - Simple structured learning framework for Python
 \item YouTube-dl - Small command-line program to download videos from YouTube.com and other video sites
 \item Tweepy - An easy-to-use Python library for accessing the Twitter API
 \item Beets - The media library management system for obsessive-compulsive music geeks
 \item Fig - Fast, isolated development environments using Docker
 \item Wagtail - A new Django content management system
-\end{enumerate}
+\end{itemize}
 
 We predict the most famous ones should be better written and contain less code clones in average and we will see if the results stick to our prediction.
+
+\begin{figure}
+\centering
+\epsfig{file=result1.pdf}
+\caption{Preprocessing Results}
+\end{figure}
+
+\begin{figure}
+\centering
+\epsfig{file=result3.pdf}
+\caption{Classification Results}
+\end{figure}
+
+\begin{figure}
+\centering
+\epsfig{file=result2.pdf}
+\caption{Mergeability Analysis}
+\end{figure}
+
+\begin{figure}
+\centering
+\epsfig{file=result4.pdf}
+\caption{Merging Results}
+\end{figure}
+
+\begin{figure}
+\centering
+\epsfig{file=result5.pdf}
+\caption{Recommendation Evaluation Distribution}
+\end{figure}
+
+
+\subsection{Preprocessing Results}
+This test data in {\bf Figure 2.} shows number of lines, clone sets, set size, duplicate lines (lines in clone sets / total number of lines), and repeated lines for
+both test sets after each filtering steps. As shown in the table, we removed many double counted clones. After all preprocessing steps, we have 9.67\% and
+4.26\% duplicate lines left that we are able to merge, respectively, which is more than half of the code clones provided by CloneDigger. Set size was 2 before clustering
+as set were pairs before the clustering step.
+
+\subsection{Classification}
+Classification test data in {\bf Figure 3.} shows how we classify clones into different types to handle them accordingly.
+Statements and Functions data is very volatile as it somewhat depends on developers personal coding style.
+Identical and Different data shows majority of clones we are merging are not Type-1, which correlates to our prediction
+before the experiments as developers hardly actually copy and paste exact code. Same Files and Different Files shows that
+it's slightly more common to have clone code residing in the same files, although we couldn't really reason about this observation.
+
+\subsection{Mergeability Analysis}
+{\bf Figure 4.} shows what percentage of code clones we can merge out of the ones provided by CloneDigger, and the distribution of clones 
+we cannot handle according to different reasons:
+\begin{itemize}
+\item Reason 1: Type-3 clones - we are unable to merge any Type-3 clones at this moment
+\item Reason 2: Clone Fragments of length which is too short. We don't want to merge these clones as it's not improving readability at all
+\item Reason 3: Merges that throw unexpected exceptions for some reason that cannot pass our sanity check
+\end{itemize}
+We can merge almost all Type-1 clones and more than half of Type-2 clones. For clones that we cannot merge, most of them are Type-3 clones.
+
+\subsection{Merging Results}
+{\bf Figure 5.} shows the overall merging results. The data for random selected projects is more interesting as it is more practical for our
+everyday software projects. The data is for merging all mergeable clones without considering any recommendation information. 
+We can merge about 3.51\% code in total which is not a bad result, but each individual merge will only remove 9.21 lines of code in average
+which is not very ideal but reasonable as it includes many not recommended merges of smaller line counts. Distance and external references
+results tell that it's very common to have Type-2 clones and externality in code fragments. Note that external references value here include both
+variable/function/objects references and returned variables for future reference. It shows we are rarely able to perform simple merges and need
+to fix reference errors here and there.
+
+\subsection{Recommendation Evaluation}
+{\bf Figure 6.} is the distribution graph of our recommendation evaluation formula $f(RE)$. As we can see from the graph, about 45\% clones
+are categorized as somewhat recommended to merge, while 40\% are not recommended with a below zero evaluation. And only around 15\% clones
+are recommended. Which makes sense to us as we are only confident enough to merge clones that saves a lot of lines and do not introduce too much
+extra complexity, and which only occupy a relatively small portion of all clones detected by CloneDigger. And we do want developers to actually
+think about and make the merging decision carefully.
+
+\subsection{Random Selected VS Famous Projects}
+When comparing the results for our random selected projects and most famous projects from GitHub, the difference is quite noticeable.
+Firstly, there are way less (almost half) duplicate lines in famous projects. Secondly, famous projects also have less set size which corresponds to
+duplicate code across multiple fragments. Thirdly, for famous projects, most clone sets consist fragments inside same files, which means it has less 
+``copy and paste" from file to file. Additionally, for all clone types detected in famous project, there are more Type-3 clones. In another word,
+there are no simple clones for such famous projects, all occurrences of clones contain quite a few changes and semantics difference.
+Lastly, based on more occurrence of Reason 2 unmergeable clones and lines reduction per set, clones in famous project are way smaller thus
+less are actually clones which are meaningful to merge. The comparison result confirms our prediction that famous open source project are written
+with better care and better refactored compared to random selected projects as they are backed by more professional developers and maintained by
+bigger communities. We do not have access to any medium to large scale commercial propriety software project but we could assume they should
+contain more clones and a higher percentage of those clones shall be merged as for such products delivery time may be more important than
+code quality.
+
+\subsection{Performance}
+Performance-wise, as everything in our program works under O(n) time complexity, time to perform any kind of actions in EasyMerge is insignificant 
+compared to CloneDigger which uses an algorithm of higher order. In fact, user will experience no delay whatsoever after the preprocessing step involving
+CloneDigger is complete.
+
 
 \section{Conclusion and Future Work}
 Code clones are very common in medium to large scale software applications.
@@ -405,7 +564,8 @@ Furthermore, the current version of EasyMerge cannot merge similar classes and a
 In the future, we can add mechanism to merge similar classes, automatically generate parent classes and extract similar members and methods to the parents.
 Additionally, current mergeable clones are within code blocks (at the same indentation level for Python). We are also interested in merging code clones that cross
 multiple levels and scopes. We may break big clone fragments into smaller pieces and merge accordingly.
-
+At the end, we couldn't implement mechanism in this version to detect intentionally introduced clones such as ones in test suites, which could 
+also be a very good research direction for future work.
 
 
 %ACKNOWLEDGMENTS are optional

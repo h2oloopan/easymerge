@@ -11,7 +11,7 @@ class Background(QtGui.QWidget):
         super(Background, self).__init__()
         self._list = QtGui.QListWidget(self)
         self._tabs = QtGui.QTabWidget(self)
-        self._result = QtGui.QTextBrowser(self)
+        self._result = QtGui.QTextEdit(self)
         self._log = QtGui.QTextBrowser(self)
         self._eval = QtGui.QTextBrowser(self)
         self._merge = QtGui.QPushButton('Merge', self)
@@ -140,7 +140,7 @@ class Background(QtGui.QWidget):
             counter += 1
 
     def generateText(self, title, start, end, replacement):
-        browser = QtGui.QTextBrowser(self)
+        browser = QtGui.QTextEdit(self)
         f = open(title)
         lines = f.readlines()
         f.close()
@@ -158,13 +158,13 @@ class Background(QtGui.QWidget):
                 browser.insertHtml('###REMOVE CODE ABOVE###')
                 browser.insertPlainText('\n')
                 browser.insertPlainText('###REPLACE WITH###')
-                browser.insertPlainText('\n')    
+                browser.insertPlainText('\n')
                 browser.insertPlainText(replacement)
                 browser.insertPlainText('###REPLACE END###')
                 browser.insertPlainText('\n')
             #this actually print the line
             browser.insertPlainText(indent + line)
-            
+
             counter += 1
 
         block = browser.document().findBlockByLineNumber(start + 10)

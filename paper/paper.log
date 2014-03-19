@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  18 MAR 2014 15:13
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  18 MAR 2014 22:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -368,65 +368,93 @@ Overfull \hbox (7.21587pt too wide) in paragraph at lines 310--312
  []
 
 
-Overfull \hbox (1.75531pt too wide) in paragraph at lines 331--337
+Overfull \hbox (1.75531pt too wide) in paragraph at lines 332--338
 \T1/aer/m/n/9 merg-ing is be-tween ``###RE-MOVE_CODE_BELOW###"
  []
 
 [4 <./screen.pdf>]
-Overfull \hbox (5.88411pt too wide) in paragraph at lines 361--363
+Overfull \hbox (5.88411pt too wide) in paragraph at lines 413--418
 \T1/aer/m/n/9 Although EasyMerge can han-dle mul-ti-ple types of code clones,
  []
 
-
-Overfull \hbox (4.20119pt too wide) in paragraph at lines 378--380
+[5]
+Overfull \hbox (4.20119pt too wide) in paragraph at lines 448--449
 []\T1/aer/m/n/9 The sec-ond set has 6 ran-domly se-lected projects from GitHub:
  
  []
 
 
-Overfull \hbox (19.9338pt too wide) in paragraph at lines 383--384
+Overfull \hbox (19.9338pt too wide) in paragraph at lines 453--454
 []\T1/aer/m/n/9 Beets - The me-dia li-brary man-age-ment sys-tem for obsessive-
 
  []
 
+<result1.pdf, id=51, 238.49101pt x 113.7048pt>
+File: result1.pdf Graphic file (type pdf)
+ <use result1.pdf>
+Package pdftex.def Info: result1.pdf used on input line 462.
+(pdftex.def)             Requested size: 238.49042pt x 113.70451pt.
 
-Overfull \hbox (1.00476pt too wide) in paragraph at lines 404--408
+<result3.pdf, id=52, 238.49101pt x 86.724pt>
+File: result3.pdf Graphic file (type pdf)
+ <use result3.pdf>
+Package pdftex.def Info: result3.pdf used on input line 468.
+(pdftex.def)             Requested size: 238.49042pt x 86.72377pt.
+
+<result2.pdf, id=53, 238.49101pt x 293.1753pt>
+File: result2.pdf Graphic file (type pdf)
+ <use result2.pdf>
+Package pdftex.def Info: result2.pdf used on input line 474.
+(pdftex.def)             Requested size: 238.49042pt x 293.17458pt.
+
+<result4.pdf, id=54, 238.49101pt x 62.3931pt>
+File: result4.pdf Graphic file (type pdf)
+ <use result4.pdf>
+Package pdftex.def Info: result4.pdf used on input line 480.
+(pdftex.def)             Requested size: 238.49042pt x 62.39293pt.
+
+<result5.pdf, id=55, 238.49101pt x 155.8623pt>
+File: result5.pdf Graphic file (type pdf)
+ <use result5.pdf>
+Package pdftex.def Info: result5.pdf used on input line 486.
+(pdftex.def)             Requested size: 238.49042pt x 155.86191pt.
+ [6 <./result1.pdf> <./result3.pdf>] [7 <./result2.pdf> <./result4.pdf> <./resu
+lt5.pdf>]
+Overfull \hbox (1.00476pt too wide) in paragraph at lines 563--569
 []\T1/aer/m/n/9 Furthermore, the cur-rent ver-sion of EasyMerge can-not merge
  []
 
 
-Overfull \hbox (1.62524pt too wide) in paragraph at lines 404--408
+Overfull \hbox (1.62524pt too wide) in paragraph at lines 563--569
 \T1/aer/m/n/9 Ad-di-tion-ally, cur-rent merge-able clones are within code block
 s
  []
 
-(./paper.bbl [5]) [6
-
-] (./paper.aux) ) 
+(./paper.bbl) [8] (./paper.aux) ) 
 Here is how much of TeX's memory you used:
- 4226 strings out of 493315
- 55603 string characters out of 6137904
+ 4251 strings out of 493315
+ 55973 string characters out of 6137904
  143849 words of memory out of 5000000
- 7594 multiletter control sequences out of 15000+600000
+ 7614 multiletter control sequences out of 15000+600000
  50309 words of font info for 66 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  41i,10n,28p,982b,248s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/base/8r.en
-c}</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb>
-</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></
-usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></us
-r/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/l
-ocal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/loca
-l/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/
-texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/te
-xlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texl
-ive/2013/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/201
-3/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2013/texmf
--dist/fonts/type1/urw/times/utmb8a.pfb>
-Output written on paper.pdf (6 pages, 2386325 bytes).
+{/usr/local/texlive/2013/texmf-dist/fonts/enc/
+dvips/base/8r.enc}</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmbx9.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmmi6.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmmi9.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr6.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+9.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.
+pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pf
+b></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
+</usr/local/texlive/2013/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/l
+ocal/texlive/2013/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/te
+xlive/2013/texmf-dist/fonts/type1/urw/times/utmb8a.pfb>
+Output written on paper.pdf (8 pages, 6353160 bytes).
 PDF statistics:
- 90 PDF objects out of 1000 (max. 8388607)
- 55 compressed objects within 1 object stream
+ 163 PDF objects out of 1000 (max. 8388607)
+ 81 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

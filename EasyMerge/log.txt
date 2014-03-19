@@ -991,3 +991,31 @@ Merge is somewhat recommended
     Start running CloneDigger...
 [Tue 18 Mar 13:38:22 2014] - 
     28 mergeable clone sets found
+[Tue 18 Mar 19:24:40 2014] - 
+    EasyMerge started
+[Tue 18 Mar 19:24:40 2014] - 
+    UI initialization completed
+[Tue 18 Mar 19:24:40 2014] - 
+    Please pick source tree to analyze
+[Tue 18 Mar 19:24:52 2014] - 
+    EasyMerge started
+[Tue 18 Mar 19:24:52 2014] - 
+    UI initialization completed
+[Tue 18 Mar 19:24:52 2014] - 
+    Please pick source tree to analyze
+[Tue 18 Mar 19:25:02 2014] - 
+    Start running CloneDigger...
+[Tue 18 Mar 19:25:42 2014] - 
+    27 mergeable clone sets found
+[Tue 18 Mar 19:27:15 2014] - 
+    Mergeable 1 evaluation:
+File 1: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/util/confit.py
+File 2: /Users/shengyingpan/Projects/easymerge/EasyMerge/tests/beets/ui/migrate.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Clone length: 30 lines
+Merge is somewhat recommended
+
