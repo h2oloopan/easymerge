@@ -38,7 +38,15 @@ class Result:
     def get_code(self):
         return self._code
     def get_caller(self):
-        return self._caller
+        def get_pak(s):
+            s = s.split("\\")[:-1]
+            print s
+            return str(s)
+        self._new_caller = {}
+        for i in self._caller:
+            new_key = (i[0],i[1],i[2],get_pak(i[0]))
+            self._new_caller[new_key] = self._caller[i]
+        return self._new_caller
     def output(self):
         print "Code:"
         print self._code.strip()

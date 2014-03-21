@@ -101,10 +101,12 @@ def tmpDistributor(dSet, dInfo, src_ast_list):
     
     for m in mergeResults:
         
+        m.re = (m.lines, m.external[0], m.external[1], m.diff_pak) 
+        
         if m.diff_pak:
             stat["DiffPak"]+=1
         
-        stat["External"] = (stat["External"][0]+m.external[0], stat["External"][1]+m.external[1])
+        stat["External"] = (stat["External"][0]+m.external[0], stat["External"][1]+m.external[0])
         
         oldLines = 0
         for i in m._caller:

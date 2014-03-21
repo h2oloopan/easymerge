@@ -71,23 +71,32 @@ class Background(QtGui.QWidget):
         f.close()
 
 
-    def populateEval(self, sets, number):
+    def populateEval(self, index):
         #Populate evaluation information for one clone set
-        #Now only generate as a dummy
-        dummy  = 'Mergeable ' + str(number) + ' evaluation:\n'
+        curSet = self._sets[index]
+        re = curSet.re
+        sets = curSet.get_caller()
+        
+        dummy  = 'Mergeable ' + str(index + 1) + ' evaluation:\n'
         counter = 1
         for key in sets:
-            dummy += 'File ' + str(counter) + ': ' + key[0] + '\n'
+            dummy += 'File ' + str(index + 1) + ': ' + key[0] + '\n'
+            dummy += 'File ' + str(index + 1) + ' Path: ' + key[3] + '\n'
             counter += 1
 
-        dummy += 'File 1 package: beets > util > confit\n'
-        dummy += 'File 2 package: beets > ui > migrate\n'
-        dummy += 'External class reference: 2\n'
-        dummy += 'External function reference: 2\n'
-        dummy += 'Extra parameters: 2\n'
-        dummy += 'Clone length: 30 lines\n'
-        dummy += 'Merge is somewhat recommended\n'
-
+        dummy += 'External references: ' + str(re[1]) + '\n'
+        dummy += 'Extra return parameters: ' + str(re[2]) + '\n'
+        dummy += 'Clone length: ' + str(re[0]) + ' lines\n'
+        
+        result = re[0] * 0.5 - re[1] - re[2] * 2 - re[3] * 1.8
+        
+        if result > 8:
+            dummy += 'Merge is recommended\n'
+        elif result > 0:
+            dummy += 'Merge is somewhat recommended\n'
+        else:
+            dummy += 'Merge is not recommended\n'
+            
         self._eval.clear()
         self._eval.insertPlainText(dummy)
         return dummy
@@ -187,7 +196,7 @@ class Background(QtGui.QWidget):
         self.populateTabs(sets)
 
         #evaluation
-        log = self.populateEval(sets, index + 1)
+        log = self.populateEval(index)
         self.log(log)
 
 

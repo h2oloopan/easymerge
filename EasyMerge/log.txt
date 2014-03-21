@@ -1019,3 +1019,295 @@ Extra parameters: 2
 Clone length: 30 lines
 Merge is somewhat recommended
 
+[03/21/14 15:17:06] - 
+    EasyMerge started
+[03/21/14 15:17:06] - 
+    UI initialization completed
+[03/21/14 15:17:06] - 
+    Please pick source tree to analyze
+[03/21/14 15:17:21] - 
+    Start running CloneDigger...
+[03/21/14 15:18:07] - 
+    28 mergeable clone sets found
+[03/21/14 15:18:27] - 
+    Mergeable 1 evaluation:
+File 1: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\beets\ui\migrate.py
+File 2: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\beets\util\confit.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Clone length: 30 lines
+Merge is somewhat recommended
+
+[03/21/14 15:18:28] - 
+    Mergeable 3 evaluation:
+File 1: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\beets\mediafile.py
+File 2: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\beets\mediafile.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Clone length: 30 lines
+Merge is somewhat recommended
+
+[03/21/14 15:18:29] - 
+    Mergeable 6 evaluation:
+File 1: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\beets\mediafile.py
+File 2: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\beets\mediafile.py
+File 1 package: beets > util > confit
+File 2 package: beets > ui > migrate
+External class reference: 2
+External function reference: 2
+Extra parameters: 2
+Clone length: 30 lines
+Merge is somewhat recommended
+
+[03/21/14 15:43:50] - 
+    EasyMerge started
+[03/21/14 15:43:50] - 
+    UI initialization completed
+[03/21/14 15:43:50] - 
+    Please pick source tree to analyze
+[03/21/14 15:43:59] - 
+    Start running CloneDigger...
+[03/21/14 15:44:45] - 
+    28 mergeable clone sets found
+[03/21/14 15:46:27] - 
+    EasyMerge started
+[03/21/14 15:46:27] - 
+    UI initialization completed
+[03/21/14 15:46:27] - 
+    Please pick source tree to analyze
+[03/21/14 15:46:42] - 
+    Start running CloneDigger...
+[03/21/14 15:46:54] - 
+    10 mergeable clone sets found
+[03/21/14 15:47:45] - 
+    EasyMerge started
+[03/21/14 15:47:45] - 
+    UI initialization completed
+[03/21/14 15:47:45] - 
+    Please pick source tree to analyze
+[03/21/14 15:47:50] - 
+    Start running CloneDigger...
+[03/21/14 15:48:02] - 
+    10 mergeable clone sets found
+[03/21/14 15:49:04] - 
+    EasyMerge started
+[03/21/14 15:49:04] - 
+    UI initialization completed
+[03/21/14 15:49:04] - 
+    Please pick source tree to analyze
+[03/21/14 15:49:10] - 
+    Start running CloneDigger...
+[03/21/14 15:49:22] - 
+    10 mergeable clone sets found
+[03/21/14 15:49:25] - 
+    Mergeable 1 evaluation:
+File 1: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\fig\packages\six.py
+File 1 Package: []
+File 1: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\fig\packages\six.py
+File 1 Package: []
+External references: 10
+Extra return parameters: 9
+Clone length: 11 lines
+Merge is not recommended
+
+[03/21/14 15:49:26] - 
+    Mergeable 2 evaluation:
+File 2: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\tests\service_test.py
+File 2 Package: []
+File 2: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\tests\service_test.py
+File 2 Package: []
+External references: 5
+Extra return parameters: 3
+Clone length: 6 lines
+Merge is not recommended
+
+[03/21/14 15:49:28] - 
+    Mergeable 3 evaluation:
+File 3: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\fig\packages\docker\auth\auth.py
+File 3 Package: []
+File 3: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\fig\packages\docker\auth\auth.py
+File 3 Package: []
+External references: 7
+Extra return parameters: 1
+Clone length: 4 lines
+Merge is not recommended
+
+[03/21/14 15:49:32] - 
+    Mergeable 4 evaluation:
+File 4: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\fig\packages\six.py
+File 4 Package: []
+File 4: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\fig\packages\six.py
+File 4 Package: []
+External references: 4
+Extra return parameters: 3
+Clone length: 8 lines
+Merge is not recommended
+
+[03/21/14 15:49:33] - 
+    Mergeable 6 evaluation:
+File 6: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\tests\service_test.py
+File 6 Package: []
+File 6: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\tests\service_test.py
+File 6 Package: []
+External references: 4
+Extra return parameters: 2
+Clone length: 7 lines
+Merge is not recommended
+
+[03/21/14 15:49:33] - 
+    Mergeable 7 evaluation:
+File 7: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\tests\service_test.py
+File 7 Package: []
+File 7: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\tests\service_test.py
+File 7 Package: []
+External references: 4
+Extra return parameters: 3
+Clone length: 6 lines
+Merge is not recommended
+
+[03/21/14 15:49:34] - 
+    Mergeable 10 evaluation:
+File 10: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\fig\packages\docker\client.py
+File 10 Package: []
+File 10: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\fig\cli\log_printer.py
+File 10 Package: []
+External references: 2
+Extra return parameters: 1
+Clone length: 3 lines
+Merge is not recommended
+
+[03/21/14 15:49:34] - 
+    Mergeable 6 evaluation:
+File 6: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\tests\service_test.py
+File 6 Package: []
+File 6: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\tests\service_test.py
+File 6 Package: []
+External references: 4
+Extra return parameters: 2
+Clone length: 7 lines
+Merge is not recommended
+
+[03/21/14 15:49:35] - 
+    Mergeable 2 evaluation:
+File 2: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\tests\service_test.py
+File 2 Package: []
+File 2: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\tests\service_test.py
+File 2 Package: []
+External references: 5
+Extra return parameters: 3
+Clone length: 6 lines
+Merge is not recommended
+
+[03/21/14 15:49:35] - 
+    Mergeable 4 evaluation:
+File 4: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\fig\packages\six.py
+File 4 Package: []
+File 4: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\fig\packages\six.py
+File 4 Package: []
+External references: 4
+Extra return parameters: 3
+Clone length: 8 lines
+Merge is not recommended
+
+[03/21/14 15:50:17] - 
+    EasyMerge started
+[03/21/14 15:50:17] - 
+    UI initialization completed
+[03/21/14 15:50:17] - 
+    Please pick source tree to analyze
+[03/21/14 15:50:24] - 
+    Start running CloneDigger...
+[03/21/14 15:50:36] - 
+    10 mergeable clone sets found
+[03/21/14 15:51:00] - 
+    Mergeable 1 evaluation:
+File 1: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\fig\packages\six.py
+File 1 Package: []
+File 1: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\fig\packages\six.py
+File 1 Package: []
+External references: 10
+Extra return parameters: 9
+Clone length: 11 lines
+Merge is not recommended
+
+[03/21/14 15:51:45] - 
+    EasyMerge started
+[03/21/14 15:51:45] - 
+    UI initialization completed
+[03/21/14 15:51:45] - 
+    Please pick source tree to analyze
+[03/21/14 15:51:50] - 
+    Start running CloneDigger...
+[03/21/14 15:52:02] - 
+    10 mergeable clone sets found
+[03/21/14 15:52:04] - 
+    Mergeable 2 evaluation:
+File 2: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\tests\service_test.py
+File 2 Package: []
+File 2: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\tests\service_test.py
+File 2 Package: []
+External references: 5
+Extra return parameters: 3
+Clone length: 6 lines
+Merge is not recommended
+
+[03/21/14 15:52:06] - 
+    Mergeable 4 evaluation:
+File 4: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\fig\packages\six.py
+File 4 Package: []
+File 4: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\fig\packages\six.py
+File 4 Package: []
+External references: 4
+Extra return parameters: 3
+Clone length: 8 lines
+Merge is not recommended
+
+[03/21/14 15:52:07] - 
+    Mergeable 2 evaluation:
+File 2: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\tests\service_test.py
+File 2 Package: []
+File 2: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\tests\service_test.py
+File 2 Package: []
+External references: 5
+Extra return parameters: 3
+Clone length: 6 lines
+Merge is not recommended
+
+[03/21/14 15:52:08] - 
+    Mergeable 1 evaluation:
+File 1: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\fig\packages\six.py
+File 1 Package: []
+File 1: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\fig\packages\six.py
+File 1 Package: []
+External references: 10
+Extra return parameters: 9
+Clone length: 11 lines
+Merge is not recommended
+
+[03/21/14 15:52:30] - 
+    EasyMerge started
+[03/21/14 15:52:30] - 
+    UI initialization completed
+[03/21/14 15:52:30] - 
+    Please pick source tree to analyze
+[03/21/14 15:52:35] - 
+    Start running CloneDigger...
+[03/21/14 15:52:47] - 
+    10 mergeable clone sets found
+[03/21/14 15:53:05] - 
+    Mergeable 9 evaluation:
+File 9: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\fig\cli\log_printer.py
+File 9 Package: ['C:', 'Users', 'Shengying', 'Projects', 'easymerge', 'EasyMerge', 'tests', 'fig', 'fig', 'cli']
+File 9: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\fig\packages\docker\client.py
+File 9 Package: ['C:', 'Users', 'Shengying', 'Projects', 'easymerge', 'EasyMerge', 'tests', 'fig', 'fig', 'packages', 'docker']
+External references: 2
+Extra return parameters: 1
+Clone length: 3 lines
+Merge is not recommended
+
