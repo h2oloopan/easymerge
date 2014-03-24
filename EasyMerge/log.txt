@@ -1311,3 +1311,140 @@ Extra return parameters: 1
 Clone length: 3 lines
 Merge is not recommended
 
+[03/24/14 15:28:51] - 
+    EasyMerge started
+[03/24/14 15:28:51] - 
+    UI initialization completed
+[03/24/14 15:28:51] - 
+    Please pick source tree to analyze
+[03/24/14 15:29:01] - 
+    Start running CloneDigger...
+[03/24/14 15:29:14] - 
+    10 mergeable clone sets found
+[03/24/14 15:57:54] - 
+    Mergeable 1 evaluation:
+File 1: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\fig\packages\six.py
+File 1 Path: ['C:', 'Users', 'Shengying', 'Projects', 'easymerge', 'EasyMerge', 'tests', 'fig', 'fig', 'packages']
+File 1: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\fig\packages\six.py
+File 1 Path: ['C:', 'Users', 'Shengying', 'Projects', 'easymerge', 'EasyMerge', 'tests', 'fig', 'fig', 'packages']
+External references: 10
+Extra return parameters: 9
+Clone length: 11 lines
+Merge is not recommended
+
+[03/24/14 15:58:04] - 
+    Mergeable 4 evaluation:
+File 4: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\fig\packages\six.py
+File 4 Path: ['C:', 'Users', 'Shengying', 'Projects', 'easymerge', 'EasyMerge', 'tests', 'fig', 'fig', 'packages']
+File 4: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\fig\packages\six.py
+File 4 Path: ['C:', 'Users', 'Shengying', 'Projects', 'easymerge', 'EasyMerge', 'tests', 'fig', 'fig', 'packages']
+External references: 4
+Extra return parameters: 3
+Clone length: 8 lines
+Merge is not recommended
+
+[03/24/14 15:58:05] - 
+    Mergeable 7 evaluation:
+File 7: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\tests\service_test.py
+File 7 Path: ['C:', 'Users', 'Shengying', 'Projects', 'easymerge', 'EasyMerge', 'tests', 'fig', 'tests']
+File 7: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\tests\service_test.py
+File 7 Path: ['C:', 'Users', 'Shengying', 'Projects', 'easymerge', 'EasyMerge', 'tests', 'fig', 'tests']
+External references: 4
+Extra return parameters: 2
+Clone length: 7 lines
+Merge is not recommended
+
+[03/24/14 15:58:06] - 
+    Mergeable 9 evaluation:
+File 9: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\fig\packages\docker\client.py
+File 9 Path: ['C:', 'Users', 'Shengying', 'Projects', 'easymerge', 'EasyMerge', 'tests', 'fig', 'fig', 'packages', 'docker']
+File 9: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\fig\packages\docker\client.py
+File 9 Path: ['C:', 'Users', 'Shengying', 'Projects', 'easymerge', 'EasyMerge', 'tests', 'fig', 'fig', 'packages', 'docker']
+External references: 6
+Extra return parameters: 5
+Clone length: 6 lines
+Merge is not recommended
+
+[03/24/14 15:58:07] - 
+    Mergeable 10 evaluation:
+File 10: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\fig\cli\log_printer.py
+File 10 Path: ['C:', 'Users', 'Shengying', 'Projects', 'easymerge', 'EasyMerge', 'tests', 'fig', 'fig', 'cli']
+File 10: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\fig\packages\docker\client.py
+File 10 Path: ['C:', 'Users', 'Shengying', 'Projects', 'easymerge', 'EasyMerge', 'tests', 'fig', 'fig', 'packages', 'docker']
+External references: 2
+Extra return parameters: 1
+Clone length: 3 lines
+Merge is not recommended
+
+[03/24/14 15:58:08] - 
+    Mergeable 4 evaluation:
+File 4: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\fig\packages\six.py
+File 4 Path: ['C:', 'Users', 'Shengying', 'Projects', 'easymerge', 'EasyMerge', 'tests', 'fig', 'fig', 'packages']
+File 4: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\fig\packages\six.py
+File 4 Path: ['C:', 'Users', 'Shengying', 'Projects', 'easymerge', 'EasyMerge', 'tests', 'fig', 'fig', 'packages']
+External references: 4
+Extra return parameters: 3
+Clone length: 8 lines
+Merge is not recommended
+
+[03/24/14 15:58:09] - 
+    Mergeable 3 evaluation:
+File 3: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\fig\packages\docker\auth\auth.py
+File 3 Path: ['C:', 'Users', 'Shengying', 'Projects', 'easymerge', 'EasyMerge', 'tests', 'fig', 'fig', 'packages', 'docker', 'auth']
+File 3: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\fig\packages\docker\auth\auth.py
+File 3 Path: ['C:', 'Users', 'Shengying', 'Projects', 'easymerge', 'EasyMerge', 'tests', 'fig', 'fig', 'packages', 'docker', 'auth']
+External references: 7
+Extra return parameters: 1
+Clone length: 4 lines
+Merge is not recommended
+
+[03/24/14 15:58:10] - 
+    Mergeable 5 evaluation:
+File 5: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\fig\packages\docker\client.py
+File 5 Path: ['C:', 'Users', 'Shengying', 'Projects', 'easymerge', 'EasyMerge', 'tests', 'fig', 'fig', 'packages', 'docker']
+File 5: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\fig\packages\docker\client.py
+File 5 Path: ['C:', 'Users', 'Shengying', 'Projects', 'easymerge', 'EasyMerge', 'tests', 'fig', 'fig', 'packages', 'docker']
+External references: 5
+Extra return parameters: 4
+Clone length: 7 lines
+Merge is not recommended
+
+[03/24/14 15:58:10] - 
+    Mergeable 7 evaluation:
+File 7: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\tests\service_test.py
+File 7 Path: ['C:', 'Users', 'Shengying', 'Projects', 'easymerge', 'EasyMerge', 'tests', 'fig', 'tests']
+File 7: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\tests\service_test.py
+File 7 Path: ['C:', 'Users', 'Shengying', 'Projects', 'easymerge', 'EasyMerge', 'tests', 'fig', 'tests']
+External references: 4
+Extra return parameters: 2
+Clone length: 7 lines
+Merge is not recommended
+
+[03/24/14 15:58:11] - 
+    Mergeable 6 evaluation:
+File 6: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\tests\service_test.py
+File 6 Path: ['C:', 'Users', 'Shengying', 'Projects', 'easymerge', 'EasyMerge', 'tests', 'fig', 'tests']
+File 6: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\tests\service_test.py
+File 6 Path: ['C:', 'Users', 'Shengying', 'Projects', 'easymerge', 'EasyMerge', 'tests', 'fig', 'tests']
+External references: 4
+Extra return parameters: 3
+Clone length: 6 lines
+Merge is not recommended
+
+[03/24/14 15:58:13] - 
+    Mergeable 4 evaluation:
+File 4: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\fig\packages\six.py
+File 4 Path: ['C:', 'Users', 'Shengying', 'Projects', 'easymerge', 'EasyMerge', 'tests', 'fig', 'fig', 'packages']
+File 4: C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\fig\packages\six.py
+File 4 Path: ['C:', 'Users', 'Shengying', 'Projects', 'easymerge', 'EasyMerge', 'tests', 'fig', 'fig', 'packages']
+External references: 4
+Extra return parameters: 3
+Clone length: 8 lines
+Merge is not recommended
+
+[03/24/14 15:58:15] - 
+    Files:
+C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\fig\packages\six.py
+C:\Users\Shengying\Projects\easymerge\EasyMerge\tests\fig\fig\packages\six.py
+merged.
+
